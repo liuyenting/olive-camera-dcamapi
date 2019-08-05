@@ -1,6 +1,5 @@
 from setuptools import setup, Extension
 from Cython.Distutils import build_ext
-import numpy as np
 
 NAME = "olive-camera-dcamapi"
 VERSION = "0.1"
@@ -20,7 +19,7 @@ ext_1 = Extension(
     "dcamapi",      
     [SRC_DIR + "/dcamapi4.pyx"],
     language='c',
-    include_dirs=[np.get_include()],
+    include_dirs=[],
     extra_objects=[SRC_DIR+'/lib/dcamapi.lib']
 )
 
