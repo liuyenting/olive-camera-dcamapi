@@ -289,8 +289,31 @@ cdef extern from 'lib/dcamapi4.h':
     struct DCAMDATA_LINEARLUT:
         pass
     
-    struct DCAMPROP_ATTR:
-        pass
+    ctypedef struct DCAMPROP_ATTR:
+    	## input parameters ##
+        int32				cbSize					# [in] size of this structure
+        int32				iProp					# DCAMIDPROPERTY
+        int32				option					# DCAMPROPOPTION
+        int32				iReserved1				# must be 0
+
+        ## output parameters ##
+        int32				attribute				# DCAMPROPATTRIBUTE
+        int32				iGroup					# 0 reserved
+        int32				iUnit					# DCAMPROPUNIT
+        int32				attribute2				# DCAMPROPATTRIBUTE2
+
+        double				valuemin				# minimum value
+        double				valuemax				# maximum value
+        double				valuestep				# minimum stepping between a value and the next
+        double				valuedefault			# default value
+
+        int32				nMaxChannel			    # max channel if supports
+        int32				iReserved3				# reserved to 0
+        int32				nMaxView				# max view if supports
+
+        int32				iProp_NumberOfElement	# property id to get number of elements of this property if it is array
+        int32				iProp_ArrayBase		    # base id of array if element
+        int32				iPropStep_Element		# step for iProp to next element
 
     struct DCAMPROP_VALUETEXT:
         pass 
@@ -328,6 +351,15 @@ cdef extern from 'lib/dcamapi4.h':
     DCAMERR dcamdev_getdata			( HDCAM h, DCAMDATA_HDR* param )
 
     # property control
+    DCAMERR dcamprop_getattr		( HDCAM h, DCAMPROP_ATTR* param )
+    DCAMERR dcamprop_getvalue		( HDCAM h, int32 iProp, double* pValue )
+    DCAMERR dcamprop_setvalue		( HDCAM h, int32 iProp, double  fValue )
+    DCAMERR dcamprop_setgetvalue	( HDCAM h, int32 iProp, double* pValue, int32 option DCAM_DEFAULT_ARG )
+    DCAMERR dcamprop_queryvalue		( HDCAM h, int32 iProp, double* pValue, int32 option DCAM_DEFAULT_ARG )
+    DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp, int32 option DCAM_DEFAULT_ARG )
+    DCAMERR dcamprop_getname		( HDCAM h, int32 iProp, char* text, int32 textbytes )
+    DCAMERR dcamprop_getvaluetext	( HDCAM h, DCAMPROP_VALUETEXT* param )
+
 
     # buffer control
 
