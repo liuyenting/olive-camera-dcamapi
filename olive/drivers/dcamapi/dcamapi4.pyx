@@ -1,6 +1,13 @@
+#cython: language_level=3
+
 cimport cython
+from cpython.exc cimport PyErr_SetFromErrno, PyErr_SetFromErrnoWithFilenameObject
+from libc.stdint cimport intptr_t
 
 cdef extern from 'lib/dcamapi4.h':
+    ctypedef int            int32
+    ctypedef unsigned int   _ui32
+
     ctypedef void* HDCAM
 
     enum DCAMERR:
@@ -193,17 +200,55 @@ cdef extern from 'lib/dcamapi4.h':
         ## The value "(error code) - DCAMERR_INITOPTION_COLLISION_BASE" indicates the index which second INITOPTION group happens. ##
 
         ## success ##
-        DCAMERR_SUCCESS				= 1			##		no error, general success code, app should check the value is positive	##
+        #: no error, general success code, app should check the value is positive
+        DCAMERR_SUCCESS				= 1			
 
 
+    enum DCAM_IDSTR:
+        #: bus information
+        DCAM_IDSTR_BUS						= 0x04000101,
+        #: camera ID (serial number or bus specific string)
+        DCAM_IDSTR_CAMERAID					= 0x04000102,
+        #: always "Hamamatsu"
+        DCAM_IDSTR_VENDOR					= 0x04000103,
+        #: camera model name
+        DCAM_IDSTR_MODEL					= 0x04000104,
+        #: version of the firmware or hardware
+        DCAM_IDSTR_CAMERAVERSION			= 0x04000105,
+        #: version of the low level driver which DCAM is using
+        DCAM_IDSTR_DRIVERVERSION			= 0x04000106,
+        #: version of the DCAM module
+        DCAM_IDSTR_MODULEVERSION			= 0x04000107,
+        #: version of DCAM-API specification
+        DCAM_IDSTR_DCAMAPIVERSION			= 0x04000108,
+
+        #: camera series name (nickname)
+        DCAM_IDSTR_CAMERA_SERIESNAME		= 0x0400012c,
+
+        #: optical block model name
+        DCAM_IDSTR_OPTICALBLOCK_MODEL		= 0x04001101,
+        #: optical block serial number
+        DCAM_IDSTR_OPTICALBLOCK_ID			= 0x04001102,
+        #: description of optical block 
+        DCAM_IDSTR_OPTICALBLOCK_DESCRIPTION	= 0x04001103,
+        #: description of optical block channel 1
+        DCAM_IDSTR_OPTICALBLOCK_CHANNEL_1	= 0x04001104,
+        #: description of optical block channel 2
+        DCAM_IDSTR_OPTICALBLOCK_CHANNEL_2	= 0x04001105    
+    
     ##
     # structures
     ##
-    struct DCAM_GUID:
+    ctypedef struct DCAM_GUID:
         pass
 
-    struct DCAMAPI_INIT:
-        pass
+    ctypedef struct DCAMAPI_INIT:
+        int32				size				    # [in]
+        int32				iDeviceCount		    # [out]
+        int32				reserved			    # reserved
+        int32				initoptionbytes		    # [in] maximum bytes of initoption array.
+        const int32*		initoption			    # [in ptr] initialize options. Choose from DCAMAPI_INITOPTION
+        const DCAM_GUID*	guid				    # [in ptr]
 
     struct DCAMDEV_OPEN:
         pass
@@ -220,11 +265,17 @@ cdef extern from 'lib/dcamapi4.h':
     struct DCAMDEV_CAPABILITY_FRAMEOPTION:
         pass
     
-    struct DCAMDEV_STRING:
-        pass
+    ctypedef struct DCAMDEV_STRING:
+        int32				size					# [in]
+        int32				iString				    # [in]
+        char*				text					# [in,obuf]
+        int32				textbytes				# [in]
     
-    struct DCAMDATA_HDR:
-        pass
+    ctypedef struct DCAMDATA_HDR:
+        int32				size					# [in]	size of whole structure, not only this
+        int32				iKind					# [in] DCAMDATA_KIND__*
+        int32				option					# [in] DCAMDATA_OPTION__*
+        int32				reserved2				# [in] 0 reserved
     
     struct DCAMDATA_REGION:
         pass
@@ -266,16 +317,15 @@ cdef extern from 'lib/dcamapi4.h':
     # functions
     ##
     # initialize, uninitialize and misc
-    DCAMERR dcamapi_init			( DCAMAPI_INIT* param );
-    DCAMERR dcamapi_init			();
-    DCAMERR dcamapi_uninit			();
-    DCAMERR dcamdev_open			( DCAMDEV_OPEN* param );
-    DCAMERR dcamdev_close			( HDCAM h );
-    DCAMERR dcamdev_showpanel		( HDCAM h, int iKind );
-    DCAMERR dcamdev_getcapability	( HDCAM h, DCAMDEV_CAPABILITY* param );
-    DCAMERR dcamdev_getstring		( HDCAM h, DCAMDEV_STRING* param );
-    DCAMERR dcamdev_setdata			( HDCAM h, DCAMDATA_HDR* param );
-    DCAMERR dcamdev_getdata			( HDCAM h, DCAMDATA_HDR* param );
+    DCAMERR dcamapi_init			( DCAMAPI_INIT* param )
+    DCAMERR dcamapi_uninit			()
+    DCAMERR dcamdev_open			( DCAMDEV_OPEN* param )
+    DCAMERR dcamdev_close			( HDCAM h )
+    DCAMERR dcamdev_showpanel		( HDCAM h, int iKind )
+    DCAMERR dcamdev_getcapability	( HDCAM h, DCAMDEV_CAPABILITY* param )
+    DCAMERR dcamdev_getstring		( HDCAM h, DCAMDEV_STRING* param )
+    DCAMERR dcamdev_setdata			( HDCAM h, DCAMDATA_HDR* param )
+    DCAMERR dcamdev_getdata			( HDCAM h, DCAMDATA_HDR* param )
 
     # property control
 
@@ -284,3 +334,68 @@ cdef extern from 'lib/dcamapi4.h':
     # capturing
 
     # wait abort handle control
+
+    ##
+    # utilities
+    ##
+    int failed( DCAMERR err )
+
+cdef inline dcamdev_string( DCAMERR& err, HDCAM hdcam, int32 idStr, char* text, int32 textbytes ):
+    cdef DCAMDEV_STRING param
+    param.size = sizeof(param)
+    param.text = text
+    param.textbytes = textbytes
+    param.iString = idStr
+
+    # "Assignment to reference" bug
+    #   https://github.com/cython/cython/issues/1863
+    (&err)[0] = dcamdev_getstring( hdcam, &param )
+    return not failed(err)
+
+
+cdef show_dcamerr( HDCAM hdcam, DCAMERR errid, const char* apiname ):
+    cdef DCAMERR err
+
+    cdef char errtext[256]
+    dcamdev_string( err, hdcam, errid, errtext, sizeof(errtext) )
+
+    # retrieved error text
+    msg = 'FAILED: (DCAMERR)0x{:08X} {} @ {}'.format(errid, errtext, apiname)
+    PyErr_SetFromErrnoWithFilenameObject(RuntimeError, msg)
+
+
+cdef show_dcamdev_info( HDCAM hdcam ):
+    cdef char model[256]
+    cdef char cameraid[64]
+    cdef char bus[64]
+
+    cdef DCAMERR err
+    if not dcamdev_string( err, hdcam, DCAM_IDSTR_MODEL, model, sizeof(model) ):
+        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_MODEL)')
+    elif not dcamdev_string( err, hdcam, DCAM_IDSTR_CAMERAID, cameraid, sizeof(cameraid) ):
+        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_CAMERAID)')
+    elif not dcamdev_string( err, hdcam, DCAM_IDSTR_BUS, bus, sizeof(bus) ):
+        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_BUS)')
+    else:
+        print('{} ({}) on {}'.format(model.decode('UTF-8'), cameraid.decode('UTF-8'), bus.decode('UTF-8')))
+
+cdef class DCAMAPI:
+    cdef DCAMAPI_INIT apiinit 
+
+    def __cinit__(self):
+        cdef DCAMERR err
+
+        self.apiinit.size = sizeof(self.apiinit)
+        self.apiinit.initoptionbytes = 0
+        err = dcamapi_init(&self.apiinit)
+        
+        if failed(err):
+            show_dcamerr( NULL, err, 'dcamapi_init()' )
+        else:
+            print('dcamapi_init() found {} devices'.format(self.apiinit.iDeviceCount))
+
+            for iDevice in range(self.apiinit.iDeviceCount):
+                show_dcamdev_info( <HDCAM>iDevice )
+    
+    def __dealloc__(self):
+        dcamapi_uninit()

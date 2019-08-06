@@ -1,5 +1,5 @@
 import os
-from setuptools import setup, Extension
+from setuptools import Extension, setup
 
 from Cython.Build import build_ext
 
@@ -22,12 +22,13 @@ EMAIL = "ytliu@gate.sinica.edu.tw"
 REQUIRES = []
 
 PACKAGES=[
-    'olive.devices.drivers.dcamapi'
+    'olive.drivers.dcamapi'
 ]
 
 EXT_DEFS = [
     {
-        'name': 'olive.devices.drivers.dcamapi.dcamapi4',
+        'name': 'olive.drivers.dcamapi.dcamapi4',
+        'language': 'c++',
         'extra_objects': [
             'lib/dcamapi.lib'
         ]
@@ -87,7 +88,7 @@ setup(
 
     # package to install
     packages=PACKAGES,
-    namespace_packages=['olive.devices.drivers'],
+    namespace_packages=['olive', 'olive.drivers'],
     package_data=PACKAGE_DATA,
     ext_modules=EXTENSIONS,
 
