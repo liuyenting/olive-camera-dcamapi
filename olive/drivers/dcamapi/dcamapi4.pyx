@@ -4,7 +4,10 @@ cimport cython
 from cpython.exc cimport PyErr_SetFromErrno, PyErr_SetFromErrnoWithFilenameObject
 from libc.stdint cimport intptr_t
 from libc.stdlib cimport malloc, free
+from libc.string cimport memset
 from libcpp.string cimport string
+
+from enum import Enum
 
 cdef extern from 'lib/dcamapi4.h':
     ctypedef int            int32
@@ -112,7 +115,7 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_INVALIDCHANNEL		= 0x80000829,
         #: the property id specifies channel but channel is invalid
         DCAMERR_INVALIDVIEW			= 0x8000082a,
-        #: the combination of subarray values are invalid. e.g. DCAM_IDPROP_SUBARRAYHPOS + DCAM_IDPROP_SUBARRAYHSIZE is greater than the number of horizontal pixel of sensor
+        #: the combination of subarray values are invalid
         DCAMERR_INVALIDSUBARRAY		= 0x8000082b,
         #: the property cannot access during this DCAM STATUS
         DCAMERR_ACCESSDENY			= 0x8000082c,
@@ -130,17 +133,17 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_INVALIDSESSIONINDEX	= 0x80000834,
         #: not take the dark and shading correction data yet
         DCAMERR_NOCORRECTIONDATA	= 0x80000838,
-        #: 
-        DCAMERR_CHANNELDEPENDENTVALUE= 0x80000839,##	each channel has own property value so can't return overall property value.	##
-        #: 
-        DCAMERR_VIEWDEPENDENTVALUE	= 0x8000083a,##		each view has own property value so can't return overall property value.	##
-        #: 
-        DCAMERR_INVALIDCALIBSETTING	= 0x8000083e,##		the setting of properties are invalid on sampling calibration data. some camera has the limitation to make calibration data. e.g. the trigger source is INTERNAL only and read out direction isn't trigger.	##
-        #: 
-        DCAMERR_LESSSYSTEMMEMORY	= 0x8000083f,##		the sysmte memory size is too small. PC doesn't have enough memory or is limited memory by 32bit OS.	##
-        #: 
-        DCAMERR_NOTSUPPORT			= 0x80000f03,##		camera does not support the function or property with current settings	##
-
+        #: each channel has own property value so can't return overall property value
+        DCAMERR_CHANNELDEPENDENTVALUE= 0x80000839,
+        #: each view has own property value so can't return overall property value
+        DCAMERR_VIEWDEPENDENTVALUE	= 0x8000083a,
+        #: the setting of properties are invalid on sampling calibration data
+        DCAMERR_INVALIDCALIBSETTING	= 0x8000083e,
+        #: system memory size is too small
+        DCAMERR_LESSSYSTEMMEMORY	= 0x8000083f,
+        #: camera does not support the function or property with current settings
+        DCAMERR_NOTSUPPORT			= 0x80000f03,
+        
         ## camera or bus trouble ##
         #: failed to read data from camera
         DCAMERR_FAILREADCAMERA		= 0x83001002,
@@ -191,13 +194,17 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_UNREACH				= 0x80000f01,##		internal error						##
         DCAMERR_UNLOADED			= 0x80000f04,##		calling after process terminated	##
         DCAMERR_THRUADAPTER			= 0x80000f05,##											##
-        DCAMERR_NOCONNECTION		= 0x80000f07,##		HDCAM lost connection to camera		##
-
-        DCAMERR_NOTIMPLEMENT		= 0x80000f02,##		not yet implementation				##
-
-        DCAMERR_APIINIT_INITOPTIONBYTES	= 0xa4010003,##	DCAMAPI_INIT::initoptionbytes is invalid	##
-        DCAMERR_APIINIT_INITOPTION		= 0xa4010004,##	DCAMAPI_INIT::initoption is invalid	##
-
+        #: HDCAM lost connection to camera
+        DCAMERR_NOCONNECTION		= 0x80000f07,
+        
+        #: not implement
+        DCAMERR_NOTIMPLEMENT		= 0x80000f02,
+        
+        #: DCAMAPI_INIT::initoptionbytes is invalid
+        DCAMERR_APIINIT_INITOPTIONBYTES	= 0xa4010003,
+        #: DCAMAPI_INIT::initoption is invalid
+        DCAMERR_APIINIT_INITOPTION		= 0xa4010004,
+        
         DCAMERR_INITOPTION_COLLISION_BASE=0xa401C000,
         DCAMERR_INITOPTION_COLLISION_MAX= 0xa401FFFF,
 
@@ -240,7 +247,26 @@ cdef extern from 'lib/dcamapi4.h':
 
     enum DCAMCAP_TRANSFERKIND:
         DCAMCAP_TRANSFERKIND_FRAME		= 0
-        
+
+
+    enum DCAMCAP_STATUS:
+        DCAMCAP_STATUS_ERROR				= 0x0000,
+        #: now capturing
+        DCAMCAP_STATUS_BUSY					= 0x0001,
+        #: not capturing, but ready to start capturing
+        DCAMCAP_STATUS_READY				= 0x0002,
+        #: device is not prepared for immediate capturing
+        DCAMCAP_STATUS_STABLE				= 0x0003,
+        #: device is not fit for capture
+        DCAMCAP_STATUS_UNSTABLE				= 0x0004
+    
+
+    cpdef enum DCAMCAP_START:
+        #: continuously capturing images
+        DCAMCAP_START_SEQUENCE				= -1,
+        #: captures images until the buffer is filled completely then stop
+        DCAMCAP_START_SNAP					= 0
+
 
     cpdef enum DCAM_IDSTR:
         #: bus information
@@ -311,15 +337,28 @@ cdef extern from 'lib/dcamapi4.h':
         int32				capflag				    # [out] available flags in current condition.
         int32				kind					# [in] data kind in domain
     
-    struct DCAMDEV_CAPABILITY_LUT:
-        pass
+    ctypedef struct DCAMDEV_CAPABILITY_LUT:
+        DCAMDEV_CAPABILITY	hdr					    # [in] size:		size of this structure
+                                                    # [in] domain:		DCAMDEV_CAPDOMAIN__DCAMDATA
+                                                    # [out] capflag:	DCAMDATA_LUTTYPE__*
+                                                    # [in] kind:		DCAMDATA_KIND__LUT
+        int32				linearpointmax			# [out] max of linear lut point
     
-    struct DCAMDEV_CAPABILITY_REGION:
-        pass
+    ctypedef struct DCAMDEV_CAPABILITY_REGION:
+        DCAMDEV_CAPABILITY	hdr					    # [in] size:		size of this structure
+                                                    # [in] domain:		DCAMDEV_CAPDOMAIN__DCAMDATA
+                                                    # [out] capflag:	DCAMDATA_REGIONTYPE__*
+                                                    # [in] kind:		DCAMDATA_KIND__REGION
+        int32				horzunit				# [out] horizontal step
+        int32				vertunit				# [out] vertical step
     
-    struct DCAMDEV_CAPABILITY_FRAMEOPTION:
-        pass
-    
+    ctypedef struct DCAMDEV_CAPABILITY_FRAMEOPTION:
+        DCAMDEV_CAPABILITY	hdr					    # [in] size:		size of this structure
+                                                    # [in] domain:		DCAMDEV_CAPDOMAIN__FRAMEOPTION
+                                                    # [out] capflag:	available DCAMBUF_PROCTYPE__* flags in current condition.
+                                                    # [in] kind:		0 reserved
+        int32	supportproc						    # [out] support DCAMBUF_PROCTYPE__* flags in the camera. hdr.capflag may be 0 if the function doesn't work in current condition.
+
     ctypedef struct DCAMDEV_STRING:
         int32				size					# [in]
         int32				iString				    # [in]
@@ -430,7 +469,7 @@ cdef extern from 'lib/dcamapi4.h':
         int32				size					# [in] size of whole structure, not only this.
         int32				iKind					# [in] DCAMBUF_METADATAKIND
         int32				option					# [in] value meaning depends on DCAMBUF_METADATAKIND
-        int32				iFrame					# [in] frame index
+        int32				iFrame					# [in] frfame index
     ##
     ## structures
     ##
@@ -527,13 +566,28 @@ cdef show_dcamdev_info( HDCAM hdcam ):
         print('{} ({}) on {}'.format(model.decode('UTF-8'), cameraid.decode('UTF-8'), bus.decode('UTF-8')))
 
 
-cdef class _DCAMAPI:
+cdef class Singleton:
+    _instances = {}
+
+    @classmethod
+    def instance(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = cls(*args, **kwargs)
+        return cls._instances[cls]
+
+    @classmethod
+    def destroy(cls):
+        if cls in cls._instances:
+            del cls._instances[cls]
+
+
+cdef class _DCAMAPI(Singleton):
     def __cinit__(self):
         cdef DCAMERR err
 
         cdef DCAMAPI_INIT apiinit
+        memset(&apiinit, 0, sizeof(apiinit))
         apiinit.size = sizeof(apiinit)
-        apiinit.initoptionbytes = 0
         err = dcamapi_init(&apiinit)
         
         if failed(err):
@@ -548,11 +602,17 @@ cdef class _DCAMAPI:
         print('dcamapi_uninit()')
         dcamapi_uninit()
 
+
+class Capability(Enum):
+    LUT = 1
+    Region = 2
+    FrameOption = 3
+
+
 cdef class DCAMAPI:
-    #: DCAM-API singleton 
-    _instance = None
-    #: dynamic attribute for device handle
-    cdef dict __dict__
+    #: reference to the DCAM-API
+    cdef object _instance
+    #: device handle
     cdef HDCAM hdcam 
     
     def __init__(self, index=0):
@@ -562,19 +622,30 @@ cdef class DCAMAPI:
     ##
     ## initialize, uninitialize and misc 
     ##
-    @classmethod
-    def init(cls):
-        if cls._instance is None:
-            cls._instance = cls() #FIXME
+    def init(self):
+        """
+        Initialize the DCAM-API manager, modules and drivers.
 
-    @classmethod
-    def uninit(cls):
-        del cls._instance
+        Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI to provide singleton behavior.
+        """
+        if self._instance is None:
+            self._instance = _DCAMAPI.instance()
+            
+    def uninit(self):
+        """
+        Cleanups all resources and objects used by DCAM-API. 
+        
+        All opened devices will be forcefully closed. No new devices can be opened unless initialize again.
+        """
+        # this only decrease the reference count, will NOT guarantee dcam_uninit be called
+        self._instance = None
+        _DCAMAPI.destroy()
 
     def open(self, index):
         cdef DCAMERR err
 
         cdef DCAMDEV_OPEN devopen
+        memset(&devopen, 0, sizeof(devopen))
         devopen.size = sizeof(devopen)
         devopen.index = index
         err = dcamdev_open(&devopen)
@@ -597,28 +668,42 @@ cdef class DCAMAPI:
     ##
     ## device data
     ##
-    def get_capability(self):  
-        pass
-    
-    @cython.boundscheck(False)
-    cpdef get_string(self, DCAM_IDSTR idstr, size_t nbytes=256):
+    def get_capability(self, capability):  
+        """Returns capability information not able to get from property."""
+        if capability == LUT:
+            pass
+        elif capability == Region:
+            pass
+        elif capability == FrameOption:
+            pass
+        else:
+            raise ValueError('unknown capability opton')
+
+    cpdef get_string(self, DCAM_IDSTR idstr, int32 nbytes=256):
         cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
         cdef DCAMDEV_STRING param
+        memset(&param, 0, sizeof(param))
         param.size = sizeof(param)
         param.text = text 
         param.textbytes = nbytes
         param.iString = idstr
         try:
             dcamdev_getstring(self.hdcam, &param)
-            return string(text)
+            return text.decode('UTF-8')
         finally:
             free(text)
 
     def set_data(self):
+        """
+        Set the data that is impossible to set with property. WTF?
+        """
         pass
-    
+
     def get_data(self):
+        """
+        Get the data that is impossible to get from property. WTF!?
+        """
         pass
     ##
     ## device data
@@ -630,4 +715,91 @@ cdef class DCAMAPI:
 
     ##
     ## property control
+    ##
+
+    ##
+    ## buffer control
+    ##
+    cpdef alloc(self, int32 nframes):
+        """
+        Allocates internal image buffers for image acquisition.
+        """
+        cdef DCAMERR err
+        err = dcambuf_alloc(self.hdcam, nframes)
+        if failed(err):
+            show_dcamerr(self.hdcam, err, 'dcambuf_alloc()')
+    
+    def attach(self):
+        pass
+    
+    def release(self):
+        """
+        Releases capturing buffer allocated by dcambuf_alloc() or assigned by dcambuf_attached().
+        """
+        cdef DCAMERR err
+        err = dcambuf_release(self.hdcam)
+        if failed(err):
+            #TODO wait for busy state
+            show_dcamerr(self.hdcam, err, 'dcambuf_release()')
+
+    def lock_frame(self):
+        pass 
+    
+    def copy_frame(self):
+        pass 
+    
+    def copy_metadata(self):
+        pass
+    ##
+    ## buffer control
+    ##
+
+    ##
+    ## capturing
+    ##
+    def start(self, int32 mode):
+        """
+        Start capturing images.
+        """
+        cdef DCAMERR err
+        err = dcamcap_start(self.hdcam, mode)
+        if failed(err):
+            show_dcamerr(self.hdcam, err, 'dcamcap_start()')
+
+    def stop(self):
+        """
+        Terminates the acquisition.
+        """
+        cdef DCAMERR err
+        err = dcamcap_stop(self.hdcam)
+        if failed(err):
+            show_dcamerr(self.hdcam, err, 'dcamcap_stop()')
+    
+    def status(self):
+        """
+        Returns current capturing status.
+        """
+        cdef DCAMERR err
+        cdef int32 status
+        err = dcamcap_status(self.hdcam, &status)
+        if failed(err):
+            show_dcamerr(self.hdcam, err, 'dcamcap_status()')
+        else:
+            #TODO convert capture status
+            pass 
+    
+    def transfer_info(self):
+        pass
+    
+    def fire_trigger(self):
+        pass
+    ##
+    ## capturing
+    ##
+
+    ##
+    ## wait abort handle control
+    ##
+    ##
+    ## wait abort handle control
     ##
