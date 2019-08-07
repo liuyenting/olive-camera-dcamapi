@@ -3,6 +3,8 @@
 cimport cython
 from cpython.exc cimport PyErr_SetFromErrno, PyErr_SetFromErrnoWithFilenameObject
 from libc.stdint cimport intptr_t
+from libc.stdlib cimport malloc, free
+from libcpp.string cimport string
 
 cdef extern from 'lib/dcamapi4.h':
     ctypedef int            int32
@@ -10,10 +12,11 @@ cdef extern from 'lib/dcamapi4.h':
 
     ctypedef void* HDCAM
 
+    ##
+    ## constant declaration
+    ## 
     enum DCAMERR:
-        ## 
-        # status error 
-        ##
+        ## status error 
         #: API cannot process in busy state
         DCAMERR_BUSY				= 0x80000101,
         #: API requires ready state
@@ -38,9 +41,7 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_TOOFREQUENTTRIGGER	= 0x80000305,
 
         
-        ##
-        # wait error 
-        ##
+        ## wait error 
         #: abort process
         DCAMERR_ABORT				= 0x80000102,
         #: timeout
@@ -52,9 +53,8 @@ cdef extern from 'lib/dcamapi4.h':
         #: hpk format data is invalid data
         DCAMERR_INVALIDIMAGE		= 0x80000321,
         
-        ##
-        # initialization error
-        ##
+
+        ## initialization error
         #: not enough resource except memory
         DCAMERR_NORESOURCE			= 0x80000201,
         #: not enough memory
@@ -70,6 +70,7 @@ cdef extern from 'lib/dcamapi4.h':
         #: no combination on registry
         DCAMERR_NOCOMBINATION		= 0x80000208,
 
+
         #: DEPRECATED
         DCAMERR_FAILOPEN			= 0x80001001,
         #: dcam_init() found invalid module
@@ -83,9 +84,8 @@ cdef extern from 'lib/dcamapi4.h':
         #: need to update frame grabber firmware to use the camera
         DCAMERR_FRAMEGRABBER_NEEDS_FIRMWAREUPDATE = 0x80001002,
         
-        ##
-        # calling error 
-        ##
+        
+        ## calling error 
         #: invalid camera
         DCAMERR_INVALIDCAMERA		= 0x80000806,
         #: invalid camera handle
@@ -114,22 +114,22 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_INVALIDVIEW			= 0x8000082a,
         #: the combination of subarray values are invalid. e.g. DCAM_IDPROP_SUBARRAYHPOS + DCAM_IDPROP_SUBARRAYHSIZE is greater than the number of horizontal pixel of sensor
         DCAMERR_INVALIDSUBARRAY		= 0x8000082b,
-        #: 
-        DCAMERR_ACCESSDENY			= 0x8000082c,##			##
-        #: 
-        DCAMERR_NOVALUETEXT			= 0x8000082d,##		the property does not have value text	##
-        #: 
-        DCAMERR_WRONGPROPERTYVALUE	= 0x8000082e,##		at least one property value is wrong	##
-        #: 
-        DCAMERR_DISHARMONY			= 0x80000830,##		the paired camera does not have same parameter	##
-        #: 
-        DCAMERR_FRAMEBUNDLESHOULDBEOFF=0x80000832,##	framebundle mode should be OFF under current property settings	##
-        #: 
-        DCAMERR_INVALIDFRAMEINDEX	= 0x80000833,##		the frame index is invalid	##
-        #: 
-        DCAMERR_INVALIDSESSIONINDEX	= 0x80000834,##		the session index is invalid	##
-        #: 
-        DCAMERR_NOCORRECTIONDATA	= 0x80000838,##		not take the dark and shading correction data yet.	##
+        #: the property cannot access during this DCAM STATUS
+        DCAMERR_ACCESSDENY			= 0x8000082c,
+        #: the property does not have value text
+        DCAMERR_NOVALUETEXT			= 0x8000082d,
+        #: at least one property value is wrong
+        DCAMERR_WRONGPROPERTYVALUE	= 0x8000082e,
+        #: the paired camera does not have same parameter
+        DCAMERR_DISHARMONY			= 0x80000830,
+        #: framebundle mode should be OFF under current property settings
+        DCAMERR_FRAMEBUNDLESHOULDBEOFF=0x80000832,
+        #: the frame index is invalid
+        DCAMERR_INVALIDFRAMEINDEX	= 0x80000833,
+        #: the session index is invalid
+        DCAMERR_INVALIDSESSIONINDEX	= 0x80000834,
+        #: not take the dark and shading correction data yet
+        DCAMERR_NOCORRECTIONDATA	= 0x80000838,
         #: 
         DCAMERR_CHANNELDEPENDENTVALUE= 0x80000839,##	each channel has own property value so can't return overall property value.	##
         #: 
@@ -142,11 +142,16 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_NOTSUPPORT			= 0x80000f03,##		camera does not support the function or property with current settings	##
 
         ## camera or bus trouble ##
-        DCAMERR_FAILREADCAMERA		= 0x83001002,##		failed to read data from camera	##
-        DCAMERR_FAILWRITECAMERA		= 0x83001003,##		failed to write data to the camera	##
-        DCAMERR_CONFLICTCOMMPORT	= 0x83001004,##		conflict the com port name user set	##
-        DCAMERR_OPTICS_UNPLUGGED	= 0x83001005,## 	Optics part is unplugged so please check it.	##
-        DCAMERR_FAILCALIBRATION		= 0x83001006,##		fail calibration	##
+        #: failed to read data from camera
+        DCAMERR_FAILREADCAMERA		= 0x83001002,
+        #: failed to write data to the camera
+        DCAMERR_FAILWRITECAMERA		= 0x83001003,
+        #: conflict the com port name user set
+        DCAMERR_CONFLICTCOMMPORT	= 0x83001004,
+        #: optics part is unplugged so please check it
+        DCAMERR_OPTICS_UNPLUGGED	= 0x83001005,
+        #: fail calibration
+        DCAMERR_FAILCALIBRATION		= 0x83001006,
 
         ## 0x84000100 - 0x840001FF, DCAMERR_INVALIDMEMBER_x ##
         DCAMERR_INVALIDMEMBER_3		= 0x84000103,##		3th member variable is invalid value	##
@@ -203,8 +208,41 @@ cdef extern from 'lib/dcamapi4.h':
         #: no error, general success code, app should check the value is positive
         DCAMERR_SUCCESS				= 1			
 
+    
+    enum DCAM_PIXELTYPE:
+        DCAM_PIXELTYPE_MONO8		= 0x00000001,
+        DCAM_PIXELTYPE_MONO16		= 0x00000002,
+        DCAM_PIXELTYPE_MONO12		= 0x00000003,
+        DCAM_PIXELTYPE_MONO12P		= 0x00000005,
 
-    enum DCAM_IDSTR:
+        DCAM_PIXELTYPE_RGB24		= 0x00000021,
+        DCAM_PIXELTYPE_RGB48		= 0x00000022,
+        DCAM_PIXELTYPE_BGR24		= 0x00000029,
+        DCAM_PIXELTYPE_BGR48		= 0x0000002a,
+
+        DCAM_PIXELTYPE_NONE			= 0x00000000
+
+    
+    enum DCAMBUF_ATTACHKIND:
+        #: copy timestamp to pointer array of user buffer
+        DCAMBUF_ATTACHKIND_TIMESTAMP	= 1,
+        #: copy framestamp to pointer array of user buffer
+        DCAMBUF_ATTACHKIND_FRAMESTAMP	= 2,
+
+        #: copy timestamp to user buffer
+        DCAMBUF_ATTACHKIND_PRIMARY_TIMESTAMP	= 3,
+        #: copy framestamp to user buffer
+        DCAMBUF_ATTACHKIND_PRIMARY_FRAMESTAMP	= 4,
+
+        #: copy image to user buffer
+        DCAMBUF_ATTACHKIND_FRAME		= 0
+
+
+    enum DCAMCAP_TRANSFERKIND:
+        DCAMCAP_TRANSFERKIND_FRAME		= 0
+        
+
+    cpdef enum DCAM_IDSTR:
         #: bus information
         DCAM_IDSTR_BUS						= 0x04000101,
         #: camera ID (serial number or bus specific string)
@@ -236,10 +274,22 @@ cdef extern from 'lib/dcamapi4.h':
         #: description of optical block channel 2
         DCAM_IDSTR_OPTICALBLOCK_CHANNEL_2	= 0x04001105    
     
+
+    enum DCAMBUF_METADATAKIND:
+        #: captured timing
+        DCAMBUF_METADATAKIND_TIMESTAMPS			= 0x00010000,
+        #: frame index
+        DCAMBUF_METADATAKIND_FRAMESTAMPS		= 0x00020000
     ##
-    # structures
+    ## constant declaration
+    ## 
+
     ##
-    ctypedef struct DCAM_GUID:
+    ## structures
+    ##
+    ctypedef void* HDCAMWAIT
+
+    struct DCAM_GUID:
         pass
 
     ctypedef struct DCAMAPI_INIT:
@@ -250,11 +300,16 @@ cdef extern from 'lib/dcamapi4.h':
         const int32*		initoption			    # [in ptr] initialize options. Choose from DCAMAPI_INITOPTION
         const DCAM_GUID*	guid				    # [in ptr]
 
-    struct DCAMDEV_OPEN:
-        pass
+    ctypedef struct DCAMDEV_OPEN:
+        int32				size					# [in]
+        int32				index					# [in]
+        HDCAM				hdcam					# [out]
 
-    struct DCAMDEV_CAPABILITY:
-        pass
+    ctypedef struct DCAMDEV_CAPABILITY:
+        int32				size					# [in]
+        int32				domain					# [in] DCAMDEV_CAPDOMAIN__*
+        int32				capflag				    # [out] available flags in current condition.
+        int32				kind					# [in] data kind in domain
     
     struct DCAMDEV_CAPABILITY_LUT:
         pass
@@ -290,7 +345,7 @@ cdef extern from 'lib/dcamapi4.h':
         pass
     
     ctypedef struct DCAMPROP_ATTR:
-    	## input parameters ##
+        ## input parameters ##
         int32				cbSize					# [in] size of this structure
         int32				iProp					# DCAMIDPROPERTY
         int32				option					# DCAMPROPOPTION
@@ -315,62 +370,122 @@ cdef extern from 'lib/dcamapi4.h':
         int32				iProp_ArrayBase		    # base id of array if element
         int32				iPropStep_Element		# step for iProp to next element
 
-    struct DCAMPROP_VALUETEXT:
-        pass 
+    ctypedef struct DCAMPROP_VALUETEXT:
+        int32				cbSize					# [in] size of this structure
+        int32				iProp					# [in] DCAMIDPROP
+        double				value					# [in] value of property
+        char*				text					# [in,obuf] text of the value
+        int32				textbytes				# [in] text buf size 
 
-    struct DCAMBUF_ATTACH:
-        pass
+    ctypedef struct DCAMBUF_ATTACH:
+        int32				size					# [in] size of this structure.
+        int32				iKind					# [in] DCAMBUF_ATTACHKIND
+        void**				buffer					# [in,ptr]
+        int32				buffercount			    # [in]
     
-    struct DCAM_TIMESTAMP:
-        pass
+    ctypedef struct DCAM_TIMESTAMP:
+        _ui32				sec					    # [out]
+        int32				microsec				# [out]
     
-    struct DCAMCAP_TRANSFERINFO:
-        pass
+    ctypedef struct DCAMCAP_TRANSFERINFO:
+        int32				size					# [in] size of this structure.
+        int32				iKind					# [in] DCAMCAP_TRANSFERKIND
+        int32				nNewestFrameIndex		# [out]
+        int32				nFrameCount			    # [out]
     
-    struct DCAMBUF_FRAME:
-        pass
+    ctypedef struct DCAMBUF_FRAME:
+        # copyframe() and lockframe() use this structure. Some members have different direction.
+        # [i:o] means, the member is input at copyframe() and output at lockframe().
+        # [i:i] and [o:o] means always input and output at both function.
+        # "input" means application has to set the value before calling.
+        # "output" means function filles a value at returning.
+        int32				size					# [i:i] size of this structure.
+        int32				iKind					# reserved. set to 0.
+        int32				option					# reserved. set to 0.
+        int32				iFrame					# [i:i] frame index
+        void*				buf					    # [i:o] pointer for top-left image
+        int32				rowbytes				# [i:o] byte size for next line.
+        DCAM_PIXELTYPE		type					# reserved. set to 0.
+        int32				width					# [i:o] horizontal pixel count
+        int32				height					# [i:o] vertical line count
+        int32				left					# [i:o] horizontal start pixel
+        int32				top					    # [i:o] vertical start line
+        DCAM_TIMESTAMP		timestamp				# [o:o] timestamp
+        int32				framestamp				# [o:o] framestamp
+        int32				camerastamp			    # [o:o] camerastamp
     
-    struct DCAMWAIT_OPEN:
-        pass
+    ctypedef struct DCAMWAIT_OPEN:
+        int32				size					# [in] size of this structure.
+        int32				supportevent			# [out]
+        HDCAMWAIT			hwait					# [out]
+        HDCAM				hdcam					# [in]
 
-    struct DCAMWAIT_START:
-        pass
+    ctypedef struct DCAMWAIT_START:
+        int32				size					# [in] size of this structure.
+        int32				eventhappened			# [out]
+        int32				eventmask				# [in]
+        int32				timeout				    # [in]
+
+    ctypedef struct DCAM_METADATAHDR:
+        int32				size					# [in] size of whole structure, not only this.
+        int32				iKind					# [in] DCAMBUF_METADATAKIND
+        int32				option					# [in] value meaning depends on DCAMBUF_METADATAKIND
+        int32				iFrame					# [in] frame index
+    ##
+    ## structures
+    ##
 
     ##
-    # functions
+    ## functions
     ##
-    # initialize, uninitialize and misc
+    ## initialize, uninitialize and misc ##
     DCAMERR dcamapi_init			( DCAMAPI_INIT* param )
     DCAMERR dcamapi_uninit			()
     DCAMERR dcamdev_open			( DCAMDEV_OPEN* param )
     DCAMERR dcamdev_close			( HDCAM h )
-    DCAMERR dcamdev_showpanel		( HDCAM h, int iKind )
+
+    ## device data ##
     DCAMERR dcamdev_getcapability	( HDCAM h, DCAMDEV_CAPABILITY* param )
     DCAMERR dcamdev_getstring		( HDCAM h, DCAMDEV_STRING* param )
     DCAMERR dcamdev_setdata			( HDCAM h, DCAMDATA_HDR* param )
     DCAMERR dcamdev_getdata			( HDCAM h, DCAMDATA_HDR* param )
 
-    # property control
+    ## property control ##
     DCAMERR dcamprop_getattr		( HDCAM h, DCAMPROP_ATTR* param )
     DCAMERR dcamprop_getvalue		( HDCAM h, int32 iProp, double* pValue )
     DCAMERR dcamprop_setvalue		( HDCAM h, int32 iProp, double  fValue )
-    DCAMERR dcamprop_setgetvalue	( HDCAM h, int32 iProp, double* pValue, int32 option DCAM_DEFAULT_ARG )
-    DCAMERR dcamprop_queryvalue		( HDCAM h, int32 iProp, double* pValue, int32 option DCAM_DEFAULT_ARG )
-    DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp, int32 option DCAM_DEFAULT_ARG )
+    DCAMERR dcamprop_setgetvalue	( HDCAM h, int32 iProp, double* pValue, int32 option )
+    DCAMERR dcamprop_queryvalue		( HDCAM h, int32 iProp, double* pValue, int32 option )
+    DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp, int32 option )
     DCAMERR dcamprop_getname		( HDCAM h, int32 iProp, char* text, int32 textbytes )
     DCAMERR dcamprop_getvaluetext	( HDCAM h, DCAMPROP_VALUETEXT* param )
 
+    ## buffer control ##
+    DCAMERR dcambuf_alloc			( HDCAM h, int32 framecount )	# call dcambuf_release() to free.
+    DCAMERR dcambuf_attach			( HDCAM h, const DCAMBUF_ATTACH* param )
+    DCAMERR dcambuf_release			( HDCAM h, int32 iKind )
+    DCAMERR dcambuf_lockframe		( HDCAM h, DCAMBUF_FRAME* pFrame )
+    DCAMERR dcambuf_copyframe		( HDCAM h, DCAMBUF_FRAME* pFrame )
+    DCAMERR dcambuf_copymetadata	( HDCAM h, DCAM_METADATAHDR* hdr )
 
-    # buffer control
+    ## capturing ##
+    DCAMERR dcamcap_start			( HDCAM h, int32 mode )
+    DCAMERR dcamcap_stop			( HDCAM h )
+    DCAMERR dcamcap_status			( HDCAM h, int32* pStatus )
+    DCAMERR dcamcap_transferinfo	( HDCAM h, DCAMCAP_TRANSFERINFO* param )
+    DCAMERR dcamcap_firetrigger		( HDCAM h, int32 iKind )
 
-    # capturing
+    ## wait abort handle control ##
+    DCAMERR dcamwait_open			( DCAMWAIT_OPEN* param )
+    DCAMERR dcamwait_close			( HDCAMWAIT hWait )
+    DCAMERR dcamwait_start			( HDCAMWAIT hWait, DCAMWAIT_START* param )
+    DCAMERR dcamwait_abort			( HDCAMWAIT hWait )
 
-    # wait abort handle control
-
-    ##
-    # utilities
-    ##
+    ## utilities ##
     int failed( DCAMERR err )
+    ##
+    ## functions
+    ##
 
 cdef inline dcamdev_string( DCAMERR& err, HDCAM hdcam, int32 idStr, char* text, int32 textbytes ):
     cdef DCAMDEV_STRING param
@@ -411,23 +526,108 @@ cdef show_dcamdev_info( HDCAM hdcam ):
     else:
         print('{} ({}) on {}'.format(model.decode('UTF-8'), cameraid.decode('UTF-8'), bus.decode('UTF-8')))
 
-cdef class DCAMAPI:
-    cdef DCAMAPI_INIT apiinit 
 
+cdef class _DCAMAPI:
     def __cinit__(self):
         cdef DCAMERR err
 
-        self.apiinit.size = sizeof(self.apiinit)
-        self.apiinit.initoptionbytes = 0
-        err = dcamapi_init(&self.apiinit)
+        cdef DCAMAPI_INIT apiinit
+        apiinit.size = sizeof(apiinit)
+        apiinit.initoptionbytes = 0
+        err = dcamapi_init(&apiinit)
         
         if failed(err):
             show_dcamerr( NULL, err, 'dcamapi_init()' )
         else:
-            print('dcamapi_init() found {} devices'.format(self.apiinit.iDeviceCount))
+            print('dcamapi_init() found {} devices'.format(apiinit.iDeviceCount))
 
-            for iDevice in range(self.apiinit.iDeviceCount):
+            for iDevice in range(apiinit.iDeviceCount):
                 show_dcamdev_info( <HDCAM>iDevice )
     
     def __dealloc__(self):
+        print('dcamapi_uninit()')
         dcamapi_uninit()
+
+cdef class DCAMAPI:
+    #: DCAM-API singleton 
+    _instance = None
+    #: dynamic attribute for device handle
+    cdef dict __dict__
+    cdef HDCAM hdcam 
+    
+    def __init__(self, index=0):
+        self.init()
+        self.open(index)
+
+    ##
+    ## initialize, uninitialize and misc 
+    ##
+    @classmethod
+    def init(cls):
+        if cls._instance is None:
+            cls._instance = cls() #FIXME
+
+    @classmethod
+    def uninit(cls):
+        del cls._instance
+
+    def open(self, index):
+        cdef DCAMERR err
+
+        cdef DCAMDEV_OPEN devopen
+        devopen.size = sizeof(devopen)
+        devopen.index = index
+        err = dcamdev_open(&devopen)
+
+        if failed(err):
+            show_dcamerr(NULL, err, 'dcamdev_open()')
+        else:
+            self.hdcam = <HDCAM>devopen.hdcam
+    
+    def close(self):
+        cdef DCAMERR err
+
+        err = dcamdev_close(self.hdcam)
+        if failed(err):
+            show_dcamerr(NULL, err, 'dcamdev_close()')
+    ##
+    ## initialize, uninitialize and misc 
+    ##
+
+    ##
+    ## device data
+    ##
+    def get_capability(self):  
+        pass
+    
+    @cython.boundscheck(False)
+    cpdef get_string(self, DCAM_IDSTR idstr, size_t nbytes=256):
+        cdef char *text = <char *>malloc(nbytes * sizeof(char))
+
+        cdef DCAMDEV_STRING param
+        param.size = sizeof(param)
+        param.text = text 
+        param.textbytes = nbytes
+        param.iString = idstr
+        try:
+            dcamdev_getstring(self.hdcam, &param)
+            return string(text)
+        finally:
+            free(text)
+
+    def set_data(self):
+        pass
+    
+    def get_data(self):
+        pass
+    ##
+    ## device data
+    ##
+
+    ##
+    ## property control
+    ##
+
+    ##
+    ## property control
+    ##
