@@ -171,29 +171,48 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_ALREADYOCCUPIED		= 0x84001007,##		DCAMREC handle is already occupied by other HDCAM	##
         DCAMERR_TOOLARGEUSERDATASIZE= 0x84001008,##		DCAMREC is set the large value to user data size	##
         DCAMERR_NOIMAGE				= 0x84001804,##		not stored image in buffer on bufrecord ##
-        DCAMERR_INVALIDWAITHANDLE	= 0x84002001,##		DCAMWAIT is invalid handle	##
-        DCAMERR_NEWRUNTIMEREQUIRED	= 0x84002002,##		DCAM Module Version is older than the version that the camera requests	##
-        DCAMERR_VERSIONMISMATCH		= 0x84002003,##		Camre returns the error on setting parameter to limit version	##
-        DCAMERR_RUNAS_FACTORYMODE	= 0x84002004,##		Camera is running as a factory mode	##
-        DCAMERR_IMAGE_UNKNOWNSIGNATURE	= 0x84003001,##	sigunature of image header is unknown or corrupted	##
-        DCAMERR_IMAGE_NEWRUNTIMEREQUIRED= 0x84003002,## version of image header is newer than version that used DCAM supports	##
-        DCAMERR_IMAGE_ERRORSTATUSEXIST	= 0x84003003,##	image header stands error status	##
-        DCAMERR_IMAGE_HEADERCORRUPTED	= 0x84004004,##	image header value is strange	##
-        DCAMERR_IMAGE_BROKENCONTENT		= 0x84004005,##	image content is corrupted	##
+        #: DCAMWAIT handle is invalid 
+        DCAMERR_INVALIDWAITHANDLE	= 0x84002001,
+        #: DCAM module vesion is older than the version that the camera requests
+        DCAMERR_NEWRUNTIMEREQUIRED	= 0x84002002,
+        #: camera returns an error on setting version
+        DCAMERR_VERSIONMISMATCH		= 0x84002003,
+        #: camera is running in factory mode
+        DCAMERR_RUNAS_FACTORYMODE	= 0x84002004,
+        #: unknown image header signature
+        DCAMERR_IMAGE_UNKNOWNSIGNATURE	= 0x84003001,
+        #: version of image header is newer than current DCAM can support
+        DCAMERR_IMAGE_NEWRUNTIMEREQUIRED= 0x84003002,
+        #: image header indicates error 
+        DCAMERR_IMAGE_ERRORSTATUSEXIST	= 0x84003003,
+        #: image header is corrupted
+        DCAMERR_IMAGE_HEADERCORRUPTED	= 0x84004004,
+        #: image content is corrupted
+        DCAMERR_IMAGE_BROKENCONTENT		= 0x84004005,
 
         ## calling error for DCAM-API 2.1.3 ##
-        DCAMERR_UNKNOWNMSGID		= 0x80000801,##		unknown message id		##
-        DCAMERR_UNKNOWNSTRID		= 0x80000802,##		unknown string id		##
-        DCAMERR_UNKNOWNPARAMID		= 0x80000803,##		unkown parameter id		##
-        DCAMERR_UNKNOWNBITSTYPE		= 0x80000804,##		unknown bitmap bits type			##
-        DCAMERR_UNKNOWNDATATYPE		= 0x80000805,##		unknown frame data type				##
+        #: unknown message id
+        DCAMERR_UNKNOWNMSGID		= 0x80000801,
+        #: unknown string id
+        DCAMERR_UNKNOWNSTRID		= 0x80000802,
+        #: unknown parameter id
+        DCAMERR_UNKNOWNPARAMID		= 0x80000803,
+        #: unknown bitmap bits type
+        DCAMERR_UNKNOWNBITSTYPE		= 0x80000804,
+        #: unknown frame data type
+        DCAMERR_UNKNOWNDATATYPE		= 0x80000805,
 
         ## internal error ##
-        DCAMERR_NONE				= 0,		##		no error, nothing to have done		##
-        DCAMERR_INSTALLATIONINPROGRESS=0x80000f00,##	installation progress				##
-        DCAMERR_UNREACH				= 0x80000f01,##		internal error						##
-        DCAMERR_UNLOADED			= 0x80000f04,##		calling after process terminated	##
-        DCAMERR_THRUADAPTER			= 0x80000f05,##											##
+        #: no error, nothing have done
+        DCAMERR_NONE				= 0,
+        #: installation progress
+        DCAMERR_INSTALLATIONINPROGRESS=0x80000f00,
+        #: internal error
+        DCAMERR_UNREACH				= 0x80000f01,
+        #: calling after process terminated
+        DCAMERR_UNLOADED			= 0x80000f04,
+        
+        DCAMERR_THRUADAPTER			= 0x80000f05,
         #: HDCAM lost connection to camera
         DCAMERR_NOCONNECTION		= 0x80000f07,
         
