@@ -1,14 +1,3 @@
-#cython: language_level=3
-
-cimport cython
-from cpython.exc cimport PyErr_SetFromErrno, PyErr_SetFromErrnoWithFilenameObject
-from libc.stdint cimport intptr_t
-from libc.stdlib cimport malloc, free
-from libc.string cimport memset
-from libcpp.string cimport string
-
-from enum import Enum
-
 cdef extern from 'lib/dcamapi4.h':
     ctypedef int            int32
     ctypedef unsigned int   _ui32
@@ -498,6 +487,7 @@ cdef extern from 'lib/dcamapi4.h':
     ##
     ## initialize, uninitialize and misc ##
     DCAMERR dcamapi_init			( DCAMAPI_INIT* param )
+    DCAMERR dcamapi_init			()
     DCAMERR dcamapi_uninit			()
     DCAMERR dcamdev_open			( DCAMDEV_OPEN* param )
     DCAMERR dcamdev_close			( HDCAM h )
@@ -515,6 +505,7 @@ cdef extern from 'lib/dcamapi4.h':
     DCAMERR dcamprop_setgetvalue	( HDCAM h, int32 iProp, double* pValue, int32 option )
     DCAMERR dcamprop_queryvalue		( HDCAM h, int32 iProp, double* pValue, int32 option )
     DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp, int32 option )
+    DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp )
     DCAMERR dcamprop_getname		( HDCAM h, int32 iProp, char* text, int32 textbytes )
     DCAMERR dcamprop_getvaluetext	( HDCAM h, DCAMPROP_VALUETEXT* param )
 
@@ -522,6 +513,7 @@ cdef extern from 'lib/dcamapi4.h':
     DCAMERR dcambuf_alloc			( HDCAM h, int32 framecount )	# call dcambuf_release() to free.
     DCAMERR dcambuf_attach			( HDCAM h, const DCAMBUF_ATTACH* param )
     DCAMERR dcambuf_release			( HDCAM h, int32 iKind )
+    DCAMERR dcambuf_release			( HDCAM h )
     DCAMERR dcambuf_lockframe		( HDCAM h, DCAMBUF_FRAME* pFrame )
     DCAMERR dcambuf_copyframe		( HDCAM h, DCAMBUF_FRAME* pFrame )
     DCAMERR dcambuf_copymetadata	( HDCAM h, DCAM_METADATAHDR* hdr )
@@ -532,6 +524,7 @@ cdef extern from 'lib/dcamapi4.h':
     DCAMERR dcamcap_status			( HDCAM h, int32* pStatus )
     DCAMERR dcamcap_transferinfo	( HDCAM h, DCAMCAP_TRANSFERINFO* param )
     DCAMERR dcamcap_firetrigger		( HDCAM h, int32 iKind )
+    DCAMERR dcamcap_firetrigger		( HDCAM h )
 
     ## wait abort handle control ##
     DCAMERR dcamwait_open			( DCAMWAIT_OPEN* param )
@@ -543,282 +536,4 @@ cdef extern from 'lib/dcamapi4.h':
     int failed( DCAMERR err )
     ##
     ## functions
-    ##
-
-cdef inline dcamdev_string( DCAMERR& err, HDCAM hdcam, int32 idStr, char* text, int32 textbytes ):
-    cdef DCAMDEV_STRING param
-    param.size = sizeof(param)
-    param.text = text
-    param.textbytes = textbytes
-    param.iString = idStr
-
-    # "Assignment to reference" bug
-    #   https://github.com/cython/cython/issues/1863
-    (&err)[0] = dcamdev_getstring( hdcam, &param )
-    return not failed(err)
-
-
-cdef show_dcamerr( HDCAM hdcam, DCAMERR errid, const char* apiname ):
-    cdef DCAMERR err
-
-    cdef char errtext[256]
-    dcamdev_string( err, hdcam, errid, errtext, sizeof(errtext) )
-
-    # retrieved error text
-    msg = 'FAILED: (DCAMERR)0x{:08X} {} @ {}'.format(errid, errtext, apiname)
-    PyErr_SetFromErrnoWithFilenameObject(RuntimeError, msg)
-
-
-cdef show_dcamdev_info( HDCAM hdcam ):
-    cdef char model[256]
-    cdef char cameraid[64]
-    cdef char bus[64]
-
-    cdef DCAMERR err
-    if not dcamdev_string( err, hdcam, DCAM_IDSTR_MODEL, model, sizeof(model) ):
-        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_MODEL)')
-    elif not dcamdev_string( err, hdcam, DCAM_IDSTR_CAMERAID, cameraid, sizeof(cameraid) ):
-        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_CAMERAID)')
-    elif not dcamdev_string( err, hdcam, DCAM_IDSTR_BUS, bus, sizeof(bus) ):
-        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_BUS)')
-    else:
-        print('{} ({}) on {}'.format(model.decode('UTF-8'), cameraid.decode('UTF-8'), bus.decode('UTF-8')))
-
-
-cdef class Singleton:
-    _instances = {}
-
-    @classmethod
-    def instance(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = cls(*args, **kwargs)
-        return cls._instances[cls]
-
-    @classmethod
-    def destroy(cls):
-        if cls in cls._instances:
-            del cls._instances[cls]
-
-
-cdef class _DCAMAPI(Singleton):
-    def __cinit__(self):
-        cdef DCAMERR err
-
-        cdef DCAMAPI_INIT apiinit
-        memset(&apiinit, 0, sizeof(apiinit))
-        apiinit.size = sizeof(apiinit)
-        err = dcamapi_init(&apiinit)
-        
-        if failed(err):
-            show_dcamerr( NULL, err, 'dcamapi_init()' )
-        else:
-            print('dcamapi_init() found {} devices'.format(apiinit.iDeviceCount))
-
-            for iDevice in range(apiinit.iDeviceCount):
-                show_dcamdev_info( <HDCAM>iDevice )
-    
-    def __dealloc__(self):
-        print('dcamapi_uninit()')
-        dcamapi_uninit()
-
-
-class Capability(Enum):
-    LUT = 1
-    Region = 2
-    FrameOption = 3
-
-
-cdef class DCAMAPI:
-    #: reference to the DCAM-API
-    cdef object _instance
-    #: device handle
-    cdef HDCAM hdcam 
-    
-    def __init__(self, index=0):
-        self.init()
-        self.open(index)
-
-    ##
-    ## initialize, uninitialize and misc 
-    ##
-    def init(self):
-        """
-        Initialize the DCAM-API manager, modules and drivers.
-
-        Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI to provide singleton behavior.
-        """
-        if self._instance is None:
-            self._instance = _DCAMAPI.instance()
-            
-    def uninit(self):
-        """
-        Cleanups all resources and objects used by DCAM-API. 
-        
-        All opened devices will be forcefully closed. No new devices can be opened unless initialize again.
-        """
-        # this only decrease the reference count, will NOT guarantee dcam_uninit be called
-        self._instance = None
-        _DCAMAPI.destroy()
-
-    def open(self, index):
-        cdef DCAMERR err
-
-        cdef DCAMDEV_OPEN devopen
-        memset(&devopen, 0, sizeof(devopen))
-        devopen.size = sizeof(devopen)
-        devopen.index = index
-        err = dcamdev_open(&devopen)
-
-        if failed(err):
-            show_dcamerr(NULL, err, 'dcamdev_open()')
-        else:
-            self.hdcam = <HDCAM>devopen.hdcam
-    
-    def close(self):
-        cdef DCAMERR err
-
-        err = dcamdev_close(self.hdcam)
-        if failed(err):
-            show_dcamerr(NULL, err, 'dcamdev_close()')
-    ##
-    ## initialize, uninitialize and misc 
-    ##
-
-    ##
-    ## device data
-    ##
-    def get_capability(self, capability):  
-        """Returns capability information not able to get from property."""
-        if capability == LUT:
-            pass
-        elif capability == Region:
-            pass
-        elif capability == FrameOption:
-            pass
-        else:
-            raise ValueError('unknown capability opton')
-
-    cpdef get_string(self, DCAM_IDSTR idstr, int32 nbytes=256):
-        cdef char *text = <char *>malloc(nbytes * sizeof(char))
-
-        cdef DCAMDEV_STRING param
-        memset(&param, 0, sizeof(param))
-        param.size = sizeof(param)
-        param.text = text 
-        param.textbytes = nbytes
-        param.iString = idstr
-        try:
-            dcamdev_getstring(self.hdcam, &param)
-            return text.decode('UTF-8')
-        finally:
-            free(text)
-
-    def set_data(self):
-        """
-        Set the data that is impossible to set with property. WTF?
-        """
-        pass
-
-    def get_data(self):
-        """
-        Get the data that is impossible to get from property. WTF!?
-        """
-        pass
-    ##
-    ## device data
-    ##
-
-    ##
-    ## property control
-    ##
-
-    ##
-    ## property control
-    ##
-
-    ##
-    ## buffer control
-    ##
-    cpdef alloc(self, int32 nframes):
-        """
-        Allocates internal image buffers for image acquisition.
-        """
-        cdef DCAMERR err
-        err = dcambuf_alloc(self.hdcam, nframes)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcambuf_alloc()')
-    
-    def attach(self):
-        pass
-    
-    def release(self):
-        """
-        Releases capturing buffer allocated by dcambuf_alloc() or assigned by dcambuf_attached().
-        """
-        cdef DCAMERR err
-        err = dcambuf_release(self.hdcam)
-        if failed(err):
-            #TODO wait for busy state
-            show_dcamerr(self.hdcam, err, 'dcambuf_release()')
-
-    def lock_frame(self):
-        pass 
-    
-    def copy_frame(self):
-        pass 
-    
-    def copy_metadata(self):
-        pass
-    ##
-    ## buffer control
-    ##
-
-    ##
-    ## capturing
-    ##
-    def start(self, int32 mode):
-        """
-        Start capturing images.
-        """
-        cdef DCAMERR err
-        err = dcamcap_start(self.hdcam, mode)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcamcap_start()')
-
-    def stop(self):
-        """
-        Terminates the acquisition.
-        """
-        cdef DCAMERR err
-        err = dcamcap_stop(self.hdcam)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcamcap_stop()')
-    
-    def status(self):
-        """
-        Returns current capturing status.
-        """
-        cdef DCAMERR err
-        cdef int32 status
-        err = dcamcap_status(self.hdcam, &status)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcamcap_status()')
-        else:
-            #TODO convert capture status
-            pass 
-    
-    def transfer_info(self):
-        pass
-    
-    def fire_trigger(self):
-        pass
-    ##
-    ## capturing
-    ##
-
-    ##
-    ## wait abort handle control
-    ##
-    ##
-    ## wait abort handle control
     ##

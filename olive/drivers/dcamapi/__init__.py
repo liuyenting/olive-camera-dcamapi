@@ -1,1 +1,1 @@
-from .dcamapi4 import DCAMAPI
+from .dcamapi import DCAMAPI
