@@ -576,7 +576,12 @@ cdef class Singleton:
 
 @cython.final
 cdef class _DCAMAPI(Singleton):
-    cdef dict devices 
+    """
+    Thin wrapper to ensure DCAM-API is only initialized once, and destroyed when no-one 
+    referenced it.
+    """
+    #: number of supported devices found by DCAM-API
+    cdef readonly int32 n_devices 
 
     def __cinit__(self):
         cdef DCAMERR err
@@ -587,7 +592,7 @@ cdef class _DCAMAPI(Singleton):
         err = dcamapi_init(&apiinit)
         _DCAMAPI.check_error(err, 'dcamapi_init()')
         
-        print('dcamapi_init() found {} devices'.format(apiinit.iDeviceCount))
+        self.n_devices = apiinit.iDeviceCount
     
     def __dealloc__(self):
         print('dcamapi_uninit()')
@@ -613,7 +618,7 @@ cdef class _DCAMAPI(Singleton):
         raise RuntimeError(
             '{}, (DCAMERR)0x{:08X} {}'.format(apiname.decode('UTF-8'), errid&0xFFFFFFFF, errtext.decode('UTF-8'))
         )
-
+    
 
 cdef class DCAMAPI:
     #: api intsance
@@ -621,9 +626,8 @@ cdef class DCAMAPI:
     #: device handle
     cdef HDCAM hdcam 
     
-    def __init__(self, index=0):
+    def __init__(self):
         self.api = self.init()
-        self.open(index)
 
     ##
     ## initialize, uninitialize and misc 
@@ -644,7 +648,21 @@ cdef class DCAMAPI:
         """
         _DCAMAPI.uninit()
 
-    def open(self, index):
+    def open(self, sn=None, index=0):
+        if (sn is not None) and isinstance(sn, str):
+            self._open_sn(sn)
+        else:
+            self._open_index(index)
+    
+    def _open_sn(self, sn):
+        print('{} devices found'.format(self.api.n_devices))
+
+        for i in range(self.api.n_devices):
+            self.hdcam = <HDCAM>i # temporary override HDCAM 
+            i_sn = self.get_string(DCAM_IDSTR_CAMERAID)
+            print('[{}] {}'.format(i, i_sn))
+
+    def _open_index(self, index):
         cdef DCAMERR err
 
         cdef DCAMDEV_OPEN devopen
@@ -653,14 +671,17 @@ cdef class DCAMAPI:
         devopen.index = index
         err = dcamdev_open(&devopen)
         _DCAMAPI.check_error(err, 'dcamdev_open()')
-        
+
         self.hdcam = <HDCAM>devopen.hdcam
-    
+        
     def close(self):
         cdef DCAMERR err
 
         err = dcamdev_close(self.hdcam)
         _DCAMAPI.check_error(err, 'dcamdev_close()')
+
+    def list_devices(self):
+        return _DCAMAPI.list_devices()
     ##
     ## initialize, uninitialize and misc 
     ##

@@ -1,8 +1,11 @@
-from olive.drivers.dcamapi import DCAMAPI as api
+from olive.drivers.dcamapi import DCAMAPI
 from olive.drivers.dcamapi.dcamapi import DCAM_IDSTR
 
-camera = api()
+camera = DCAMAPI()
 
+camera.open(sn='303026')
+
+"""
 queries = (
     DCAM_IDSTR.DCAM_IDSTR_MODEL,
     DCAM_IDSTR.DCAM_IDSTR_CAMERAID,
@@ -12,4 +15,6 @@ for idstr in queries:
     print(camera.get_string(idstr))
 
 camera.close()
+"""
+
 camera.uninit()
