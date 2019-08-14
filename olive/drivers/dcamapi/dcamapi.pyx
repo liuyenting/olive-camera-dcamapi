@@ -1,6 +1,7 @@
 #cython: language_level=3
 
 from cpython.exc cimport PyErr_SetFromErrnoWithFilenameObject
+cimport cython 
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset
 
@@ -544,45 +545,6 @@ cdef extern from 'lib/dcamapi4.h':
     ## functions
     ##
 
-
-cdef inline dcamdev_string( DCAMERR& err, HDCAM hdcam, int32 idStr, char* text, int32 textbytes ):
-    cdef DCAMDEV_STRING param
-    param.size = sizeof(param)
-    param.text = text
-    param.textbytes = textbytes
-    param.iString = idStr
-
-    # "Assignment to reference", https://github.com/cython/cython/issues/1863
-    (&err)[0] = dcamdev_getstring( hdcam, &param )
-    return not failed(err)
-
-
-cdef show_dcamerr( HDCAM hdcam, DCAMERR errid, const char* apiname ):
-    cdef DCAMERR err
-
-    cdef char errtext[256]
-    dcamdev_string( err, hdcam, errid, errtext, sizeof(errtext) )
-
-    # retrieved error text
-    msg = 'FAILED: (DCAMERR)0x{:08X} {} @ {}'.format(errid, errtext, apiname)
-    PyErr_SetFromErrnoWithFilenameObject(RuntimeError, msg)
-
-
-cdef show_dcamdev_info( HDCAM hdcam ):
-    cdef char model[256]
-    cdef char cameraid[64]
-    cdef char bus[64]
-
-    cdef DCAMERR err
-    if not dcamdev_string( err, hdcam, DCAM_IDSTR_MODEL, model, sizeof(model) ):
-        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_MODEL)')
-    elif not dcamdev_string( err, hdcam, DCAM_IDSTR_CAMERAID, cameraid, sizeof(cameraid) ):
-        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_CAMERAID)')
-    elif not dcamdev_string( err, hdcam, DCAM_IDSTR_BUS, bus, sizeof(bus) ):
-        show_dcamerr( hdcam, err, 'dcamdev_getstring(DCAM_IDSTR_BUS)')
-    else:
-        print('{} ({}) on {}'.format(model.decode('UTF-8'), cameraid.decode('UTF-8'), bus.decode('UTF-8')))
-
 ###
 ### DEBUG BEGIN
 ###
@@ -612,6 +574,7 @@ cdef class Singleton:
             del cls._instances[cls]
 
 
+@cython.final
 cdef class _DCAMAPI(Singleton):
     cdef dict devices 
 
@@ -622,26 +585,44 @@ cdef class _DCAMAPI(Singleton):
         memset(&apiinit, 0, sizeof(apiinit))
         apiinit.size = sizeof(apiinit)
         err = dcamapi_init(&apiinit)
+        _DCAMAPI.check_error(err, 'dcamapi_init()')
         
-        if failed(err):
-            show_dcamerr( NULL, err, 'dcamapi_init()' )
-        else:
-            print('dcamapi_init() found {} devices'.format(apiinit.iDeviceCount))
-
-            for iDevice in range(apiinit.iDeviceCount):
-                show_dcamdev_info( <HDCAM>iDevice )
+        print('dcamapi_init() found {} devices'.format(apiinit.iDeviceCount))
     
     def __dealloc__(self):
         print('dcamapi_uninit()')
         dcamapi_uninit()
 
+    @staticmethod
+    cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL):
+        if not failed(errid):
+            return
+        
+        # implicit string reader for fast access
+        cdef char errtext[256]
+        
+        cdef DCAMDEV_STRING param
+        memset(&param, 0, sizeof(param))
+        param.size = sizeof(param)
+        param.text = errtext 
+        param.textbytes = sizeof(errtext)
+        param.iString = errid
+        dcamdev_getstring(hdcam, &param)
+
+        # restrict errid to 32-bits to match C-style output
+        raise RuntimeError(
+            '{}, (DCAMERR)0x{:08X} {}'.format(apiname.decode('UTF-8'), errid&0xFFFFFFFF, errtext.decode('UTF-8'))
+        )
+
 
 cdef class DCAMAPI:
+    #: api intsance
+    cdef object api
     #: device handle
     cdef HDCAM hdcam 
     
     def __init__(self, index=0):
-        self.init()
+        self.api = self.init()
         self.open(index)
 
     ##
@@ -653,7 +634,7 @@ cdef class DCAMAPI:
 
         Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI to provide singleton behavior.
         """
-        _DCAMAPI.init()
+        return _DCAMAPI.init()
             
     def uninit(self):
         """
@@ -671,18 +652,15 @@ cdef class DCAMAPI:
         devopen.size = sizeof(devopen)
         devopen.index = index
         err = dcamdev_open(&devopen)
-
-        if failed(err):
-            show_dcamerr(NULL, err, 'dcamdev_open()')
-        else:
-            self.hdcam = <HDCAM>devopen.hdcam
+        _DCAMAPI.check_error(err, 'dcamdev_open()')
+        
+        self.hdcam = <HDCAM>devopen.hdcam
     
     def close(self):
         cdef DCAMERR err
 
         err = dcamdev_close(self.hdcam)
-        if failed(err):
-            show_dcamerr(NULL, err, 'dcamdev_close()')
+        _DCAMAPI.check_error(err, 'dcamdev_close()')
     ##
     ## initialize, uninitialize and misc 
     ##
@@ -704,7 +682,7 @@ cdef class DCAMAPI:
         """
         pass
         
-    cpdef get_string(self, DCAM_IDSTR idstr, int32 nbytes=256):
+    cpdef get_string(self, int32 idstr, int32 nbytes=256):
         cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
         cdef DCAMDEV_STRING param
@@ -751,8 +729,7 @@ cdef class DCAMAPI:
         """
         cdef DCAMERR err
         err = dcambuf_alloc(self.hdcam, nframes)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcambuf_alloc()')
+        _DCAMAPI.check_error(err, 'dcambuf_alloc()', self.hdcam)
     
     def attach(self):
         pass
@@ -763,10 +740,9 @@ cdef class DCAMAPI:
         """
         cdef DCAMERR err
         err = dcambuf_release(self.hdcam)
-        if failed(err):
-            #TODO wait for busy state
-            show_dcamerr(self.hdcam, err, 'dcambuf_release()')
-
+        _DCAMAPI.check_error(err, 'dcambuf_release()', self.hdcam)
+        #TODO wait for busy state
+        
     def lock_frame(self):
         pass 
     
@@ -788,8 +764,7 @@ cdef class DCAMAPI:
         """
         cdef DCAMERR err
         err = dcamcap_start(self.hdcam, mode)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcamcap_start()')
+        _DCAMAPI.check_error(err, 'dcamcap_start()', self.hdcam)
 
     def stop(self):
         """
@@ -797,8 +772,7 @@ cdef class DCAMAPI:
         """
         cdef DCAMERR err
         err = dcamcap_stop(self.hdcam)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcamcap_stop()')
+        _DCAMAPI.check_error(err, 'dcamcap_stop()', self.hdcam)
     
     def status(self):
         """
@@ -807,11 +781,8 @@ cdef class DCAMAPI:
         cdef DCAMERR err
         cdef int32 status
         err = dcamcap_status(self.hdcam, &status)
-        if failed(err):
-            show_dcamerr(self.hdcam, err, 'dcamcap_status()')
-        else:
-            #TODO convert capture status
-            pass 
+        _DCAMAPI.check_error(err, 'dcamcap_status()', self.hdcam)
+        #TODO convert capture status
     
     def transfer_info(self):
         pass
