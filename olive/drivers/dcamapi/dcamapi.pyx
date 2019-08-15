@@ -648,21 +648,7 @@ cdef class DCAMAPI:
         """
         _DCAMAPI.uninit()
 
-    def open(self, sn=None, index=0):
-        if (sn is not None) and isinstance(sn, str):
-            self._open_sn(sn)
-        else:
-            self._open_index(index)
-    
-    def _open_sn(self, sn):
-        print('{} devices found'.format(self.api.n_devices))
-
-        for i in range(self.api.n_devices):
-            self.hdcam = <HDCAM>i # temporary override HDCAM 
-            i_sn = self.get_string(DCAM_IDSTR_CAMERAID)
-            print('[{}] {}'.format(i, i_sn))
-
-    def _open_index(self, index):
+    def open(self, index):
         cdef DCAMERR err
 
         cdef DCAMDEV_OPEN devopen
@@ -673,15 +659,19 @@ cdef class DCAMAPI:
         _DCAMAPI.check_error(err, 'dcamdev_open()')
 
         self.hdcam = <HDCAM>devopen.hdcam
+    
+    def _open_sn(self, sn):
+        print('{} devices found'.format(self.api.n_devices))
+
+        for i in range(self.api.n_devices):
+            i_sn = self.get_string(DCAM_IDSTR_MODEL, index=i)
+            print('[{}] s/n:{}'.format(i, i_sn))
         
     def close(self):
         cdef DCAMERR err
 
         err = dcamdev_close(self.hdcam)
         _DCAMAPI.check_error(err, 'dcamdev_close()')
-
-    def list_devices(self):
-        return _DCAMAPI.list_devices()
     ##
     ## initialize, uninitialize and misc 
     ##
@@ -703,9 +693,10 @@ cdef class DCAMAPI:
         """
         pass
         
-    cpdef get_string(self, int32 idstr, int32 nbytes=256):
+    cpdef get_string(self, int32 idstr, int32 nbytes=256, int32 index=-1):
         cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
+        cdef HDCAM hdcam
         cdef DCAMDEV_STRING param
         memset(&param, 0, sizeof(param))
         param.size = sizeof(param)
@@ -713,8 +704,9 @@ cdef class DCAMAPI:
         param.textbytes = nbytes
         param.iString = idstr
         try:
-            dcamdev_getstring(self.hdcam, &param)
-            return text.decode('UTF-8')
+            hdcam = self.hdcam if index < 0 else <HDCAM>index
+            dcamdev_getstring(hdcam, &param)
+            return text.decode('UTF-8', errors='replace')
         finally:
             free(text)
 
@@ -820,3 +812,16 @@ cdef class DCAMAPI:
     ##
     ## wait abort handle control
     ##
+
+    ##
+    ## helpers
+    ##
+    def list_device_sn(self):
+        return tuple(
+            self.get_string(DCAM_IDSTR_CAMERAID, index=i) 
+            for i in range(self.api.n_devices)
+        )
+    ##
+    ## helpers
+    ##
+    
