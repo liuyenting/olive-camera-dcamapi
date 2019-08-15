@@ -659,13 +659,6 @@ cdef class DCAMAPI:
         _DCAMAPI.check_error(err, 'dcamdev_open()')
 
         self.hdcam = <HDCAM>devopen.hdcam
-    
-    def _open_sn(self, sn):
-        print('{} devices found'.format(self.api.n_devices))
-
-        for i in range(self.api.n_devices):
-            i_sn = self.get_string(DCAM_IDSTR_MODEL, index=i)
-            print('[{}] s/n:{}'.format(i, i_sn))
         
     def close(self):
         cdef DCAMERR err
@@ -813,15 +806,6 @@ cdef class DCAMAPI:
     ## wait abort handle control
     ##
 
-    ##
-    ## helpers
-    ##
-    def list_device_sn(self):
-        return tuple(
-            self.get_string(DCAM_IDSTR_CAMERAID, index=i) 
-            for i in range(self.api.n_devices)
-        )
-    ##
-    ## helpers
-    ##
-    
+    @property
+    def n_devices(self):
+        return self.api.n_devices

@@ -1,8 +1,6 @@
-from olive.drivers.dcamapi import DCAMAPI
+from olive.drivers.dcamapi import GenericCamera
 
-camera = DCAMAPI()
+camera = GenericCamera()
 
-for i, sn in enumerate(camera.list_device_sn()):
-    print('[{}] {}'.format(i, sn))
-
-camera.uninit()
+from pprint import pprint
+pprint(camera.enumerate_cameras())
