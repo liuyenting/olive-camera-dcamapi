@@ -7,6 +7,8 @@ from olive.devices import Camera, CameraInfo
 from . import DCAMAPI
 from .dcamapi import DCAM_IDSTR
 
+logger = logging.getLogger(__name__)
+
 
 class GenericCamera(Camera):
     def __init__(self):

@@ -45,8 +45,9 @@ with open(os.path.join(cwd, "README.md"), encoding="utf-8") as fd:
 # - force sdist to keep the .pyx files
 PACKAGE_DATA = {pkg: ["*.pxd", "*.pyx"] for pkg in PACKAGES}
 
-# generate extension constructors
+
 def generate_extension(ext_def):
+    """Generate extension constructors."""
     assert "name" in ext_def, "invalid extension name"
 
     ext_path = ext_def["name"].replace(".", os.path.sep) + ".pyx"
@@ -76,7 +77,9 @@ def generate_extension(ext_def):
 EXTENSIONS = [generate_extension(ext_def) for ext_def in EXT_DEFS]
 
 setup(
-    """ Project Info """
+    #
+    # Project Info
+    #
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
@@ -85,19 +88,27 @@ setup(
     url=URL,
     classifiers=CLASSIFIERS,
     keywords=KEYWORDS,
-    """ Author """
+    #
+    # Author
+    #
     author=AUTHOR,
     author_email=EMAIL,
-    """ Dependencies """
+    #
+    # Dependencies
+    #
     # use pyproject.toml for setup dependencies instead
     # setup_requires=[],remove
     install_requires=REQUIRES,
-    """ Package Structure """
+    #
+    # Package Structure
+    #
     # package to install
     packages=PACKAGES,
     namespace_packages=["olive", "olive.drivers"],
     package_data=PACKAGE_DATA,
-    """ Build Instruction """
+    #
+    # Build Instruction
+    #
     cmdclass={"build_ext": build_ext},
     ext_modules=EXTENSIONS,
     # disable zip_safe
