@@ -104,7 +104,6 @@ setup(
     #
     # package to install
     packages=PACKAGES,
-    namespace_packages=["olive", "olive.drivers"],
     package_data=PACKAGE_DATA,
     #
     # Build Instruction
