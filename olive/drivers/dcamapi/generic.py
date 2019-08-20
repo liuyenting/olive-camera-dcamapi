@@ -4,8 +4,7 @@ import re
 
 from olive.devices import Camera, CameraInfo
 
-from . import DCAMAPI
-from .dcamapi import DCAM_IDSTR
+from olive.drivers.dcamapi.dcamapi import DCAM_IDSTR, DCAMAPI
 
 logger = logging.getLogger(__name__)
 
