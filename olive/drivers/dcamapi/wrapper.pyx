@@ -88,7 +88,7 @@ cdef class DCAM:
     """Base class for the device."""
     cdef HDCAM handle
 
-    def _cinit__(self, HDCAM handle):
+    def __cinit__(self, HDCAM handle):
         self.handle = handle
 
     ##
