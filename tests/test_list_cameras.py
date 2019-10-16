@@ -1,6 +1,11 @@
-from olive.drivers.dcamapi import GenericCamera
+from olive.drivers.dcamapi import DCAMAPI
 
-camera = GenericCamera()
+driver = DCAMAPI()
+
+driver.initialize()
 
 from pprint import pprint
-pprint(camera.enumerate_cameras())
+
+pprint(driver.enumerate_devices())
+
+driver.shutdown()

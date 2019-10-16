@@ -5,9 +5,7 @@ import re
 from olive.core import Driver
 from olive.devices import Camera
 
-from olive.drivers.dcamapi.dcamapi import DCAMAPI as _DCAMAPI
-from olive.drivers.dcamapi.dcamapi import DCAM as _DCAM
-from olive.drivers.dcamapi.dcamapi import DCAM_IDSTR
+from .wrapper import DCAMAPI as _DCAMAPI
 
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
@@ -15,20 +13,23 @@ __all__ = ["DCAMAPI", "HamamatsuCamera"]
 logger = logging.getLogger(__name__)
 
 
-class DCAMAPI(_DCAMAPI, Driver):
+class DCAMAPI(Driver):
+    api = None
+
     def __init__(self):
-        pass
+        if self.api is None:
+            self.api = _DCAMAPI()
 
     ##
 
     def initialize(self):
-        pass
+        self.api.init()
 
     def shutdown(self):
-        pass
+        self.api.uninit()
 
     def enumerate_devices(self):
-        pass
+        return self.api.n_devices
 
     ##
 
@@ -41,7 +42,7 @@ class DCAMAPI(_DCAMAPI, Driver):
     def set_attribute(self, name, value):
         pass
 
-
+"""
 class HamamatsuCamera(_DCAM, Camera):
     def __init__(self, driver):
         super().__init__()
@@ -74,3 +75,4 @@ class HamamatsuCamera(_DCAM, Camera):
     @property
     def handle(self):
         return self._handle
+"""

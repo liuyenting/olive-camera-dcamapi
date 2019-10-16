@@ -1,4 +1,4 @@
-from .generic import GenericCamera
+from .generic import DCAMAPI
 
-__all__ = ["GenericCamera"]
+__all__ = ["DCAMAPI"]
 
