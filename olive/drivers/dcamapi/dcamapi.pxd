@@ -1,5 +1,3 @@
-#cython: language_level=3
-
 cdef extern from 'lib/dcamapi4.h':
     ctypedef int            int32
     ctypedef unsigned int   _ui32
@@ -9,6 +7,8 @@ cdef extern from 'lib/dcamapi4.h':
     ##
     ## constant declaration
     ##
+
+    ### ERRORS ###
     enum DCAMERR:
         ## status error
         #: API cannot process in busy state
@@ -226,6 +226,19 @@ cdef extern from 'lib/dcamapi4.h':
         DCAMERR_SUCCESS				= 1
 
 
+    enum DCAMBUF_FRAME_OPTION:
+        DCAMBUF_FRAME_OPTION__VIEW_ALL		= 0x00000000,
+        DCAMBUF_FRAME_OPTION__VIEW_1		= 0x00100000,
+        DCAMBUF_FRAME_OPTION__VIEW_2		= 0x00200000,
+        DCAMBUF_FRAME_OPTION__VIEW_3		= 0x00300000,
+        DCAMBUF_FRAME_OPTION__VIEW_4		= 0x00400000,
+
+        DCAMBUF_FRAME_OPTION__PROC_HIGHCONTRAST	= 0x00000010,
+
+        DCAMBUF_FRAME_OPTION__VIEW__STEP	= 0x00100000,
+        DCAMBUF_FRAME_OPTION__VIEW__MASK	= 0x00F00000,
+        DCAMBUF_FRAME_OPTION__PROC__MASK	= 0x00000FF0,
+
     enum DCAM_PIXELTYPE:
         DCAM_PIXELTYPE_MONO8		= 0x00000001,
         DCAM_PIXELTYPE_MONO16		= 0x00000002,
@@ -258,7 +271,7 @@ cdef extern from 'lib/dcamapi4.h':
     enum DCAMCAP_TRANSFERKIND:
         DCAMCAP_TRANSFERKIND_FRAME		= 0
 
-
+    ### STATUS ###
     enum DCAMCAP_STATUS:
         DCAMCAP_STATUS_ERROR				= 0x0000,
         #: now capturing
@@ -270,15 +283,15 @@ cdef extern from 'lib/dcamapi4.h':
         #: device is not fit for capture
         DCAMCAP_STATUS_UNSTABLE				= 0x0004
 
-
-    cpdef enum DCAMCAP_START:
+    ### START ###
+    enum DCAMCAP_START:
         #: continuously capturing images
         DCAMCAP_START_SEQUENCE				= -1,
         #: captures images until the buffer is filled completely then stop
         DCAMCAP_START_SNAP					= 0
 
-
-    cpdef enum DCAM_IDSTR:
+    ### STRING ID ###
+    enum DCAM_IDSTR:
         #: bus information
         DCAM_IDSTR_BUS						= 0x04000101,
         #: camera ID (serial number or bus specific string)
@@ -311,11 +324,64 @@ cdef extern from 'lib/dcamapi4.h':
         DCAM_IDSTR_OPTICALBLOCK_CHANNEL_2	= 0x04001105
 
 
+    ### WAIT TIMEOUT ###
+    ### INITIALIZE PARAMETER ###
+    ### METADATA KIND ###
     enum DCAMBUF_METADATAKIND:
         #: captured timing
         DCAMBUF_METADATAKIND_TIMESTAMPS			= 0x00010000,
         #: frame index
         DCAMBUF_METADATAKIND_FRAMESTAMPS		= 0x00020000
+
+    ### DCAM DATA {OPTION / KIND / ATTRIBUTE / REGION TYPE / LUT TYPE} ###
+    enum DCAMDATA_KIND:
+        DCAMDATA_KIND__REGION					= 0x00000001,
+        DCAMDATA_KIND__LUT						= 0x00000002,
+        DCAMDATA_KIND__NONE						= 0x00000000
+
+    enum DCAMDATA_REGIONTYPE:
+        DCAMDATA_REGIONTYPE__BYTEMASK			= 0x00000001,
+        DCAMDATA_REGIONTYPE__RECT16ARRAY		= 0x00000002,
+
+        DCAMDATA_REGIONTYPE__ACCESSREADY		= DCAMDATA_ATTRIBUTE__ACCESSREADY,
+        DCAMDATA_REGIONTYPE__ACCESSBUSY			= DCAMDATA_ATTRIBUTE__ACCESSBUSY,
+        DCAMDATA_REGIONTYPE__HASVIEW			= DCAMDATA_ATTRIBUTE__HASVIEW,
+
+        DCAMDATA_REGIONTYPE__BODYMASK			= 0x00FFFFFF,
+        DCAMDATA_REGIONTYPE__ATTRIBUTEMASK		= DCAMDATA_ATTRIBUTE__MASK,
+
+        DCAMDATA_REGIONTYPE__NONE				= 0x00000000
+
+    enum DCAMDATA_ATTRIBUTE:
+        DCAMDATA_ATTRIBUTE__ACCESSREADY			= 0x01000000,
+        DCAMDATA_ATTRIBUTE__ACCESSBUSY			= 0x02000000,
+
+        DCAMDATA_ATTRIBUTE__HASVIEW				= 0x10000000,
+
+        DCAMDATA_ATTRIBUTE__MASK				= 0xFF000000
+
+    ### BUFFER PROC TYPE ###
+    enum DCAMBUF_PROCTYPE:
+        DCAMBUF_PROCTYPE__HIGHCONTRASTMODE  = DCAMBUF_FRAME_OPTION__PROC_HIGHCONTRAST,
+        DCAMBUF_PROCTYPE__NONE              = 0x00000000
+
+    ### CODE PAGE ###
+    ### CAPABILITY ###
+    enum DCAMDEV_CAPDOMAIN:
+        DCAMDEV_CAPDOMAIN__DCAMDATA			= 0x00000001,
+        DCAMDEV_CAPDOMAIN__FRAMEOPTION		= 0x00000002,
+        DCAMDEV_CAPDOMAIN__FUNCTION         = 0x00000000
+
+    enum DCAMDEV_CAPFLAG:
+        DCAMDEV_CAPFLAG_FRAMESTAMP			= 0x00000001,
+        DCAMDEV_CAPFLAG_TIMESTAMP		    = 0x00000002,
+        DCAMDEV_CAPFLAG_CAMERASTAMP         = 0x00000004,
+        DCAMDEV_CAPFLAG_NONE                = 0x00000000
+
+    enum DCAMREC_STATUSFLAG:
+        DCAMREC_STATUSFLAG_NONE			    = 0x00000000,
+        DCAMREC_STATUSFLAG_RECORDING		= 0x00000001
+
     ##
     ## constant declaration
     ##

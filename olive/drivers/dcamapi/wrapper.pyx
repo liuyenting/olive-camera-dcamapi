@@ -1,9 +1,30 @@
+#cython: language_level=3
+
+from cpython cimport bool as pybool
 from cpython.exc cimport PyErr_SetFromErrnoWithFilenameObject
 cimport cython
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset
 
+from enum import auto, Enum, IntEnum
+
 from dcamapi cimport *
+
+class Info(IntEnum):
+    Bus             = DCAM_IDSTR.DCAM_IDSTR_BUS
+    CameraID        = DCAM_IDSTR.DCAM_IDSTR_CAMERAID
+    Vendor          = DCAM_IDSTR.DCAM_IDSTR_VENDOR
+    Model           = DCAM_IDSTR.DCAM_IDSTR_MODEL
+    CameraVersion   = DCAM_IDSTR.DCAM_IDSTR_CAMERAVERSION
+    DriverVersion   = DCAM_IDSTR.DCAM_IDSTR_DRIVERVERSION
+    ModuleVersion   = DCAM_IDSTR.DCAM_IDSTR_MODULEVERSION
+    APIVersion      = DCAM_IDSTR.DCAM_IDSTR_DCAMAPIVERSION
+
+class Capability(Enum):
+    LUT = auto()
+    Region = auto()
+    FrameOption = auto()
+
 
 @cython.final
 cdef class DCAMAPI:
@@ -15,7 +36,7 @@ cdef class DCAMAPI:
     #: number of supported devices found by DCAM-API
     cdef readonly int32 n_devices
 
-    cdef init(self):
+    def init(self):
         """
         Initialize the DCAM-API manager, modules and drivers.
 
@@ -37,12 +58,11 @@ cdef class DCAMAPI:
 
         All opened devices will be forcefully closed. No new devices can be opened unless initialize again.
         """
-        print('dcamapi_uninit()')
         dcamapi_uninit()
 
     ##
 
-    def open(self, index):
+    cpdef open(self, int32 index):
         cdef DCAMERR err
 
         cdef DCAMDEV_OPEN devopen
@@ -52,7 +72,7 @@ cdef class DCAMAPI:
         err = dcamdev_open(&devopen)
         DCAMAPI.check_error(err, 'dcamdev_open()')
 
-        return DCAM(devopen.hdcam)
+        return <object>devopen.hdcam
 
     cpdef close(self, DCAM dev):
         cdef DCAMERR err
@@ -88,30 +108,71 @@ cdef class DCAM:
     """Base class for the device."""
     cdef HDCAM handle
 
-    def __cinit__(self, HDCAM handle):
-        self.handle = handle
+    def __cinit__(self, handle):
+        self.handle = <HDCAM>handle
 
     ##
     ## device data
     ##
-    def get_capability(self, capability):
+    def get_capability(self, capability: Capability):
         """Returns capability information not able to get from property."""
-        """"
-        if capability == LUT:
-            pass
-        elif capability == Region:
-            pass
-        elif capability == FrameOption:
-            pass
-        else:
-            raise ValueError('unknown capability opton')
-        """
-        pass
+        try:
+            return {
+                Capability.Region: self._get_capability_region,
+                Capability.LUT: self._get_capability_lut,
+                Capability.FrameOption: self._get_capability_frameoption
+            }[capability]()
+        except KeyError:
+            raise ValueError('unknown capability option')
 
-    cpdef get_string(self, int32 idstr, int32 nbytes=256, int32 index=-1):
+    def _get_capability_region(self):
+        cdef DCAMERR err
+
+        cdef DCAMDEV_CAPABILITY_REGION param
+        memset(&param, 0, sizeof(param))
+        param.hdr.size = sizeof(param)
+        param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
+        param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__REGION
+
+        err = dcamdev_getcapability(self.handle, &param.hdr)
+        DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
+
+        # TODO nested parser for different region type
+
+    def _get_capability_lut(self):
+        cdef DCAMERR err
+
+        cdef DCAMDEV_CAPABILITY_LUT param
+        memset(&param, 0, sizeof(param))
+        param.hdr.size = sizeof(param)
+        param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
+        param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__LUT
+
+    def _get_capability_frameoption(self):
+        cdef DCAMERR err
+
+        cdef DCAMDEV_CAPABILITY_FRAMEOPTION param
+        memset(&param, 0, sizeof(param))
+        param.hdr.size = sizeof(param)
+        param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__FRAMEOPTION
+
+        err = dcamdev_getcapability(self.handle, &param.hdr)
+        DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
+
+        if param.hdr.capflag == 0:
+            raise RuntimeError('frame option is currently disabled')
+
+        flags = {
+            'highcontrast': DCAMBUF_PROCTYPE.DCAMBUF_PROCTYPE__HIGHCONTRASTMODE
+        }
+        return {
+            key: <pybool>(param.hdr.capflag & value)
+            for key, value in flags.items()
+        }
+
+    cpdef get_string(self, int32 idstr, int32 nbytes=256):
         cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
-        cdef HDCAM handle
         cdef DCAMDEV_STRING param
         memset(&param, 0, sizeof(param))
         param.size = sizeof(param)
@@ -119,9 +180,8 @@ cdef class DCAM:
         param.textbytes = nbytes
         param.iString = idstr
         try:
-            handle = self.handle if index < 0 else <HDCAM>index
-            dcamdev_getstring(handle, &param)
-            return text.decode('UTF-8', errors='replace')
+            dcamdev_getstring(self.handle, &param)
+            return text.decode('utf--8', errors='replace')
         finally:
             free(text)
 
