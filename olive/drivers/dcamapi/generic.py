@@ -119,13 +119,3 @@ class DCAMAPI(Driver):
                 pass
         return tuple(valid_devices)
 
-    ##
-
-    def enumerate_attributes(self):
-        pass
-
-    def get_attribute(self, name):
-        pass
-
-    def set_attribute(self, name, value):
-        pass

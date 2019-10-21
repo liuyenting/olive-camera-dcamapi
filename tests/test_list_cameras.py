@@ -14,5 +14,6 @@ driver = DCAMAPI()
 driver.initialize()
 
 pprint(driver.enumerate_devices())
+pprint()
 
 driver.shutdown()

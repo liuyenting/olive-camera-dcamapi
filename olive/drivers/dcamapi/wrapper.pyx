@@ -137,7 +137,21 @@ cdef class DCAM:
         err = dcamdev_getcapability(self.handle, &param.hdr)
         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
 
-        # TODO nested parser for different region type
+        attributes = dict()
+        attributes['units'] = {'horizontal': param.horzunit, 'vertical': param.vertunit}
+
+        region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
+        attributes['type'] = []
+        if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__NONE:
+            pass
+        else:
+            if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:
+                attributes['type'].append('rect16array')
+            if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BYTEMASK:
+                attributes['type'].append('bytemask')
+
+        return attributes
+
 
     def _get_capability_lut(self):
         cdef DCAMERR err
@@ -147,6 +161,8 @@ cdef class DCAM:
         param.hdr.size = sizeof(param)
         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__LUT
+
+        raise NotImplementedError
 
     def _get_capability_frameoption(self):
         cdef DCAMERR err
