@@ -9,6 +9,7 @@ from libc.string cimport memset
 from enum import auto, Enum, IntEnum
 
 from dcamapi cimport *
+from dcamprop cimport *
 
 class Info(IntEnum):
     Bus             = DCAM_IDSTR.DCAM_IDSTR_BUS
@@ -25,6 +26,15 @@ class Capability(Enum):
     Region = auto()
     FrameOption = auto()
 
+class NextPropertyOption(IntEnum):
+    #: next property that the device supports
+    Support         = DCAMPROPOPTION.DCAMPROP_OPTION_SUPPORT
+    #: next property which the value or mode has been changed
+    Updated         = DCAMPROPOPTION.DCAMPROP_OPTION_UPDATED
+    #: next property which the value or mode can be changed unexpectedly
+    Volatile        = DCAMPROPOPTION.DCAMPROP_OPTION_VOLATILE
+    #: next array element property
+    ArrayElement    = DCAMPROPOPTION.DCAMPROP_OPTION_ARRAYELEMENT
 
 @cython.final
 cdef class DCAMAPI:
@@ -135,15 +145,18 @@ cdef class DCAM:
         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__REGION
 
         err = dcamdev_getcapability(self.handle, &param.hdr)
-        DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
-
         attributes = dict()
+        try:
+            DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
+        except RuntimeError:
+            raise RuntimeError("does not support region")
+
         attributes['units'] = {'horizontal': param.horzunit, 'vertical': param.vertunit}
 
         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
         attributes['type'] = []
         if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__NONE:
-            pass
+            attributes['type'] = 'none'
         else:
             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:
                 attributes['type'].append('rect16array')
@@ -162,7 +175,21 @@ cdef class DCAM:
         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__LUT
 
-        raise NotImplementedError
+        err = dcamdev_getcapability(self.handle, &param.hdr)
+        DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
+
+        attributes = dict()
+
+        lut_type = param.hdr.capflag & DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__BODYMASK
+        if lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__NONE:
+            attributes['type'] = 'none'
+        elif lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__SEGMENTED_LINEAR:
+            attributes['type'] = 'linear'
+            attributes['max_points'] = param.linearpointmax
+        else:
+            attributes['type'] = 'unknown'
+
+        return attributes
 
     def _get_capability_frameoption(self):
         cdef DCAMERR err
@@ -175,6 +202,8 @@ cdef class DCAM:
         err = dcamdev_getcapability(self.handle, &param.hdr)
         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
 
+        if param.supportproc == 0:
+            raise RuntimeError("does not support processing options")
         if param.hdr.capflag == 0:
             raise RuntimeError('frame option is currently disabled')
 
@@ -197,7 +226,7 @@ cdef class DCAM:
         param.iString = idstr
         try:
             dcamdev_getstring(self.handle, &param)
-            return text.decode('utf--8', errors='replace')
+            return text.decode('utf-8', errors='replace')
         finally:
             free(text)
 
@@ -219,6 +248,40 @@ cdef class DCAM:
     ##
     ## property control
     ##
+    def get_attr(self):
+        pass
+
+    def get_value(self):
+        pass
+
+    def set_value(self):
+        pass
+
+    def set_get_value(self):
+        pass
+
+    def query_value(self):
+        pass
+
+    cpdef get_next_id(self, int32 iprop=0, int32 option=NextPropertyOption.Support):
+        cdef DCAMERR err
+        err = dcamprop_getnextid(self.handle, &iprop, option)
+
+        return iprop
+
+    cpdef get_name(self, int32 iprop, int32 nbytes=64):
+        cdef char *text = <char *>malloc(nbytes * sizeof(char))
+
+        cdef DCAMERR err
+        try:
+            err = dcamprop_getname(self.handle, iprop, text, nbytes)
+            DCAMAPI.check_error(err, 'dcamprop_getname()', self.handle)
+            return text.decode('utf-8', errors='replace')
+        finally:
+            free(text)
+
+    cpdef get_value_text(self, int32 iprop, int32 nbytes=64):
+        pass
 
     ##
     ## property control

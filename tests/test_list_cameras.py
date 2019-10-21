@@ -12,8 +12,16 @@ coloredlogs.install(
 driver = DCAMAPI()
 
 driver.initialize()
+try:
+    devices = driver.enumerate_devices()
+    pprint(devices)
 
-pprint(driver.enumerate_devices())
-pprint()
+    camera = devices[0]
 
-driver.shutdown()
+    camera.open()
+    try:
+        pprint(camera.enumerate_properties())
+    finally:
+        camera.close()
+finally:
+    driver.shutdown()

@@ -7,7 +7,7 @@ from olive.devices import Camera
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, Info
+from .wrapper import DCAM, Info, Capability
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -26,7 +26,8 @@ class HamamatsuCamera(Camera):
             handle = self.driver.api.open(self._index)
             self._api = DCAM(handle)
             logger.info(f".. {self.info()}")
-        except RuntimeError:
+        except RuntimeError as err:
+            logger.exception(err)
             raise UnsupportedDeviceError
         finally:
             self.driver.api.close(self.api)
@@ -50,11 +51,25 @@ class HamamatsuCamera(Camera):
             "model": self.api.get_string(Info.Model),
             "serial_number": re.match(r"S/N: (\d+)", raw_sn).group(1),
         }
+
+        # DEBUG
+        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
+            try:
+                print(self.api.get_capability(option))
+            except RuntimeError as err:
+                logger.error(err)
+
         return DeviceInfo(**params)
 
     def enumerate_properties(self):
-        pass
+        i = self.api.get_next_id()
+        while i != 0:
+            print(i)
 
+            name = self.api.get_name(i)
+            print(f'{i} = {name}')
+
+            i = self.api.get_next_id(i)
     ##
 
     def snap(self):
@@ -110,6 +125,7 @@ class DCAMAPI(Driver):
 
     def enumerate_devices(self) -> HamamatsuCamera:
         valid_devices = []
+        logger.debug(f'max index: {self.api.n_devices}')
         for i_device in range(self.api.n_devices):
             try:
                 device = HamamatsuCamera(self, i_device)
