@@ -7,7 +7,7 @@ from olive.devices import Camera
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, Info, Capabilities, NextPropertyOption, CaptureTypes
+from .wrapper import DCAM, Info, Capability, NextPropertyOption, CaptureType
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -54,7 +54,7 @@ class HamamatsuCamera(Camera):
         }
 
         # DEBUG
-        for option in (Capabilities.Region, Capabilities.FrameOption, Capabilities.LUT):
+        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
             try:
                 print(self.api.get_capability(option))
             except RuntimeError as err:
@@ -93,6 +93,8 @@ class HamamatsuCamera(Camera):
 
         prop_type, prop_id = attributes["type"], self._get_property_id(name)
         if prop_type == "mode":
+            # NOTE
+            #   assuming uniform step, simplify the implementation for now...
             index = int(self.api.get_value(prop_id)) - int(attributes["min"])
             return attributes["modes"][index]
         elif prop_type == "long":
@@ -126,7 +128,7 @@ class HamamatsuCamera(Camera):
 
     def snap(self):
         self.api.alloc(1)
-        self.api.start(CaptureTypes.Snap)
+        self.api.start(CaptureType.Snap)
 
     def configure_grab(self):
         pass

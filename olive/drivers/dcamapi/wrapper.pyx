@@ -24,12 +24,12 @@ class Info(IntEnum):
     ModuleVersion   = DCAM_IDSTR.DCAM_IDSTR_MODULEVERSION
     APIVersion      = DCAM_IDSTR.DCAM_IDSTR_DCAMAPIVERSION
 
-class Capabilities(Enum):
+class Capability(Enum):
     LUT         = auto()
     Region      = auto()
     FrameOption = auto()
 
-class Events(IntEnum):
+class Event(IntEnum):
     """Capture events"""
     Transferred = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_TRANSFERRED
     FrameReady  = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_FRAMEREADY
@@ -37,7 +37,7 @@ class Events(IntEnum):
     ExposureEnd = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_EXPOSUREEND
     Stopped     = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_STOPPED
 
-class CaptureTypes(IntEnum):
+class CaptureType(IntEnum):
     Sequence    = DCAMCAP_START.DCAMCAP_START_SEQUENCE
     Snap        = DCAMCAP_START.DCAMCAP_START_SNAP
 
@@ -156,7 +156,7 @@ cdef class DCAMWAIT:
         cdef DCAMWAIT_OPEN waitopen
         memset(&waitopen, 0, sizeof(waitopen))
         waitopen.size = sizeof(waitopen)
-        waitopen.hdcam = <HDCAM>hdcam
+        waitopen.hdcam = self.hdcam
 
         err = dcamwait_open(&waitopen)
         DCAMAPI.check_error(err, 'dcamwait_open()', self.hdcam)
@@ -171,12 +171,12 @@ cdef class DCAMWAIT:
         err = dcamwait_close(self.handle)
         DCAMAPI.check_error(err, 'dcamwait_close()', self.hdcam)
 
-    cpdef start(self, int32 event: Events, int32 timeout=1000):
+    cpdef start(self, int32 event: Event, int32 timeout=1000):
         """
         Start waiting for a specified DCAM event.
 
         Args:
-            event (Events): type of event to wait
+            event (Event): type of event to wait
             timeout (int): this function will wait as maximum by miliseconds
         """
         cdef DCAMWAIT_START waitstart
@@ -208,33 +208,32 @@ cdef class DCAM:
     ##
     ## device data
     ##
-    def get_capability(self, capability: Capabilities):
+    def get_capability(self, capability: Capability):
         """Returns capability information not able to get from property."""
         try:
             return {
-                Capabilities.Region: self._get_capability_region,
-                Capabilities.LUT: self._get_capability_lut,
-                Capabilities.FrameOption: self._get_capability_frameoption
+                Capability.Region: self._get_capability_region,
+                Capability.LUT: self._get_capability_lut,
+                Capability.FrameOption: self._get_capability_frameoption
             }[capability]()
         except KeyError:
             raise ValueError('unknown capability option')
 
     def _get_capability_region(self):
-        cdef DCAMERR err
-
         cdef DCAMDEV_CAPABILITY_REGION param
         memset(&param, 0, sizeof(param))
         param.hdr.size = sizeof(param)
         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__REGION
 
+        cdef DCAMERR err
         err = dcamdev_getcapability(self.handle, &param.hdr)
-        attributes = dict()
         try:
             DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
         except RuntimeError:
             raise RuntimeError("does not support region")
 
+        attributes = dict()
         attributes['units'] = {'horizontal': param.horzunit, 'vertical': param.vertunit}
 
         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
@@ -250,14 +249,13 @@ cdef class DCAM:
         return attributes
 
     def _get_capability_lut(self):
-        cdef DCAMERR err
-
         cdef DCAMDEV_CAPABILITY_LUT param
         memset(&param, 0, sizeof(param))
         param.hdr.size = sizeof(param)
         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__LUT
 
+        cdef DCAMERR err
         err = dcamdev_getcapability(self.handle, &param.hdr)
         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
 
@@ -275,13 +273,12 @@ cdef class DCAM:
         return attributes
 
     def _get_capability_frameoption(self):
-        cdef DCAMERR err
-
         cdef DCAMDEV_CAPABILITY_FRAMEOPTION param
         memset(&param, 0, sizeof(param))
         param.hdr.size = sizeof(param)
         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__FRAMEOPTION
 
+        cdef DCAMERR err
         err = dcamdev_getcapability(self.handle, &param.hdr)
         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
 
@@ -433,8 +430,8 @@ cdef class DCAM:
         cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
         cdef DCAMERR err
+        err = dcamprop_getname(self.handle, iprop, text, nbytes)
         try:
-            err = dcamprop_getname(self.handle, iprop, text, nbytes)
             DCAMAPI.check_error(err, 'dcamprop_getname()', self.handle)
             return text.decode('utf-8', errors='replace')
         finally:
@@ -443,7 +440,6 @@ cdef class DCAM:
     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):
         cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
-        cdef DCAMERR err
         cdef DCAMPROP_VALUETEXT value
         memset(&value, 0, sizeof(value))
         value.cbSize = sizeof(value)
@@ -451,8 +447,10 @@ cdef class DCAM:
         value.value	= valuemin
         value.text = text
         value.textbytes = nbytes
+
+        cdef DCAMERR err
+        err = dcamprop_getvaluetext(self.handle, &value)
         try:
-            err = dcamprop_getvaluetext(self.handle, &value)
             DCAMAPI.check_error(err, 'dcamprop_getvaluetext()', self.handle)
             return text.decode('utf-8', errors='replace')
         finally:
@@ -500,6 +498,9 @@ cdef class DCAM:
     cpdef lock_frame(self, int32 iframe=-1):
         """
         Returns a pointer that the host software can use to access the captured image data.
+
+        Args:
+            iframe (int): frame index, -1 to retrieve the latest frame
         """
         cdef DCAMBUF_FRAME bufframe
         memset(&bufframe, 0, sizeof(bufframe))
@@ -522,7 +523,7 @@ cdef class DCAM:
     ##
     ## capturing
     ##
-    def start(self, int32 mode: CaptureTypes):
+    def start(self, int32 mode: CaptureType):
         """
         Start capturing images.
         """
