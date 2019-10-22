@@ -20,7 +20,8 @@ try:
 
     camera.open()
     try:
-        pprint(camera.enumerate_properties())
+        for prop in camera.enumerate_properties():
+            print(f'{prop}: {camera.get_property(prop)}')
     finally:
         camera.close()
 finally:

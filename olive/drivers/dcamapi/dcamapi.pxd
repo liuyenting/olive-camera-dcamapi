@@ -283,6 +283,13 @@ cdef extern from 'lib/dcamapi4.h':
         #: device is not fit for capture
         DCAMCAP_STATUS_UNSTABLE				= 0x0004
 
+    enum DCAMWAIT_EVENT:
+        DCAMWAIT_CAPEVENT_TRANSFERRED		= 0x0001,
+        DCAMWAIT_CAPEVENT_FRAMEREADY		= 0x0002,
+        DCAMWAIT_CAPEVENT_CYCLEEND			= 0x0004,
+        DCAMWAIT_CAPEVENT_EXPOSUREEND		= 0x0008,
+        DCAMWAIT_CAPEVENT_STOPPED			= 0x0010,
+
     ### START ###
     enum DCAMCAP_START:
         #: continuously capturing images
@@ -583,6 +590,7 @@ cdef extern from 'lib/dcamapi4.h':
     DCAMERR dcamprop_getvalue		( HDCAM h, int32 iProp, double* pValue )
     DCAMERR dcamprop_setvalue		( HDCAM h, int32 iProp, double  fValue )
     DCAMERR dcamprop_setgetvalue	( HDCAM h, int32 iProp, double* pValue, int32 option )
+    DCAMERR dcamprop_setgetvalue	( HDCAM h, int32 iProp, double* pValue )
     DCAMERR dcamprop_queryvalue		( HDCAM h, int32 iProp, double* pValue, int32 option )
     DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp, int32 option )
     DCAMERR dcamprop_getnextid		( HDCAM h, int32* pProp )

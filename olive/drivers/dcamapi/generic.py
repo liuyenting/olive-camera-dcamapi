@@ -1,4 +1,4 @@
-from functools import partial
+from functools import lru_cache
 import logging
 import re
 
@@ -7,7 +7,7 @@ from olive.devices import Camera
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, Info, Capability
+from .wrapper import DCAM, Info, Capabilities, NextPropertyOption, CaptureTypes
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -18,6 +18,7 @@ class HamamatsuCamera(Camera):
     def __init__(self, driver, index):
         super().__init__(driver)
         self._index, self._api = index, None
+        self._properties = dict()
 
     ##
 
@@ -53,7 +54,7 @@ class HamamatsuCamera(Camera):
         }
 
         # DEBUG
-        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
+        for option in (Capabilities.Region, Capabilities.FrameOption, Capabilities.LUT):
             try:
                 print(self.api.get_capability(option))
             except RuntimeError as err:
@@ -61,19 +62,71 @@ class HamamatsuCamera(Camera):
 
         return DeviceInfo(**params)
 
+    @lru_cache(maxsize=1)
     def enumerate_properties(self):
-        i = self.api.get_next_id()
-        while i != 0:
-            print(i)
+        properties = dict()
 
-            name = self.api.get_name(i)
-            print(f'{i} = {name}')
+        curr_id, next_id = -1, self.api.get_next_id()
+        while curr_id != next_id:
+            try:
+                curr_id, next_id = next_id, self.api.get_next_id(next_id)
+            except RuntimeError:
+                # no more supported property id
+                break
 
-            i = self.api.get_next_id(i)
+            name = self.api.get_name(curr_id)
+            name = name.lower().replace(" ", "_")
+            properties[name] = curr_id
+
+        self._properties = properties
+        return tuple(properties.keys())
+
+    def get_property(self, name):
+        attributes = self._get_property_attributes(name)
+        if not attributes["readable"]:
+            raise TypeError(f'property "{name}" is not readable')
+
+        if attributes["is_array"]:
+            logger.warning(
+                f"an array property with {attributes['n_elements']} element(s), NOT IMPLEMENTED"
+            )
+
+        prop_type, prop_id = attributes["type"], self._get_property_id(name)
+        if prop_type == "mode":
+            index = int(self.api.get_value(prop_id)) - int(attributes["min"])
+            return attributes["modes"][index]
+        elif prop_type == "long":
+            return int(self.api.get_value(prop_id))
+        elif prop_type == "real":
+            return float(self.api.get_value(prop_id))
+
+    def set_property(self, name, value):
+        attributes = self._get_property_attributes(name)
+        if not attributes["writable"]:
+            raise TypeError(f'property "{name}" is not writable')
+
+        # TODO
+
+    def _get_property_id(self, name):
+        return self._properties[name]
+
+    @lru_cache(maxsize=16)
+    def _get_property_attributes(self, name):
+        """
+        Attributes indicates the characteristic of the property.
+
+        Args:
+            name (str): name of the property
+        """
+        logger.debug(f"attributes of {name} cache missed")
+        prop_id = self._get_property_id(name)
+        return self.api.get_attr(prop_id)
+
     ##
 
     def snap(self):
-        pass
+        self.api.alloc(1)
+        self.api.start(CaptureTypes.Snap)
 
     def configure_grab(self):
         pass
@@ -125,7 +178,7 @@ class DCAMAPI(Driver):
 
     def enumerate_devices(self) -> HamamatsuCamera:
         valid_devices = []
-        logger.debug(f'max index: {self.api.n_devices}')
+        logger.debug(f"max index: {self.api.n_devices}")
         for i_device in range(self.api.n_devices):
             try:
                 device = HamamatsuCamera(self, i_device)

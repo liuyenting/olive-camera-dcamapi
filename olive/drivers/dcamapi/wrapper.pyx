@@ -11,6 +11,9 @@ from enum import auto, Enum, IntEnum
 from dcamapi cimport *
 from dcamprop cimport *
 
+##
+## Driver
+##
 class Info(IntEnum):
     Bus             = DCAM_IDSTR.DCAM_IDSTR_BUS
     CameraID        = DCAM_IDSTR.DCAM_IDSTR_CAMERAID
@@ -21,19 +24,45 @@ class Info(IntEnum):
     ModuleVersion   = DCAM_IDSTR.DCAM_IDSTR_MODULEVERSION
     APIVersion      = DCAM_IDSTR.DCAM_IDSTR_DCAMAPIVERSION
 
-class Capability(Enum):
-    LUT = auto()
-    Region = auto()
+class Capabilities(Enum):
+    LUT         = auto()
+    Region      = auto()
     FrameOption = auto()
 
+class Events(IntEnum):
+    """Capture events"""
+    Transferred = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_TRANSFERRED
+    FrameReady  = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_FRAMEREADY
+    CycleEnd    = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_CYCLEEND
+    ExposureEnd = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_EXPOSUREEND
+    Stopped     = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_STOPPED
+
+class CaptureTypes(IntEnum):
+    Sequence    = DCAMCAP_START.DCAMCAP_START_SEQUENCE
+    Snap        = DCAMCAP_START.DCAMCAP_START_SNAP
+
+class CaptureStatus(IntEnum):
+    Error       = DCAMCAP_STATUS.DCAMCAP_STATUS_ERROR
+    Busy        = DCAMCAP_STATUS.DCAMCAP_STATUS_BUSY
+    Ready       = DCAMCAP_STATUS.DCAMCAP_STATUS_READY
+    Stable      = DCAMCAP_STATUS.DCAMCAP_STATUS_STABLE
+    Unstable    = DCAMCAP_STATUS.DCAMCAP_STATUS_UNSTABLE
+
+##
+## Properties
+##
 class NextPropertyOption(IntEnum):
-    #: next property that the device supports
+    ##
+    ## direction flag for dcam_getnextpropertyid(), dcam_querypropertyvalue()
+    ##
+    Prior           = DCAMPROPOPTION.DCAMPROP_OPTION_PRIOR
+    Next            = DCAMPROPOPTION.DCAMPROP_OPTION_NEXT
+    ##
+    ## option for dcam_getnextpropertyid()
+    ##
     Support         = DCAMPROPOPTION.DCAMPROP_OPTION_SUPPORT
-    #: next property which the value or mode has been changed
     Updated         = DCAMPROPOPTION.DCAMPROP_OPTION_UPDATED
-    #: next property which the value or mode can be changed unexpectedly
     Volatile        = DCAMPROPOPTION.DCAMPROP_OPTION_VOLATILE
-    #: next array element property
     ArrayElement    = DCAMPROPOPTION.DCAMPROP_OPTION_ARRAYELEMENT
 
 @cython.final
@@ -114,6 +143,61 @@ cdef class DCAMAPI:
         )
 
 @cython.final
+cdef class DCAMWAIT:
+    cdef HDCAM hdcam
+    cdef HDCAMWAIT handle
+
+    cpdef open(self, int32 hdcam):
+        """
+        Create the HDCAMWAIT handle for a HDCAM member.
+        """
+        self.hdcam = <HDCAM>hdcam
+
+        cdef DCAMWAIT_OPEN waitopen
+        memset(&waitopen, 0, sizeof(waitopen))
+        waitopen.size = sizeof(waitopen)
+        waitopen.hdcam = <HDCAM>hdcam
+
+        err = dcamwait_open(&waitopen)
+        DCAMAPI.check_error(err, 'dcamwait_open()', self.hdcam)
+
+        self.handle = waitopen.hwait
+
+    def close(self):
+        """
+        Release the HDCAMWAIT handle.
+        """
+        cdef DCAMERR err
+        err = dcamwait_close(self.handle)
+        DCAMAPI.check_error(err, 'dcamwait_close()', self.hdcam)
+
+    cpdef start(self, int32 event: Events, int32 timeout=1000):
+        """
+        Start waiting for a specified DCAM event.
+
+        Args:
+            event (Events): type of event to wait
+            timeout (int): this function will wait as maximum by miliseconds
+        """
+        cdef DCAMWAIT_START waitstart
+        memset(&waitstart, 0, sizeof(waitstart))
+        waitstart.size = sizeof(waitstart)
+        waitstart.eventmask = event
+        waitstart.timeout = timeout # TODO move this to __cinit__, memory leak
+
+        cdef DCAMERR err
+        err = dcamwait_start(self.handle, &waitstart)
+        DCAMAPI.check_error(err, 'dcamwait_start()', self.hdcam)
+
+    def abort(self):
+        """
+        Aborts a start() call.
+        """
+        cdef DCAMERR err
+        err = dcamwait_abort(self.handle)
+        DCAMAPI.check_error(err, 'dcamwait_abort()', self.hdcam)
+
+@cython.final
 cdef class DCAM:
     """Base class for the device."""
     cdef HDCAM handle
@@ -124,13 +208,13 @@ cdef class DCAM:
     ##
     ## device data
     ##
-    def get_capability(self, capability: Capability):
+    def get_capability(self, capability: Capabilities):
         """Returns capability information not able to get from property."""
         try:
             return {
-                Capability.Region: self._get_capability_region,
-                Capability.LUT: self._get_capability_lut,
-                Capability.FrameOption: self._get_capability_frameoption
+                Capabilities.Region: self._get_capability_region,
+                Capabilities.LUT: self._get_capability_lut,
+                Capabilities.FrameOption: self._get_capability_frameoption
             }[capability]()
         except KeyError:
             raise ValueError('unknown capability option')
@@ -164,7 +248,6 @@ cdef class DCAM:
                 attributes['type'].append('bytemask')
 
         return attributes
-
 
     def _get_capability_lut(self):
         cdef DCAMERR err
@@ -248,24 +331,101 @@ cdef class DCAM:
     ##
     ## property control
     ##
-    def get_attr(self):
-        pass
+    cpdef get_attr(self, int32 iprop):
+        cdef DCAMERR err
 
-    def get_value(self):
-        pass
+        cdef DCAMPROP_ATTR attr
+        memset(&attr, 0, sizeof(attr))
+        attr.cbSize	= sizeof(attr)
+        attr.iProp	= iprop
 
-    def set_value(self):
-        pass
+        err = dcamprop_getattr(self.handle, &attr)
+        DCAMAPI.check_error(err, 'dcamprop_getattr()', self.handle)
 
-    def set_get_value(self):
-        pass
+        attributes = dict()
 
-    def query_value(self):
-        pass
+        # read/write
+        attributes = {
+            'writable': bool(attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_WRITABLE),
+            'readable': bool(attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_READABLE),
+        }
+
+        # type
+        prop_type = attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MASK
+        if prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MODE:
+            attributes['type'] = 'mode'
+        elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_LONG:
+            attributes['type'] = 'long'
+        elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_REAL:
+            attributes['type'] = 'real'
+        else:
+            raise RuntimeError('unknown attribute type')
+
+        # array
+        prop_type = attr.attribute2 & DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
+        is_array = prop_type == DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
+        attributes['is_array'] = is_array
+        if is_array:
+            attributes['n_elements'] = attr.iProp_NumberOfElement
+
+        # min/max/step
+        if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASRANGE:
+            attributes.update({'min': attr.valuemin, 'max': attr.valuemax})
+        if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:
+            attributes['step'] = attr.valuestep
+        if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASDEFAULT:
+            attributes['default'] = attr.valuedefault
+
+        # update details
+        cdef double value
+        if attributes['type'] == 'mode':
+            value = attributes['min']
+            mode_text = []
+            while True:
+                text = self._get_value_text(iprop, value)
+                text = text.lower().replace(" ", "_")
+                mode_text.append(text)
+                try:
+                    value = self._query_value(iprop, value)
+                except RuntimeError:
+                    # last value reached
+                    break
+            attributes['modes'] = tuple(mode_text)
+
+        return attributes
+
+    cpdef get_value(self, int32 iprop):
+        cdef double value
+
+        cdef DCAMERR err
+        err = dcamprop_getvalue(self.handle, iprop, &value)
+        DCAMAPI.check_error(err, 'dcamprop_getvalue()', self.handle)
+
+        return value
+
+    cpdef set_value(self, int32 iprop, double value):
+        cdef DCAMERR err
+        err = dcamprop_setvalue(self.handle, iprop, value)
+        DCAMAPI.check_error(err, 'dcamprop_setvalue()', self.handle)
+
+    def set_get_value(self, int32 iprop, double value):
+        cdef DCAMERR err
+        err = dcamprop_setgetvalue(self.handle, iprop, &value)
+        DCAMAPI.check_error(err, 'dcamprop_setgetvalue()', self.handle)
+
+        return value
+
+    cdef _query_value(self, int32 iprop, double value):
+        cdef DCAMERR err
+        err = dcamprop_queryvalue(self.handle, iprop, &value, NextPropertyOption.Next)
+        DCAMAPI.check_error(err, 'dcamprop_queryvalue()', self.handle)
+
+        return value
 
     cpdef get_next_id(self, int32 iprop=0, int32 option=NextPropertyOption.Support):
         cdef DCAMERR err
         err = dcamprop_getnextid(self.handle, &iprop, option)
+        DCAMAPI.check_error(err, 'dcamprop_getnextid()', self.handle)
 
         return iprop
 
@@ -280,9 +440,23 @@ cdef class DCAM:
         finally:
             free(text)
 
-    cpdef get_value_text(self, int32 iprop, int32 nbytes=64):
-        pass
+    cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):
+        cdef char *text = <char *>malloc(nbytes * sizeof(char))
 
+        cdef DCAMERR err
+        cdef DCAMPROP_VALUETEXT value
+        memset(&value, 0, sizeof(value))
+        value.cbSize = sizeof(value)
+        value.iProp	= iprop
+        value.value	= valuemin
+        value.text = text
+        value.textbytes = nbytes
+        try:
+            err = dcamprop_getvaluetext(self.handle, &value)
+            DCAMAPI.check_error(err, 'dcamprop_getvaluetext()', self.handle)
+            return text.decode('utf-8', errors='replace')
+        finally:
+            free(text)
     ##
     ## property control
     ##
@@ -298,8 +472,22 @@ cdef class DCAM:
         err = dcambuf_alloc(self.handle, nframes)
         DCAMAPI.check_error(err, 'dcambuf_alloc()', self.handle)
 
-    def attach(self):
-        pass
+    '''
+    cpdef attach(self, None, int32 nframes):
+        """
+        Attach external image buffers for image acquisition.
+        """
+        cdef DCAMERR err
+        cdef DCAMBUF_ATTACH bufattach
+        memset(&bufattach, 0, sizeof(bufattach))
+        bufattach.size = sizeof(bufattach)
+        bufattach.iKind = DCAMBUF_ATTACHKIND.DCAMBUF_ATTACHKIND_FRAME
+        bufattach.buffer = buffer
+        bufattach.buffercount = nframes
+
+        err = dcambuf_attach(self.handle, &bufattach)
+        DCAMAPI.check_error(err, 'dcambuf_attach()', self.handle)
+    '''
 
     def release(self):
         """
@@ -308,10 +496,19 @@ cdef class DCAM:
         cdef DCAMERR err
         err = dcambuf_release(self.handle)
         DCAMAPI.check_error(err, 'dcambuf_release()', self.handle)
-        #TODO wait for busy state
 
-    def lock_frame(self):
-        pass
+    cpdef lock_frame(self, int32 iframe=-1):
+        """
+        Returns a pointer that the host software can use to access the captured image data.
+        """
+        cdef DCAMBUF_FRAME bufframe
+        memset(&bufframe, 0, sizeof(bufframe))
+        bufframe.size = sizeof(bufframe)
+        bufframe.iFrame = iframe
+
+        cdef DCAMERR err
+        err = dcambuf_lockframe(self.handle, &bufframe)
+        DCAMAPI.check_error(err, 'dcambuf_lockframe()', self.handle)
 
     def copy_frame(self):
         pass
@@ -325,7 +522,7 @@ cdef class DCAM:
     ##
     ## capturing
     ##
-    def start(self, int32 mode):
+    def start(self, int32 mode: CaptureTypes):
         """
         Start capturing images.
         """
@@ -341,28 +538,25 @@ cdef class DCAM:
         err = dcamcap_stop(self.handle)
         DCAMAPI.check_error(err, 'dcamcap_stop()', self.handle)
 
-    def status(self):
+    def status(self) -> CaptureStatus:
         """
         Returns current capturing status.
         """
-        cdef DCAMERR err
         cdef int32 status
+
+        cdef DCAMERR err
         err = dcamcap_status(self.handle, &status)
         DCAMAPI.check_error(err, 'dcamcap_status()', self.handle)
-        #TODO convert capture status
+
+        return CaptureStatus(status)
 
     def transfer_info(self):
         pass
 
     def fire_trigger(self):
-        pass
+        cdef DCAMERR err
+        err = dcamcap_firetrigger(self.handle)
+        DCAMAPI.check_error(err, 'dcamcap_firetrigger()', self.handle)
     ##
     ## capturing
-    ##
-
-    ##
-    ## wait abort handle control
-    ##
-    ##
-    ## wait abort handle control
     ##
