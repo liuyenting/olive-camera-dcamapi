@@ -2,6 +2,7 @@ import os
 from setuptools import Extension, setup
 
 from Cython.Build import build_ext
+import numpy
 
 NAME = "olive-camera-dcamapi"
 VERSION = "0.1"
@@ -19,7 +20,7 @@ KEYWORDS = []
 AUTHOR = "Liu, Yen-Ting"
 EMAIL = "ytliu@gate.sinica.edu.tw"
 
-REQUIRES = []
+REQUIRES = ["numpy"]
 
 PACKAGES = ["olive.drivers.dcamapi"]
 
@@ -28,7 +29,8 @@ EXT_DEFS = [
         "name": "olive.drivers.dcamapi.wrapper",
         "language": "c++",
         "include_dirs": [
-            "."  # "Module .pxd file not found next to .pyx file", https://github.com/cython/cython/issues/2452
+            ".",  # "Module .pxd file not found next to .pyx file", https://github.com/cython/cython/issues/2452
+            numpy.get_include()
         ],
         "extra_objects": ["lib/dcamapi.lib"],
     }
