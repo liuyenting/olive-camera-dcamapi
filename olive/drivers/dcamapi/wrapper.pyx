@@ -3,6 +3,7 @@
 from cpython cimport bool as pybool
 from cpython.exc cimport PyErr_SetFromErrnoWithFilenameObject
 cimport cython
+from cython cimport view
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset
 
@@ -122,24 +123,25 @@ cdef class DCAMAPI:
     ##
 
     @staticmethod
-    cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL):
+    cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):
         if not failed(errid):
             return
 
         # implicit string reader for fast access
-        cdef char errtext[256]
+        cdef char[::1] errtext = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
+        cdef char *c_errtext = &errtext[0]
 
         cdef DCAMDEV_STRING param
         memset(&param, 0, sizeof(param))
         param.size = sizeof(param)
-        param.text = errtext
-        param.textbytes = sizeof(errtext)
+        param.text = c_errtext
+        param.textbytes = nbytes
         param.iString = errid
         dcamdev_getstring(hdcam, &param)
 
         # restrict errid to 32-bits to match C-style output
         raise RuntimeError(
-            '{}, (DCAMERR)0x{:08X} {}'.format(apiname.decode('UTF-8'), errid&0xFFFFFFFF, errtext.decode('UTF-8'))
+            f"{apiname.decode('utf-8')}, (DCAMERR)0x{errid&0xFFFFFFFF:08X} {c_errtext.decode('utf-8')}"
         )
 
 @cython.final
@@ -296,19 +298,18 @@ cdef class DCAM:
         }
 
     cpdef get_string(self, int32 idstr, int32 nbytes=256):
-        cdef char *text = <char *>malloc(nbytes * sizeof(char))
+        cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
+        cdef char *c_text = &text[0]
 
         cdef DCAMDEV_STRING param
         memset(&param, 0, sizeof(param))
         param.size = sizeof(param)
-        param.text = text
+        param.text = c_text
         param.textbytes = nbytes
         param.iString = idstr
-        try:
-            dcamdev_getstring(self.handle, &param)
-            return text.decode('utf-8', errors='replace')
-        finally:
-            free(text)
+
+        dcamdev_getstring(self.handle, &param)
+        return c_text.decode('utf-8', errors='replace')
 
     def set_data(self):
         """
@@ -329,13 +330,12 @@ cdef class DCAM:
     ## property control
     ##
     cpdef get_attr(self, int32 iprop):
-        cdef DCAMERR err
-
         cdef DCAMPROP_ATTR attr
         memset(&attr, 0, sizeof(attr))
         attr.cbSize	= sizeof(attr)
         attr.iProp	= iprop
 
+        cdef DCAMERR err
         err = dcamprop_getattr(self.handle, &attr)
         DCAMAPI.check_error(err, 'dcamprop_getattr()', self.handle)
 
@@ -427,34 +427,32 @@ cdef class DCAM:
         return iprop
 
     cpdef get_name(self, int32 iprop, int32 nbytes=64):
-        cdef char *text = <char *>malloc(nbytes * sizeof(char))
+        cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
+        cdef char *c_text = &text[0]
 
         cdef DCAMERR err
-        err = dcamprop_getname(self.handle, iprop, text, nbytes)
-        try:
-            DCAMAPI.check_error(err, 'dcamprop_getname()', self.handle)
-            return text.decode('utf-8', errors='replace')
-        finally:
-            free(text)
+        err = dcamprop_getname(self.handle, iprop, c_text, nbytes)
+        DCAMAPI.check_error(err, 'dcamprop_getname()', self.handle)
+
+        return c_text.decode('utf-8', errors='replace')
 
     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):
-        cdef char *text = <char *>malloc(nbytes * sizeof(char))
+        cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
+        cdef char *c_text = &text[0]
 
         cdef DCAMPROP_VALUETEXT value
         memset(&value, 0, sizeof(value))
         value.cbSize = sizeof(value)
         value.iProp	= iprop
         value.value	= valuemin
-        value.text = text
+        value.text = c_text
         value.textbytes = nbytes
 
         cdef DCAMERR err
         err = dcamprop_getvaluetext(self.handle, &value)
-        try:
-            DCAMAPI.check_error(err, 'dcamprop_getvaluetext()', self.handle)
-            return text.decode('utf-8', errors='replace')
-        finally:
-            free(text)
+        DCAMAPI.check_error(err, 'dcamprop_getvaluetext()', self.handle)
+
+        return c_text.decode('utf-8', errors='replace')
     ##
     ## property control
     ##
