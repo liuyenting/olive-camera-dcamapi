@@ -1,17 +1,19 @@
 #cython: language_level=3
 
 from cpython cimport bool as pybool
+from cpython cimport buffer
 from cpython.exc cimport PyErr_SetFromErrnoWithFilenameObject
 cimport cython
 from cython cimport view
+from cython.view cimport memoryview
 from libc.stdint cimport uintptr_t
 from libc.stdlib cimport malloc, free
-from libc.string cimport memset
+from libc.string cimport memset, strcmp
 
 from enum import auto, Enum, IntEnum
 
 import numpy as np
-cimport numpy as c_np
+cimport numpy as np
 
 from dcamapi cimport *
 from dcamprop cimport *
@@ -19,6 +21,30 @@ from dcamprop cimport *
 ##
 ## Driver
 ##
+class Capability(Enum):
+    LUT         = auto()
+    Region      = auto()
+    FrameOption = auto()
+
+class CaptureStatus(IntEnum):
+    Error       = DCAMCAP_STATUS.DCAMCAP_STATUS_ERROR
+    Busy        = DCAMCAP_STATUS.DCAMCAP_STATUS_BUSY
+    Ready       = DCAMCAP_STATUS.DCAMCAP_STATUS_READY
+    Stable      = DCAMCAP_STATUS.DCAMCAP_STATUS_STABLE
+    Unstable    = DCAMCAP_STATUS.DCAMCAP_STATUS_UNSTABLE
+
+class CaptureType(IntEnum):
+    Sequence    = DCAMCAP_START.DCAMCAP_START_SEQUENCE
+    Snap        = DCAMCAP_START.DCAMCAP_START_SNAP
+
+class Event(IntEnum):
+    """Capture events"""
+    Transferred = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_TRANSFERRED
+    FrameReady  = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_FRAMEREADY
+    CycleEnd    = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_CYCLEEND
+    ExposureEnd = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_EXPOSUREEND
+    Stopped     = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_STOPPED
+
 class Info(IntEnum):
     Bus             = DCAM_IDSTR.DCAM_IDSTR_BUS
     CameraID        = DCAM_IDSTR.DCAM_IDSTR_CAMERAID
@@ -29,34 +55,15 @@ class Info(IntEnum):
     ModuleVersion   = DCAM_IDSTR.DCAM_IDSTR_MODULEVERSION
     APIVersion      = DCAM_IDSTR.DCAM_IDSTR_DCAMAPIVERSION
 
-class Capability(Enum):
-    LUT         = auto()
-    Region      = auto()
-    FrameOption = auto()
-
-class Event(IntEnum):
-    """Capture events"""
-    Transferred = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_TRANSFERRED
-    FrameReady  = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_FRAMEREADY
-    CycleEnd    = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_CYCLEEND
-    ExposureEnd = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_EXPOSUREEND
-    Stopped     = DCAMWAIT_EVENT.DCAMWAIT_CAPEVENT_STOPPED
-
-class CaptureType(IntEnum):
-    Sequence    = DCAMCAP_START.DCAMCAP_START_SEQUENCE
-    Snap        = DCAMCAP_START.DCAMCAP_START_SNAP
-
-class CaptureStatus(IntEnum):
-    Error       = DCAMCAP_STATUS.DCAMCAP_STATUS_ERROR
-    Busy        = DCAMCAP_STATUS.DCAMCAP_STATUS_BUSY
-    Ready       = DCAMCAP_STATUS.DCAMCAP_STATUS_READY
-    Stable      = DCAMCAP_STATUS.DCAMCAP_STATUS_STABLE
-    Unstable    = DCAMCAP_STATUS.DCAMCAP_STATUS_UNSTABLE
-
-##
-## Properties
-##
-# NONE
+class Unit(IntEnum):
+    Second          = DCAMPROPUNIT.DCAMPROP_UNIT_SECOND
+    Celsius         = DCAMPROPUNIT.DCAMPROP_UNIT_CELSIUS
+    Kelvin          = DCAMPROPUNIT.DCAMPROP_UNIT_KELVIN
+    MeterPerSecond  = DCAMPROPUNIT.DCAMPROP_UNIT_METERPERSECOND
+    PerSecond       = DCAMPROPUNIT.DCAMPROP_UNIT_PERSECOND
+    Degree          = DCAMPROPUNIT.DCAMPROP_UNIT_DEGREE
+    MicroMeter      = DCAMPROPUNIT.DCAMPROP_UNIT_MICROMETER
+    Unitless        = DCAMPROPUNIT.DCAMPROP_UNIT_NONE
 
 @cython.final
 cdef class DCAMAPI:
@@ -199,10 +206,127 @@ cdef class DCAMWAIT:
         err = dcamwait_abort(self.handle)
         DCAMAPI.check_error(err, 'dcamwait_abort()', self.hdcam)
 
+cdef class OnceIndirect:
+    cdef object _objects
+    cdef void** buf
+    cdef int ndim
+    cdef int n_rows
+    cdef int buf_len
+    cdef Py_ssize_t* shape
+    cdef Py_ssize_t* strides
+    cdef Py_ssize_t* suboffsets
+    cdef Py_ssize_t itemsize
+    cdef bytes format
+    cdef int is_readonly
+
+    def __cinit__(self, object rows, want_writable=True, want_format=True, allow_indirect=False):
+        """
+        Set want_writable to False if you don't want writable data. (This may
+        prevent copies.)
+        Set want_format to False if your input doesn't support PyBUF_FORMAT (unlikely)
+        Set allow_indirect to True if you are ok with the memoryview being indirect
+        in dimensions other than the first. (This may prevent copies.)
+        """
+        demand = buffer.PyBUF_INDIRECT if allow_indirect else buffer.PyBUF_STRIDES
+        if want_writable:
+            demand |= buffer.PyBUF_WRITABLE
+        if want_format:
+            demand |= buffer.PyBUF_FORMAT
+        self._objects = [memoryview(row, demand) for row in rows]
+        self.n_rows = len(self._objects)
+        self.buf_len = sizeof(void*) * self.n_rows
+        self.buf = <void**>malloc(self.buf_len)
+        self.ndim = 1 + self._objects[0].ndim
+        self.shape = <Py_ssize_t*>malloc(sizeof(Py_ssize_t) * self.ndim)
+        self.strides = <Py_ssize_t*>malloc(sizeof(Py_ssize_t) * self.ndim)
+        self.suboffsets = <Py_ssize_t*>malloc(sizeof(Py_ssize_t) * self.ndim)
+
+        cdef memoryview example_obj = self._objects[0]
+        self.itemsize = example_obj.itemsize
+
+        if want_format:
+            self.format = example_obj.view.format
+        else:
+            self.format = None
+        self.is_readonly |= example_obj.view.readonly
+
+        for dim in range(self.ndim):
+            if dim == 0:
+                self.shape[dim] = self.n_rows
+                self.strides[dim] = sizeof(void*)
+                self.suboffsets[dim] = 0
+            else:
+                self.shape[dim] = example_obj.view.shape[dim - 1]
+                self.strides[dim] = example_obj.view.strides[dim - 1]
+                if example_obj.view.suboffsets == NULL:
+                    self.suboffsets[dim] = -1
+                else:
+                    self.suboffsets[dim] = example_obj.suboffsets[dim - 1]
+
+        cdef memoryview obj
+        cdef int i = 0
+        for obj in self._objects:
+            assert_similar(example_obj, obj)
+            self.buf[i] = obj.view.buf
+            i += 1
+
+    def __getbuffer__(self, Py_buffer* buff, int flags):
+        if (flags & buffer.PyBUF_INDIRECT) != buffer.PyBUF_INDIRECT:
+            raise Exception("don't want to copy data")
+        if flags & buffer.PyBUF_WRITABLE and self.is_readonly:
+            raise Exception("couldn't provide writable, you should have demanded it earlier")
+        if flags & buffer.PyBUF_FORMAT:
+            if self.format is None:
+                raise Exception("couldn't provide format, you should have demanded it earlier")
+            buff.format = self.format
+        else:
+            buff.format = NULL
+
+        buff.buf = <void*>self.buf
+        buff.obj = self
+        buff.len = self.buf_len
+        buff.readonly = self.is_readonly
+        buff.ndim = self.ndim
+        buff.shape = self.shape
+        buff.strides = self.strides
+        buff.suboffsets = self.suboffsets
+        buff.itemsize = self.itemsize
+        buff.internal = NULL
+
+    def __dealloc__(self):
+        free(self.buf)
+        free(self.shape)
+        free(self.strides)
+        free(self.suboffsets)
+
+cdef int assert_similar(memoryview left_, memoryview right_) except -1:
+    cdef Py_buffer left = left_.view
+    cdef Py_buffer right = right_.view
+    assert left.ndim == right.ndim
+    cdef int i
+    for i in range(left.ndim):
+        assert left.shape[i] == right.shape[i], (left_.shape, right_.shape)
+        assert left.strides[i] == right.strides[i], (left_.strides, right_.strides)
+
+    if left.suboffsets == NULL:
+        assert right.suboffsets == NULL, (left_.suboffsets, right_.suboffsets)
+    else:
+        for i in range(left.ndim):
+            assert left.suboffsets[i] == right.suboffsets[i], (left_.suboffsets, right_.suboffsets)
+
+    if left.format == NULL:
+        assert right.format == NULL, (bytes(left.format), bytes(right.format))
+    else:
+        #alternatively, compare as Python strings:
+        #assert bytes(left.format) == bytes(right.format)
+        assert strcmp(left.format, right.format) == 0, (bytes(left.format), bytes(right.format))
+    return 0
+
 @cython.final
 cdef class DCAM:
     """Base class for the device."""
     cdef HDCAM handle
+    cdef uintptr_t[:] buffer
 
     def __cinit__(self, handle):
         self.handle = <HDCAM>handle
@@ -358,6 +482,9 @@ cdef class DCAM:
         else:
             raise RuntimeError('unknown attribute type')
 
+        # unit
+        attributes['unit'] = Unit(attr.iUnit)
+
         # array
         prop_type = attr.attribute2 & DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
         is_array = prop_type == DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
@@ -468,22 +595,29 @@ cdef class DCAM:
         err = dcambuf_alloc(self.handle, nframes)
         DCAMAPI.check_error(err, 'dcambuf_alloc()', self.handle)
 
-    '''
-    cpdef attach(self, None, int32 nframes):
+    cpdef attach(self, list buffer):
         """
         Attach external image buffers for image acquisition.
         """
-        cdef DCAMERR err
+        cdef int nframes = len(buffer)
+        if nframes < 1:
+            raise RuntimeError('number of frames has to be >= 1')
+
+        # build pointer array to memoryviews
+        cdef np.uint16_t[::view.indirect, ::1] c_buffer = OnceIndirect(buffer)
+
         cdef DCAMBUF_ATTACH bufattach
         memset(&bufattach, 0, sizeof(bufattach))
         bufattach.size = sizeof(bufattach)
         bufattach.iKind = DCAMBUF_ATTACHKIND.DCAMBUF_ATTACHKIND_FRAME
-        bufattach.buffer = buffer
+        bufattach.buffer = <void **>&c_buffer[0, 0]
         bufattach.buffercount = nframes
 
+        cdef DCAMERR err
         err = dcambuf_attach(self.handle, &bufattach)
         DCAMAPI.check_error(err, 'dcambuf_attach()', self.handle)
-    '''
+
+        print('dcambuf_attach() returned')
 
     def release(self):
         """
@@ -511,12 +645,9 @@ cdef class DCAM:
 
         # bufframe.buf, bufframe.rowbytes, bufframe.type, bufframe.width, bufframe.height
         if bufframe.type == DCAM_PIXELTYPE.DCAM_PIXELTYPE_MONO16:
-            return np.asarray(<c_np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
+            return np.asarray(<np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
         else:
             raise NotImplementedError(f'unsupported pixel format')
-
-    cdef _lock_uint16_frame(self, const DCAMBUF_FRAME &bufframe):
-        cdef uint16_t
 
     def copy_frame(self):
         pass
@@ -530,21 +661,13 @@ cdef class DCAM:
     ##
     ## capturing
     ##
-    cpdef start(self, int32 mode: CaptureType, DCAMWAIT event=None):
+    cpdef start(self, int32 mode: CaptureType):
         """
         Start capturing images.
         """
         cdef DCAMERR err
         err = dcamcap_start(self.handle, mode)
         DCAMAPI.check_error(err, 'dcamcap_start()', self.handle)
-
-        print('dcamcap_start() started')
-
-        if event is not None:
-            print('waiting...')
-            event.start(Event.FrameReady)
-
-        print('start() ended, return')
 
     def stop(self):
         """

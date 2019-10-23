@@ -2,12 +2,14 @@ from functools import lru_cache
 import logging
 import re
 
+import numpy as np
+
 from olive.core import Driver, DeviceInfo
 from olive.devices import Camera
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, DCAMWAIT, Event, Info, Capability, CaptureType
+from .wrapper import DCAM, Event, Info, Capability, CaptureType
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -20,13 +22,15 @@ class HamamatsuCamera(Camera):
         self._index, self._api = index, None
         self._properties = dict()
 
+        self._event = None
+
     ##
 
     def test_open(self):
         try:
             handle = self.driver.api.open(self._index)
             self._api = DCAM(handle)
-            logger.info(f".. {self.info()}")
+            logger.info(f".. {self.info}")
         except RuntimeError as err:
             logger.exception(err)
             raise UnsupportedDeviceError
@@ -43,24 +47,6 @@ class HamamatsuCamera(Camera):
         self._api = None
 
     ##
-
-    def info(self):
-        raw_sn = self.api.get_string(Info.CameraID)
-        params = {
-            "version": self.api.get_string(Info.APIVersion),
-            "vendor": self.api.get_string(Info.Vendor),
-            "model": self.api.get_string(Info.Model),
-            "serial_number": re.match(r"S/N: (\d+)", raw_sn).group(1),
-        }
-
-        # DEBUG
-        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
-            try:
-                print(self.api.get_capability(option))
-            except RuntimeError as err:
-                logger.error(err)
-
-        return DeviceInfo(**params)
 
     @lru_cache(maxsize=1)
     def enumerate_properties(self):
@@ -91,10 +77,10 @@ class HamamatsuCamera(Camera):
                 f"an array property with {attributes['n_elements']} element(s), NOT IMPLEMENTED"
             )
 
+        # convert data type
         prop_type, prop_id = attributes["type"], self._get_property_id(name)
         if prop_type == "mode":
-            # NOTE
-            #   assuming uniform step, simplify the implementation for now...
+            # NOTE assuming uniform step
             index = int(self.api.get_value(prop_id)) - int(attributes["min"])
             return attributes["modes"][index]
         elif prop_type == "long":
@@ -107,7 +93,12 @@ class HamamatsuCamera(Camera):
         if not attributes["writable"]:
             raise TypeError(f'property "{name}" is not writable')
 
-        # TODO
+        prop_type, prop_id = attributes["type"], self._get_property_id(name)
+        if prop_type == "mode":
+            # translate string enum back to index
+            # NOTE assuming uniform step
+            value = attributes["modes"].index(value) + int(attributes["min"])
+        self.api.set_value(prop_id, value)
 
     def _get_property_id(self, name):
         return self._properties[name]
@@ -127,26 +118,15 @@ class HamamatsuCamera(Camera):
     ##
 
     def snap(self):
-        wait = self.api.event
-        wait.open()
-        logger.debug('DCAMWAIT opened')
+        self.configure_acquisition(1)
+        self.start_acquisition()
 
-        self.api.alloc(1)
-        logger.debug('internal buffer ALLOCATED')
-        self.api.start(CaptureType.Snap, wait)
-        logger.debug('acquisition started')
+        frame = self.get_image()
 
-        logger.debug('waiting...')
+        self.stop_acquisition()
+        self.unconfigure_acquisition()
 
-        # TODO retrieve frame
-
-        wait.close()
-        logger.debug('... done')
-
-        self.api.release()
-        logger.debug('internal buffer RELEASED')
-
-        # TODO return frame
+        return frame
 
     def configure_grab(self):
         pass
@@ -154,31 +134,89 @@ class HamamatsuCamera(Camera):
     def grab(self):
         pass
 
-    def sequence(self):
-        pass
+    def sequence(self, n_frames, out=None):
+        self.configure_acquisition(n_frames)
 
     ##
 
-    def configure_acquisition(self):
-        pass
+    def configure_acquisition(self, buf_size, continuous=False):
+        # self.api.alloc(1)
+
+        buffer = []
+        for _ in range(1):
+            buffer.append(np.empty((2048 * 2048,), dtype=np.uint16))
+        self.api.attach(buffer)
+        self._buffer = buffer
+        logger.debug("buffer ALLOCATED")
+
+        self._event = self.api.event
+        self._event.open()
 
     def start_acquisition(self):
-        pass
+        # TODO setup camera status
+
+        self.api.start(CaptureType.Snap)
 
     def get_image(self):
-        pass
+        self._event.start(Event.FrameReady)
+        # return self.api.lock_frame().copy()
+        return self.buffer[0].copy().reshape((2048, 2048))
 
     def stop_acquisition(self):
         pass
 
     def unconfigure_acquisition(self):
-        pass
+        self._event.close()
+        self._event = None
+
+        self.api.release()
+        logger.debug("buffer RELEASED")
+
+    ##
+
+    def get_roi(self):
+        """Set region of interest."""
+
+    def set_roi(self):
+        """Set region of interest."""
+
+    def get_exposure_time(self):
+        # default return value is in s
+        return self.get_property("exposure_time") * 1000
+
+    def set_exposure_time(self, value):
+        # default return value is in s
+        value /= 1000
+        self.set_property("exposure_time", value)
 
     ##
 
     @property
     def api(self):
         return self._api
+
+    @property
+    def busy(self):
+        return False
+
+    @property
+    def info(self):
+        raw_sn = self.api.get_string(Info.CameraID)
+        params = {
+            "version": self.api.get_string(Info.APIVersion),
+            "vendor": self.api.get_string(Info.Vendor),
+            "model": self.api.get_string(Info.Model),
+            "serial_number": re.match(r"S/N: (\d+)", raw_sn).group(1),
+        }
+
+        # DEBUG
+        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
+            try:
+                print(self.api.get_capability(option))
+            except RuntimeError as err:
+                logger.error(err)
+
+        return DeviceInfo(**params)
 
 
 class DCAMAPI(Driver):
