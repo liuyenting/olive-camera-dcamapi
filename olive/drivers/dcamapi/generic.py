@@ -7,7 +7,7 @@ from olive.devices import Camera
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, Info, Capability, NextPropertyOption, CaptureType
+from .wrapper import DCAM, DCAMWAIT, Event, Info, Capability, CaptureType
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -127,8 +127,26 @@ class HamamatsuCamera(Camera):
     ##
 
     def snap(self):
+        wait = self.api.event
+        wait.open()
+        logger.debug('DCAMWAIT opened')
+
         self.api.alloc(1)
-        self.api.start(CaptureType.Snap)
+        logger.debug('internal buffer ALLOCATED')
+        self.api.start(CaptureType.Snap, wait)
+        logger.debug('acquisition started')
+
+        logger.debug('waiting...')
+
+        # TODO retrieve frame
+
+        wait.close()
+        logger.debug('... done')
+
+        self.api.release()
+        logger.debug('internal buffer RELEASED')
+
+        # TODO return frame
 
     def configure_grab(self):
         pass

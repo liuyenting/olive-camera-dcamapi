@@ -4,10 +4,14 @@ from cpython cimport bool as pybool
 from cpython.exc cimport PyErr_SetFromErrnoWithFilenameObject
 cimport cython
 from cython cimport view
+from libc.stdint cimport uintptr_t
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset
 
 from enum import auto, Enum, IntEnum
+
+import numpy as np
+cimport numpy as c_np
 
 from dcamapi cimport *
 from dcamprop cimport *
@@ -52,19 +56,7 @@ class CaptureStatus(IntEnum):
 ##
 ## Properties
 ##
-class NextPropertyOption(IntEnum):
-    ##
-    ## direction flag for dcam_getnextpropertyid(), dcam_querypropertyvalue()
-    ##
-    Prior           = DCAMPROPOPTION.DCAMPROP_OPTION_PRIOR
-    Next            = DCAMPROPOPTION.DCAMPROP_OPTION_NEXT
-    ##
-    ## option for dcam_getnextpropertyid()
-    ##
-    Support         = DCAMPROPOPTION.DCAMPROP_OPTION_SUPPORT
-    Updated         = DCAMPROPOPTION.DCAMPROP_OPTION_UPDATED
-    Volatile        = DCAMPROPOPTION.DCAMPROP_OPTION_VOLATILE
-    ArrayElement    = DCAMPROPOPTION.DCAMPROP_OPTION_ARRAYELEMENT
+# NONE
 
 @cython.final
 cdef class DCAMAPI:
@@ -82,11 +74,11 @@ cdef class DCAMAPI:
 
         Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI, who provides the singleton behavior.
         """
-        cdef DCAMERR err
-
         cdef DCAMAPI_INIT apiinit
         memset(&apiinit, 0, sizeof(apiinit))
         apiinit.size = sizeof(apiinit)
+
+        cdef DCAMERR err
         err = dcamapi_init(&apiinit)
         DCAMAPI.check_error(err, 'dcamapi_init()')
 
@@ -103,12 +95,12 @@ cdef class DCAMAPI:
     ##
 
     cpdef open(self, int32 index):
-        cdef DCAMERR err
-
         cdef DCAMDEV_OPEN devopen
         memset(&devopen, 0, sizeof(devopen))
         devopen.size = sizeof(devopen)
         devopen.index = index
+
+        cdef DCAMERR err
         err = dcamdev_open(&devopen)
         DCAMAPI.check_error(err, 'dcamdev_open()')
 
@@ -149,12 +141,13 @@ cdef class DCAMWAIT:
     cdef HDCAM hdcam
     cdef HDCAMWAIT handle
 
-    cpdef open(self, int32 hdcam):
+    def __cinit__(self, uintptr_t hdcam):
+        self.hdcam = <HDCAM>hdcam
+
+    def open(self):
         """
         Create the HDCAMWAIT handle for a HDCAM member.
         """
-        self.hdcam = <HDCAM>hdcam
-
         cdef DCAMWAIT_OPEN waitopen
         memset(&waitopen, 0, sizeof(waitopen))
         waitopen.size = sizeof(waitopen)
@@ -173,6 +166,9 @@ cdef class DCAMWAIT:
         err = dcamwait_close(self.handle)
         DCAMAPI.check_error(err, 'dcamwait_close()', self.hdcam)
 
+        # ensure it is empty
+        self.handle = <HDCAMWAIT>0
+
     cpdef start(self, int32 event: Event, int32 timeout=1000):
         """
         Start waiting for a specified DCAM event.
@@ -185,11 +181,15 @@ cdef class DCAMWAIT:
         memset(&waitstart, 0, sizeof(waitstart))
         waitstart.size = sizeof(waitstart)
         waitstart.eventmask = event
-        waitstart.timeout = timeout # TODO move this to __cinit__, memory leak
+        waitstart.timeout = timeout
+
+        print('DCAMWAIT_START created')
 
         cdef DCAMERR err
         err = dcamwait_start(self.handle, &waitstart)
         DCAMAPI.check_error(err, 'dcamwait_start()', self.hdcam)
+
+        print('dcamwait_start() returned')
 
     def abort(self):
         """
@@ -414,14 +414,14 @@ cdef class DCAM:
 
     cdef _query_value(self, int32 iprop, double value):
         cdef DCAMERR err
-        err = dcamprop_queryvalue(self.handle, iprop, &value, NextPropertyOption.Next)
+        err = dcamprop_queryvalue(self.handle, iprop, &value, DCAMPROPOPTION.DCAMPROP_OPTION_NEXT)
         DCAMAPI.check_error(err, 'dcamprop_queryvalue()', self.handle)
 
         return value
 
-    cpdef get_next_id(self, int32 iprop=0, int32 option=NextPropertyOption.Support):
+    cpdef get_next_id(self, int32 iprop=0):
         cdef DCAMERR err
-        err = dcamprop_getnextid(self.handle, &iprop, option)
+        err = dcamprop_getnextid(self.handle, &iprop, DCAMPROPOPTION.DCAMPROP_OPTION_SUPPORT)
         DCAMAPI.check_error(err, 'dcamprop_getnextid()', self.handle)
 
         return iprop
@@ -509,6 +509,15 @@ cdef class DCAM:
         err = dcambuf_lockframe(self.handle, &bufframe)
         DCAMAPI.check_error(err, 'dcambuf_lockframe()', self.handle)
 
+        # bufframe.buf, bufframe.rowbytes, bufframe.type, bufframe.width, bufframe.height
+        if bufframe.type == DCAM_PIXELTYPE.DCAM_PIXELTYPE_MONO16:
+            return np.asarray(<c_np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
+        else:
+            raise NotImplementedError(f'unsupported pixel format')
+
+    cdef _lock_uint16_frame(self, const DCAMBUF_FRAME &bufframe):
+        cdef uint16_t
+
     def copy_frame(self):
         pass
 
@@ -521,13 +530,21 @@ cdef class DCAM:
     ##
     ## capturing
     ##
-    def start(self, int32 mode: CaptureType):
+    cpdef start(self, int32 mode: CaptureType, DCAMWAIT event=None):
         """
         Start capturing images.
         """
         cdef DCAMERR err
         err = dcamcap_start(self.handle, mode)
         DCAMAPI.check_error(err, 'dcamcap_start()', self.handle)
+
+        print('dcamcap_start() started')
+
+        if event is not None:
+            print('waiting...')
+            event.start(Event.FrameReady)
+
+        print('start() ended, return')
 
     def stop(self):
         """
@@ -559,3 +576,7 @@ cdef class DCAM:
     ##
     ## capturing
     ##
+
+    @property
+    def event(self):
+        return DCAMWAIT(<uintptr_t>self.handle)

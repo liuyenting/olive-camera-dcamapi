@@ -1,6 +1,7 @@
 from pprint import pprint
 
 import coloredlogs
+import imageio
 
 from olive.drivers.dcamapi import DCAMAPI
 
@@ -22,6 +23,11 @@ try:
     try:
         for prop in camera.enumerate_properties():
             print(f'{prop}: {camera.get_property(prop)}')
+        print()
+
+        print('SNAP')
+        image = camera.snap()
+        print(f'{image.shape}, {image.dtype}')
     finally:
         camera.close()
 finally:
