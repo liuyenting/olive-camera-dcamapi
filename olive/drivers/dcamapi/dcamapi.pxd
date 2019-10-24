@@ -4,331 +4,319 @@ cdef extern from 'lib/dcamapi4.h':
 
     ctypedef void* HDCAM
 
-    ##
-    ## constant declaration
-    ##
-
-    ### ERRORS ###
     enum DCAMERR:
+        ##
         ## status error
-        #: API cannot process in busy state
-        DCAMERR_BUSY				= 0x80000101,
-        #: API requires ready state
-        DCAMERR_NOTREADY			= 0x80000103,
-        #: API requires stable or unstable state
-        DCAMERR_NOTSTABLE			= 0x80000104,
-        #: API requires stable or unstable state
-        DCAMERR_UNSTABLE			= 0x80000105,
-        #: API requires busy state
-        DCAMERR_NOTBUSY				= 0x80000107,
+        ##
+        DCAMERR_BUSY,           # API cannot process in busy state
+        DCAMERR_NOTREADY,       # API requires ready state
+        DCAMERR_NOTSTABLE,      # API requires stable or unstable state
+        DCAMERR_UNSTABLE,       # API requires stable or unstable state
+        DCAMERR_NOTBUSY,        # API requires busy state
 
-        #: some resource is exclusive and already used
-        DCAMERR_EXCLUDED			= 0x80000110,
+        DCAMERR_EXCLUDED,       # some resource is exclusive and already used
 
         #: something happens near cooler
-        DCAMERR_COOLINGTROUBLE		= 0x80000302,
+        DCAMERR_COOLINGTROUBLE,
         #: no trigger when necessary. Some camera supports this error
-        DCAMERR_NOTRIGGER			= 0x80000303,
+        DCAMERR_NOTRIGGER,
         #: camera warns its temperature
-        DCAMERR_TEMPERATURE_TROUBLE = 0x80000304,
+        DCAMERR_TEMPERATURE_TROUBLE,
         #: input too frequent trigger. Some camera supports this error
-        DCAMERR_TOOFREQUENTTRIGGER	= 0x80000305,
+        DCAMERR_TOOFREQUENTTRIGGER,
 
-
+        ##
         ## wait error
+        ##
         #: abort process
-        DCAMERR_ABORT				= 0x80000102,
+        DCAMERR_ABORT,
         #: timeout
-        DCAMERR_TIMEOUT				= 0x80000106,
+        DCAMERR_TIMEOUT,
         #: frame data is lost
-        DCAMERR_LOSTFRAME			= 0x80000301,
+        DCAMERR_LOSTFRAME,
         #: frame is lost but reason is low level driver's bug
-        DCAMERR_MISSINGFRAME_TROUBLE= 0x80000f06,
+        DCAMERR_MISSINGFRAME_TROUBLE,
         #: hpk format data is invalid data
-        DCAMERR_INVALIDIMAGE		= 0x80000321,
+        DCAMERR_INVALIDIMAGE,
 
 
+        ##
         ## initialization error
+        ##
         #: not enough resource except memory
-        DCAMERR_NORESOURCE			= 0x80000201,
+        DCAMERR_NORESOURCE,
         #: not enough memory
-        DCAMERR_NOMEMORY			= 0x80000203,
+        DCAMERR_NOMEMORY,
         #: no sub module
-        DCAMERR_NOMODULE			= 0x80000204,
+        DCAMERR_NOMODULE,
         #: no driver
-        DCAMERR_NODRIVER			= 0x80000205,
+        DCAMERR_NODRIVER,
         #: no camera
-        DCAMERR_NOCAMERA			= 0x80000206,
+        DCAMERR_NOCAMERA,
         #: no grabber
-        DCAMERR_NOGRABBER			= 0x80000207,
+        DCAMERR_NOGRABBER,
         #: no combination on registry
-        DCAMERR_NOCOMBINATION		= 0x80000208,
+        DCAMERR_NOCOMBINATION,
 
 
         #: DEPRECATED
-        DCAMERR_FAILOPEN			= 0x80001001,
+        DCAMERR_FAILOPEN,
         #: dcam_init() found invalid module
-        DCAMERR_INVALIDMODULE		= 0x80000211,
+        DCAMERR_INVALIDMODULE,
         #: invalid serial port
-        DCAMERR_INVALIDCOMMPORT		= 0x80000212,
+        DCAMERR_INVALIDCOMMPORT,
         #: the bus or driver are not available
-        DCAMERR_FAILOPENBUS			= 0x81001001,
+        DCAMERR_FAILOPENBUS,
         #: camera report error during opening
-        DCAMERR_FAILOPENCAMERA		= 0x82001001,
+        DCAMERR_FAILOPENCAMERA,
         #: need to update frame grabber firmware to use the camera
-        DCAMERR_FRAMEGRABBER_NEEDS_FIRMWAREUPDATE = 0x80001002,
+        DCAMERR_FRAMEGRABBER_NEEDS_FIRMWAREUPDATE,
 
 
+        ##
         ## calling error
+        ##
         #: invalid camera
-        DCAMERR_INVALIDCAMERA		= 0x80000806,
+        DCAMERR_INVALIDCAMERA,
         #: invalid camera handle
-        DCAMERR_INVALIDHANDLE		= 0x80000807,
+        DCAMERR_INVALIDHANDLE,
         #: invalid parameter
-        DCAMERR_INVALIDPARAM		= 0x80000808,
+        DCAMERR_INVALIDPARAM,
         #: invalid property value
-        DCAMERR_INVALIDVALUE		= 0x80000821,
+        DCAMERR_INVALIDVALUE,
         #: value is out of range
-        DCAMERR_OUTOFRANGE			= 0x80000822,
+        DCAMERR_OUTOFRANGE,
         #: the property is not writable
-        DCAMERR_NOTWRITABLE			= 0x80000823,
+        DCAMERR_NOTWRITABLE,
         #: the property is not readable
-        DCAMERR_NOTREADABLE			= 0x80000824,
+        DCAMERR_NOTREADABLE,
         #: the property id is invalid
-        DCAMERR_INVALIDPROPERTYID	= 0x80000825,
+        DCAMERR_INVALIDPROPERTYID,
         #: old API cannot present the value because only new API need to be used
-        DCAMERR_NEWAPIREQUIRED		= 0x80000826,
+        DCAMERR_NEWAPIREQUIRED,
         #: this error happens DCAM get error code from camera unexpectedly
-        DCAMERR_WRONGHANDSHAKE		= 0x80000827,
+        DCAMERR_WRONGHANDSHAKE,
         #: there is no altenative or influence id, or no more property id
-        DCAMERR_NOPROPERTY			= 0x80000828,
+        DCAMERR_NOPROPERTY,
         #: the property id specifies channel but channel is invalid
-        DCAMERR_INVALIDCHANNEL		= 0x80000829,
+        DCAMERR_INVALIDCHANNEL,
         #: the property id specifies channel but channel is invalid
-        DCAMERR_INVALIDVIEW			= 0x8000082a,
+        DCAMERR_INVALIDVIEW,
         #: the combination of subarray values are invalid
-        DCAMERR_INVALIDSUBARRAY		= 0x8000082b,
+        DCAMERR_INVALIDSUBARRAY,
         #: the property cannot access during this DCAM STATUS
-        DCAMERR_ACCESSDENY			= 0x8000082c,
+        DCAMERR_ACCESSDENY,
         #: the property does not have value text
-        DCAMERR_NOVALUETEXT			= 0x8000082d,
+        DCAMERR_NOVALUETEXT,
         #: at least one property value is wrong
-        DCAMERR_WRONGPROPERTYVALUE	= 0x8000082e,
+        DCAMERR_WRONGPROPERTYVALUE,
         #: the paired camera does not have same parameter
-        DCAMERR_DISHARMONY			= 0x80000830,
+        DCAMERR_DISHARMONY,
         #: framebundle mode should be OFF under current property settings
-        DCAMERR_FRAMEBUNDLESHOULDBEOFF=0x80000832,
+        DCAMERR_FRAMEBUNDLESHOULDBEOFF,
         #: the frame index is invalid
-        DCAMERR_INVALIDFRAMEINDEX	= 0x80000833,
+        DCAMERR_INVALIDFRAMEINDEX,
         #: the session index is invalid
-        DCAMERR_INVALIDSESSIONINDEX	= 0x80000834,
+        DCAMERR_INVALIDSESSIONINDEX,
         #: not take the dark and shading correction data yet
-        DCAMERR_NOCORRECTIONDATA	= 0x80000838,
+        DCAMERR_NOCORRECTIONDATA,
         #: each channel has own property value so can't return overall property value
-        DCAMERR_CHANNELDEPENDENTVALUE= 0x80000839,
+        DCAMERR_CHANNELDEPENDENTVALUE,
         #: each view has own property value so can't return overall property value
-        DCAMERR_VIEWDEPENDENTVALUE	= 0x8000083a,
+        DCAMERR_VIEWDEPENDENTVALUE,
         #: the setting of properties are invalid on sampling calibration data
-        DCAMERR_INVALIDCALIBSETTING	= 0x8000083e,
+        DCAMERR_INVALIDCALIBSETTING,
         #: system memory size is too small
-        DCAMERR_LESSSYSTEMMEMORY	= 0x8000083f,
+        DCAMERR_LESSSYSTEMMEMORY,
         #: camera does not support the function or property with current settings
-        DCAMERR_NOTSUPPORT			= 0x80000f03,
+        DCAMERR_NOTSUPPORT,
 
-        ## camera or bus trouble ##
+        ##
+        ## camera or bus trouble
+        ##
         #: failed to read data from camera
-        DCAMERR_FAILREADCAMERA		= 0x83001002,
+        DCAMERR_FAILREADCAMERA,
         #: failed to write data to the camera
-        DCAMERR_FAILWRITECAMERA		= 0x83001003,
+        DCAMERR_FAILWRITECAMERA,
         #: conflict the com port name user set
-        DCAMERR_CONFLICTCOMMPORT	= 0x83001004,
+        DCAMERR_CONFLICTCOMMPORT,
         #: optics part is unplugged so please check it
-        DCAMERR_OPTICS_UNPLUGGED	= 0x83001005,
+        DCAMERR_OPTICS_UNPLUGGED,
         #: fail calibration
-        DCAMERR_FAILCALIBRATION		= 0x83001006,
+        DCAMERR_FAILCALIBRATION,
 
         ## 0x84000100 - 0x840001FF, DCAMERR_INVALIDMEMBER_x ##
-        DCAMERR_INVALIDMEMBER_3		= 0x84000103,##		3th member variable is invalid value	##
-        DCAMERR_INVALIDMEMBER_5		= 0x84000105,##		5th member variable is invalid value	##
-        DCAMERR_INVALIDMEMBER_7		= 0x84000107,##		7th member variable is invalid value	##
-        DCAMERR_INVALIDMEMBER_8		= 0x84000108,##		7th member variable is invalid value	##
-        DCAMERR_INVALIDMEMBER_9		= 0x84000109,##		9th member variable is invalid value	##
-        DCAMERR_FAILEDOPENRECFILE	= 0x84001001,##		DCAMREC failed to open the file	##
-        DCAMERR_INVALIDRECHANDLE	= 0x84001002,##		DCAMREC is invalid handle	##
-        DCAMERR_FAILEDWRITEDATA		= 0x84001003,##		DCAMREC failed to write the data	##
-        DCAMERR_FAILEDREADDATA		= 0x84001004,##		DCAMREC failed to read the data	##
-        DCAMERR_NOWRECORDING		= 0x84001005,##		DCAMREC is recording data now	##
-        DCAMERR_WRITEFULL			= 0x84001006,##		DCAMREC writes full frame of the session	##
-        DCAMERR_ALREADYOCCUPIED		= 0x84001007,##		DCAMREC handle is already occupied by other HDCAM	##
-        DCAMERR_TOOLARGEUSERDATASIZE= 0x84001008,##		DCAMREC is set the large value to user data size	##
-        DCAMERR_NOIMAGE				= 0x84001804,##		not stored image in buffer on bufrecord ##
+        DCAMERR_INVALIDMEMBER_3,##		3th member variable is invalid value	##
+        DCAMERR_INVALIDMEMBER_5,##		5th member variable is invalid value	##
+        DCAMERR_INVALIDMEMBER_7,##		7th member variable is invalid value	##
+        DCAMERR_INVALIDMEMBER_8,##		7th member variable is invalid value	##
+        DCAMERR_INVALIDMEMBER_9,##		9th member variable is invalid value	##
+        DCAMERR_FAILEDOPENRECFILE,##		DCAMREC failed to open the file	##
+        DCAMERR_INVALIDRECHANDLE,##		DCAMREC is invalid handle	##
+        DCAMERR_FAILEDWRITEDATA,##		DCAMREC failed to write the data	##
+        DCAMERR_FAILEDREADDATA,##		DCAMREC failed to read the data	##
+        DCAMERR_NOWRECORDING,##		DCAMREC is recording data now	##
+        DCAMERR_WRITEFULL,##		DCAMREC writes full frame of the session	##
+        DCAMERR_ALREADYOCCUPIED,##		DCAMREC handle is already occupied by other HDCAM	##
+        DCAMERR_TOOLARGEUSERDATASIZE,##		DCAMREC is set the large value to user data size	##
+        DCAMERR_NOIMAGE,##		not stored image in buffer on bufrecord ##
         #: DCAMWAIT handle is invalid
-        DCAMERR_INVALIDWAITHANDLE	= 0x84002001,
+        DCAMERR_INVALIDWAITHANDLE,
         #: DCAM module vesion is older than the version that the camera requests
-        DCAMERR_NEWRUNTIMEREQUIRED	= 0x84002002,
+        DCAMERR_NEWRUNTIMEREQUIRED,
         #: camera returns an error on setting version
-        DCAMERR_VERSIONMISMATCH		= 0x84002003,
+        DCAMERR_VERSIONMISMATCH,
         #: camera is running in factory mode
-        DCAMERR_RUNAS_FACTORYMODE	= 0x84002004,
+        DCAMERR_RUNAS_FACTORYMODE,
         #: unknown image header signature
-        DCAMERR_IMAGE_UNKNOWNSIGNATURE	= 0x84003001,
+        DCAMERR_IMAGE_UNKNOWNSIGNATURE,
         #: version of image header is newer than current DCAM can support
-        DCAMERR_IMAGE_NEWRUNTIMEREQUIRED= 0x84003002,
+        DCAMERR_IMAGE_NEWRUNTIMEREQUIRED,
         #: image header indicates error
-        DCAMERR_IMAGE_ERRORSTATUSEXIST	= 0x84003003,
+        DCAMERR_IMAGE_ERRORSTATUSEXIST,
         #: image header is corrupted
-        DCAMERR_IMAGE_HEADERCORRUPTED	= 0x84004004,
+        DCAMERR_IMAGE_HEADERCORRUPTED,
         #: image content is corrupted
-        DCAMERR_IMAGE_BROKENCONTENT		= 0x84004005,
+        DCAMERR_IMAGE_BROKENCONTENT,
 
-        ## calling error for DCAM-API 2.1.3 ##
-        #: unknown message id
-        DCAMERR_UNKNOWNMSGID		= 0x80000801,
-        #: unknown string id
-        DCAMERR_UNKNOWNSTRID		= 0x80000802,
-        #: unknown parameter id
-        DCAMERR_UNKNOWNPARAMID		= 0x80000803,
-        #: unknown bitmap bits type
-        DCAMERR_UNKNOWNBITSTYPE		= 0x80000804,
-        #: unknown frame data type
-        DCAMERR_UNKNOWNDATATYPE		= 0x80000805,
-
-        ## internal error ##
+        ##
+        ## internal error
+        ##
         #: no error, nothing have done
-        DCAMERR_NONE				= 0,
+        DCAMERR_NONE,
         #: installation progress
-        DCAMERR_INSTALLATIONINPROGRESS=0x80000f00,
+        DCAMERR_INSTALLATIONINPROGRESS,
         #: internal error
-        DCAMERR_UNREACH				= 0x80000f01,
+        DCAMERR_UNREACH,
         #: calling after process terminated
-        DCAMERR_UNLOADED			= 0x80000f04,
+        DCAMERR_UNLOADED,
 
-        DCAMERR_THRUADAPTER			= 0x80000f05,
+        DCAMERR_THRUADAPTER,
         #: HDCAM lost connection to camera
-        DCAMERR_NOCONNECTION		= 0x80000f07,
+        DCAMERR_NOCONNECTION,
 
         #: not implement
-        DCAMERR_NOTIMPLEMENT		= 0x80000f02,
+        DCAMERR_NOTIMPLEMENT,
 
         #: DCAMAPI_INIT::initoptionbytes is invalid
-        DCAMERR_APIINIT_INITOPTIONBYTES	= 0xa4010003,
+        DCAMERR_APIINIT_INITOPTIONBYTES,
         #: DCAMAPI_INIT::initoption is invalid
-        DCAMERR_APIINIT_INITOPTION		= 0xa4010004,
+        DCAMERR_APIINIT_INITOPTION,
 
-        DCAMERR_INITOPTION_COLLISION_BASE=0xa401C000,
-        DCAMERR_INITOPTION_COLLISION_MAX= 0xa401FFFF,
+        DCAMERR_INITOPTION_COLLISION_BASE,
+        DCAMERR_INITOPTION_COLLISION_MAX,
 
         ## Between DCAMERR_INITOPTION_COLLISION_BASE and DCAMERR_INITOPTION_COLLISION_MAX means there is collision with initoption in DCAMAPI_INIT. ##
         ## The value "(error code) - DCAMERR_INITOPTION_COLLISION_BASE" indicates the index which second INITOPTION group happens. ##
 
-        ## success ##
+        ##
+        ## success
+        ##
         #: no error, general success code, app should check the value is positive
-        DCAMERR_SUCCESS				= 1
+        DCAMERR_SUCCESS
 
 
     enum DCAMBUF_FRAME_OPTION:
-        DCAMBUF_FRAME_OPTION__VIEW_ALL		= 0x00000000,
-        DCAMBUF_FRAME_OPTION__VIEW_1		= 0x00100000,
-        DCAMBUF_FRAME_OPTION__VIEW_2		= 0x00200000,
-        DCAMBUF_FRAME_OPTION__VIEW_3		= 0x00300000,
-        DCAMBUF_FRAME_OPTION__VIEW_4		= 0x00400000,
+        DCAMBUF_FRAME_OPTION__VIEW_ALL,
+        DCAMBUF_FRAME_OPTION__VIEW_1,
+        DCAMBUF_FRAME_OPTION__VIEW_2,
+        DCAMBUF_FRAME_OPTION__VIEW_3,
+        DCAMBUF_FRAME_OPTION__VIEW_4,
 
-        DCAMBUF_FRAME_OPTION__PROC_HIGHCONTRAST	= 0x00000010,
+        DCAMBUF_FRAME_OPTION__PROC_HIGHCONTRAST,
 
-        DCAMBUF_FRAME_OPTION__VIEW__STEP	= 0x00100000,
-        DCAMBUF_FRAME_OPTION__VIEW__MASK	= 0x00F00000,
-        DCAMBUF_FRAME_OPTION__PROC__MASK	= 0x00000FF0,
+        DCAMBUF_FRAME_OPTION__VIEW__STEP,
+        DCAMBUF_FRAME_OPTION__VIEW__MASK,
+        DCAMBUF_FRAME_OPTION__PROC__MASK
 
     enum DCAM_PIXELTYPE:
-        DCAM_PIXELTYPE_MONO8		= 0x00000001,
-        DCAM_PIXELTYPE_MONO16		= 0x00000002,
-        DCAM_PIXELTYPE_MONO12		= 0x00000003,
-        DCAM_PIXELTYPE_MONO12P		= 0x00000005,
+        DCAM_PIXELTYPE_MONO8,
+        DCAM_PIXELTYPE_MONO16,
+        DCAM_PIXELTYPE_MONO12,
+        DCAM_PIXELTYPE_MONO12P,
 
-        DCAM_PIXELTYPE_RGB24		= 0x00000021,
-        DCAM_PIXELTYPE_RGB48		= 0x00000022,
-        DCAM_PIXELTYPE_BGR24		= 0x00000029,
-        DCAM_PIXELTYPE_BGR48		= 0x0000002a,
+        DCAM_PIXELTYPE_RGB24,
+        DCAM_PIXELTYPE_RGB48,
+        DCAM_PIXELTYPE_BGR24,
+        DCAM_PIXELTYPE_BGR48,
 
-        DCAM_PIXELTYPE_NONE			= 0x00000000
+        DCAM_PIXELTYPE_NONE
 
 
     enum DCAMBUF_ATTACHKIND:
         #: copy timestamp to pointer array of user buffer
-        DCAMBUF_ATTACHKIND_TIMESTAMP	= 1,
+        DCAMBUF_ATTACHKIND_TIMESTAMP,
         #: copy framestamp to pointer array of user buffer
-        DCAMBUF_ATTACHKIND_FRAMESTAMP	= 2,
+        DCAMBUF_ATTACHKIND_FRAMESTAMP,
 
         #: copy timestamp to user buffer
-        DCAMBUF_ATTACHKIND_PRIMARY_TIMESTAMP	= 3,
+        DCAMBUF_ATTACHKIND_PRIMARY_TIMESTAMP,
         #: copy framestamp to user buffer
-        DCAMBUF_ATTACHKIND_PRIMARY_FRAMESTAMP	= 4,
+        DCAMBUF_ATTACHKIND_PRIMARY_FRAMESTAMP,
 
         #: copy image to user buffer
-        DCAMBUF_ATTACHKIND_FRAME		= 0
+        DCAMBUF_ATTACHKIND_FRAME
 
 
     enum DCAMCAP_TRANSFERKIND:
-        DCAMCAP_TRANSFERKIND_FRAME		= 0
+        DCAMCAP_TRANSFERKIND_FRAME
 
     ### STATUS ###
     enum DCAMCAP_STATUS:
-        DCAMCAP_STATUS_ERROR				= 0x0000,
+        DCAMCAP_STATUS_ERROR,
         #: now capturing
-        DCAMCAP_STATUS_BUSY					= 0x0001,
+        DCAMCAP_STATUS_BUSY,
         #: not capturing, but ready to start capturing
-        DCAMCAP_STATUS_READY				= 0x0002,
+        DCAMCAP_STATUS_READY,
         #: device is not prepared for immediate capturing
-        DCAMCAP_STATUS_STABLE				= 0x0003,
+        DCAMCAP_STATUS_STABLE,
         #: device is not fit for capture
-        DCAMCAP_STATUS_UNSTABLE				= 0x0004
+        DCAMCAP_STATUS_UNSTABLE
 
     enum DCAMWAIT_EVENT:
-        DCAMWAIT_CAPEVENT_TRANSFERRED		= 0x0001,
-        DCAMWAIT_CAPEVENT_FRAMEREADY		= 0x0002,
-        DCAMWAIT_CAPEVENT_CYCLEEND			= 0x0004,
-        DCAMWAIT_CAPEVENT_EXPOSUREEND		= 0x0008,
-        DCAMWAIT_CAPEVENT_STOPPED			= 0x0010,
+        DCAMWAIT_CAPEVENT_TRANSFERRED,
+        DCAMWAIT_CAPEVENT_FRAMEREADY,
+        DCAMWAIT_CAPEVENT_CYCLEEND,
+        DCAMWAIT_CAPEVENT_EXPOSUREEND,
+        DCAMWAIT_CAPEVENT_STOPPED
 
     ### START ###
     enum DCAMCAP_START:
-        #: continuously capturing images
-        DCAMCAP_START_SEQUENCE				= -1,
-        #: captures images until the buffer is filled completely then stop
-        DCAMCAP_START_SNAP					= 0
+        DCAMCAP_START_SEQUENCE,
+        DCAMCAP_START_SNAP
 
     ### STRING ID ###
     enum DCAM_IDSTR:
         #: bus information
-        DCAM_IDSTR_BUS						= 0x04000101,
+        DCAM_IDSTR_BUS,
         #: camera ID (serial number or bus specific string)
-        DCAM_IDSTR_CAMERAID					= 0x04000102,
+        DCAM_IDSTR_CAMERAID,
         #: always "Hamamatsu"
-        DCAM_IDSTR_VENDOR					= 0x04000103,
+        DCAM_IDSTR_VENDOR,
         #: camera model name
-        DCAM_IDSTR_MODEL					= 0x04000104,
+        DCAM_IDSTR_MODEL,
         #: version of the firmware or hardware
-        DCAM_IDSTR_CAMERAVERSION			= 0x04000105,
+        DCAM_IDSTR_CAMERAVERSION,
         #: version of the low level driver which DCAM is using
-        DCAM_IDSTR_DRIVERVERSION			= 0x04000106,
+        DCAM_IDSTR_DRIVERVERSION,
         #: version of the DCAM module
-        DCAM_IDSTR_MODULEVERSION			= 0x04000107,
+        DCAM_IDSTR_MODULEVERSION,
         #: version of DCAM-API specification
-        DCAM_IDSTR_DCAMAPIVERSION			= 0x04000108,
+        DCAM_IDSTR_DCAMAPIVERSION,
 
         #: camera series name (nickname)
-        DCAM_IDSTR_CAMERA_SERIESNAME		= 0x0400012c,
+        DCAM_IDSTR_CAMERA_SERIESNAME,
 
         #: optical block model name
-        DCAM_IDSTR_OPTICALBLOCK_MODEL		= 0x04001101,
+        DCAM_IDSTR_OPTICALBLOCK_MODEL,
         #: optical block serial number
-        DCAM_IDSTR_OPTICALBLOCK_ID			= 0x04001102,
+        DCAM_IDSTR_OPTICALBLOCK_ID,
         #: description of optical block
-        DCAM_IDSTR_OPTICALBLOCK_DESCRIPTION	= 0x04001103,
+        DCAM_IDSTR_OPTICALBLOCK_DESCRIPTION,
         #: description of optical block channel 1
-        DCAM_IDSTR_OPTICALBLOCK_CHANNEL_1	= 0x04001104,
+        DCAM_IDSTR_OPTICALBLOCK_CHANNEL_1,
         #: description of optical block channel 2
-        DCAM_IDSTR_OPTICALBLOCK_CHANNEL_2	= 0x04001105
+        DCAM_IDSTR_OPTICALBLOCK_CHANNEL_2
 
 
     ### WAIT TIMEOUT ###
@@ -336,70 +324,70 @@ cdef extern from 'lib/dcamapi4.h':
     ### METADATA KIND ###
     enum DCAMBUF_METADATAKIND:
         #: captured timing
-        DCAMBUF_METADATAKIND_TIMESTAMPS			= 0x00010000,
+        DCAMBUF_METADATAKIND_TIMESTAMPS,
         #: frame index
-        DCAMBUF_METADATAKIND_FRAMESTAMPS		= 0x00020000
+        DCAMBUF_METADATAKIND_FRAMESTAMPS
 
     ### DCAM DATA {OPTION / (KIND) / (ATTRIBUTE) / (REGION TYPE) / (LUT TYPE)} ###
     enum DCAMDATA_KIND:
-        DCAMDATA_KIND__REGION					= 0x00000001,
-        DCAMDATA_KIND__LUT						= 0x00000002,
-        DCAMDATA_KIND__NONE						= 0x00000000
+        DCAMDATA_KIND__REGION,
+        DCAMDATA_KIND__LUT,
+        DCAMDATA_KIND__NONE
 
     enum DCAMDATA_ATTRIBUTE:
-        DCAMDATA_ATTRIBUTE__ACCESSREADY			= 0x01000000,
-        DCAMDATA_ATTRIBUTE__ACCESSBUSY			= 0x02000000,
+        DCAMDATA_ATTRIBUTE__ACCESSREADY,
+        DCAMDATA_ATTRIBUTE__ACCESSBUSY,
 
-        DCAMDATA_ATTRIBUTE__HASVIEW				= 0x10000000,
+        DCAMDATA_ATTRIBUTE__HASVIEW,
 
-        DCAMDATA_ATTRIBUTE__MASK				= 0xFF000000
+        DCAMDATA_ATTRIBUTE__MASK
 
     enum DCAMDATA_REGIONTYPE:
-        DCAMDATA_REGIONTYPE__BYTEMASK			= 0x00000001,
-        DCAMDATA_REGIONTYPE__RECT16ARRAY		= 0x00000002,
+        DCAMDATA_REGIONTYPE__BYTEMASK,
+        DCAMDATA_REGIONTYPE__RECT16ARRAY,
 
-        DCAMDATA_REGIONTYPE__ACCESSREADY		= DCAMDATA_ATTRIBUTE__ACCESSREADY,
-        DCAMDATA_REGIONTYPE__ACCESSBUSY			= DCAMDATA_ATTRIBUTE__ACCESSBUSY,
-        DCAMDATA_REGIONTYPE__HASVIEW			= DCAMDATA_ATTRIBUTE__HASVIEW,
+        DCAMDATA_REGIONTYPE__ACCESSREADY,
+        DCAMDATA_REGIONTYPE__ACCESSBUSY,
+        DCAMDATA_REGIONTYPE__HASVIEW,
 
-        DCAMDATA_REGIONTYPE__BODYMASK			= 0x00FFFFFF,
-        DCAMDATA_REGIONTYPE__ATTRIBUTEMASK		= DCAMDATA_ATTRIBUTE__MASK,
+        DCAMDATA_REGIONTYPE__BODYMASK,
+        DCAMDATA_REGIONTYPE__ATTRIBUTEMASK,
 
-        DCAMDATA_REGIONTYPE__NONE				= 0x00000000
+        DCAMDATA_REGIONTYPE__NONE
 
     enum DCAMDATA_LUTTYPE:
-        DCAMDATA_LUTTYPE__SEGMENTED_LINEAR		= 0x00000001,
-        DCAMDATA_LUTTYPE__MONO16				= 0x00000002,
+        DCAMDATA_LUTTYPE__SEGMENTED_LINEAR,
+        DCAMDATA_LUTTYPE__MONO16,
 
-        DCAMDATA_LUTTYPE__ACCESSREADY			= DCAMDATA_ATTRIBUTE__ACCESSREADY,
-        DCAMDATA_LUTTYPE__ACCESSBUSY			= DCAMDATA_ATTRIBUTE__ACCESSBUSY,
+        DCAMDATA_LUTTYPE__ACCESSREADY,
+        DCAMDATA_LUTTYPE__ACCESSBUSY,
 
-        DCAMDATA_LUTTYPE__BODYMASK				= 0x00FFFFFF,
-        DCAMDATA_LUTTYPE__ATTRIBUTEMASK			= DCAMDATA_ATTRIBUTE__MASK,
+        DCAMDATA_LUTTYPE__BODYMASK,
+        DCAMDATA_LUTTYPE__ATTRIBUTEMASK,
 
-        DCAMDATA_LUTTYPE__NONE					= 0x00000000
+        DCAMDATA_LUTTYPE__NONE
 
     ### BUFFER PROC TYPE ###
     enum DCAMBUF_PROCTYPE:
-        DCAMBUF_PROCTYPE__HIGHCONTRASTMODE  = DCAMBUF_FRAME_OPTION__PROC_HIGHCONTRAST,
-        DCAMBUF_PROCTYPE__NONE              = 0x00000000
+        DCAMBUF_PROCTYPE__HIGHCONTRASTMODE,
+        DCAMBUF_PROCTYPE__NONE
 
     ### CODE PAGE ###
     ### CAPABILITY ###
     enum DCAMDEV_CAPDOMAIN:
-        DCAMDEV_CAPDOMAIN__DCAMDATA			= 0x00000001,
-        DCAMDEV_CAPDOMAIN__FRAMEOPTION		= 0x00000002,
-        DCAMDEV_CAPDOMAIN__FUNCTION         = 0x00000000
+        DCAMDEV_CAPDOMAIN__DCAMDATA,
+        DCAMDEV_CAPDOMAIN__FRAMEOPTION,
+        DCAMDEV_CAPDOMAIN__FUNCTION
 
     enum DCAMDEV_CAPFLAG:
-        DCAMDEV_CAPFLAG_FRAMESTAMP			= 0x00000001,
-        DCAMDEV_CAPFLAG_TIMESTAMP		    = 0x00000002,
-        DCAMDEV_CAPFLAG_CAMERASTAMP         = 0x00000004,
-        DCAMDEV_CAPFLAG_NONE                = 0x00000000
+        DCAMDEV_CAPFLAG_FRAMESTAMP,
+        DCAMDEV_CAPFLAG_TIMESTAMP,
+        DCAMDEV_CAPFLAG_CAMERASTAMP,
+        DCAMDEV_CAPFLAG_NONE
 
     enum DCAMREC_STATUSFLAG:
-        DCAMREC_STATUSFLAG_NONE			    = 0x00000000,
-        DCAMREC_STATUSFLAG_RECORDING		= 0x00000001
+        DCAMREC_STATUSFLAG_NONE,
+        DCAMREC_STATUSFLAG_RECORDING
 
     ##
     ## constant declaration

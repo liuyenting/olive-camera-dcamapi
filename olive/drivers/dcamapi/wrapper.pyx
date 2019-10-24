@@ -6,14 +6,14 @@ from cpython.exc cimport PyErr_SetFromErrnoWithFilenameObject
 cimport cython
 from cython cimport view
 from cython.view cimport memoryview
-from libc.stdint cimport uintptr_t
+from libc.stdint cimport uint8_t, uintptr_t
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset, strcmp
 
 from enum import auto, Enum, IntEnum
 
 import numpy as np
-cimport numpy as cnp
+cimport numpy as np
 
 from dcamapi cimport *
 from dcamprop cimport *
@@ -64,6 +64,12 @@ class Unit(IntEnum):
     Degree          = DCAMPROPUNIT.DCAMPROP_UNIT_DEGREE
     MicroMeter      = DCAMPROPUNIT.DCAMPROP_UNIT_MICROMETER
     Unitless        = DCAMPROPUNIT.DCAMPROP_UNIT_NONE
+
+class SubArray(IntEnum):
+    HPos            = DCAMIDPROP.DCAM_IDPROP_SUBARRAYHPOS
+    HSize           = DCAMIDPROP.DCAM_IDPROP_SUBARRAYHSIZE
+    VPos            = DCAMIDPROP.DCAM_IDPROP_SUBARRAYVPOS
+    VSize           = DCAMIDPROP.DCAM_IDPROP_SUBARRAYVSIZE
 
 @cython.final
 cdef class DCAMAPI:
@@ -190,13 +196,9 @@ cdef class DCAMWAIT:
         waitstart.eventmask = event
         waitstart.timeout = timeout
 
-        print('DCAMWAIT_START created')
-
         cdef DCAMERR err
         err = dcamwait_start(self.handle, &waitstart)
         DCAMAPI.check_error(err, 'dcamwait_start()', self.hdcam)
-
-        print('dcamwait_start() returned')
 
     def abort(self):
         """
@@ -483,12 +485,16 @@ cdef class DCAM:
         """
         Attach external image buffers for image acquisition.
         """
-        cdef int nframes = len(buffer)
+        cdef int nframes = <int>len(buffer)
         if nframes < 1:
             raise RuntimeError('number of frames has to be >= 1')
 
-        # build pointer array to memoryviews
-        self.buffer = view.array(shape=(nframes, ), itemsize=sizeof(uintptr_t), format='P')
+        # build pointer array
+        self.buffer = np.empty(nframes, dtype=np.uintp)
+        cdef uint8_t[::1] frame
+        for i in range(nframes):
+            frame = buffer[i].get_obj()
+            self.buffer[i] = <uintptr_t>&frame[0]
 
         cdef DCAMBUF_ATTACH bufattach
         memset(&bufattach, 0, sizeof(bufattach))
@@ -501,8 +507,6 @@ cdef class DCAM:
         err = dcambuf_attach(self.handle, &bufattach)
         DCAMAPI.check_error(err, 'dcambuf_attach()', self.handle)
 
-        print('dcambuf_attach() returned')
-
     def release(self):
         """
         Releases capturing buffer allocated by dcambuf_alloc() or assigned by dcambuf_attached().
@@ -510,6 +514,8 @@ cdef class DCAM:
         cdef DCAMERR err
         err = dcambuf_release(self.handle)
         DCAMAPI.check_error(err, 'dcambuf_release()', self.handle)
+
+        self.buffer = None
 
     cpdef lock_frame(self, int32 iframe=-1):
         """
@@ -529,7 +535,7 @@ cdef class DCAM:
 
         # bufframe.buf, bufframe.rowbytes, bufframe.type, bufframe.width, bufframe.height
         if bufframe.type == DCAM_PIXELTYPE.DCAM_PIXELTYPE_MONO16:
-            return np.asarray(<cnp.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
+            return np.asarray(<np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
         else:
             raise NotImplementedError(f'unsupported pixel format')
 
@@ -545,7 +551,7 @@ cdef class DCAM:
     ##
     ## capturing
     ##
-    cpdef start(self, int32 mode: CaptureType):
+    cpdef start(self, int32 mode):
         """
         Start capturing images.
         """

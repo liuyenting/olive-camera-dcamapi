@@ -1,5 +1,7 @@
+import ctypes
 from functools import lru_cache
 import logging
+from multiprocessing import Array
 import re
 
 import numpy as np
@@ -9,7 +11,7 @@ from olive.devices import Camera
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, Event, Info, Capability, CaptureType
+from .wrapper import DCAM, Event, Info, Capability, CaptureType, SubArray
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -42,78 +44,27 @@ class HamamatsuCamera(Camera):
         handle = self.driver.api.open(self._index)
         self._api = DCAM(handle)
 
+        # probe the camera
+        self._enumerate_camera_properties()
+
     def close(self):
         self.driver.api.close(self.api)
         self._api = None
 
     ##
 
-    @lru_cache(maxsize=1)
     def enumerate_properties(self):
-        properties = dict()
+        return ("detector_pixel_num", "pixel_size")
 
-        curr_id, next_id = -1, self.api.get_next_id()
-        while curr_id != next_id:
-            try:
-                curr_id, next_id = next_id, self.api.get_next_id(next_id)
-            except RuntimeError:
-                # no more supported property id
-                break
+    def _get_detector_pixel_num(self):
+        nx = self._get_camera_property("image_detector_pixel_num_horz")
+        ny = self._get_camera_property("image_detector_pixel_num_vert")
+        return ny, nx
 
-            name = self.api.get_name(curr_id)
-            name = name.lower().replace(" ", "_")
-            properties[name] = curr_id
-
-        self._properties = properties
-        return tuple(properties.keys())
-
-    def get_property(self, name):
-        attributes = self._get_property_attributes(name)
-        if not attributes["readable"]:
-            raise TypeError(f'property "{name}" is not readable')
-
-        if attributes["is_array"]:
-            logger.warning(
-                f"an array property with {attributes['n_elements']} element(s), NOT IMPLEMENTED"
-            )
-
-        # convert data type
-        prop_type, prop_id = attributes["type"], self._get_property_id(name)
-        if prop_type == "mode":
-            # NOTE assuming uniform step
-            index = int(self.api.get_value(prop_id)) - int(attributes["min"])
-            return attributes["modes"][index]
-        elif prop_type == "long":
-            return int(self.api.get_value(prop_id))
-        elif prop_type == "real":
-            return float(self.api.get_value(prop_id))
-
-    def set_property(self, name, value):
-        attributes = self._get_property_attributes(name)
-        if not attributes["writable"]:
-            raise TypeError(f'property "{name}" is not writable')
-
-        prop_type, prop_id = attributes["type"], self._get_property_id(name)
-        if prop_type == "mode":
-            # translate string enum back to index
-            # NOTE assuming uniform step
-            value = attributes["modes"].index(value) + int(attributes["min"])
-        self.api.set_value(prop_id, value)
-
-    def _get_property_id(self, name):
-        return self._properties[name]
-
-    @lru_cache(maxsize=16)
-    def _get_property_attributes(self, name):
-        """
-        Attributes indicates the characteristic of the property.
-
-        Args:
-            name (str): name of the property
-        """
-        logger.debug(f"attributes of {name} cache missed")
-        prop_id = self._get_property_id(name)
-        return self.api.get_attr(prop_id)
+    def _get_pixel_size(self):
+        px = self._get_camera_property("image_detector_pixel_width")
+        py = self._get_camera_property("image_detector_pixel_height")
+        return py, px
 
     ##
 
@@ -122,6 +73,7 @@ class HamamatsuCamera(Camera):
         self.start_acquisition()
 
         frame = self.get_image()
+        print(f"retrieved: {frame.shape}, {frame.dtype}")
 
         self.stop_acquisition()
         self.unconfigure_acquisition()
@@ -139,12 +91,18 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def configure_acquisition(self, buf_size, continuous=False):
-        # self.api.alloc(1)
+    def configure_acquisition(self, buf_nframes, continuous=False, fallback=False):
+        ny, nx = self._get_detector_pixel_num()
+        nbytes = (nx * ny) * 2
 
         buffer = []
-        for _ in range(1):
-            buffer.append(np.empty((2048 * 2048,), dtype=np.uint16))
+        for _ in range(buf_nframes):
+            buffer.append(Array(ctypes.c_uint8, nbytes))
+
+        # DEBUG dump memory
+        for i, frame in enumerate(buffer):
+            print(f"[{i}] = \n{frame}\n")
+
         self.api.attach(buffer)
         self._buffer = buffer
         logger.debug("buffer ALLOCATED")
@@ -152,18 +110,28 @@ class HamamatsuCamera(Camera):
         self._event = self.api.event
         self._event.open()
 
+    def _attach_external_buffer(self):
+        pass
+
+    def _request_internal_buffer(self):
+        pass
+
     def start_acquisition(self):
         # TODO setup camera status
 
         self.api.start(CaptureType.Snap)
+        logger.debug("acquisition STARTED")
 
     def get_image(self):
         self._event.start(Event.FrameReady)
         # return self.api.lock_frame().copy()
-        return self.buffer[0].copy().reshape((2048, 2048))
+        return np.frombuffer(self.buffer[0].get_obj(), dtype=np.uint16).reshape(
+            (2048, 2048)
+        )
 
     def stop_acquisition(self):
-        pass
+        self._event.start(Event.Stopped)
+        logger.debug("acquisition STOPPED")
 
     def unconfigure_acquisition(self):
         self._event.close()
@@ -177,17 +145,60 @@ class HamamatsuCamera(Camera):
     def get_roi(self):
         """Set region of interest."""
 
-    def set_roi(self):
-        """Set region of interest."""
+    def set_roi(self, pos0=None, shape=None):
+        # disable subarray mode
+        self._set_camera_property('subarray_mode', 'off')
+
+        max_shape = self._get_detector_pixel_num()
+        if pos0 is None:
+            if shape is None:
+                # full sensor range, disable sub-array mode, nothing to do
+                return
+            else:
+                # .. validate
+                if any(s > ms for s, ms in zip(shape, max_shape)):
+                    raise ValueError(f"initial position {pos0[::-1]} out-of-bound")
+                # centered
+                pos0 = [(ms - s) // 2 for ms, s in zip(max_shape, shape)]
+        else:
+            # .. validate
+            if any(p > s for p, s in zip(pos0, max_shape)):
+                raise ValueError(f"initial position {pos0[::-1]} out-of-bound")
+            py0, px0 = pos0
+
+            if shape is None:
+                # extend to boundary
+                shape = [ms - p + 1 for ms, p in zip(max_shape, pos0)]
+            else:
+                # manual
+                pos1 = [p + (s - 1) for p, s in zip(pos0, shape)]
+                # .. validate
+                if any(p > s for p, s in zip(pos1, max_shape)):
+                    raise ValueError(
+                        f"unable to accommodate the ROI, {pos0[::-1]}->{pos1[::-1]}"
+                    )
+
+        # apply
+        (py, px), (ny, nx) = pos0, shape
+        mapping = {
+            "subarray_hpos": px,
+            "subarray_vpos": py,
+            "subarray_hsize": nx,
+            "subarray_vsize": ny,
+        }
+        for name, value in mapping.items():
+            self._set_camera_property(name, value)
+
+        # camera will validate the setting upon enable
+        self._set_camera_property('subarray_mode', 'on')
 
     def get_exposure_time(self):
-        # default return value is in s
-        return self.get_property("exposure_time") * 1000
+        # NOTE default return value is in s
+        return self._get_camera_property("exposure_time") * 1000
 
     def set_exposure_time(self, value):
-        # default return value is in s
-        value /= 1000
-        self.set_property("exposure_time", value)
+        # NOTE default return value is in s
+        self._set_camera_property("exposure_time", value / 1000)
 
     ##
 
@@ -217,6 +228,75 @@ class HamamatsuCamera(Camera):
                 logger.error(err)
 
         return DeviceInfo(**params)
+
+    ##
+
+    @lru_cache(maxsize=1)
+    def _enumerate_camera_properties(self):
+        properties = dict()
+
+        curr_id, next_id = -1, self.api.get_next_id()
+        while curr_id != next_id:
+            try:
+                curr_id, next_id = next_id, self.api.get_next_id(next_id)
+            except RuntimeError:
+                # no more supported property id
+                break
+
+            name = self.api.get_name(curr_id)
+            name = name.lower().replace(" ", "_")
+            properties[name] = curr_id
+
+        self._properties = properties
+        return tuple(properties.keys())
+
+    def _get_camera_property(self, name):
+        attributes = self._get_camera_property_attributes(name)
+        if not attributes["readable"]:
+            raise TypeError(f'property "{name}" is not readable')
+
+        if attributes["is_array"]:
+            logger.warning(
+                f"an array property with {attributes['n_elements']} element(s), NOT IMPLEMENTED"
+            )
+
+        # convert data type
+        prop_type, prop_id = attributes["type"], self._get_camera_property_id(name)
+        if prop_type == "mode":
+            # NOTE assuming uniform step
+            index = int(self.api.get_value(prop_id)) - int(attributes["min"])
+            return attributes["modes"][index]
+        elif prop_type == "long":
+            return int(self.api.get_value(prop_id))
+        elif prop_type == "real":
+            return float(self.api.get_value(prop_id))
+
+    def _set_camera_property(self, name, value):
+        attributes = self._get_camera_property_attributes(name)
+        if not attributes["writable"]:
+            raise TypeError(f'property "{name}" is not writable')
+
+        prop_type, prop_id = attributes["type"], self._get_camera_property_id(name)
+        if prop_type == "mode":
+            # translate string enum back to index
+            # NOTE assuming uniform step
+            value = attributes["modes"].index(value) + int(attributes["min"])
+        self.api.set_value(prop_id, value)
+
+    def _get_camera_property_id(self, name):
+        return self._properties[name]
+
+    @lru_cache(maxsize=16)
+    def _get_camera_property_attributes(self, name):
+        """
+        Attributes indicates the characteristic of the property.
+
+        Args:
+            name (str): name of the property
+        """
+        logger.debug(f"attributes of {name} cache missed")
+        prop_id = self._get_camera_property_id(name)
+        return self.api.get_attr(prop_id)
 
 
 class DCAMAPI(Driver):
