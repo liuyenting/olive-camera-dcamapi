@@ -29,7 +29,9 @@ EXT_DEFS = [
         "name": "olive.drivers.dcamapi.wrapper",
         "language": "c++",
         "include_dirs": [
-            ".",  # "Module .pxd file not found next to .pyx file", https://github.com/cython/cython/issues/2452
+            # "Module .pxd file not found next to .pyx file", https://github.com/cython/cython/issues/2452
+            ".",
+            # numpy
             numpy.get_include()
         ],
         "extra_objects": ["lib/dcamapi.lib"],

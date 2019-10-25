@@ -65,12 +65,6 @@ class Unit(IntEnum):
     MicroMeter      = DCAMPROPUNIT.DCAMPROP_UNIT_MICROMETER
     Unitless        = DCAMPROPUNIT.DCAMPROP_UNIT_NONE
 
-class SubArray(IntEnum):
-    HPos            = DCAMIDPROP.DCAM_IDPROP_SUBARRAYHPOS
-    HSize           = DCAMIDPROP.DCAM_IDPROP_SUBARRAYHSIZE
-    VPos            = DCAMIDPROP.DCAM_IDPROP_SUBARRAYVPOS
-    VSize           = DCAMIDPROP.DCAM_IDPROP_SUBARRAYVSIZE
-
 @cython.final
 cdef class DCAMAPI:
     """
@@ -493,7 +487,7 @@ cdef class DCAM:
         self.buffer = np.empty(nframes, dtype=np.uintp)
         cdef uint8_t[::1] frame
         for i in range(nframes):
-            frame = buffer[i].get_obj()
+            frame = buffer[i]#.get_obj()
             self.buffer[i] = <uintptr_t>&frame[0]
 
         cdef DCAMBUF_ATTACH bufattach
@@ -588,7 +582,7 @@ cdef class DCAM:
         err = dcamcap_transferinfo(self.handle, &info)
         DCAMAPI.check_error(err, 'dcamcap_transferinfo()', self.handle)
 
-        # TODO
+        return info.nNewestFrameIndex, info.nFrameCount
 
     def fire_trigger(self):
         cdef DCAMERR err

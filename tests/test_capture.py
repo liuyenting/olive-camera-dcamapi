@@ -22,12 +22,6 @@ canvas.size = 768, 768
 
 # create view and image
 view = canvas.central_widget.add_view()
-image = scene.visuals.Image(
-    np.zeros((2048, 2048), dtype=np.uint16),
-    interpolation="nearest",
-    parent=view.scene,
-    cmap="grays",
-)
 
 # lock view
 view.camera = scene.PanZoomCamera(aspect=1, interactive=True)
@@ -40,23 +34,32 @@ try:
     camera = devices[0]
 
     camera.open()
-    try:
-        t_exp = camera.get_exposure_time()
-        print(f'exposure time: {t_exp:04f} ms')
+    canvas.title = str(camera.info)
 
-        camera.set_roi(shape=(512, 512))
+    try:
+        camera.set_exposure_time(100)
+
+        camera.set_roi(pos0=(744, 744), shape=(556, 556))
+
+        # dump properties
+        for name in camera.enumerate_properties():
+            print(
+                f"{name} ({camera._get_property_id(name)}) = {camera.get_property(name)}"
+            )
+            pprint(camera._get_property_attributes(name))
+            print()
 
         frame = camera.snap()
-        imageio.imwrite('debug.tif', frame)
+        print(f"captured size {frame.shape}, {frame.dtype}")
+        imageio.imwrite("debug.tif", frame)
 
-        #image.set_data(frame)
-        #view.camera.set_range()
-        #view.camera.zoom(1)
+        image = scene.visuals.Image(frame, parent=view.scene, cmap="grays")
+        view.camera.set_range(margin=0)
     finally:
         camera.close()
 finally:
     driver.shutdown()
 
 # run loop
-#canvas.show()
-#app.run()
+canvas.show()
+app.run()

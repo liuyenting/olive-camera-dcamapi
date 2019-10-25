@@ -1,17 +1,17 @@
 import ctypes
 from functools import lru_cache
 import logging
-from multiprocessing import Array
+from multiprocessing.sharedctypes import RawArray
 import re
 
 import numpy as np
 
 from olive.core import Driver, DeviceInfo
-from olive.devices import Camera
+from olive.devices import Camera, BufferRetrieveMode
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import DCAM, Event, Info, Capability, CaptureType, SubArray
+from .wrapper import Capability, CaptureType, DCAM, Event, Info
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -46,6 +46,9 @@ class HamamatsuCamera(Camera):
 
         # probe the camera
         self.enumerate_properties()
+
+        # enable defect correction
+        self.set_property('defect_correct_mode', 'on')
 
     def close(self):
         self.driver.api.close(self.api)
@@ -122,18 +125,6 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def snap(self):
-        self.configure_acquisition(1)
-        self.start_acquisition()
-
-        frame = self.get_image()
-        print(f"retrieved: {frame.shape}, {frame.dtype}")
-
-        self.stop_acquisition()
-        self.unconfigure_acquisition()
-
-        return frame
-
     def configure_grab(self):
         pass
 
@@ -145,52 +136,63 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def configure_acquisition(self, buf_nframes, continuous=False, fallback=False):
-        _, (ny, nx) = self.get_roi()
-        nbytes = (nx * ny) * 2
+    def configure_acquisition(self, nframes, continuous=False):
+        # create buffer
+        super().configure_acquisition(nframes, continuous)
 
-        buffer = []
-        for _ in range(buf_nframes):
-            buffer.append(Array(ctypes.c_uint8, nbytes))
-
-        self.api.attach(buffer)
-        self._buffer = buffer
-        logger.debug("buffer ALLOCATED")
-
+        # create event handle
         self._event = self.api.event
         self._event.open()
 
-    def _attach_external_buffer(self):
-        pass
-
-    def _request_internal_buffer(self, buf_nframes):
-        self.api.alloc(buf_nframes)
+    def configure_ring(self, nframes):
+        """Attach buffer to DCAM-API internals."""
+        super().configure_ring(nframes)
+        self.api.attach(self.buffer.frames)
 
     def start_acquisition(self):
-        # TODO setup camera status
-
         self.api.start(CaptureType.Snap)
         logger.debug("acquisition STARTED")
 
     def get_image(self):
         self._event.start(Event.FrameReady)
-        # return self.api.lock_frame().copy()
-        return np.frombuffer(self.buffer[0].get_obj(), dtype=np.uint16).reshape(
-            self.get_roi()[1]
-        )
+        self.buffer.push_dirty(self.buffer.pop_clean())
+
+    def _extract_frame(self, mode: BufferRetrieveMode, index=-1):
+        ilatest, nbacklog = self.api.transfer_info()
+        # retrieve data
+        for _ in range(nbacklog):
+            self.buffer.push_dirty(self.buffer.pop_clean())
+
+        if mode == BufferRetrieveMode.Index:
+            pass
+        elif mode == BufferRetrieveMode.Last:
+            pass
+        elif mode == BufferRetrieveMode.Next:
+            pass
 
     def stop_acquisition(self):
         self._event.start(Event.Stopped)
         logger.debug("acquisition STOPPED")
 
     def unconfigure_acquisition(self):
+        # cleanup event handle
         self._event.close()
         self._event = None
 
+        # detach
         self.api.release()
-        logger.debug("buffer RELEASED")
+
+        # free buffer
+        super().unconfigure_acquisition()
 
     ##
+
+    def get_dtype(self):
+        pixel_type = self.get_property("image_pixel_type")
+        try:
+            return {"mono8": np.uint8, "mono16": np.uint16}[pixel_type]
+        except KeyError:
+            raise NotImplementedError(f"unknown pixel type {pixel_type.upper()}")
 
     def get_exposure_time(self):
         # NOTE default return value is in s
@@ -228,7 +230,7 @@ class HamamatsuCamera(Camera):
 
         try:
             # pos0
-            desc = 'initial position'
+            desc = "initial position"
             if pos0 is None:
                 if shape is None:
                     # full sensor range, disable sub-array mode, nothing to do
@@ -236,7 +238,7 @@ class HamamatsuCamera(Camera):
                 else:
                     # centered
                     pos0 = [(ms - s) // 2 for ms, s in zip(max_shape, shape)]
-                    desc = 'inferred ' + desc
+                    desc = "inferred " + desc
             try:
                 for name, value in zip(("subarray_vpos", "subarray_hpos"), pos0):
                     self.set_property(name, value)
@@ -261,7 +263,7 @@ class HamamatsuCamera(Camera):
                     f"unable to accommodate the ROI, {pos0[::-1]}->{pos1[::-1]}"
                 )
         except ValueError:
-            logger.warning('revert back to previous ROI...')
+            logger.warning("revert back to previous ROI...")
             self.set_roi(pos0=prev_pos0, shape=prev_shape)
             raise
 
