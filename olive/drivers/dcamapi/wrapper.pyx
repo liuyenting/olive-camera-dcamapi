@@ -580,7 +580,15 @@ cdef class DCAM:
         return CaptureStatus(status)
 
     def transfer_info(self):
-        pass
+        cdef DCAMCAP_TRANSFERINFO info
+        memset(&info, 0, sizeof(info))
+        info.size = sizeof(info)
+
+        cdef DCAMERR err
+        err = dcamcap_transferinfo(self.handle, &info)
+        DCAMAPI.check_error(err, 'dcamcap_transferinfo()', self.handle)
+
+        # TODO
 
     def fire_trigger(self):
         cdef DCAMERR err

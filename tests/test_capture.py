@@ -41,20 +41,10 @@ try:
 
     camera.open()
     try:
-        print('>>> BEFORE <<<')
-        for prop in camera._enumerate_camera_properties():
-            print(f"{prop}: {camera._get_camera_property(prop)}")
-        print()
-
         t_exp = camera.get_exposure_time()
         print(f'exposure time: {t_exp:04f} ms')
 
-        camera.set_roi(shape=(1024, 1024))
-
-        print('>>> AFTER <<<')
-        for prop in camera._enumerate_camera_properties():
-            print(f"{prop}: {camera._get_camera_property(prop)}")
-        print()
+        camera.set_roi(shape=(512, 512))
 
         frame = camera.snap()
         imageio.imwrite('debug.tif', frame)
