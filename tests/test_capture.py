@@ -1,3 +1,5 @@
+import errno
+import os
 from pprint import pprint
 from timeit import timeit
 
@@ -37,9 +39,9 @@ try:
     canvas.title = str(camera.info)
 
     try:
-        camera.set_exposure_time(100)
+        camera.set_exposure_time(20)
 
-        camera.set_roi(pos0=(744, 744), shape=(556, 556))
+        camera.set_roi(shape=(2048, 2048))
 
         # dump properties
         for name in camera.enumerate_properties():
@@ -49,17 +51,27 @@ try:
             pprint(camera._get_property_attributes(name))
             print()
 
-        frame = camera.snap()
-        print(f"captured size {frame.shape}, {frame.dtype}")
-        imageio.imwrite("debug.tif", frame)
+        if False:
+            frame = camera.snap()
+            print(f"captured size {frame.shape}, {frame.dtype}")
+            imageio.imwrite("debug.tif", frame)
+        elif True:
+            frame = camera.sequence(25)
+            print(f"captured size {frame.shape}, {frame.dtype}")
+            try:
+                os.mkdir("_debug")
+            except FileExistsError:
+                pass
+            for i, _frame in enumerate(frame):
+                imageio.imwrite(os.path.join("_debug", f"frame_{i:03d}.tif"), _frame)
 
-        image = scene.visuals.Image(frame, parent=view.scene, cmap="grays")
-        view.camera.set_range(margin=0)
+        # image = scene.visuals.Image(frame, parent=view.scene, cmap="grays")
+        # view.camera.set_range(margin=0)
     finally:
         camera.close()
 finally:
     driver.shutdown()
 
 # run loop
-canvas.show()
-app.run()
+# canvas.show()
+# app.run()

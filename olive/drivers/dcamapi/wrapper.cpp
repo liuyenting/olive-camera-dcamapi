@@ -9364,6 +9364,8 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("transfer_info", 0);
 
   /* "olive/drivers/dcamapi/wrapper.pyx":578
@@ -9398,13 +9400,37 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  *         err = dcamcap_transferinfo(self.handle, &info)
  *         DCAMAPI.check_error(err, 'dcamcap_transferinfo()', self.handle)             # <<<<<<<<<<<<<<
  * 
- *         # TODO
+ *         return info.nNewestFrameIndex, info.nFrameCount
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
   __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_transferinfo()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":585
+ *         DCAMAPI.check_error(err, 'dcamcap_transferinfo()', self.handle)
+ * 
+ *         return info.nNewestFrameIndex, info.nFrameCount             # <<<<<<<<<<<<<<
+ * 
+ *     def fire_trigger(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_info.nNewestFrameIndex); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 585, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyInt_From_int32(__pyx_v_info.nFrameCount); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 585, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 585, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
+  __pyx_t_1 = 0;
+  __pyx_t_3 = 0;
+  __pyx_r = __pyx_t_4;
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
 
   /* "olive/drivers/dcamapi/wrapper.pyx":576
  *         return CaptureStatus(status)
@@ -9415,10 +9441,10 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.transfer_info", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -9428,7 +9454,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
 }
 
 /* "olive/drivers/dcamapi/wrapper.pyx":587
- *         # TODO
+ *         return info.nNewestFrameIndex, info.nFrameCount
  * 
  *     def fire_trigger(self):             # <<<<<<<<<<<<<<
  *         cdef DCAMERR err
@@ -9479,7 +9505,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_48fire_trigger
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "olive/drivers/dcamapi/wrapper.pyx":587
- *         # TODO
+ *         return info.nNewestFrameIndex, info.nFrameCount
  * 
  *     def fire_trigger(self):             # <<<<<<<<<<<<<<
  *         cdef DCAMERR err

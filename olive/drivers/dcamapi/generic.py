@@ -48,7 +48,7 @@ class HamamatsuCamera(Camera):
         self.enumerate_properties()
 
         # enable defect correction
-        self.set_property('defect_correct_mode', 'on')
+        self.set_property("defect_correct_mode", "on")
 
     def close(self):
         self.driver.api.close(self.api)
@@ -131,14 +131,14 @@ class HamamatsuCamera(Camera):
     def grab(self):
         pass
 
-    def sequence(self, n_frames, out=None):
-        self.configure_acquisition(n_frames)
-
     ##
 
     def configure_acquisition(self, nframes, continuous=False):
         # create buffer
         super().configure_acquisition(nframes, continuous)
+
+        # DCAM-API book keep the buffer index
+        self._buffer_curr_index = 0
 
         # create event handle
         self._event = self.api.event
@@ -150,25 +150,38 @@ class HamamatsuCamera(Camera):
         self.api.attach(self.buffer.frames)
 
     def start_acquisition(self):
+        print(self.api.status())
         self.api.start(CaptureType.Snap)
         logger.debug("acquisition STARTED")
 
-    def get_image(self):
+    def _extract_frame(self, mode: BufferRetrieveMode = BufferRetrieveMode.Next):
         self._event.start(Event.FrameReady)
-        self.buffer.push_dirty(self.buffer.pop_clean())
 
-    def _extract_frame(self, mode: BufferRetrieveMode, index=-1):
-        ilatest, nbacklog = self.api.transfer_info()
-        # retrieve data
-        for _ in range(nbacklog):
-            self.buffer.push_dirty(self.buffer.pop_clean())
+        curr_index, (next_index, frame_count) = (
+            self._buffer_curr_index,
+            self.api.transfer_info(),
+        )
+        logger.debug(f"i_new: {next_index}, n_frames: {frame_count}")
 
-        if mode == BufferRetrieveMode.Index:
-            pass
-        elif mode == BufferRetrieveMode.Last:
-            pass
-        elif mode == BufferRetrieveMode.Next:
-            pass
+        # determine number of backlogs
+        n_backlog = next_index - curr_index + 1
+        if next_index < curr_index:
+            # round about
+            n_backlog += self.buffer.capacity()
+        logger.debug(f"{n_backlog} backlogged frame(s)")
+        # update index
+        self._buffer_curr_index = next_index
+
+        # update buffer
+        for _ in range(n_backlog):
+            # nothing to write, DCAM-API writes directly to the buffer
+            self.buffer.write()
+
+        if mode == BufferRetrieveMode.Latest:
+            # drop frames
+            for _ in range(n_backlog - 1):
+                self.buffer.read()
+        return self.buffer.read()
 
     def stop_acquisition(self):
         self._event.start(Event.Stopped)
@@ -181,6 +194,9 @@ class HamamatsuCamera(Camera):
 
         # detach
         self.api.release()
+
+        # wipe
+        self._buffer_curr_index = None
 
         # free buffer
         super().unconfigure_acquisition()
