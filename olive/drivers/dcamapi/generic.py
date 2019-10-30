@@ -138,7 +138,7 @@ class HamamatsuCamera(Camera):
         super().configure_acquisition(nframes, continuous)
 
         # DCAM-API book keep the buffer index
-        self._buffer_curr_index = 0
+        self._buffer_curr_index = None
 
         # create event handle
         self._event = self.api.event
@@ -157,18 +157,21 @@ class HamamatsuCamera(Camera):
     def _extract_frame(self, mode: BufferRetrieveMode = BufferRetrieveMode.Next):
         self._event.start(Event.FrameReady)
 
-        curr_index, (next_index, frame_count) = (
+        curr_index, (next_index, n_frames) = (
             self._buffer_curr_index,
             self.api.transfer_info(),
         )
-        logger.debug(f"i_new: {next_index}, n_frames: {frame_count}")
 
         # determine number of backlogs
-        n_backlog = next_index - curr_index + 1
-        if next_index < curr_index:
-            # round about
-            n_backlog += self.buffer.capacity()
-        logger.debug(f"{n_backlog} backlogged frame(s)")
+        try:
+            n_backlog = next_index - curr_index
+            if next_index < curr_index:
+                # round about
+                n_backlog += self.buffer.capacity()
+        except TypeError:
+            # first run
+            n_backlog = 1
+        logger.debug(f"frame {n_frames:03d}, {n_backlog} backlogged frame(s)")
         # update index
         self._buffer_curr_index = next_index
 

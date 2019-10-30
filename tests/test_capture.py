@@ -29,6 +29,15 @@ view = canvas.central_widget.add_view()
 view.camera = scene.PanZoomCamera(aspect=1, interactive=True)
 view.camera.flip = (0, 1, 0)
 
+
+def dump_properties(camera):
+    # dump properties
+    for name in camera.enumerate_properties():
+        print(f"{name} ({camera._get_property_id(name)}) = {camera.get_property(name)}")
+        pprint(camera._get_property_attributes(name))
+        print()
+
+
 try:
     devices = driver.enumerate_devices()
     pprint(devices)
@@ -39,24 +48,19 @@ try:
     canvas.title = str(camera.info)
 
     try:
-        camera.set_exposure_time(20)
+        camera.set_max_memory_size(100 * (2 ** 20))  # 100 MiB
 
+        camera.set_exposure_time(20)
         camera.set_roi(shape=(2048, 2048))
 
-        # dump properties
-        for name in camera.enumerate_properties():
-            print(
-                f"{name} ({camera._get_property_id(name)}) = {camera.get_property(name)}"
-            )
-            pprint(camera._get_property_attributes(name))
-            print()
+        # dump_properties(camera)
 
         if False:
             frame = camera.snap()
             print(f"captured size {frame.shape}, {frame.dtype}")
             imageio.imwrite("debug.tif", frame)
         elif True:
-            frame = camera.sequence(25)
+            frame = camera.sequence(100)
             print(f"captured size {frame.shape}, {frame.dtype}")
             try:
                 os.mkdir("_debug")
