@@ -133,9 +133,9 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def configure_acquisition(self, nframes, continuous=False):
+    def configure_acquisition(self, n_frames, continuous=False):
         # create buffer
-        super().configure_acquisition(nframes, continuous)
+        super().configure_acquisition(n_frames, continuous)
 
         # DCAM-API book keep the buffer index
         self._buffer_curr_index = None
@@ -144,15 +144,15 @@ class HamamatsuCamera(Camera):
         self._event = self.api.event
         self._event.open()
 
-    def configure_ring(self, nframes):
+    def configure_ring(self, n_frames):
         """Attach buffer to DCAM-API internals."""
-        super().configure_ring(nframes)
+        super().configure_ring(n_frames)
         self.api.attach(self.buffer.frames)
 
     def start_acquisition(self):
-        print(self.api.status())
-        self.api.start(CaptureType.Snap)
-        logger.debug("acquisition STARTED")
+        mode = CaptureType.Sequence if self.continuous else CaptureType.Snap
+        self.api.start(mode)
+        logger.debug(f"acquisition STARTED")
 
     def _extract_frame(self, mode: BufferRetrieveMode = BufferRetrieveMode.Next):
         self._event.start(Event.FrameReady)
@@ -171,7 +171,7 @@ class HamamatsuCamera(Camera):
         except TypeError:
             # first run
             n_backlog = 1
-        logger.debug(f"frame {n_frames:03d}, {n_backlog} backlogged frame(s)")
+        logger.debug(f"frame {n_frames:05d}, {n_backlog} backlogged frame(s)")
         # update index
         self._buffer_curr_index = next_index
 
@@ -187,6 +187,7 @@ class HamamatsuCamera(Camera):
         return self.buffer.read()
 
     def stop_acquisition(self):
+        self.api.stop()
         self._event.start(Event.Stopped)
         logger.debug("acquisition STOPPED")
 

@@ -48,7 +48,7 @@ try:
     canvas.title = str(camera.info)
 
     try:
-        camera.set_max_memory_size(100 * (2 ** 20))  # 100 MiB
+        camera.set_max_memory_size(1000 * (2 ** 20))  # 1000 MiB
 
         camera.set_exposure_time(20)
         camera.set_roi(shape=(2048, 2048))
@@ -60,14 +60,14 @@ try:
             print(f"captured size {frame.shape}, {frame.dtype}")
             imageio.imwrite("debug.tif", frame)
         elif True:
-            frame = camera.sequence(100)
-            print(f"captured size {frame.shape}, {frame.dtype}")
             try:
-                os.mkdir("_debug")
+                os.mkdir("E:/_debug")
             except FileExistsError:
                 pass
-            for i, _frame in enumerate(frame):
-                imageio.imwrite(os.path.join("_debug", f"frame_{i:03d}.tif"), _frame)
+
+            n_frames = (10 * 1000) // 20
+            for i, frame in enumerate(camera.sequence(n_frames)):
+                imageio.imwrite(os.path.join("E:/_debug", f"frame{i:05d}.tif"), frame)
 
         # image = scene.visuals.Image(frame, parent=view.scene, cmap="grays")
         # view.camera.set_range(margin=0)
