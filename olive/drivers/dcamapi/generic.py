@@ -125,14 +125,6 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def configure_grab(self):
-        pass
-
-    def grab(self):
-        pass
-
-    ##
-
     def configure_acquisition(self, n_frames, continuous=False):
         # create buffer
         super().configure_acquisition(n_frames, continuous)
