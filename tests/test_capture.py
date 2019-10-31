@@ -51,9 +51,9 @@ try:
     canvas.title = str(camera.info)
 
     try:
-        t_exp = 15
+        t_exp = 20
 
-        camera.set_max_memory_size(1000 * (2 ** 20))  # 1000 MiB
+        camera.set_max_memory_size(1024 * (2 ** 20))  # 1000 MiB
 
         camera.set_exposure_time(t_exp)
         camera.set_roi(shape=(2048, 2048))
@@ -65,8 +65,10 @@ try:
             print(f"captured size {frame.shape}, {frame.dtype}")
             imageio.imwrite("debug.tif", frame)
         elif True:
+            dst_dir = "_debug"  # 'E:/_debug'
+
             try:
-                os.mkdir("E:/_debug")
+                os.mkdir(dst_dir)
             except FileExistsError:
                 pass
 
@@ -76,35 +78,40 @@ try:
 
             import asyncio
 
+            async def noop():
+                pass
+
             async def grabber(camera, queue, n_frames):
-                camera.configure_acquisition(n_frames)
                 camera.start_acquisition()
                 for i in range(n_frames):
-                    await queue.put(camera.get_image(copy=False))
+                    logger.info(f".. read frame {i:05d}")
+                    frame = camera.get_image(copy=False)
+                    await queue.put((i, frame))
+                    await asyncio.sleep(0)
                 camera.stop_acquisition()
-                camera.unconfigure_acquisition()
 
             async def writer(queue):
-                i = 0
                 while True:
-                    frame = await queue.get()
-                    logger.info(f".. frame {i:05d}")
-                    imageio.imwrite(
-                        os.path.join("E:/_debug", f"frame{i:05d}.tif"), frame
-                    )
-                    i += 1
+                    i, frame = await queue.get()
+                    logger.info(f".. write frame {i:05d}")
+                    imageio.imwrite(os.path.join(dst_dir, f"frame{i:05d}.tif"), frame)
                     queue.task_done()
+                    await asyncio.sleep(0)
 
             async def run(n_frames):
-                queue = asyncio.Queue()
+                queue = asyncio.Queue(maxsize=len(camera.buffer.frames) // 2)
                 consumer = asyncio.ensure_future(writer(queue))
                 await grabber(camera, queue, n_frames)
                 await queue.join()
                 consumer.cancel()
 
+            camera.configure_acquisition(n_frames)
+
             loop = asyncio.get_event_loop()
             loop.run_until_complete(run(n_frames))
             loop.close()
+
+            camera.unconfigure_acquisition()
 
         # image = scene.visuals.Image(frame, parent=view.scene, cmap="grays")
         # view.camera.set_range(margin=0)
