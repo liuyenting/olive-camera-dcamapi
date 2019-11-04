@@ -51,9 +51,9 @@ try:
     canvas.title = str(camera.info)
 
     try:
-        t_exp = 20
+        t_exp = 30
 
-        camera.set_max_memory_size(1024 * (2 ** 20))  # 1000 MiB
+        camera.set_max_memory_size(2048 * (2 ** 20))  # 1000 MiB
 
         camera.set_exposure_time(t_exp)
         camera.set_roi(shape=(2048, 2048))
@@ -72,14 +72,11 @@ try:
             except FileExistsError:
                 pass
 
-            n_frames = (10 * 1000) // t_exp
+            n_frames = (60 * 1000) // t_exp
             # for i, frame in enumerate(camera.sequence(n_frames)):
             #    imageio.imwrite(os.path.join("E:/_debug", f"frame{i:05d}.tif"), frame)
 
             import asyncio
-
-            async def noop():
-                pass
 
             async def grabber(camera, queue, n_frames):
                 camera.start_acquisition()
