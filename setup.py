@@ -34,7 +34,8 @@ EXT_DEFS = [
             # numpy
             numpy.get_include()
         ],
-        "extra_objects": ["lib/dcamapi.lib"],
+        "libraries": ["dcamapi"],
+        "library_dirs": ["lib"],
     }
 ]
 
@@ -58,6 +59,21 @@ def generate_extension(ext_def):
     ext_root = os.path.dirname(ext_path)
 
     ext_def["sources"] = [ext_path]
+
+    if "extra_objects" in ext_def:
+        if not sys.platform.startswith("linux"):
+            # NOTE:
+            #   re-route static library on Windows https://stackoverflow.com/a/49139257
+            # extract names
+            static_libs = [os.path.split(lib) for lib in ext_def["extra_objects"]]
+            lib_dirs, lib_names = zip(*static_libs)
+            lib_names = [os.path.splitext(name)[0] for name in lib_names]
+            # 1) save it into 'libraries'
+            # 2) append search path (remove duplicates on-the-fly)
+            ext_def.setdefault("libraries", []).extend(lib_names)
+            ext_def.setdefault("library_dirs", []).extend(list(set(lib_dirs)))
+            # empty 'extra_objects'
+            del ext_def["extra_objects"]
 
     # prepend root directory
     arguments = (
