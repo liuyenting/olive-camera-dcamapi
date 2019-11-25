@@ -5,6 +5,7 @@ from multiprocessing.sharedctypes import RawArray
 import re
 
 import numpy as np
+import trio
 
 from olive.core import Driver, DeviceInfo
 from olive.devices import Camera, BufferRetrieveMode
@@ -28,36 +29,37 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def test_open(self):
+    async def test_open(self):
         try:
-            handle = self.driver.api.open(self._index)
-            self._api = DCAM(handle)
+            await self.open()
             logger.info(f".. {self.info}")
         except RuntimeError as err:
             logger.exception(err)
             raise UnsupportedDeviceError
         finally:
-            self.driver.api.close(self.api)
-            self._api = None
+            await self.close()
 
-    def open(self):
+    async def open(self):
+        """
+        Note:
+            Do not open and close in another thread.
+        """
         handle = self.driver.api.open(self._index)
         self._api = DCAM(handle)
 
         # probe the camera
-        self.enumerate_properties()
+        await self.enumerate_properties()
 
         # enable defect correction
-        self.set_property("defect_correct_mode", "on")
+        await self.set_property("defect_correct_mode", "on")
 
-    def close(self):
-        self.driver.api.close(self.api)
+    async def close(self):
+        await trio.to_thread.run_sync(self.driver.api.close, self.api)
         self._api = None
 
     ##
 
-    @lru_cache(maxsize=1)
-    def enumerate_properties(self):
+    async def enumerate_properties(self):
         properties = dict()
 
         curr_id, next_id = -1, self.api.get_next_id()
@@ -68,14 +70,14 @@ class HamamatsuCamera(Camera):
                 # no more supported property id
                 break
 
-            name = self.api.get_name(curr_id)
+            name = await trio.to_thread.run_sync(self.api.get_name, curr_id)
             name = name.lower().replace(" ", "_")
             properties[name] = curr_id
 
         self._properties = properties
         return tuple(properties.keys())
 
-    def get_property(self, name):
+    async def get_property(self, name):
         attributes = self._get_property_attributes(name)
         if not attributes["readable"]:
             raise TypeError(f'property "{name}" is not readable')
@@ -87,16 +89,20 @@ class HamamatsuCamera(Camera):
 
         # convert data type
         prop_type, prop_id = attributes["type"], self._get_property_id(name)
+
+        async def get_value(prop_id):
+            return await trio.to_thread.run_sync(self.api.get_value, prop_id)
+
         if prop_type == "mode":
             # NOTE assuming uniform step
-            index = int(self.api.get_value(prop_id)) - int(attributes["min"])
+            index = int(await get_value(prop_id)) - int(attributes["min"])
             return attributes["modes"][index]
         elif prop_type == "long":
-            return int(self.api.get_value(prop_id))
+            return int(await get_value(prop_id))
         elif prop_type == "real":
-            return float(self.api.get_value(prop_id))
+            return float(await get_value(prop_id))
 
-    def set_property(self, name, value):
+    async def set_property(self, name, value):
         attributes = self._get_property_attributes(name)
         if not attributes["writable"]:
             raise TypeError(f'property "{name}" is not writable')
@@ -106,7 +112,7 @@ class HamamatsuCamera(Camera):
             # translate string enum back to index
             # NOTE assuming uniform step
             value = attributes["modes"].index(value) + int(attributes["min"])
-        self.api.set_value(prop_id, value)
+        await trio.to_thread.run_sync(self.api.set_value, prop_id, value)
 
     def _get_property_id(self, name):
         return self._properties[name]
@@ -125,33 +131,33 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    def configure_acquisition(self, n_frames, continuous=False):
+    async def configure_acquisition(self, n_frames, continuous=False):
         # create buffer
-        super().configure_acquisition(n_frames, continuous)
+        await super().configure_acquisition(n_frames, continuous)
 
         # DCAM-API book keep the buffer index
         self._buffer_curr_index = None
 
         # create event handle
         self._event = self.api.event
-        self._event.open()
+        await trio.to_thread.run_sync(self._event.open)
 
-    def configure_ring(self, n_frames):
+    async def configure_ring(self, n_frames):
         """Attach buffer to DCAM-API internals."""
-        super().configure_ring(n_frames)
-        self.api.attach(self.buffer.frames)
+        await super().configure_ring(n_frames)
+        await trio.to_thread.run_sync(self.api.attach, self.buffer.frames)
 
     def start_acquisition(self):
         mode = CaptureType.Sequence if self.continuous else CaptureType.Snap
         self.api.start(mode)
         logger.debug(f"acquisition STARTED")
 
-    def _extract_frame(self, mode: BufferRetrieveMode = BufferRetrieveMode.Next):
+    async def _extract_frame(self, mode: BufferRetrieveMode = BufferRetrieveMode.Next):
         self._event.start(Event.FrameReady)
 
         curr_index, (next_index, n_frames) = (
             self._buffer_curr_index,
-            self.api.transfer_info(),
+            await trio.to_thread.run_sync(self.api.transfer_info),
         )
 
         # determine number of backlogs
@@ -183,48 +189,54 @@ class HamamatsuCamera(Camera):
         self._event.start(Event.Stopped)
         logger.debug("acquisition STOPPED")
 
-    def unconfigure_acquisition(self):
+    async def unconfigure_acquisition(self):
         # cleanup event handle
         self._event.close()
         self._event = None
 
         # detach
-        self.api.release()
+        await trio.to_thread.run_sync(self.api.release)
 
         # wipe
         self._buffer_curr_index = None
 
         # free buffer
-        super().unconfigure_acquisition()
+        await super().unconfigure_acquisition()
 
     ##
 
-    def get_dtype(self):
-        pixel_type = self.get_property("image_pixel_type")
+    async def get_dtype(self):
+        pixel_type = await self.get_property("image_pixel_type")
         try:
             return {"mono8": np.uint8, "mono16": np.uint16}[pixel_type]
         except KeyError:
             raise NotImplementedError(f"unknown pixel type {pixel_type.upper()}")
 
-    def get_exposure_time(self):
+    async def get_exposure_time(self):
         # NOTE default return value is in s
-        return self.get_property("exposure_time") * 1000
+        return await self.get_property("exposure_time") * 1000
 
-    def set_exposure_time(self, value):
+    async def set_exposure_time(self, value):
         # NOTE default return value is in s
-        self.set_property("exposure_time", value / 1000)
+        await self.set_property("exposure_time", value / 1000)
 
-    def get_max_roi_shape(self):
-        nx = self.get_property("image_detector_pixel_num_horz")
-        ny = self.get_property("image_detector_pixel_num_vert")
+    async def get_max_roi_shape(self):
+        nx = await self.get_property("image_detector_pixel_num_horz")
+        ny = await self.get_property("image_detector_pixel_num_vert")
         return ny, nx
 
-    def get_roi(self):
-        pos0 = self.get_property("subarray_vpos"), self.get_property("subarray_hpos")
-        shape = self.get_property("subarray_vsize"), self.get_property("subarray_hsize")
+    async def get_roi(self):
+        pos0 = (
+            await self.get_property("subarray_vpos"),
+            await self.get_property("subarray_hpos"),
+        )
+        shape = (
+            await self.get_property("subarray_vsize"),
+            await self.get_property("subarray_hsize"),
+        )
         return pos0, shape
 
-    def set_roi(self, pos0=None, shape=None):
+    async def set_roi(self, pos0=None, shape=None):
         """
         Set region-of-interest.
 
@@ -233,12 +245,12 @@ class HamamatsuCamera(Camera):
             shape (tuple, optional): shape of the ROI
         """
         # save prior roi
-        prev_pos0, prev_shape = self.get_roi()
+        prev_pos0, prev_shape = await self.get_roi()
 
         # disable subarray mode
-        self.set_property("subarray_mode", "off")
+        await self.set_property("subarray_mode", "off")
 
-        max_shape = self.get_max_roi_shape()
+        max_shape = await self.get_max_roi_shape()
 
         try:
             # pos0
@@ -253,7 +265,7 @@ class HamamatsuCamera(Camera):
                     desc = "inferred " + desc
             try:
                 for name, value in zip(("subarray_vpos", "subarray_hpos"), pos0):
-                    self.set_property(name, value)
+                    await self.set_property(name, value)
             except RuntimeError:
                 raise ValueError(f"{desc} {pos0[::-1]} out-of-bound")
 
@@ -266,9 +278,9 @@ class HamamatsuCamera(Camera):
                 pass
             try:
                 for name, value in zip(("subarray_vsize", "subarray_hsize"), shape):
-                    self.set_property(name, value)
+                    await self.set_property(name, value)
                 # re-enable
-                self.set_property("subarray_mode", "on")
+                await self.set_property("subarray_mode", "on")
             except RuntimeError:
                 pos1 = tuple(p + (s - 1) for p, s in zip(pos0, shape))
                 raise ValueError(
@@ -276,7 +288,7 @@ class HamamatsuCamera(Camera):
                 )
         except ValueError:
             logger.warning("revert back to previous ROI...")
-            self.set_roi(pos0=prev_pos0, shape=prev_shape)
+            await self.set_roi(pos0=prev_pos0, shape=prev_shape)
             raise
 
     ##
@@ -318,19 +330,19 @@ class DCAMAPI(Driver):
 
     ##
 
-    def initialize(self):
+    async def initialize(self):
         self.api.init()
 
-    def shutdown(self):
+    async def shutdown(self):
         self.api.uninit()
 
-    def enumerate_devices(self) -> HamamatsuCamera:
+    async def enumerate_devices(self) -> HamamatsuCamera:
         valid_devices = []
         logger.debug(f"max index: {self.api.n_devices}")
         for i_device in range(self.api.n_devices):
             try:
                 device = HamamatsuCamera(self, i_device)
-                device.test_open()
+                await device.test_open()
                 valid_devices.append(device)
             except UnsupportedDeviceError:
                 pass
