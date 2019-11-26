@@ -1,14 +1,10 @@
-import errno
 import logging
 import os
 from pprint import pprint
-from timeit import timeit
 import trio
 
 import coloredlogs
 import imageio
-import numpy as np
-from vispy import app, scene
 
 from olive.drivers.dcamapi import DCAMAPI
 
@@ -19,95 +15,63 @@ coloredlogs.install(
 logger = logging.getLogger(__name__)
 
 
-async def acquire(t_exp=50, dst_dir='_debug'):
+async def acquire(send_channel, camera, n_frames):
+    await camera.configure_acquisition(n_frames)
+
+    async with send_channel:
+        camera.start_acquisition()
+        for i in range(n_frames):
+            logger.info(f".. read frame {i:05d}")
+            frame = await camera.get_image(copy=False)
+            await send_channel.send((i, frame))
+        camera.stop_acquisition()
+
+    await camera.unconfigure_acquisition()
+
+
+async def writer(receive_channel, dst_dir):
+    async with receive_channel:
+        async for i, frame in receive_channel:
+            logger.info(f".. write frame {i:05d}")
+            imageio.imwrite(os.path.join(dst_dir, f"frame_{i:05d}.tif"), frame)
+
+
+async def main(dst_dir="_debug", t_exp=30, t_total=60, shape=(2048, 2048)):
+    # create destination directory
     try:
-        os.mkdir(dst_dir)
+        os.makedirs(dst_dir)
     except FileExistsError:
         pass
 
+    # initialize driver
     driver = DCAMAPI()
+    await driver.initialize()
 
-    try:
-        await driver.initialize()
+    # enumerate cameras and select one
+    cameras = await driver.enumerate_devices()
+    pprint(cameras)
+    camera = cameras[0]
 
-        devices = await driver.enumerate_devices()
-        pprint(devices)
+    # open
+    await camera.open()
 
-        camera = devices[0]
-        await camera.open()
+    # pre-configure host-side
+    camera.set_max_memory_size(2000 * (2 ** 20))  # 1000 MiB
+    await camera.set_exposure_time(t_exp)
+    await camera.set_roi(shape=shape)
 
-        try:
-            camera.set_max_memory_size(2048 * (2 ** 20))  # 1000 MiB
+    # total frames
+    n_frames = (t_total * 1000) // t_exp
 
-            await camera.set_exposure_time(t_exp)
-            await camera.set_roi(shape=(2048, 2048))
+    # kick-off the acquisition
+    async with trio.open_nursery() as nursery:
+        send_channel, receive_channel = trio.open_memory_channel(0)
+        nursery.start_soon(acquire, send_channel, camera, n_frames)
+        nursery.start_soon(writer, receive_channel, dst_dir)
 
-            n_frames = (60 * 1000) // t_exp
-
-            async def grabber(camera, queue, n_frames):
-                camera.start_acquisition()
-                for i in range(n_frames):
-                    logger.info(f".. read frame {i:05d}")
-                    frame = camera.get_image(copy=False)
-                    await queue.put((i, frame))
-                    await trio.sleep(0)
-                camera.stop_acquisition()
-
-            async def writer(queue):
-                while True:
-                    i, frame = await queue.get()
-                    logger.info(f".. write frame {i:05d}")
-                    imageio.imwrite(
-                        os.path.join(dst_dir, f"frame{i:05d}.tif"), frame
-                    )
-                    queue.task_done()
-                    await trio.sleep(0)
-
-            async def run(n_frames):
-                queue = asyncio.Queue(maxsize=len(camera.buffer.frames) // 2)
-                consumer = asyncio.ensure_future(writer(queue))
-                await grabber(camera, queue, n_frames)
-                await queue.join()
-                consumer.cancel()
-
-            camera.configure_acquisition(n_frames)
-
-            loop = asyncio.get_event_loop()
-            loop.run_until_complete(run(n_frames))
-            loop.close()
-
-            camera.unconfigure_acquisition()
-
-            # image = scene.visuals.Image(frame, parent=view.scene, cmap="grays")
-            # view.camera.set_range(margin=0)
-        finally:
-            await camera.close()
-    finally:
-        await driver.shutdown()
-
-    # run loop
-    # canvas.show()
-    # app.run()
-
-
-async def viewer():
-    # init viewer
-    canvas = scene.SceneCanvas(keys="interactive")
-    canvas.size = 768, 768
-
-    # create view and image
-    view = canvas.central_widget.add_view()
-
-    # lock view
-    view.camera = scene.PanZoomCamera(aspect=1, interactive=True)
-    view.camera.flip = (0, 1, 0)
-
-    canvas.show()
-
-
-async def main():
-    app.run()
-
+    # close and terminate
+    await camera.close()
+    await driver.shutdown()
 
 if __name__ == "__main__":
     trio.run(main)
