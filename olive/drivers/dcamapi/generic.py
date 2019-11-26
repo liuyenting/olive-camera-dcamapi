@@ -135,9 +135,6 @@ class HamamatsuCamera(Camera):
         # create buffer
         await super().configure_acquisition(n_frames, continuous)
 
-        # DCAM-API book keep the buffer index
-        self._buffer_curr_index = None
-
         # create event handle
         self._event = self.api.event
         await trio.to_thread.run_sync(self._event.open)
@@ -152,37 +149,34 @@ class HamamatsuCamera(Camera):
         self.api.start(mode)
         logger.debug(f"acquisition STARTED")
 
-    async def _extract_frame(self, mode: BufferRetrieveMode = BufferRetrieveMode.Next):
+    async def _extract_frame(self, mode: BufferRetrieveMode):
         self._event.start(Event.FrameReady)
 
-        curr_index, (next_index, n_frames) = (
-            self._buffer_curr_index,
-            await trio.to_thread.run_sync(self.api.transfer_info),
-        )
+        while True:
+            latest_index, n_frames = await trio.to_thread.run_sync(
+                self.api.transfer_info
+            )
 
-        # determine number of backlogs
-        try:
-            n_backlog = next_index - curr_index
-            if next_index < curr_index:
-                # round about
-                n_backlog += self.buffer.capacity()
-        except TypeError:
-            # first run
-            n_backlog = 1
-        logger.debug(f"frame {n_frames:05d}, {n_backlog} backlogged frame(s)")
-        # update index
-        self._buffer_curr_index = next_index
+            logger.debug(
+                f"frame {n_frames:05d}, {self.buffer.size()} backlogged frame(s)"
+            )
 
-        # update buffer
-        for _ in range(n_backlog):
-            # nothing to write, DCAM-API writes directly to the buffer
-            self.buffer.write()
+            # DCAM-API writes directly to the buffer...
+            # self.buffer.write()
+            # ... update write pointer only
+            self.buffer._write_index = (
+                latest_index - 1 if latest_index > 0 else self.buffer.capacity() - 1
+            )
 
-        if mode == BufferRetrieveMode.Latest:
-            # drop frames
-            for _ in range(n_backlog - 1):
-                self.buffer.read()
-        return self.buffer.read()
+            if mode == BufferRetrieveMode.Latest:
+                # fast forward
+                self.buffer._read_index = latest_index
+            frame = self.buffer.read()
+            if frame is not None:
+                return frame
+            else:
+                await trio.sleep(0)
+                logger.debug(f"retry...")
 
     def stop_acquisition(self):
         self.api.stop()
@@ -196,9 +190,6 @@ class HamamatsuCamera(Camera):
 
         # detach
         await trio.to_thread.run_sync(self.api.release)
-
-        # wipe
-        self._buffer_curr_index = None
 
         # free buffer
         await super().unconfigure_acquisition()

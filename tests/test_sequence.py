@@ -16,17 +16,12 @@ logger = logging.getLogger(__name__)
 
 
 async def acquire(send_channel, camera, n_frames):
-    await camera.configure_acquisition(n_frames)
-
     async with send_channel:
-        camera.start_acquisition()
-        for i in range(n_frames):
+        i = 0
+        async for frame in camera.sequence(n_frames):
             logger.info(f".. read frame {i:05d}")
-            frame = await camera.get_image(copy=False)
             await send_channel.send((i, frame))
-        camera.stop_acquisition()
-
-    await camera.unconfigure_acquisition()
+            i += 1
 
 
 async def writer(receive_channel, dst_dir):
@@ -36,7 +31,7 @@ async def writer(receive_channel, dst_dir):
             imageio.imwrite(os.path.join(dst_dir, f"frame_{i:05d}.tif"), frame)
 
 
-async def main(dst_dir="_debug", t_exp=30, t_total=60, shape=(2048, 2048)):
+async def main(dst_dir="_debug", t_exp=15, t_total=30, shape=(2048, 2048)):
     # create destination directory
     try:
         os.makedirs(dst_dir)
@@ -72,6 +67,7 @@ async def main(dst_dir="_debug", t_exp=30, t_total=60, shape=(2048, 2048)):
     # close and terminate
     await camera.close()
     await driver.shutdown()
+
 
 if __name__ == "__main__":
     trio.run(main)
