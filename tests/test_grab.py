@@ -6,7 +6,8 @@ import trio
 import coloredlogs
 from skimage import exposure, transform
 import numpy as np
-from vispy import app, scene
+from vispy import scene
+from vispy.app import Application
 
 from olive.drivers.dcamapi import DCAMAPI
 
@@ -20,18 +21,19 @@ logger = logging.getLogger(__name__)
 async def acquire(send_channel, camera):
     await camera.configure_grab()
     async with send_channel:
-        i = 0
         async for frame in camera.grab():
-            logger.info(f".. tx frame {i:05d}")
-            await send_channel.send((i, frame))
-            i += 1
+            await send_channel.send(frame)
 
 
 async def viewer(receive_channel, shape):
     display_shape = (512, 512)
 
+    # init app
+    app = Application()
+    app.create()
+
     # init viewer
-    canvas = scene.SceneCanvas(keys="interactive")
+    canvas = scene.SceneCanvas(app=app, keys="interactive")
     canvas.size = display_shape
 
     # create view and image
@@ -42,62 +44,61 @@ async def viewer(receive_channel, shape):
     view.camera.flip = (0, 1, 0)
 
     image = scene.visuals.Image(
-        np.empty(display_shape, np.uint16), parent=view.scene, cmap="grays"
+        np.empty(display_shape, np.uint8), parent=view.scene, cmap="grays"
     )
     view.camera.set_range(margin=0)
 
     canvas.show()
 
     async with receive_channel:
-        async for i, frame in receive_channel:
-            logger.info(f".. rx frame {i:05d}")
-
+        async for frame in receive_channel:
             logger.debug(f".... average {frame.mean():.2f}")
 
             # resize
-            # frame = transform.resize(frame, display_shape)
+            frame = transform.resize(frame, display_shape)
             # rescale intensity to 8-bit
-            # frame = exposure.rescale_intensity(frame, out_range=np.uint8)
+            frame = exposure.rescale_intensity(frame, out_range=np.uint8)
             # change dtype
-            # frame = frame.astype(np.uint8)
+            frame = frame.astype(np.uint8)
 
-            # image.set_data(frame)
+            image.set_data(frame)
 
-
-async def ui_event_loop():
-    while True:
-        await trio.sleep(0)
-        app.process_events()
+            canvas.update()
+            app.process_events()
 
 
-async def main(t_exp=30, shape=(512, 512)):
+async def main(t_exp=30, shape=(2048, 2048)):
     # initialize driver
     driver = DCAMAPI()
-    await driver.initialize()
 
-    # enumerate cameras and select one
-    cameras = await driver.enumerate_devices()
-    pprint(cameras)
-    camera = cameras[0]
+    try:
+        await driver.initialize()
 
-    # open
-    await camera.open()
+        # enumerate cameras and select one
+        cameras = await driver.enumerate_devices()
+        pprint(cameras)
+        camera = cameras[0]
 
-    # pre-configure host-side
-    camera.set_max_memory_size(1000 * (2 ** 20))  # 1000 MiB
-    await camera.set_exposure_time(t_exp)
-    await camera.set_roi(shape=shape)
+        try:
+            # open
+            await camera.open()
 
-    # kick-off the acquisition
-    async with trio.open_nursery() as nursery:
-        send_channel, receive_channel = trio.open_memory_channel(0)
-        nursery.start_soon(acquire, send_channel, camera)
-        nursery.start_soon(viewer, receive_channel, shape)
-        await ui_event_loop()
+            # pre-configure host-side
+            camera.set_max_memory_size(1000 * (2 ** 20))  # 1000 MiB
+            await camera.set_exposure_time(t_exp)
+            await camera.set_roi(shape=shape)
 
-    # close and terminate
-    await camera.close()
-    await driver.shutdown()
+            # kick-off the acquisition
+            async with trio.open_nursery() as nursery:
+                send_channel, receive_channel = trio.open_memory_channel(0)
+                nursery.start_soon(acquire, send_channel, camera)
+                nursery.start_soon(viewer, receive_channel, shape)
+        finally:
+            # close and terminate
+            await camera.close()
+    finally:
+        print("SHUTDOWN")
+        await driver.shutdown()
 
 
 if __name__ == "__main__":
