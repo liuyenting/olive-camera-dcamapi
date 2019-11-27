@@ -322,7 +322,21 @@ class DCAMAPI(Driver):
     ##
 
     async def initialize(self):
-        self.api.init()
+        try:
+            self.api.init()
+        except RuntimeError as err:
+            if "No cameras" in str(err):
+                # create dummy API object
+                class DummyDCAMAPI(object):
+                    def __init__(self):
+                        self.n_devices = 0
+
+                    def uninit(self):
+                        pass
+
+                self.api = DummyDCAMAPI()
+            else:
+                raise
 
     async def shutdown(self):
         self.api.uninit()

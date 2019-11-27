@@ -20,7 +20,7 @@ KEYWORDS = []
 AUTHOR = "Liu, Yen-Ting"
 EMAIL = "ytliu@gate.sinica.edu.tw"
 
-REQUIRES = ["numpy"]
+REQUIRES = ["numpy", "trio~=0.13.0"]
 
 PACKAGES = ["olive.drivers.dcamapi"]
 
@@ -32,7 +32,7 @@ EXT_DEFS = [
             # "Module .pxd file not found next to .pyx file", https://github.com/cython/cython/issues/2452
             ".",
             # numpy
-            numpy.get_include()
+            numpy.get_include(),
         ],
         "libraries": ["dcamapi"],
         "library_dirs": ["lib"],

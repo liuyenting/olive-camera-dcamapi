@@ -97,7 +97,6 @@ async def main(t_exp=30, shape=(2048, 2048)):
             # close and terminate
             await camera.close()
     finally:
-        print("SHUTDOWN")
         await driver.shutdown()
 
 
