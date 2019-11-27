@@ -1,5 +1,6 @@
 import os
 from setuptools import Extension, setup
+import sys
 
 from Cython.Build import build_ext
 import numpy
