@@ -12,7 +12,7 @@ from olive.devices import Camera, BufferRetrieveMode
 from olive.devices.errors import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import Capability, CaptureType, DCAM, Event, Info
+from .wrapper import Capability, CaptureStatus, CaptureType, DCAM, Event, Info
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -51,10 +51,10 @@ class HamamatsuCamera(Camera):
         await self.enumerate_properties()
 
         # enable defect correction
-        await self.set_property("defect_correct_mode", "on")
+        self.set_property("defect_correct_mode", "on")
 
     async def close(self):
-        await trio.to_thread.run_sync(self.driver.api.close, self.api)
+        self.driver.api.close(self.api)
         self._api = None
 
     ##
@@ -70,14 +70,14 @@ class HamamatsuCamera(Camera):
                 # no more supported property id
                 break
 
-            name = await trio.to_thread.run_sync(self.api.get_name, curr_id)
+            name = self.api.get_name(curr_id)
             name = name.lower().replace(" ", "_")
             properties[name] = curr_id
 
         self._properties = properties
         return tuple(properties.keys())
 
-    async def get_property(self, name):
+    def get_property(self, name):
         attributes = self._get_property_attributes(name)
         if not attributes["readable"]:
             raise TypeError(f'property "{name}" is not readable')
@@ -90,19 +90,19 @@ class HamamatsuCamera(Camera):
         # convert data type
         prop_type, prop_id = attributes["type"], self._get_property_id(name)
 
-        async def get_value(prop_id):
-            return await trio.to_thread.run_sync(self.api.get_value, prop_id)
+        print(attributes)
 
+        value = self.api.get_value(prop_id)
         if prop_type == "mode":
             # NOTE assuming uniform step
-            index = int(await get_value(prop_id)) - int(attributes["min"])
+            index = int(value) - int(attributes["min"])
             return attributes["modes"][index]
         elif prop_type == "long":
-            return int(await get_value(prop_id))
+            return int(value)
         elif prop_type == "real":
-            return float(await get_value(prop_id))
+            return float(value)
 
-    async def set_property(self, name, value):
+    def set_property(self, name, value):
         attributes = self._get_property_attributes(name)
         if not attributes["writable"]:
             raise TypeError(f'property "{name}" is not writable')
@@ -112,7 +112,7 @@ class HamamatsuCamera(Camera):
             # translate string enum back to index
             # NOTE assuming uniform step
             value = attributes["modes"].index(value) + int(attributes["min"])
-        await trio.to_thread.run_sync(self.api.set_value, prop_id, value)
+        self.api.set_value(prop_id, value)
 
     def _get_property_id(self, name):
         return self._properties[name]
@@ -196,38 +196,38 @@ class HamamatsuCamera(Camera):
 
     ##
 
-    async def get_dtype(self):
-        pixel_type = await self.get_property("image_pixel_type")
+    def get_dtype(self):
+        pixel_type = self.get_property("image_pixel_type")
         try:
             return {"mono8": np.uint8, "mono16": np.uint16}[pixel_type]
         except KeyError:
             raise NotImplementedError(f"unknown pixel type {pixel_type.upper()}")
 
-    async def get_exposure_time(self):
+    def get_exposure_time(self):
         # NOTE default return value is in s
-        return await self.get_property("exposure_time") * 1000
+        return self.get_property("exposure_time") * 1000
 
-    async def set_exposure_time(self, value):
+    def set_exposure_time(self, value):
         # NOTE default return value is in s
-        await self.set_property("exposure_time", value / 1000)
+        self.set_property("exposure_time", value / 1000)
 
-    async def get_max_roi_shape(self):
-        nx = await self.get_property("image_detector_pixel_num_horz")
-        ny = await self.get_property("image_detector_pixel_num_vert")
+    def get_max_roi_shape(self):
+        nx = self.get_property("image_detector_pixel_num_horz")
+        ny = self.get_property("image_detector_pixel_num_vert")
         return ny, nx
 
-    async def get_roi(self):
+    def get_roi(self):
         pos0 = (
-            await self.get_property("subarray_vpos"),
-            await self.get_property("subarray_hpos"),
+            self.get_property("subarray_vpos"),
+            self.get_property("subarray_hpos"),
         )
         shape = (
-            await self.get_property("subarray_vsize"),
-            await self.get_property("subarray_hsize"),
+            self.get_property("subarray_vsize"),
+            self.get_property("subarray_hsize"),
         )
         return pos0, shape
 
-    async def set_roi(self, pos0=None, shape=None):
+    def set_roi(self, pos0=None, shape=None):
         """
         Set region-of-interest.
 
@@ -236,12 +236,12 @@ class HamamatsuCamera(Camera):
             shape (tuple, optional): shape of the ROI
         """
         # save prior roi
-        prev_pos0, prev_shape = await self.get_roi()
+        prev_pos0, prev_shape = self.get_roi()
 
         # disable subarray mode
-        await self.set_property("subarray_mode", "off")
+        self.set_property("subarray_mode", "off")
 
-        max_shape = await self.get_max_roi_shape()
+        max_shape = self.get_max_roi_shape()
 
         try:
             # pos0
@@ -256,7 +256,7 @@ class HamamatsuCamera(Camera):
                     desc = "inferred " + desc
             try:
                 for name, value in zip(("subarray_vpos", "subarray_hpos"), pos0):
-                    await self.set_property(name, value)
+                    self.set_property(name, value)
             except RuntimeError:
                 raise ValueError(f"{desc} {pos0[::-1]} out-of-bound")
 
@@ -269,9 +269,9 @@ class HamamatsuCamera(Camera):
                 pass
             try:
                 for name, value in zip(("subarray_vsize", "subarray_hsize"), shape):
-                    await self.set_property(name, value)
+                    self.set_property(name, value)
                 # re-enable
-                await self.set_property("subarray_mode", "on")
+                self.set_property("subarray_mode", "on")
             except RuntimeError:
                 pos1 = tuple(p + (s - 1) for p, s in zip(pos0, shape))
                 raise ValueError(
@@ -279,7 +279,7 @@ class HamamatsuCamera(Camera):
                 )
         except ValueError:
             logger.warning("revert back to previous ROI...")
-            await self.set_roi(pos0=prev_pos0, shape=prev_shape)
+            self.set_roi(pos0=prev_pos0, shape=prev_shape)
             raise
 
     ##
@@ -289,11 +289,16 @@ class HamamatsuCamera(Camera):
         return self._api
 
     @property
-    def busy(self):
-        return False
+    def is_busy(self):
+        return self.api.status() != CaptureStatus.Ready
+
+    @property
+    def is_opened(self):
+        return self._api is not None
 
     @property
     def info(self):
+        print("RETRIEVE INFO")
         raw_sn = self.api.get_string(Info.CameraID)
         params = {
             "version": self.api.get_string(Info.APIVersion),

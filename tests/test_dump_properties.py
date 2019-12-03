@@ -1,14 +1,8 @@
-import errno
 import logging
-import os
 from pprint import pprint
-from timeit import timeit
 import trio
 
 import coloredlogs
-import imageio
-import numpy as np
-from vispy import app, scene
 
 from olive.drivers.dcamapi import DCAMAPI
 
@@ -22,7 +16,7 @@ logger = logging.getLogger(__name__)
 async def dump_properties(camera):
     for name in await camera.enumerate_properties():
         print(
-            f"{name} ({camera._get_property_id(name)}) = {await camera.get_property(name)}"
+            f"{name} ({camera._get_property_id(name)}) = {camera.get_property(name)}"
         )
         pprint(camera._get_property_attributes(name))
         print()

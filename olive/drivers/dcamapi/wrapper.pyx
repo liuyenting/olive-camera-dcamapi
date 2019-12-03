@@ -383,7 +383,12 @@ cdef class DCAM:
         # update details
         cdef double value
         if attributes['type'] == 'mode':
-            value = attributes['min']
+            try:
+                value = attributes['min']
+            except KeyError:
+                # no minimum index value, default to 0
+                attributes['min'] = 0
+                value = attributes['default']
             mode_text = []
             while True:
                 text = self._get_value_text(iprop, value)
