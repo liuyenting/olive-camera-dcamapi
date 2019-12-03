@@ -34,6 +34,7 @@ async def main():
             camera.set_exposure_time(t_exp)
             camera.set_roi(shape=(2048, 2048))
 
+            # TODO single frame ring buffer not working, exception
             frame = await camera.snap()
             print(f"captured size {frame.shape}, {frame.dtype}")
             imageio.imwrite("debug.tif", frame)
