@@ -31,8 +31,8 @@ async def main():
         try:
             t_exp = 10
 
-            await camera.set_exposure_time(t_exp)
-            await camera.set_roi(shape=(2048, 2048))
+            camera.set_exposure_time(t_exp)
+            camera.set_roi(shape=(2048, 2048))
 
             frame = await camera.snap()
             print(f"captured size {frame.shape}, {frame.dtype}")

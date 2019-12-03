@@ -18,10 +18,14 @@ logger = logging.getLogger(__name__)
 async def acquire(send_channel, camera, n_frames):
     async with send_channel:
         i = 0
-        async for frame in camera.sequence(n_frames):
-            logger.info(f".. read frame {i:05d}")
-            await send_channel.send((i, frame))
-            i += 1
+        try:
+            async for frame in camera.sequence(n_frames):
+                logger.info(f".. read frame {i:05d}")
+                await send_channel.send((i, frame))
+                i += 1
+        except IndexError as err:
+            logger.error(str(err))
+            return
 
 
 async def writer(receive_channel, dst_dir):
@@ -31,7 +35,7 @@ async def writer(receive_channel, dst_dir):
             imageio.imwrite(os.path.join(dst_dir, f"frame_{i:05d}.tif"), frame)
 
 
-async def main(dst_dir="_debug", t_exp=15, t_total=30, shape=(2048, 2048)):
+async def main(dst_dir="_debug", t_exp=20, t_total=60, shape=(2048, 2048)):
     # create destination directory
     try:
         os.makedirs(dst_dir)
@@ -51,9 +55,9 @@ async def main(dst_dir="_debug", t_exp=15, t_total=30, shape=(2048, 2048)):
     await camera.open()
 
     # pre-configure host-side
-    camera.set_max_memory_size(2000 * (2 ** 20))  # 1000 MiB
-    await camera.set_exposure_time(t_exp)
-    await camera.set_roi(shape=shape)
+    camera.set_max_memory_size(2048 * (2 ** 20))  # 1000 MiB
+    camera.set_exposure_time(t_exp)
+    camera.set_roi(shape=shape)
 
     # total frames
     n_frames = (t_total * 1000) // t_exp

@@ -90,8 +90,6 @@ class HamamatsuCamera(Camera):
         # convert data type
         prop_type, prop_id = attributes["type"], self._get_property_id(name)
 
-        print(attributes)
-
         value = self.api.get_value(prop_id)
         if prop_type == "mode":
             # NOTE assuming uniform step
@@ -137,12 +135,12 @@ class HamamatsuCamera(Camera):
 
         # create event handle
         self._event = self.api.event
-        await trio.to_thread.run_sync(self._event.open)
+        self._event.open()
 
     async def configure_ring(self, n_frames):
         """Attach buffer to DCAM-API internals."""
         await super().configure_ring(n_frames)
-        await trio.to_thread.run_sync(self.api.attach, self.buffer.frames)
+        self.api.attach(self.buffer.frames)
 
     def start_acquisition(self):
         mode = CaptureType.Sequence if self.continuous else CaptureType.Snap
@@ -153,24 +151,17 @@ class HamamatsuCamera(Camera):
         self._event.start(Event.FrameReady)
 
         while True:
-            latest_index, n_frames = await trio.to_thread.run_sync(
-                self.api.transfer_info
-            )
+            latest_index, n_frames = self.api.transfer_info()
 
-            logger.debug(
-                f"frame {n_frames:05d}, {self.buffer.size()} backlogged frame(s)"
-            )
-
-            # DCAM-API writes directly to the buffer...
-            # self.buffer.write()
-            # ... update write pointer only
-            self.buffer._write_index = (
-                latest_index - 1 if latest_index > 0 else self.buffer.capacity() - 1
-            )
+            # DCAM-API writes directly to the buffer, dummy write
+            n_backlog = latest_index - self.buffer._write_index + 1
+            for _ in range(n_backlog):
+                self.buffer.write()
 
             if mode == BufferRetrieveMode.Latest:
                 # fast forward
                 self.buffer._read_index = latest_index
+
             frame = self.buffer.read()
             if frame is not None:
                 return frame
@@ -189,7 +180,7 @@ class HamamatsuCamera(Camera):
         self._event = None
 
         # detach
-        await trio.to_thread.run_sync(self.api.release)
+        self.api.release()
 
         # free buffer
         await super().unconfigure_acquisition()
@@ -217,10 +208,7 @@ class HamamatsuCamera(Camera):
         return ny, nx
 
     def get_roi(self):
-        pos0 = (
-            self.get_property("subarray_vpos"),
-            self.get_property("subarray_hpos"),
-        )
+        pos0 = (self.get_property("subarray_vpos"), self.get_property("subarray_hpos"))
         shape = (
             self.get_property("subarray_vsize"),
             self.get_property("subarray_hsize"),

@@ -52,7 +52,7 @@ async def viewer(receive_channel, shape):
 
     async with receive_channel:
         async for frame in receive_channel:
-            logger.debug(f".... average {frame.mean():.2f}")
+            # logger.debug(f".... average {frame.mean():.2f}")
 
             # resize
             frame = transform.resize(frame, display_shape)
@@ -67,7 +67,7 @@ async def viewer(receive_channel, shape):
             app.process_events()
 
 
-async def main(t_exp=30, shape=(2048, 2048)):
+async def main(t_exp=10, shape=(1024, 1024)):
     # initialize driver
     driver = DCAMAPI()
 
@@ -85,8 +85,8 @@ async def main(t_exp=30, shape=(2048, 2048)):
 
             # pre-configure host-side
             camera.set_max_memory_size(1000 * (2 ** 20))  # 1000 MiB
-            await camera.set_exposure_time(t_exp)
-            await camera.set_roi(shape=shape)
+            camera.set_exposure_time(t_exp)
+            camera.set_roi(shape=shape)
 
             # kick-off the acquisition
             async with trio.open_nursery() as nursery:
