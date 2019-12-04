@@ -5,8 +5,6 @@ import trio
 
 import coloredlogs
 import imageio
-from numcodecs import Blosc
-import zarr
 
 from olive.drivers.dcamapi import DCAMAPI
 
@@ -29,11 +27,11 @@ async def acquire(send_channel, camera, n_frames):
             return
 
 
-async def writer(receive_channel, array):
+async def writer(receive_channel, dst_dir):
     async with receive_channel:
         async for i, frame in receive_channel:
             logger.info(f".. acquired frame {i:05d}")
-            array[i, ...] = frame
+            imageio.imwrite(os.path.join(dst_dir, f"frmae_{i:05d}.tif"), frame)
 
 
 async def main(dst_dir="_debug", t_exp=20, t_total=60, shape=(2048, 2048)):
@@ -63,35 +61,17 @@ async def main(dst_dir="_debug", t_exp=20, t_total=60, shape=(2048, 2048)):
             # total frames
             n_frames = (t_total * 1000) // t_exp
 
-            # create storage
-            logger.info("creating zarr storage")
-            compressor = Blosc(cname="snappy")
-            array = zarr.open(
-                "_debug.zarr",
-                mode="w",
-                shape=(n_frames,) + shape,
-                dtype=camera.get_dtype(),
-                chunks=(1,) + shape,
-                compressor=compressor,
-            )
-            print(array.info)
-
-            # kick-off the acquisition
-            async with trio.open_nursery() as nursery:
-                send_channel, receive_channel = trio.open_memory_channel(0)
-                nursery.start_soon(acquire, send_channel, camera, n_frames)
-                nursery.start_soon(writer, receive_channel, array)
-
             # create destination directory
             try:
                 os.makedirs(dst_dir)
             except FileExistsError:
                 pass
 
-            # translate
-            for i, frame in enumerate(array):
-                logger.info(f".. translate frame {i:05d}")
-                imageio.imwrite(os.path.join(dst_dir, f"frmae_{i:05d}.tif"), frame)
+            # kick-off the acquisition
+            async with trio.open_nursery() as nursery:
+                send_channel, receive_channel = trio.open_memory_channel(0)
+                nursery.start_soon(acquire, send_channel, camera, n_frames)
+                nursery.start_soon(writer, receive_channel, dst_dir)
         finally:
             await camera.close()
     finally:
