@@ -153,14 +153,65 @@ class HamamatsuCamera(Camera):
         while True:
             latest_index, n_frames = self.api.transfer_info()
 
+            """
             # DCAM-API writes directly to the buffer, dummy write
             n_backlog = latest_index - self.buffer._write_index + 1
             for _ in range(n_backlog):
                 self.buffer.write()
+            """
 
             if mode == BufferRetrieveMode.Latest:
                 # fast forward
                 self.buffer._read_index = latest_index
+            else:
+                wi0, ri0 = self.buffer._write_index, self.buffer._read_index
+                if wi0 > ri0 or self.buffer.empty():
+                    ri0 += self.buffer.capacity()
+
+                wi1 = latest_index + 1
+                if wi1 >= ri0:
+                    self.buffer._is_full = True
+                    raise IndexError("not enough internal buffer")
+
+                # DCAM-API writes directly to the buffer, update index only
+                self.buffer._write_index = wi1 % self.buffer.capacity()
+
+                # ---W--R---
+                # ----W-R---
+                #
+                # ---W--R---
+                # ------RW-- (E)
+                #
+                # ---W--R---
+                # ------R---W
+                # W-----R--- (E)
+                #
+                # ---W--R---
+                # ------R-------W
+                # ----W-R--- (E)
+                #
+                # ---R--W---
+                #   ------W----R
+                # ---R----W-
+                #   --------W--R
+                #
+                # ---R--W---
+                #   ------W----R
+                # ---R-------W
+                # -W-R------
+                #   ---------W-R
+                #
+                # ---R--W---
+                #   ------W----R
+                # ---R----------W
+                # ---RW----- (E)
+                #   -----------RW
+                #
+                # ---R--W---
+                #   ------W----R
+                # ---R-------------W
+                # ---R---W-- (E)
+                #   -----------R---W
 
             frame = self.buffer.read()
             if frame is not None:

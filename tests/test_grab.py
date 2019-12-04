@@ -67,7 +67,7 @@ async def viewer(receive_channel, shape):
             app.process_events()
 
 
-async def main(t_exp=10, shape=(1024, 1024)):
+async def main(t_exp=20, shape=(2048, 2048)):
     # initialize driver
     driver = DCAMAPI()
 

@@ -20,7 +20,6 @@ async def acquire(send_channel, camera, n_frames):
         i = 0
         try:
             async for frame in camera.sequence(n_frames):
-                logger.info(f".. read frame {i:05d}")
                 await send_channel.send((i, frame))
                 i += 1
         except IndexError as err:
@@ -31,11 +30,11 @@ async def acquire(send_channel, camera, n_frames):
 async def writer(receive_channel, dst_dir):
     async with receive_channel:
         async for i, frame in receive_channel:
-            logger.info(f".. write frame {i:05d}")
+            logger.info(f".. acquired frame {i:05d}")
             imageio.imwrite(os.path.join(dst_dir, f"frame_{i:05d}.tif"), frame)
 
 
-async def main(dst_dir="_debug", t_exp=20, t_total=60, shape=(2048, 2048)):
+async def main(dst_dir="_debug", t_exp=20, t_total=30, shape=(2048, 2048)):
     # create destination directory
     try:
         os.makedirs(dst_dir)
