@@ -5,6 +5,8 @@ import trio
 
 import coloredlogs
 import imageio
+from numcodecs import Blosc
+import zarr
 
 from olive.drivers.dcamapi import DCAMAPI
 
@@ -27,49 +29,73 @@ async def acquire(send_channel, camera, n_frames):
             return
 
 
-async def writer(receive_channel, dst_dir):
+async def writer(receive_channel, array):
     async with receive_channel:
         async for i, frame in receive_channel:
             logger.info(f".. acquired frame {i:05d}")
-            imageio.imwrite(os.path.join(dst_dir, f"frame_{i:05d}.tif"), frame)
+            array[i, ...] = frame
 
 
-async def main(dst_dir="_debug", t_exp=20, t_total=30, shape=(2048, 2048)):
-    # create destination directory
+async def main(dst_dir="_debug", t_exp=20, t_total=60, shape=(2048, 2048)):
     try:
-        os.makedirs(dst_dir)
-    except FileExistsError:
-        pass
+        # initialize driver
+        driver = DCAMAPI()
+        await driver.initialize()
 
-    # initialize driver
-    driver = DCAMAPI()
-    await driver.initialize()
+        # enumerate cameras and select one
+        cameras = await driver.enumerate_devices()
+        pprint(cameras)
+        assert len(cameras) > 0, "no camera"
 
-    # enumerate cameras and select one
-    cameras = await driver.enumerate_devices()
-    pprint(cameras)
-    camera = cameras[0]
+        try:
+            # open
+            camera = cameras[0]
+            await camera.open()
 
-    # open
-    await camera.open()
+            # pre-configure host-side
+            logger.debug("> set max memory size")
+            camera.set_max_memory_size(2048 * (2 ** 20))  # 1000 MiB
+            logger.debug("> set exposure time")
+            camera.set_exposure_time(t_exp)
+            logger.debug("> set roi")
+            camera.set_roi(shape=shape)
 
-    # pre-configure host-side
-    camera.set_max_memory_size(2048 * (2 ** 20))  # 1000 MiB
-    camera.set_exposure_time(t_exp)
-    camera.set_roi(shape=shape)
+            # total frames
+            n_frames = (t_total * 1000) // t_exp
 
-    # total frames
-    n_frames = (t_total * 1000) // t_exp
+            # create storage
+            logger.info("creating zarr storage")
+            compressor = Blosc(cname="snappy")
+            array = zarr.open(
+                "_debug.zarr",
+                mode="w",
+                shape=(n_frames,) + shape,
+                dtype=camera.get_dtype(),
+                chunks=(1,) + shape,
+                compressor=compressor,
+            )
+            print(array.info)
 
-    # kick-off the acquisition
-    async with trio.open_nursery() as nursery:
-        send_channel, receive_channel = trio.open_memory_channel(0)
-        nursery.start_soon(acquire, send_channel, camera, n_frames)
-        nursery.start_soon(writer, receive_channel, dst_dir)
+            # kick-off the acquisition
+            async with trio.open_nursery() as nursery:
+                send_channel, receive_channel = trio.open_memory_channel(0)
+                nursery.start_soon(acquire, send_channel, camera, n_frames)
+                nursery.start_soon(writer, receive_channel, array)
 
-    # close and terminate
-    await camera.close()
-    await driver.shutdown()
+            # create destination directory
+            try:
+                os.makedirs(dst_dir)
+            except FileExistsError:
+                pass
+
+            # translate
+            for i, frame in enumerate(array):
+                logger.info(f".. translate frame {i:05d}")
+                imageio.imwrite(os.path.join(dst_dir, f"frmae_{i:05d}.tif"), frame)
+        finally:
+            await camera.close()
+    finally:
+        await driver.shutdown()
 
 
 if __name__ == "__main__":

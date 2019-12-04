@@ -337,7 +337,6 @@ class HamamatsuCamera(Camera):
 
     @property
     def info(self):
-        print("RETRIEVE INFO")
         raw_sn = self.api.get_string(Info.CameraID)
         params = {
             "version": self.api.get_string(Info.APIVersion),
@@ -369,17 +368,7 @@ class DCAMAPI(Driver):
         try:
             self.api.init()
         except RuntimeError as err:
-            if "No cameras" in str(err):
-                # create dummy API object
-                class DummyDCAMAPI(object):
-                    def __init__(self):
-                        self.n_devices = 0
-
-                    def uninit(self):
-                        pass
-
-                self.api = DummyDCAMAPI()
-            else:
+            if "No cameras" not in str(err):
                 raise
 
     async def shutdown(self):
