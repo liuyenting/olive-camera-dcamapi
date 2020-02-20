@@ -9,7 +9,7 @@ import trio
 
 from olive.core import Driver, DeviceInfo
 from olive.devices import Camera, BufferRetrieveMode
-from olive.devices.errors import UnsupportedDeviceError
+from olive.devices.error import UnsupportedDeviceError
 
 from .wrapper import DCAMAPI as _DCAMAPI
 from .wrapper import Capability, CaptureStatus, CaptureType, DCAM, Event, Info
@@ -359,6 +359,7 @@ class DCAMAPI(Driver):
     api = None
 
     def __init__(self):
+        # FIXME use class attribute, type(self)
         if self.api is None:
             self.api = _DCAMAPI()
 
