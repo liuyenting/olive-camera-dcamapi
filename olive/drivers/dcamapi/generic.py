@@ -7,9 +7,10 @@ import re
 import numpy as np
 import trio
 
-from olive.core import Driver, DeviceInfo
+from olive.core import Driver
+from olive.devices.base import DeviceInfo
 from olive.devices import Camera, BufferRetrieveMode
-from olive.devices.errors import UnsupportedDeviceError
+from olive.devices.errors import UnsupportedClassError
 
 from .wrapper import DCAMAPI as _DCAMAPI
 from .wrapper import Capability, CaptureStatus, CaptureType, DCAM, Event, Info
@@ -35,7 +36,7 @@ class HamamatsuCamera(Camera):
             logger.info(f".. {self.info}")
         except RuntimeError as err:
             logger.exception(err)
-            raise UnsupportedDeviceError
+            raise UnsupportedClassError
         finally:
             await self.close()
 
@@ -147,7 +148,7 @@ class HamamatsuCamera(Camera):
         self.api.start(mode)
         logger.debug(f"acquisition STARTED")
 
-    async def _extract_frame(self, mode: BufferRetrieveMode):
+    async def _retrieve_frame(self, mode: BufferRetrieveMode):
         self._event.start(Event.FrameReady)
 
         while True:
@@ -382,7 +383,7 @@ class DCAMAPI(Driver):
                 device = HamamatsuCamera(self, i_device)
                 await device.test_open()
                 valid_devices.append(device)
-            except UnsupportedDeviceError:
+            except UnsupportedClassError:
                 pass
         return tuple(valid_devices)
 
