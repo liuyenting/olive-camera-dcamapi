@@ -1,19 +1,21 @@
+import asyncio
 import ctypes
-from functools import lru_cache
 import logging
-from multiprocessing.sharedctypes import RawArray
 import re
+from functools import lru_cache
+from multiprocessing.sharedctypes import RawArray
+from typing import Iterable
 
 import numpy as np
-import trio
 
-from olive.core import Driver
+from olive.devices import BufferRetrieveMode, Camera
 from olive.devices.base import DeviceInfo
-from olive.devices import Camera, BufferRetrieveMode
-from olive.devices.errors import UnsupportedClassError
+from olive.devices.error import UnsupportedClassError
+from olive.drivers.base import Driver
 
+from .wrapper import DCAM
 from .wrapper import DCAMAPI as _DCAMAPI
-from .wrapper import Capability, CaptureStatus, CaptureType, DCAM, Event, Info
+from .wrapper import Capability, CaptureStatus, CaptureType, Event, Info
 
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
@@ -218,7 +220,7 @@ class HamamatsuCamera(Camera):
             if frame is not None:
                 return frame
             else:
-                await trio.sleep(0)
+                await asyncio.sleep(0)
                 logger.debug(f"retry...")
 
     def stop_acquisition(self):
@@ -360,14 +362,18 @@ class DCAMAPI(Driver):
     api = None
 
     def __init__(self):
-        if self.api is None:
-            self.api = _DCAMAPI()
+        if type(self).api is None:
+            type(self).api = _DCAMAPI()
+        super().__init__()
 
     ##
 
     async def initialize(self):
         try:
-            self.api.init()
+            print("DCAMAPI, pre-init")
+            api = _DCAMAPI()
+            api.init()
+            print("DCAMAPI, post-init")
         except RuntimeError as err:
             if "No cameras" not in str(err):
                 raise
@@ -375,15 +381,7 @@ class DCAMAPI(Driver):
     async def shutdown(self):
         self.api.uninit()
 
-    async def enumerate_devices(self) -> HamamatsuCamera:
-        valid_devices = []
-        logger.debug(f"max index: {self.api.n_devices}")
-        for i_device in range(self.api.n_devices):
-            try:
-                device = HamamatsuCamera(self, i_device)
-                await device.test_open()
-                valid_devices.append(device)
-            except UnsupportedClassError:
-                pass
-        return tuple(valid_devices)
-
+    async def _enumerate_device_candidates(self) -> Iterable[HamamatsuCamera]:
+        n_devices = self.api.n_devices
+        logger.debug(f"found {n_devices} device(s)")
+        return [HamamatsuCamera(self, i) for i in range(n_devices)]

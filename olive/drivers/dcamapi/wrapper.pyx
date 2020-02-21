@@ -75,20 +75,24 @@ cdef class DCAMAPI:
     #: number of supported devices found by DCAM-API
     cdef readonly int32 n_devices
 
-    def init(self):
+    cpdef init(self):
         """
         Initialize the DCAM-API manager, modules and drivers.
 
         Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI, who provides the singleton behavior.
         """
+        print('create apiinit')
         cdef DCAMAPI_INIT apiinit
         memset(&apiinit, 0, sizeof(apiinit))
         apiinit.size = sizeof(apiinit)
 
+        print('before dcamapi_init (2)')
         cdef DCAMERR err
         err = dcamapi_init(&apiinit)
         DCAMAPI.check_error(err, 'dcamapi_init()')
+        print('after dcamapi_init')
 
+        print(apiinit.iDeviceCount)
         self.n_devices = apiinit.iDeviceCount
 
     def  uninit(self):

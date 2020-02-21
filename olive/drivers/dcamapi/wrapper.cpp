@@ -963,7 +963,7 @@ typedef struct {
 } __Pyx_BufFmt_Context;
 
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":776
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":776
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -972,7 +972,7 @@ typedef struct {
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":777
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":777
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -981,7 +981,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":778
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":778
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -990,7 +990,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":779
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":779
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -999,7 +999,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":783
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":783
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -1008,7 +1008,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":784
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":784
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -1017,7 +1017,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":785
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":785
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -1026,7 +1026,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":786
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":786
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -1035,7 +1035,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":790
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":790
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -1044,7 +1044,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":791
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":791
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -1053,7 +1053,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":800
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":800
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -1062,7 +1062,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":801
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":801
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -1071,7 +1071,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":802
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":802
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -1080,7 +1080,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":804
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":804
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -1089,7 +1089,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":805
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":805
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -1098,7 +1098,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":806
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":806
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -1107,7 +1107,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":808
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":808
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -1116,7 +1116,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":809
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":809
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -1125,7 +1125,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":811
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":811
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -1134,7 +1134,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":812
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":812
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -1143,7 +1143,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":813
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":813
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -1185,7 +1185,7 @@ struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":815
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":815
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -1194,7 +1194,7 @@ struct __pyx_memoryviewslice_obj;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":816
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":816
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -1203,7 +1203,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":817
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":817
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -1212,7 +1212,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":819
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":819
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1228,7 +1228,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name;
 struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text;
 struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame;
 
-/* "olive/drivers/dcamapi/wrapper.pyx":125
+/* "olive/drivers/dcamapi/wrapper.pyx":129
  * 
  *     @staticmethod
  *     cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):             # <<<<<<<<<<<<<<
@@ -1241,7 +1241,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error {
   int32 nbytes;
 };
 
-/* "olive/drivers/dcamapi/wrapper.pyx":179
+/* "olive/drivers/dcamapi/wrapper.pyx":183
  *         self.handle = <HDCAMWAIT>0
  * 
  *     cpdef start(self, int32 event: Event, int32 timeout=1000):             # <<<<<<<<<<<<<<
@@ -1253,7 +1253,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start {
   int32 timeout;
 };
 
-/* "olive/drivers/dcamapi/wrapper.pyx":304
+/* "olive/drivers/dcamapi/wrapper.pyx":308
  *         }
  * 
  *     cpdef get_string(self, int32 idstr, int32 nbytes=256):             # <<<<<<<<<<<<<<
@@ -1265,7 +1265,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string {
   int32 nbytes;
 };
 
-/* "olive/drivers/dcamapi/wrapper.pyx":434
+/* "olive/drivers/dcamapi/wrapper.pyx":438
  *         return value
  * 
  *     cpdef get_next_id(self, int32 iprop=0):             # <<<<<<<<<<<<<<
@@ -1277,7 +1277,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_next_id {
   int32 iprop;
 };
 
-/* "olive/drivers/dcamapi/wrapper.pyx":441
+/* "olive/drivers/dcamapi/wrapper.pyx":445
  *         return iprop
  * 
  *     cpdef get_name(self, int32 iprop, int32 nbytes=64):             # <<<<<<<<<<<<<<
@@ -1289,7 +1289,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name {
   int32 nbytes;
 };
 
-/* "olive/drivers/dcamapi/wrapper.pyx":451
+/* "olive/drivers/dcamapi/wrapper.pyx":455
  *         return c_text.decode('utf-8', errors='replace')
  * 
  *     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):             # <<<<<<<<<<<<<<
@@ -1301,7 +1301,7 @@ struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text {
   int32 nbytes;
 };
 
-/* "olive/drivers/dcamapi/wrapper.pyx":519
+/* "olive/drivers/dcamapi/wrapper.pyx":523
  *         self.buffer = None
  * 
  *     cpdef lock_frame(self, int32 iframe=-1):             # <<<<<<<<<<<<<<
@@ -1327,7 +1327,7 @@ struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI {
 };
 
 
-/* "olive/drivers/dcamapi/wrapper.pyx":147
+/* "olive/drivers/dcamapi/wrapper.pyx":151
  * 
  * @cython.final
  * cdef class DCAMWAIT:             # <<<<<<<<<<<<<<
@@ -1342,7 +1342,7 @@ struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT {
 };
 
 
-/* "olive/drivers/dcamapi/wrapper.pyx":206
+/* "olive/drivers/dcamapi/wrapper.pyx":210
  * 
  * @cython.final
  * cdef class DCAM:             # <<<<<<<<<<<<<<
@@ -1464,17 +1464,19 @@ static struct __pyx_vtabstruct_memoryview *__pyx_vtabptr_memoryview;
  */
 
 struct __pyx_vtabstruct_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI {
+  PyObject *(*init)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, int __pyx_skip_dispatch);
   PyObject *(*open)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, int32, int __pyx_skip_dispatch);
   PyObject *(*close)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, int __pyx_skip_dispatch);
   PyObject *(*check_error)(enum DCAMERR, char const *, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error *__pyx_optional_args);
 };
 static struct __pyx_vtabstruct_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *__pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI;
+static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, int __pyx_skip_dispatch);
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, int32, int __pyx_skip_dispatch);
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, int __pyx_skip_dispatch);
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(enum DCAMERR, char const *, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error *__pyx_optional_args);
 
 
-/* "olive/drivers/dcamapi/wrapper.pyx":147
+/* "olive/drivers/dcamapi/wrapper.pyx":151
  * 
  * @cython.final
  * cdef class DCAMWAIT:             # <<<<<<<<<<<<<<
@@ -1489,7 +1491,7 @@ static struct __pyx_vtabstruct_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT *__pyx
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT *, int32, int __pyx_skip_dispatch, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start *__pyx_optional_args);
 
 
-/* "olive/drivers/dcamapi/wrapper.pyx":206
+/* "olive/drivers/dcamapi/wrapper.pyx":210
  * 
  * @cython.final
  * cdef class DCAM:             # <<<<<<<<<<<<<<
@@ -1627,55 +1629,12 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject
 /* GetBuiltinName.proto */
 static PyObject *__Pyx_GetBuiltinName(PyObject *name);
 
-/* ArgTypeTest.proto */
-#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
-    ((likely((Py_TYPE(obj) == type) | (none_allowed && (obj == Py_None)))) ? 1 :\
-        __Pyx__ArgTypeTest(obj, type, name, exact))
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
-
 /* PyObjectCall.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
 #else
 #define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
 #endif
-
-/* BufferIndexError.proto */
-static void __Pyx_RaiseBufferIndexError(int axis);
-
-/* IncludeStringH.proto */
-#include <string.h>
-
-/* decode_c_string_utf16.proto */
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16(const char *s, Py_ssize_t size, const char *errors) {
-    int byteorder = 0;
-    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
-}
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16LE(const char *s, Py_ssize_t size, const char *errors) {
-    int byteorder = -1;
-    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
-}
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16BE(const char *s, Py_ssize_t size, const char *errors) {
-    int byteorder = 1;
-    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
-}
-
-/* decode_c_string.proto */
-static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
-         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
-         const char* encoding, const char* errors,
-         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors));
-
-/* PyObjectFormat.proto */
-#if CYTHON_USE_UNICODE_WRITER
-static PyObject* __Pyx_PyObject_Format(PyObject* s, PyObject* f);
-#else
-#define __Pyx_PyObject_Format(s, f) PyObject_Format(s, f)
-#endif
-
-/* JoinPyUnicode.proto */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      Py_UCS4 max_char);
 
 /* PyCFunctionFastCall.proto */
 #if CYTHON_FAST_PYCCALL
@@ -1714,6 +1673,49 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
+
+/* ArgTypeTest.proto */
+#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
+    ((likely((Py_TYPE(obj) == type) | (none_allowed && (obj == Py_None)))) ? 1 :\
+        __Pyx__ArgTypeTest(obj, type, name, exact))
+static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
+
+/* BufferIndexError.proto */
+static void __Pyx_RaiseBufferIndexError(int axis);
+
+/* IncludeStringH.proto */
+#include <string.h>
+
+/* decode_c_string_utf16.proto */
+static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16(const char *s, Py_ssize_t size, const char *errors) {
+    int byteorder = 0;
+    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
+}
+static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16LE(const char *s, Py_ssize_t size, const char *errors) {
+    int byteorder = -1;
+    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
+}
+static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16BE(const char *s, Py_ssize_t size, const char *errors) {
+    int byteorder = 1;
+    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
+}
+
+/* decode_c_string.proto */
+static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
+         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
+         const char* encoding, const char* errors,
+         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors));
+
+/* PyObjectFormat.proto */
+#if CYTHON_USE_UNICODE_WRITER
+static PyObject* __Pyx_PyObject_Format(PyObject* s, PyObject* f);
+#else
+#define __Pyx_PyObject_Format(s, f) PyObject_Format(s, f)
+#endif
+
+/* JoinPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char);
 
 /* PyThreadStateGet.proto */
 #if CYTHON_FAST_THREAD_STATE
@@ -2454,6 +2456,7 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
+static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *__pyx_v_self, CYTHON_UNUSED int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_UNUSED struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *__pyx_v_self, int32 __pyx_v_index, CYTHON_UNUSED int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close(CYTHON_UNUSED struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *__pyx_v_self, struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *__pyx_v_dev, CYTHON_UNUSED int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(enum DCAMERR __pyx_v_errid, char const *__pyx_v_apiname, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error *__pyx_optional_args); /* proto*/
@@ -2646,6 +2649,7 @@ extern int __pyx_module_is_main_olive__drivers__dcamapi__wrapper;
 int __pyx_module_is_main_olive__drivers__dcamapi__wrapper = 0;
 
 /* Implementation of 'olive.drivers.dcamapi.wrapper' */
+static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_RuntimeError;
 static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_KeyError;
@@ -2658,22 +2662,22 @@ static PyObject *__pyx_builtin_enumerate;
 static PyObject *__pyx_builtin_Ellipsis;
 static PyObject *__pyx_builtin_id;
 static PyObject *__pyx_builtin_IndexError;
-static const char __pyx_k_[] = " ";
 static const char __pyx_k_O[] = "O";
 static const char __pyx_k_T[] = "T{";
   static const char __pyx_k_c[] = "c";
   static const char __pyx_k_s[] = "(%s)";
+  static const char __pyx_k__4[] = " ";
   static const char __pyx_k_id[] = "id";
   static const char __pyx_k_np[] = "np";
   static const char __pyx_k_08X[] = "08X";
   static const char __pyx_k_Bus[] = "Bus";
   static const char __pyx_k_LUT[] = "LUT";
-  static const char __pyx_k__10[] = "_";
-  static const char __pyx_k__41[] = "^";
-  static const char __pyx_k__42[] = "";
-  static const char __pyx_k__43[] = ":";
-static const char __pyx_k__44[] = "}";
-static const char __pyx_k__45[] = ",";
+  static const char __pyx_k__13[] = "_";
+  static const char __pyx_k__44[] = "^";
+  static const char __pyx_k__45[] = "";
+  static const char __pyx_k__46[] = ":";
+static const char __pyx_k__47[] = "}";
+static const char __pyx_k__48[] = ",";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_max[] = "max";
 static const char __pyx_k_min[] = "min";
@@ -2722,6 +2726,7 @@ static const char __pyx_k_items[] = "items";
 static const char __pyx_k_lower[] = "lower";
 static const char __pyx_k_modes[] = "modes";
 static const char __pyx_k_numpy[] = "numpy";
+static const char __pyx_k_print[] = "print";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_shape[] = "shape";
 static const char __pyx_k_start[] = "start";
@@ -2820,18 +2825,21 @@ static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
 static const char __pyx_k_Capture_events[] = "Capture events";
 static const char __pyx_k_MeterPerSecond[] = "MeterPerSecond";
+static const char __pyx_k_create_apiinit[] = "create apiinit";
 static const char __pyx_k_View_MemoryView[] = "View.MemoryView";
 static const char __pyx_k_allocate_buffer[] = "allocate_buffer";
 static const char __pyx_k_dtype_is_object[] = "dtype_is_object";
 static const char __pyx_k_pyx_PickleError[] = "__pyx_PickleError";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
+static const char __pyx_k_after_dcamapi_init[] = "after dcamapi_init";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_get_capability_lut[] = "_get_capability_lut";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
 static const char __pyx_k_NotImplementedError[] = "NotImplementedError";
 static const char __pyx_k_pyx_unpickle_DCAMAPI[] = "__pyx_unpickle_DCAMAPI";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
+static const char __pyx_k_before_dcamapi_init_2[] = "before dcamapi_init (2)";
 static const char __pyx_k_contiguous_and_direct[] = "<contiguous and direct>";
 static const char __pyx_k_get_capability_region[] = "_get_capability_region";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
@@ -2873,7 +2881,6 @@ static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __red
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
 static const char __pyx_k_unable_to_allocate_shape_and_str[] = "unable to allocate shape and strides.";
 static const char __pyx_k_Format_string_allocated_too_shor_2[] = "Format string allocated too short.";
-static PyObject *__pyx_kp_u_;
 static PyObject *__pyx_kp_u_08X;
 static PyObject *__pyx_n_s_APIVersion;
 static PyObject *__pyx_n_s_ASCII;
@@ -2951,17 +2958,20 @@ static PyObject *__pyx_n_s_Unstable;
 static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_Vendor;
 static PyObject *__pyx_n_s_View_MemoryView;
-static PyObject *__pyx_n_u__10;
-static PyObject *__pyx_kp_b__41;
-static PyObject *__pyx_kp_b__42;
-static PyObject *__pyx_kp_b__43;
+static PyObject *__pyx_n_u__13;
+static PyObject *__pyx_kp_u__4;
 static PyObject *__pyx_kp_b__44;
-static PyObject *__pyx_kp_u__45;
+static PyObject *__pyx_kp_b__45;
+static PyObject *__pyx_kp_b__46;
+static PyObject *__pyx_kp_b__47;
+static PyObject *__pyx_kp_u__48;
+static PyObject *__pyx_kp_u_after_dcamapi_init;
 static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_s_append;
 static PyObject *__pyx_n_s_asarray;
 static PyObject *__pyx_n_s_auto;
 static PyObject *__pyx_n_s_base;
+static PyObject *__pyx_kp_u_before_dcamapi_init_2;
 static PyObject *__pyx_n_u_bytemask;
 static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_u_c;
@@ -2969,6 +2979,7 @@ static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
+static PyObject *__pyx_kp_u_create_apiinit;
 static PyObject *__pyx_n_s_decode;
 static PyObject *__pyx_n_u_default;
 static PyObject *__pyx_n_s_dict;
@@ -3041,6 +3052,7 @@ static PyObject *__pyx_n_s_olive_drivers_dcamapi_wrapper;
 static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_pickle;
 static PyObject *__pyx_n_s_prepare;
+static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
 static PyObject *__pyx_n_s_pyx_getbuffer;
@@ -3194,18 +3206,18 @@ static PyObject *__pyx_int_184977713;
 static PyObject *__pyx_int_208081316;
 static PyObject *__pyx_int_4294967295;
 static PyObject *__pyx_int_neg_1;
+static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
-static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__7;
 static PyObject *__pyx_tuple__8;
 static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_slice__37;
+static PyObject *__pyx_slice__40;
+static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__13;
 static PyObject *__pyx_tuple__14;
 static PyObject *__pyx_tuple__15;
 static PyObject *__pyx_tuple__16;
@@ -3229,27 +3241,158 @@ static PyObject *__pyx_tuple__33;
 static PyObject *__pyx_tuple__34;
 static PyObject *__pyx_tuple__35;
 static PyObject *__pyx_tuple__36;
+static PyObject *__pyx_tuple__37;
 static PyObject *__pyx_tuple__38;
 static PyObject *__pyx_tuple__39;
-static PyObject *__pyx_tuple__40;
-static PyObject *__pyx_tuple__46;
-static PyObject *__pyx_tuple__48;
+static PyObject *__pyx_tuple__41;
+static PyObject *__pyx_tuple__42;
+static PyObject *__pyx_tuple__43;
 static PyObject *__pyx_tuple__49;
-static PyObject *__pyx_tuple__50;
 static PyObject *__pyx_tuple__51;
 static PyObject *__pyx_tuple__52;
 static PyObject *__pyx_tuple__53;
-static PyObject *__pyx_codeobj__47;
-static PyObject *__pyx_codeobj__54;
+static PyObject *__pyx_tuple__54;
+static PyObject *__pyx_tuple__55;
+static PyObject *__pyx_tuple__56;
+static PyObject *__pyx_codeobj__50;
+static PyObject *__pyx_codeobj__57;
 /* Late includes */
 
 /* "olive/drivers/dcamapi/wrapper.pyx":78
  *     cdef readonly int32 n_devices
  * 
- *     def init(self):             # <<<<<<<<<<<<<<
+ *     cpdef init(self):             # <<<<<<<<<<<<<<
  *         """
  *         Initialize the DCAM-API manager, modules and drivers.
  */
+
+static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_1init(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *__pyx_v_self, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  DCAMAPI_INIT __pyx_v_apiinit;
+  enum DCAMERR __pyx_v_err;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int32 __pyx_t_3;
+  __Pyx_RefNannySetupContext("init", 0);
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":84
+ *         Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI, who provides the singleton behavior.
+ *         """
+ *         print('create apiinit')             # <<<<<<<<<<<<<<
+ *         cdef DCAMAPI_INIT apiinit
+ *         memset(&apiinit, 0, sizeof(apiinit))
+ */
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":86
+ *         print('create apiinit')
+ *         cdef DCAMAPI_INIT apiinit
+ *         memset(&apiinit, 0, sizeof(apiinit))             # <<<<<<<<<<<<<<
+ *         apiinit.size = sizeof(apiinit)
+ * 
+ */
+  (void)(memset((&__pyx_v_apiinit), 0, (sizeof(__pyx_v_apiinit))));
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":87
+ *         cdef DCAMAPI_INIT apiinit
+ *         memset(&apiinit, 0, sizeof(apiinit))
+ *         apiinit.size = sizeof(apiinit)             # <<<<<<<<<<<<<<
+ * 
+ *         print('before dcamapi_init (2)')
+ */
+  __pyx_v_apiinit.size = (sizeof(__pyx_v_apiinit));
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":89
+ *         apiinit.size = sizeof(apiinit)
+ * 
+ *         print('before dcamapi_init (2)')             # <<<<<<<<<<<<<<
+ *         cdef DCAMERR err
+ *         err = dcamapi_init(&apiinit)
+ */
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":91
+ *         print('before dcamapi_init (2)')
+ *         cdef DCAMERR err
+ *         err = dcamapi_init(&apiinit)             # <<<<<<<<<<<<<<
+ *         DCAMAPI.check_error(err, 'dcamapi_init()')
+ *         print('after dcamapi_init')
+ */
+  __pyx_v_err = dcamapi_init((&__pyx_v_apiinit));
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":92
+ *         cdef DCAMERR err
+ *         err = dcamapi_init(&apiinit)
+ *         DCAMAPI.check_error(err, 'dcamapi_init()')             # <<<<<<<<<<<<<<
+ *         print('after dcamapi_init')
+ * 
+ */
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamapi_init()"), NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":93
+ *         err = dcamapi_init(&apiinit)
+ *         DCAMAPI.check_error(err, 'dcamapi_init()')
+ *         print('after dcamapi_init')             # <<<<<<<<<<<<<<
+ * 
+ *         print(apiinit.iDeviceCount)
+ */
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":95
+ *         print('after dcamapi_init')
+ * 
+ *         print(apiinit.iDeviceCount)             # <<<<<<<<<<<<<<
+ *         self.n_devices = apiinit.iDeviceCount
+ * 
+ */
+  __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_apiinit.iDeviceCount); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":96
+ * 
+ *         print(apiinit.iDeviceCount)
+ *         self.n_devices = apiinit.iDeviceCount             # <<<<<<<<<<<<<<
+ * 
+ *     def  uninit(self):
+ */
+  __pyx_t_3 = __pyx_v_apiinit.iDeviceCount;
+  __pyx_v_self->n_devices = __pyx_t_3;
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":78
+ *     cdef readonly int32 n_devices
+ * 
+ *     cpdef init(self):             # <<<<<<<<<<<<<<
+ *         """
+ *         Initialize the DCAM-API manager, modules and drivers.
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAMAPI.init", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
 
 /* Python wrapper */
 static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_1init(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -3266,73 +3409,18 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_1init(PyObj
 }
 
 static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *__pyx_v_self) {
-  DCAMAPI_INIT __pyx_v_apiinit;
-  enum DCAMERR __pyx_v_err;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  int32 __pyx_t_2;
   __Pyx_RefNannySetupContext("init", 0);
-
-  /* "olive/drivers/dcamapi/wrapper.pyx":85
- *         """
- *         cdef DCAMAPI_INIT apiinit
- *         memset(&apiinit, 0, sizeof(apiinit))             # <<<<<<<<<<<<<<
- *         apiinit.size = sizeof(apiinit)
- * 
- */
-  (void)(memset((&__pyx_v_apiinit), 0, (sizeof(__pyx_v_apiinit))));
-
-  /* "olive/drivers/dcamapi/wrapper.pyx":86
- *         cdef DCAMAPI_INIT apiinit
- *         memset(&apiinit, 0, sizeof(apiinit))
- *         apiinit.size = sizeof(apiinit)             # <<<<<<<<<<<<<<
- * 
- *         cdef DCAMERR err
- */
-  __pyx_v_apiinit.size = (sizeof(__pyx_v_apiinit));
-
-  /* "olive/drivers/dcamapi/wrapper.pyx":89
- * 
- *         cdef DCAMERR err
- *         err = dcamapi_init(&apiinit)             # <<<<<<<<<<<<<<
- *         DCAMAPI.check_error(err, 'dcamapi_init()')
- * 
- */
-  __pyx_v_err = dcamapi_init((&__pyx_v_apiinit));
-
-  /* "olive/drivers/dcamapi/wrapper.pyx":90
- *         cdef DCAMERR err
- *         err = dcamapi_init(&apiinit)
- *         DCAMAPI.check_error(err, 'dcamapi_init()')             # <<<<<<<<<<<<<<
- * 
- *         self.n_devices = apiinit.iDeviceCount
- */
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamapi_init()"), NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "olive/drivers/dcamapi/wrapper.pyx":92
- *         DCAMAPI.check_error(err, 'dcamapi_init()')
- * 
- *         self.n_devices = apiinit.iDeviceCount             # <<<<<<<<<<<<<<
- * 
- *     def  uninit(self):
- */
-  __pyx_t_2 = __pyx_v_apiinit.iDeviceCount;
-  __pyx_v_self->n_devices = __pyx_t_2;
-
-  /* "olive/drivers/dcamapi/wrapper.pyx":78
- *     cdef readonly int32 n_devices
- * 
- *     def init(self):             # <<<<<<<<<<<<<<
- *         """
- *         Initialize the DCAM-API manager, modules and drivers.
- */
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAMAPI.init", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -3343,7 +3431,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init(struct
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":94
+/* "olive/drivers/dcamapi/wrapper.pyx":98
  *         self.n_devices = apiinit.iDeviceCount
  * 
  *     def  uninit(self):             # <<<<<<<<<<<<<<
@@ -3370,7 +3458,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_2uninit(CYT
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("uninit", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":100
+  /* "olive/drivers/dcamapi/wrapper.pyx":104
  *         All opened devices will be forcefully closed. No new devices can be opened unless initialize again.
  *         """
  *         dcamapi_uninit()             # <<<<<<<<<<<<<<
@@ -3379,7 +3467,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_2uninit(CYT
  */
   (void)(dcamapi_uninit());
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":94
+  /* "olive/drivers/dcamapi/wrapper.pyx":98
  *         self.n_devices = apiinit.iDeviceCount
  * 
  *     def  uninit(self):             # <<<<<<<<<<<<<<
@@ -3394,7 +3482,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_2uninit(CYT
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":104
+/* "olive/drivers/dcamapi/wrapper.pyx":108
  *     ##
  * 
  *     cpdef open(self, int32 index):             # <<<<<<<<<<<<<<
@@ -3411,7 +3499,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("open", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":106
+  /* "olive/drivers/dcamapi/wrapper.pyx":110
  *     cpdef open(self, int32 index):
  *         cdef DCAMDEV_OPEN devopen
  *         memset(&devopen, 0, sizeof(devopen))             # <<<<<<<<<<<<<<
@@ -3420,7 +3508,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_
  */
   (void)(memset((&__pyx_v_devopen), 0, (sizeof(__pyx_v_devopen))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":107
+  /* "olive/drivers/dcamapi/wrapper.pyx":111
  *         cdef DCAMDEV_OPEN devopen
  *         memset(&devopen, 0, sizeof(devopen))
  *         devopen.size = sizeof(devopen)             # <<<<<<<<<<<<<<
@@ -3429,7 +3517,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_
  */
   __pyx_v_devopen.size = (sizeof(__pyx_v_devopen));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":108
+  /* "olive/drivers/dcamapi/wrapper.pyx":112
  *         memset(&devopen, 0, sizeof(devopen))
  *         devopen.size = sizeof(devopen)
  *         devopen.index = index             # <<<<<<<<<<<<<<
@@ -3438,7 +3526,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_
  */
   __pyx_v_devopen.index = __pyx_v_index;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":111
+  /* "olive/drivers/dcamapi/wrapper.pyx":115
  * 
  *         cdef DCAMERR err
  *         err = dcamdev_open(&devopen)             # <<<<<<<<<<<<<<
@@ -3447,18 +3535,18 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_
  */
   __pyx_v_err = dcamdev_open((&__pyx_v_devopen));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":112
+  /* "olive/drivers/dcamapi/wrapper.pyx":116
  *         cdef DCAMERR err
  *         err = dcamdev_open(&devopen)
  *         DCAMAPI.check_error(err, 'dcamdev_open()')             # <<<<<<<<<<<<<<
  * 
  *         return <object>devopen.hdcam
  */
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_open()"), NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_open()"), NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":114
+  /* "olive/drivers/dcamapi/wrapper.pyx":118
  *         DCAMAPI.check_error(err, 'dcamdev_open()')
  * 
  *         return <object>devopen.hdcam             # <<<<<<<<<<<<<<
@@ -3470,7 +3558,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(CYTHON_
   __pyx_r = ((PyObject *)__pyx_v_devopen.hdcam);
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":104
+  /* "olive/drivers/dcamapi/wrapper.pyx":108
  *     ##
  * 
  *     cpdef open(self, int32 index):             # <<<<<<<<<<<<<<
@@ -3497,7 +3585,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_5open(PyObj
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("open (wrapper)", 0);
   assert(__pyx_arg_index); {
-    __pyx_v_index = __Pyx_PyInt_As_int32(__pyx_arg_index); if (unlikely((__pyx_v_index == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
+    __pyx_v_index = __Pyx_PyInt_As_int32(__pyx_arg_index); if (unlikely((__pyx_v_index == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3518,7 +3606,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_4open(struc
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("open", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(__pyx_v_self, __pyx_v_index, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open(__pyx_v_self, __pyx_v_index, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3535,7 +3623,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_4open(struc
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":116
+/* "olive/drivers/dcamapi/wrapper.pyx":120
  *         return <object>devopen.hdcam
  * 
  *     cpdef close(self, DCAM dev):             # <<<<<<<<<<<<<<
@@ -3551,7 +3639,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close(CYTHON
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("close", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":119
+  /* "olive/drivers/dcamapi/wrapper.pyx":123
  *         cdef DCAMERR err
  * 
  *         err = dcamdev_close(dev.handle)             # <<<<<<<<<<<<<<
@@ -3560,18 +3648,18 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close(CYTHON
  */
   __pyx_v_err = dcamdev_close(__pyx_v_dev->handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":120
+  /* "olive/drivers/dcamapi/wrapper.pyx":124
  * 
  *         err = dcamdev_close(dev.handle)
  *         DCAMAPI.check_error(err, 'dcamdev_close()')             # <<<<<<<<<<<<<<
  * 
  *     ##
  */
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_close()"), NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_close()"), NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":116
+  /* "olive/drivers/dcamapi/wrapper.pyx":120
  *         return <object>devopen.hdcam
  * 
  *     cpdef close(self, DCAM dev):             # <<<<<<<<<<<<<<
@@ -3598,7 +3686,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_7close(PyOb
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("close (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dev), __pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAM, 1, "dev", 0))) __PYX_ERR(0, 116, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dev), __pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAM, 1, "dev", 0))) __PYX_ERR(0, 120, __pyx_L1_error)
   __pyx_r = __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_6close(((struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *)__pyx_v_self), ((struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *)__pyx_v_dev));
 
   /* function exit code */
@@ -3616,7 +3704,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_6close(stru
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("close", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close(__pyx_v_self, __pyx_v_dev, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close(__pyx_v_self, __pyx_v_dev, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3633,7 +3721,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_6close(stru
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":125
+/* "olive/drivers/dcamapi/wrapper.pyx":129
  * 
  *     @staticmethod
  *     cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):             # <<<<<<<<<<<<<<
@@ -3668,7 +3756,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":126
+  /* "olive/drivers/dcamapi/wrapper.pyx":130
  *     @staticmethod
  *     cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):
  *         if not failed(errid):             # <<<<<<<<<<<<<<
@@ -3678,7 +3766,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
   __pyx_t_1 = ((!(failed(__pyx_v_errid) != 0)) != 0);
   if (__pyx_t_1) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":127
+    /* "olive/drivers/dcamapi/wrapper.pyx":131
  *     cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):
  *         if not failed(errid):
  *             return             # <<<<<<<<<<<<<<
@@ -3689,7 +3777,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":126
+    /* "olive/drivers/dcamapi/wrapper.pyx":130
  *     @staticmethod
  *     cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):
  *         if not failed(errid):             # <<<<<<<<<<<<<<
@@ -3698,39 +3786,39 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":130
+  /* "olive/drivers/dcamapi/wrapper.pyx":134
  * 
  *         # implicit string reader for fast access
  *         cdef char[::1] errtext = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')             # <<<<<<<<<<<<<<
  *         cdef char *c_errtext = &errtext[0]
  * 
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_shape, __pyx_t_4) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_shape, __pyx_t_4) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_itemsize, __pyx_t_4) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_itemsize, __pyx_t_4) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_errtext = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":131
+  /* "olive/drivers/dcamapi/wrapper.pyx":135
  *         # implicit string reader for fast access
  *         cdef char[::1] errtext = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
  *         cdef char *c_errtext = &errtext[0]             # <<<<<<<<<<<<<<
@@ -3745,11 +3833,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
   } else if (unlikely(__pyx_t_6 >= __pyx_v_errtext.shape[0])) __pyx_t_7 = 0;
   if (unlikely(__pyx_t_7 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_7);
-    __PYX_ERR(0, 131, __pyx_L1_error)
+    __PYX_ERR(0, 135, __pyx_L1_error)
   }
   __pyx_v_c_errtext = (&(*((char *) ( /* dim=0 */ ((char *) (((char *) __pyx_v_errtext.data) + __pyx_t_6)) ))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":134
+  /* "olive/drivers/dcamapi/wrapper.pyx":138
  * 
  *         cdef DCAMDEV_STRING param
  *         memset(&param, 0, sizeof(param))             # <<<<<<<<<<<<<<
@@ -3758,7 +3846,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   (void)(memset((&__pyx_v_param), 0, (sizeof(__pyx_v_param))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":135
+  /* "olive/drivers/dcamapi/wrapper.pyx":139
  *         cdef DCAMDEV_STRING param
  *         memset(&param, 0, sizeof(param))
  *         param.size = sizeof(param)             # <<<<<<<<<<<<<<
@@ -3767,7 +3855,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   __pyx_v_param.size = (sizeof(__pyx_v_param));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":136
+  /* "olive/drivers/dcamapi/wrapper.pyx":140
  *         memset(&param, 0, sizeof(param))
  *         param.size = sizeof(param)
  *         param.text = c_errtext             # <<<<<<<<<<<<<<
@@ -3776,7 +3864,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   __pyx_v_param.text = __pyx_v_c_errtext;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":137
+  /* "olive/drivers/dcamapi/wrapper.pyx":141
  *         param.size = sizeof(param)
  *         param.text = c_errtext
  *         param.textbytes = nbytes             # <<<<<<<<<<<<<<
@@ -3785,7 +3873,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   __pyx_v_param.textbytes = __pyx_v_nbytes;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":138
+  /* "olive/drivers/dcamapi/wrapper.pyx":142
  *         param.text = c_errtext
  *         param.textbytes = nbytes
  *         param.iString = errid             # <<<<<<<<<<<<<<
@@ -3794,7 +3882,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   __pyx_v_param.iString = __pyx_v_errid;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":139
+  /* "olive/drivers/dcamapi/wrapper.pyx":143
  *         param.textbytes = nbytes
  *         param.iString = errid
  *         dcamdev_getstring(hdcam, &param)             # <<<<<<<<<<<<<<
@@ -3803,18 +3891,18 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  */
   (void)(dcamdev_getstring(__pyx_v_hdcam, (&__pyx_v_param)));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":143
+  /* "olive/drivers/dcamapi/wrapper.pyx":147
  *         # restrict errid to 32-bits to match C-style output
  *         raise RuntimeError(
  *             f"{apiname.decode('utf-8')}, (DCAMERR)0x{errid&0xFFFFFFFF:08X} {c_errtext.decode('utf-8')}"             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_4 = PyTuple_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_8 = 0;
   __pyx_t_9 = 127;
-  __pyx_t_2 = __Pyx_decode_c_string(__pyx_v_apiname, 0, strlen(__pyx_v_apiname), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_decode_c_string(__pyx_v_apiname, 0, strlen(__pyx_v_apiname), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_9;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
@@ -3825,12 +3913,12 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
   __pyx_t_8 += 13;
   __Pyx_GIVEREF(__pyx_kp_u_DCAMERR_0x);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_kp_u_DCAMERR_0x);
-  __pyx_t_2 = __Pyx_PyInt_From_enum__DCAMERR(__pyx_v_errid); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_enum__DCAMERR(__pyx_v_errid); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyNumber_And(__pyx_t_2, __pyx_int_4294967295); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_And(__pyx_t_2, __pyx_int_4294967295); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Format(__pyx_t_3, __pyx_kp_u_08X); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Format(__pyx_t_3, __pyx_kp_u_08X); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_9;
@@ -3838,36 +3926,36 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_2);
   __pyx_t_2 = 0;
-  __Pyx_INCREF(__pyx_kp_u_);
+  __Pyx_INCREF(__pyx_kp_u__4);
   __pyx_t_8 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u_);
-  PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_kp_u_);
-  __pyx_t_2 = __Pyx_decode_c_string(__pyx_v_c_errtext, 0, strlen(__pyx_v_c_errtext), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__4);
+  PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_kp_u__4);
+  __pyx_t_2 = __Pyx_decode_c_string(__pyx_v_c_errtext, 0, strlen(__pyx_v_c_errtext), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_9;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 4, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_4, 5, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_4, 5, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":142
+  /* "olive/drivers/dcamapi/wrapper.pyx":146
  * 
  *         # restrict errid to 32-bits to match C-style output
  *         raise RuntimeError(             # <<<<<<<<<<<<<<
  *             f"{apiname.decode('utf-8')}, (DCAMERR)0x{errid&0xFFFFFFFF:08X} {c_errtext.decode('utf-8')}"
  *         )
  */
-  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_RuntimeError, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_RuntimeError, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_Raise(__pyx_t_4, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __PYX_ERR(0, 142, __pyx_L1_error)
+  __PYX_ERR(0, 146, __pyx_L1_error)
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":125
+  /* "olive/drivers/dcamapi/wrapper.pyx":129
  * 
  *     @staticmethod
  *     cdef check_error(DCAMERR errid, const char* apiname, HDCAM hdcam=NULL, int32 nbytes=256):             # <<<<<<<<<<<<<<
@@ -3895,7 +3983,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error(
  *     #: number of supported devices found by DCAM-API
  *     cdef readonly int32 n_devices             # <<<<<<<<<<<<<<
  * 
- *     def init(self):
+ *     cpdef init(self):
  */
 
 /* Python wrapper */
@@ -4222,7 +4310,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_10__setstat
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":151
+/* "olive/drivers/dcamapi/wrapper.pyx":155
  *     cdef HDCAMWAIT handle
  * 
  *     def __cinit__(self, uintptr_t hdcam):             # <<<<<<<<<<<<<<
@@ -4256,18 +4344,18 @@ static int __pyx_pw_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_1__cinit__(PyObj
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 151, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 155, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
     }
-    __pyx_v_hdcam = __Pyx_PyInt_As_size_t(values[0]); if (unlikely((__pyx_v_hdcam == ((uintptr_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 151, __pyx_L3_error)
+    __pyx_v_hdcam = __Pyx_PyInt_As_size_t(values[0]); if (unlikely((__pyx_v_hdcam == ((uintptr_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 151, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 155, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAMWAIT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4285,7 +4373,7 @@ static int __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT___cinit__(struct
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":152
+  /* "olive/drivers/dcamapi/wrapper.pyx":156
  * 
  *     def __cinit__(self, uintptr_t hdcam):
  *         self.hdcam = <HDCAM>hdcam             # <<<<<<<<<<<<<<
@@ -4294,7 +4382,7 @@ static int __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT___cinit__(struct
  */
   __pyx_v_self->hdcam = ((HDCAM)__pyx_v_hdcam);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":151
+  /* "olive/drivers/dcamapi/wrapper.pyx":155
  *     cdef HDCAMWAIT handle
  * 
  *     def __cinit__(self, uintptr_t hdcam):             # <<<<<<<<<<<<<<
@@ -4308,7 +4396,7 @@ static int __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT___cinit__(struct
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":154
+/* "olive/drivers/dcamapi/wrapper.pyx":158
  *         self.hdcam = <HDCAM>hdcam
  * 
  *     def open(self):             # <<<<<<<<<<<<<<
@@ -4341,7 +4429,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
   HDCAMWAIT __pyx_t_4;
   __Pyx_RefNannySetupContext("open", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":159
+  /* "olive/drivers/dcamapi/wrapper.pyx":163
  *         """
  *         cdef DCAMWAIT_OPEN waitopen
  *         memset(&waitopen, 0, sizeof(waitopen))             # <<<<<<<<<<<<<<
@@ -4350,7 +4438,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
  */
   (void)(memset((&__pyx_v_waitopen), 0, (sizeof(__pyx_v_waitopen))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":160
+  /* "olive/drivers/dcamapi/wrapper.pyx":164
  *         cdef DCAMWAIT_OPEN waitopen
  *         memset(&waitopen, 0, sizeof(waitopen))
  *         waitopen.size = sizeof(waitopen)             # <<<<<<<<<<<<<<
@@ -4359,7 +4447,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
  */
   __pyx_v_waitopen.size = (sizeof(__pyx_v_waitopen));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":161
+  /* "olive/drivers/dcamapi/wrapper.pyx":165
  *         memset(&waitopen, 0, sizeof(waitopen))
  *         waitopen.size = sizeof(waitopen)
  *         waitopen.hdcam = self.hdcam             # <<<<<<<<<<<<<<
@@ -4369,7 +4457,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
   __pyx_t_1 = __pyx_v_self->hdcam;
   __pyx_v_waitopen.hdcam = __pyx_t_1;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":163
+  /* "olive/drivers/dcamapi/wrapper.pyx":167
  *         waitopen.hdcam = self.hdcam
  * 
  *         err = dcamwait_open(&waitopen)             # <<<<<<<<<<<<<<
@@ -4378,7 +4466,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
  */
   __pyx_v_err = dcamwait_open((&__pyx_v_waitopen));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":164
+  /* "olive/drivers/dcamapi/wrapper.pyx":168
  * 
  *         err = dcamwait_open(&waitopen)
  *         DCAMAPI.check_error(err, 'dcamwait_open()', self.hdcam)             # <<<<<<<<<<<<<<
@@ -4387,11 +4475,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
  */
   __pyx_t_3.__pyx_n = 1;
   __pyx_t_3.hdcam = __pyx_v_self->hdcam;
-  __pyx_t_2 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_open()"), &__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_2 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_open()"), &__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":166
+  /* "olive/drivers/dcamapi/wrapper.pyx":170
  *         DCAMAPI.check_error(err, 'dcamwait_open()', self.hdcam)
  * 
  *         self.handle = waitopen.hwait             # <<<<<<<<<<<<<<
@@ -4401,7 +4489,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
   __pyx_t_4 = __pyx_v_waitopen.hwait;
   __pyx_v_self->handle = __pyx_t_4;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":154
+  /* "olive/drivers/dcamapi/wrapper.pyx":158
  *         self.hdcam = <HDCAM>hdcam
  * 
  *     def open(self):             # <<<<<<<<<<<<<<
@@ -4422,7 +4510,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_2open(stru
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":168
+/* "olive/drivers/dcamapi/wrapper.pyx":172
  *         self.handle = waitopen.hwait
  * 
  *     def close(self):             # <<<<<<<<<<<<<<
@@ -4452,7 +4540,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_4close(str
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("close", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":173
+  /* "olive/drivers/dcamapi/wrapper.pyx":177
  *         """
  *         cdef DCAMERR err
  *         err = dcamwait_close(self.handle)             # <<<<<<<<<<<<<<
@@ -4461,7 +4549,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_4close(str
  */
   __pyx_v_err = dcamwait_close(__pyx_v_self->handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":174
+  /* "olive/drivers/dcamapi/wrapper.pyx":178
  *         cdef DCAMERR err
  *         err = dcamwait_close(self.handle)
  *         DCAMAPI.check_error(err, 'dcamwait_close()', self.hdcam)             # <<<<<<<<<<<<<<
@@ -4470,11 +4558,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_4close(str
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->hdcam;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_close()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_close()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":177
+  /* "olive/drivers/dcamapi/wrapper.pyx":181
  * 
  *         # ensure it is empty
  *         self.handle = <HDCAMWAIT>0             # <<<<<<<<<<<<<<
@@ -4483,7 +4571,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_4close(str
  */
   __pyx_v_self->handle = ((HDCAMWAIT)0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":168
+  /* "olive/drivers/dcamapi/wrapper.pyx":172
  *         self.handle = waitopen.hwait
  * 
  *     def close(self):             # <<<<<<<<<<<<<<
@@ -4504,7 +4592,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_4close(str
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":179
+/* "olive/drivers/dcamapi/wrapper.pyx":183
  *         self.handle = <HDCAMWAIT>0
  * 
  *     cpdef start(self, int32 event: Event, int32 timeout=1000):             # <<<<<<<<<<<<<<
@@ -4528,7 +4616,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":188
+  /* "olive/drivers/dcamapi/wrapper.pyx":192
  *         """
  *         cdef DCAMWAIT_START waitstart
  *         memset(&waitstart, 0, sizeof(waitstart))             # <<<<<<<<<<<<<<
@@ -4537,7 +4625,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
  */
   (void)(memset((&__pyx_v_waitstart), 0, (sizeof(__pyx_v_waitstart))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":189
+  /* "olive/drivers/dcamapi/wrapper.pyx":193
  *         cdef DCAMWAIT_START waitstart
  *         memset(&waitstart, 0, sizeof(waitstart))
  *         waitstart.size = sizeof(waitstart)             # <<<<<<<<<<<<<<
@@ -4546,7 +4634,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
  */
   __pyx_v_waitstart.size = (sizeof(__pyx_v_waitstart));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":190
+  /* "olive/drivers/dcamapi/wrapper.pyx":194
  *         memset(&waitstart, 0, sizeof(waitstart))
  *         waitstart.size = sizeof(waitstart)
  *         waitstart.eventmask = event             # <<<<<<<<<<<<<<
@@ -4555,7 +4643,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
  */
   __pyx_v_waitstart.eventmask = __pyx_v_event;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":191
+  /* "olive/drivers/dcamapi/wrapper.pyx":195
  *         waitstart.size = sizeof(waitstart)
  *         waitstart.eventmask = event
  *         waitstart.timeout = timeout             # <<<<<<<<<<<<<<
@@ -4564,7 +4652,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
  */
   __pyx_v_waitstart.timeout = __pyx_v_timeout;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":194
+  /* "olive/drivers/dcamapi/wrapper.pyx":198
  * 
  *         cdef DCAMERR err
  *         err = dcamwait_start(self.handle, &waitstart)             # <<<<<<<<<<<<<<
@@ -4573,7 +4661,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
  */
   __pyx_v_err = dcamwait_start(__pyx_v_self->handle, (&__pyx_v_waitstart));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":195
+  /* "olive/drivers/dcamapi/wrapper.pyx":199
  *         cdef DCAMERR err
  *         err = dcamwait_start(self.handle, &waitstart)
  *         DCAMAPI.check_error(err, 'dcamwait_start()', self.hdcam)             # <<<<<<<<<<<<<<
@@ -4582,11 +4670,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start(struc
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->hdcam;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_start()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_start()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":179
+  /* "olive/drivers/dcamapi/wrapper.pyx":183
  *         self.handle = <HDCAMWAIT>0
  * 
  *     cpdef start(self, int32 event: Event, int32 timeout=1000):             # <<<<<<<<<<<<<<
@@ -4643,7 +4731,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_7start(PyO
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "start") < 0)) __PYX_ERR(0, 179, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "start") < 0)) __PYX_ERR(0, 183, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -4654,16 +4742,16 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_7start(PyO
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_event = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_event == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 179, __pyx_L3_error)
+    __pyx_v_event = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_event == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_timeout = __Pyx_PyInt_As_int32(values[1]); if (unlikely((__pyx_v_timeout == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 179, __pyx_L3_error)
+      __pyx_v_timeout = __Pyx_PyInt_As_int32(values[1]); if (unlikely((__pyx_v_timeout == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
     } else {
       __pyx_v_timeout = ((int32)0x3E8);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("start", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 179, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("start", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 183, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAMWAIT.start", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4685,7 +4773,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_6start(str
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.timeout = __pyx_v_timeout;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT->start(__pyx_v_self, __pyx_v_event, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT->start(__pyx_v_self, __pyx_v_event, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4702,7 +4790,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_6start(str
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":197
+/* "olive/drivers/dcamapi/wrapper.pyx":201
  *         DCAMAPI.check_error(err, 'dcamwait_start()', self.hdcam)
  * 
  *     def abort(self):             # <<<<<<<<<<<<<<
@@ -4732,7 +4820,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_8abort(str
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("abort", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":202
+  /* "olive/drivers/dcamapi/wrapper.pyx":206
  *         """
  *         cdef DCAMERR err
  *         err = dcamwait_abort(self.handle)             # <<<<<<<<<<<<<<
@@ -4741,7 +4829,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_8abort(str
  */
   __pyx_v_err = dcamwait_abort(__pyx_v_self->handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":203
+  /* "olive/drivers/dcamapi/wrapper.pyx":207
  *         cdef DCAMERR err
  *         err = dcamwait_abort(self.handle)
  *         DCAMAPI.check_error(err, 'dcamwait_abort()', self.hdcam)             # <<<<<<<<<<<<<<
@@ -4750,11 +4838,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_8abort(str
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->hdcam;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_abort()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamwait_abort()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":197
+  /* "olive/drivers/dcamapi/wrapper.pyx":201
  *         DCAMAPI.check_error(err, 'dcamwait_start()', self.hdcam)
  * 
  *     def abort(self):             # <<<<<<<<<<<<<<
@@ -4806,7 +4894,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_10__reduce
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4859,7 +4947,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_12__setsta
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4882,7 +4970,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_12__setsta
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":211
+/* "olive/drivers/dcamapi/wrapper.pyx":215
  *     cdef uintptr_t[::1] buffer
  * 
  *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
@@ -4916,7 +5004,7 @@ static int __pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_1__cinit__(PyObject 
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 211, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 215, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
@@ -4927,7 +5015,7 @@ static int __pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_1__cinit__(PyObject 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 211, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 215, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4945,7 +5033,7 @@ static int __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM___cinit__(struct __p
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":212
+  /* "olive/drivers/dcamapi/wrapper.pyx":216
  * 
  *     def __cinit__(self, handle):
  *         self.handle = <HDCAM>handle             # <<<<<<<<<<<<<<
@@ -4954,7 +5042,7 @@ static int __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM___cinit__(struct __p
  */
   __pyx_v_self->handle = ((HDCAM)__pyx_v_handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":211
+  /* "olive/drivers/dcamapi/wrapper.pyx":215
  *     cdef uintptr_t[::1] buffer
  * 
  *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
@@ -4968,7 +5056,7 @@ static int __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM___cinit__(struct __p
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":217
+/* "olive/drivers/dcamapi/wrapper.pyx":221
  *     ## device data
  *     ##
  *     def get_capability(self, capability: Capability):             # <<<<<<<<<<<<<<
@@ -5003,7 +5091,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("get_capability", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":219
+  /* "olive/drivers/dcamapi/wrapper.pyx":223
  *     def get_capability(self, capability: Capability):
  *         """Returns capability information not able to get from property."""
  *         try:             # <<<<<<<<<<<<<<
@@ -5019,7 +5107,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":220
+      /* "olive/drivers/dcamapi/wrapper.pyx":224
  *         """Returns capability information not able to get from property."""
  *         try:
  *             return {             # <<<<<<<<<<<<<<
@@ -5028,70 +5116,70 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
  */
       __Pyx_XDECREF(__pyx_r);
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":221
+      /* "olive/drivers/dcamapi/wrapper.pyx":225
  *         try:
  *             return {
  *                 Capability.Region: self._get_capability_region,             # <<<<<<<<<<<<<<
  *                 Capability.LUT: self._get_capability_lut,
  *                 Capability.FrameOption: self._get_capability_frameoption
  */
-      __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Region); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 221, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Region); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_capability_region); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_capability_region); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (PyDict_SetItem(__pyx_t_5, __pyx_t_7, __pyx_t_6) < 0) __PYX_ERR(0, 221, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_5, __pyx_t_7, __pyx_t_6) < 0) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":222
+      /* "olive/drivers/dcamapi/wrapper.pyx":226
  *             return {
  *                 Capability.Region: self._get_capability_region,
  *                 Capability.LUT: self._get_capability_lut,             # <<<<<<<<<<<<<<
  *                 Capability.FrameOption: self._get_capability_frameoption
  *             }[capability]()
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 222, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_LUT); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 222, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_LUT); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 226, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_capability_lut); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 222, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_capability_lut); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (PyDict_SetItem(__pyx_t_5, __pyx_t_7, __pyx_t_6) < 0) __PYX_ERR(0, 221, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_5, __pyx_t_7, __pyx_t_6) < 0) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":223
+      /* "olive/drivers/dcamapi/wrapper.pyx":227
  *                 Capability.Region: self._get_capability_region,
  *                 Capability.LUT: self._get_capability_lut,
  *                 Capability.FrameOption: self._get_capability_frameoption             # <<<<<<<<<<<<<<
  *             }[capability]()
  *         except KeyError:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 227, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_FrameOption); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 223, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_FrameOption); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 227, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_capability_frameoption); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_capability_frameoption); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 227, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (PyDict_SetItem(__pyx_t_5, __pyx_t_7, __pyx_t_6) < 0) __PYX_ERR(0, 221, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_5, __pyx_t_7, __pyx_t_6) < 0) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":224
+      /* "olive/drivers/dcamapi/wrapper.pyx":228
  *                 Capability.LUT: self._get_capability_lut,
  *                 Capability.FrameOption: self._get_capability_frameoption
  *             }[capability]()             # <<<<<<<<<<<<<<
  *         except KeyError:
  *             raise ValueError('unknown capability option')
  */
-      __pyx_t_6 = __Pyx_PyDict_GetItem(__pyx_t_5, __pyx_v_capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItem(__pyx_t_5, __pyx_v_capability); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 228, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
@@ -5106,14 +5194,14 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
       }
       __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L3_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 228, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_r = __pyx_t_4;
       __pyx_t_4 = 0;
       goto __pyx_L7_try_return;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":219
+      /* "olive/drivers/dcamapi/wrapper.pyx":223
  *     def get_capability(self, capability: Capability):
  *         """Returns capability information not able to get from property."""
  *         try:             # <<<<<<<<<<<<<<
@@ -5127,7 +5215,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":225
+    /* "olive/drivers/dcamapi/wrapper.pyx":229
  *                 Capability.FrameOption: self._get_capability_frameoption
  *             }[capability]()
  *         except KeyError:             # <<<<<<<<<<<<<<
@@ -5137,28 +5225,28 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
     __pyx_t_8 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_KeyError);
     if (__pyx_t_8) {
       __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.get_capability", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_5) < 0) __PYX_ERR(0, 225, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_5) < 0) __PYX_ERR(0, 229, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_5);
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":226
+      /* "olive/drivers/dcamapi/wrapper.pyx":230
  *             }[capability]()
  *         except KeyError:
  *             raise ValueError('unknown capability option')             # <<<<<<<<<<<<<<
  * 
  *     def _get_capability_region(self):
  */
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 226, __pyx_L5_except_error)
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 230, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_Raise(__pyx_t_7, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __PYX_ERR(0, 226, __pyx_L5_except_error)
+      __PYX_ERR(0, 230, __pyx_L5_except_error)
     }
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":219
+    /* "olive/drivers/dcamapi/wrapper.pyx":223
  *     def get_capability(self, capability: Capability):
  *         """Returns capability information not able to get from property."""
  *         try:             # <<<<<<<<<<<<<<
@@ -5178,7 +5266,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
     goto __pyx_L0;
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":217
+  /* "olive/drivers/dcamapi/wrapper.pyx":221
  *     ## device data
  *     ##
  *     def get_capability(self, capability: Capability):             # <<<<<<<<<<<<<<
@@ -5200,7 +5288,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_2get_capabilit
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":228
+/* "olive/drivers/dcamapi/wrapper.pyx":232
  *             raise ValueError('unknown capability option')
  * 
  *     def _get_capability_region(self):             # <<<<<<<<<<<<<<
@@ -5241,7 +5329,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("_get_capability_region", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":230
+  /* "olive/drivers/dcamapi/wrapper.pyx":234
  *     def _get_capability_region(self):
  *         cdef DCAMDEV_CAPABILITY_REGION param
  *         memset(&param, 0, sizeof(param))             # <<<<<<<<<<<<<<
@@ -5250,7 +5338,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
   (void)(memset((&__pyx_v_param), 0, (sizeof(__pyx_v_param))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":231
+  /* "olive/drivers/dcamapi/wrapper.pyx":235
  *         cdef DCAMDEV_CAPABILITY_REGION param
  *         memset(&param, 0, sizeof(param))
  *         param.hdr.size = sizeof(param)             # <<<<<<<<<<<<<<
@@ -5259,7 +5347,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
   __pyx_v_param.hdr.size = (sizeof(__pyx_v_param));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":232
+  /* "olive/drivers/dcamapi/wrapper.pyx":236
  *         memset(&param, 0, sizeof(param))
  *         param.hdr.size = sizeof(param)
  *         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA             # <<<<<<<<<<<<<<
@@ -5268,7 +5356,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
   __pyx_v_param.hdr.domain = DCAMDEV_CAPDOMAIN__DCAMDATA;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":233
+  /* "olive/drivers/dcamapi/wrapper.pyx":237
  *         param.hdr.size = sizeof(param)
  *         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
  *         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__REGION             # <<<<<<<<<<<<<<
@@ -5277,7 +5365,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
   __pyx_v_param.hdr.kind = DCAMDATA_KIND__REGION;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":236
+  /* "olive/drivers/dcamapi/wrapper.pyx":240
  * 
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)             # <<<<<<<<<<<<<<
@@ -5286,7 +5374,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
   __pyx_v_err = dcamdev_getcapability(__pyx_v_self->handle, (&__pyx_v_param.hdr));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":237
+  /* "olive/drivers/dcamapi/wrapper.pyx":241
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)
  *         try:             # <<<<<<<<<<<<<<
@@ -5302,7 +5390,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":238
+      /* "olive/drivers/dcamapi/wrapper.pyx":242
  *         err = dcamdev_getcapability(self.handle, &param.hdr)
  *         try:
  *             DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)             # <<<<<<<<<<<<<<
@@ -5311,11 +5399,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
       __pyx_t_5.__pyx_n = 1;
       __pyx_t_5.hdcam = __pyx_v_self->handle;
-      __pyx_t_4 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_getcapbility()"), &__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L3_error)
+      __pyx_t_4 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_getcapbility()"), &__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":237
+      /* "olive/drivers/dcamapi/wrapper.pyx":241
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)
  *         try:             # <<<<<<<<<<<<<<
@@ -5330,7 +5418,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     __pyx_L3_error:;
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":239
+    /* "olive/drivers/dcamapi/wrapper.pyx":243
  *         try:
  *             DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
  *         except RuntimeError:             # <<<<<<<<<<<<<<
@@ -5340,28 +5428,28 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     __pyx_t_6 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_RuntimeError);
     if (__pyx_t_6) {
       __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM._get_capability_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_7, &__pyx_t_8) < 0) __PYX_ERR(0, 239, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_7, &__pyx_t_8) < 0) __PYX_ERR(0, 243, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_GOTREF(__pyx_t_8);
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":240
+      /* "olive/drivers/dcamapi/wrapper.pyx":244
  *             DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
  *         except RuntimeError:
  *             raise RuntimeError("does not support region")             # <<<<<<<<<<<<<<
  * 
  *         attributes = dict()
  */
-      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 240, __pyx_L5_except_error)
+      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 244, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_Raise(__pyx_t_9, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __PYX_ERR(0, 240, __pyx_L5_except_error)
+      __PYX_ERR(0, 244, __pyx_L5_except_error)
     }
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":237
+    /* "olive/drivers/dcamapi/wrapper.pyx":241
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)
  *         try:             # <<<<<<<<<<<<<<
@@ -5376,39 +5464,39 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     __pyx_L8_try_end:;
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":242
+  /* "olive/drivers/dcamapi/wrapper.pyx":246
  *             raise RuntimeError("does not support region")
  * 
  *         attributes = dict()             # <<<<<<<<<<<<<<
  *         attributes['units'] = {'horizontal': param.horzunit, 'vertical': param.vertunit}
  * 
  */
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 242, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 246, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_v_attributes = ((PyObject*)__pyx_t_8);
   __pyx_t_8 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":243
+  /* "olive/drivers/dcamapi/wrapper.pyx":247
  * 
  *         attributes = dict()
  *         attributes['units'] = {'horizontal': param.horzunit, 'vertical': param.vertunit}             # <<<<<<<<<<<<<<
  * 
  *         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
  */
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 243, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_7 = __Pyx_PyInt_From_int32(__pyx_v_param.horzunit); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 243, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyInt_From_int32(__pyx_v_param.horzunit); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_n_u_horizontal, __pyx_t_7) < 0) __PYX_ERR(0, 243, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_n_u_horizontal, __pyx_t_7) < 0) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyInt_From_int32(__pyx_v_param.vertunit); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 243, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyInt_From_int32(__pyx_v_param.vertunit); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_n_u_vertical, __pyx_t_7) < 0) __PYX_ERR(0, 243, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_n_u_vertical, __pyx_t_7) < 0) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_units, __pyx_t_8) < 0)) __PYX_ERR(0, 243, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_units, __pyx_t_8) < 0)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":245
+  /* "olive/drivers/dcamapi/wrapper.pyx":249
  *         attributes['units'] = {'horizontal': param.horzunit, 'vertical': param.vertunit}
  * 
  *         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK             # <<<<<<<<<<<<<<
@@ -5417,19 +5505,19 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
   __pyx_v_region_type = (__pyx_v_param.hdr.capflag & DCAMDATA_REGIONTYPE__BODYMASK);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":246
+  /* "olive/drivers/dcamapi/wrapper.pyx":250
  * 
  *         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
  *         attributes['type'] = []             # <<<<<<<<<<<<<<
  *         if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__NONE:
  *             attributes['type'] = 'none'
  */
-  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 246, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_t_8) < 0)) __PYX_ERR(0, 246, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_t_8) < 0)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":247
+  /* "olive/drivers/dcamapi/wrapper.pyx":251
  *         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
  *         attributes['type'] = []
  *         if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__NONE:             # <<<<<<<<<<<<<<
@@ -5439,16 +5527,16 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
   __pyx_t_10 = ((__pyx_v_region_type == DCAMDATA_REGIONTYPE__NONE) != 0);
   if (__pyx_t_10) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":248
+    /* "olive/drivers/dcamapi/wrapper.pyx":252
  *         attributes['type'] = []
  *         if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__NONE:
  *             attributes['type'] = 'none'             # <<<<<<<<<<<<<<
  *         else:
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_none) < 0)) __PYX_ERR(0, 248, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_none) < 0)) __PYX_ERR(0, 252, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":247
+    /* "olive/drivers/dcamapi/wrapper.pyx":251
  *         region_type = param.hdr.capflag & DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BODYMASK
  *         attributes['type'] = []
  *         if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__NONE:             # <<<<<<<<<<<<<<
@@ -5458,7 +5546,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     goto __pyx_L11;
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":250
+  /* "olive/drivers/dcamapi/wrapper.pyx":254
  *             attributes['type'] = 'none'
  *         else:
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:             # <<<<<<<<<<<<<<
@@ -5469,19 +5557,19 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     __pyx_t_10 = ((__pyx_v_region_type == DCAMDATA_REGIONTYPE__RECT16ARRAY) != 0);
     if (__pyx_t_10) {
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":251
+      /* "olive/drivers/dcamapi/wrapper.pyx":255
  *         else:
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:
  *                 attributes['type'].append('rect16array')             # <<<<<<<<<<<<<<
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BYTEMASK:
  *                 attributes['type'].append('bytemask')
  */
-      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_type); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 251, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_type); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 255, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_11 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_n_u_rect16array); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 251, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_n_u_rect16array); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 255, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":250
+      /* "olive/drivers/dcamapi/wrapper.pyx":254
  *             attributes['type'] = 'none'
  *         else:
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:             # <<<<<<<<<<<<<<
@@ -5490,7 +5578,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
  */
     }
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":252
+    /* "olive/drivers/dcamapi/wrapper.pyx":256
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:
  *                 attributes['type'].append('rect16array')
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BYTEMASK:             # <<<<<<<<<<<<<<
@@ -5500,19 +5588,19 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
     __pyx_t_10 = ((__pyx_v_region_type == DCAMDATA_REGIONTYPE__BYTEMASK) != 0);
     if (__pyx_t_10) {
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":253
+      /* "olive/drivers/dcamapi/wrapper.pyx":257
  *                 attributes['type'].append('rect16array')
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BYTEMASK:
  *                 attributes['type'].append('bytemask')             # <<<<<<<<<<<<<<
  * 
  *         return attributes
  */
-      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_type); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 253, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_type); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 257, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_11 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_n_u_bytemask); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 253, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_n_u_bytemask); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 257, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":252
+      /* "olive/drivers/dcamapi/wrapper.pyx":256
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__RECT16ARRAY:
  *                 attributes['type'].append('rect16array')
  *             if region_type == DCAMDATA_REGIONTYPE.DCAMDATA_REGIONTYPE__BYTEMASK:             # <<<<<<<<<<<<<<
@@ -5523,7 +5611,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
   }
   __pyx_L11:;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":255
+  /* "olive/drivers/dcamapi/wrapper.pyx":259
  *                 attributes['type'].append('bytemask')
  * 
  *         return attributes             # <<<<<<<<<<<<<<
@@ -5535,7 +5623,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
   __pyx_r = __pyx_v_attributes;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":228
+  /* "olive/drivers/dcamapi/wrapper.pyx":232
  *             raise ValueError('unknown capability option')
  * 
  *     def _get_capability_region(self):             # <<<<<<<<<<<<<<
@@ -5558,7 +5646,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_4_get_capabili
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":257
+/* "olive/drivers/dcamapi/wrapper.pyx":261
  *         return attributes
  * 
  *     def _get_capability_lut(self):             # <<<<<<<<<<<<<<
@@ -5590,7 +5678,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("_get_capability_lut", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":259
+  /* "olive/drivers/dcamapi/wrapper.pyx":263
  *     def _get_capability_lut(self):
  *         cdef DCAMDEV_CAPABILITY_LUT param
  *         memset(&param, 0, sizeof(param))             # <<<<<<<<<<<<<<
@@ -5599,7 +5687,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   (void)(memset((&__pyx_v_param), 0, (sizeof(__pyx_v_param))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":260
+  /* "olive/drivers/dcamapi/wrapper.pyx":264
  *         cdef DCAMDEV_CAPABILITY_LUT param
  *         memset(&param, 0, sizeof(param))
  *         param.hdr.size = sizeof(param)             # <<<<<<<<<<<<<<
@@ -5608,7 +5696,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   __pyx_v_param.hdr.size = (sizeof(__pyx_v_param));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":261
+  /* "olive/drivers/dcamapi/wrapper.pyx":265
  *         memset(&param, 0, sizeof(param))
  *         param.hdr.size = sizeof(param)
  *         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA             # <<<<<<<<<<<<<<
@@ -5617,7 +5705,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   __pyx_v_param.hdr.domain = DCAMDEV_CAPDOMAIN__DCAMDATA;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":262
+  /* "olive/drivers/dcamapi/wrapper.pyx":266
  *         param.hdr.size = sizeof(param)
  *         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__DCAMDATA
  *         param.hdr.kind = DCAMDATA_KIND.DCAMDATA_KIND__LUT             # <<<<<<<<<<<<<<
@@ -5626,7 +5714,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   __pyx_v_param.hdr.kind = DCAMDATA_KIND__LUT;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":265
+  /* "olive/drivers/dcamapi/wrapper.pyx":269
  * 
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)             # <<<<<<<<<<<<<<
@@ -5635,7 +5723,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   __pyx_v_err = dcamdev_getcapability(__pyx_v_self->handle, (&__pyx_v_param.hdr));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":266
+  /* "olive/drivers/dcamapi/wrapper.pyx":270
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)
  *         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)             # <<<<<<<<<<<<<<
@@ -5644,23 +5732,23 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_getcapbility()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_getcapbility()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":268
+  /* "olive/drivers/dcamapi/wrapper.pyx":272
  *         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
  * 
  *         attributes = dict()             # <<<<<<<<<<<<<<
  * 
  *         lut_type = param.hdr.capflag & DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__BODYMASK
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_attributes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":270
+  /* "olive/drivers/dcamapi/wrapper.pyx":274
  *         attributes = dict()
  * 
  *         lut_type = param.hdr.capflag & DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__BODYMASK             # <<<<<<<<<<<<<<
@@ -5669,7 +5757,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
  */
   __pyx_v_lut_type = (__pyx_v_param.hdr.capflag & DCAMDATA_LUTTYPE__BODYMASK);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":271
+  /* "olive/drivers/dcamapi/wrapper.pyx":275
  * 
  *         lut_type = param.hdr.capflag & DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__BODYMASK
  *         if lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__NONE:             # <<<<<<<<<<<<<<
@@ -5679,16 +5767,16 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
   switch (__pyx_v_lut_type) {
     case DCAMDATA_LUTTYPE__NONE:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":272
+    /* "olive/drivers/dcamapi/wrapper.pyx":276
  *         lut_type = param.hdr.capflag & DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__BODYMASK
  *         if lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__NONE:
  *             attributes['type'] = 'none'             # <<<<<<<<<<<<<<
  *         elif lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__SEGMENTED_LINEAR:
  *             attributes['type'] = 'linear'
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_none) < 0)) __PYX_ERR(0, 272, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_none) < 0)) __PYX_ERR(0, 276, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":271
+    /* "olive/drivers/dcamapi/wrapper.pyx":275
  * 
  *         lut_type = param.hdr.capflag & DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__BODYMASK
  *         if lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__NONE:             # <<<<<<<<<<<<<<
@@ -5698,28 +5786,28 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
     break;
     case DCAMDATA_LUTTYPE__SEGMENTED_LINEAR:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":274
+    /* "olive/drivers/dcamapi/wrapper.pyx":278
  *             attributes['type'] = 'none'
  *         elif lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__SEGMENTED_LINEAR:
  *             attributes['type'] = 'linear'             # <<<<<<<<<<<<<<
  *             attributes['max_points'] = param.linearpointmax
  *         else:
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_linear) < 0)) __PYX_ERR(0, 274, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_linear) < 0)) __PYX_ERR(0, 278, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":275
+    /* "olive/drivers/dcamapi/wrapper.pyx":279
  *         elif lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__SEGMENTED_LINEAR:
  *             attributes['type'] = 'linear'
  *             attributes['max_points'] = param.linearpointmax             # <<<<<<<<<<<<<<
  *         else:
  *             attributes['type'] = 'unknown'
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_param.linearpointmax); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_param.linearpointmax); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_max_points, __pyx_t_1) < 0)) __PYX_ERR(0, 275, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_max_points, __pyx_t_1) < 0)) __PYX_ERR(0, 279, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":273
+    /* "olive/drivers/dcamapi/wrapper.pyx":277
  *         if lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__NONE:
  *             attributes['type'] = 'none'
  *         elif lut_type == DCAMDATA_LUTTYPE.DCAMDATA_LUTTYPE__SEGMENTED_LINEAR:             # <<<<<<<<<<<<<<
@@ -5729,18 +5817,18 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
     break;
     default:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":277
+    /* "olive/drivers/dcamapi/wrapper.pyx":281
  *             attributes['max_points'] = param.linearpointmax
  *         else:
  *             attributes['type'] = 'unknown'             # <<<<<<<<<<<<<<
  * 
  *         return attributes
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_unknown) < 0)) __PYX_ERR(0, 277, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_unknown) < 0)) __PYX_ERR(0, 281, __pyx_L1_error)
     break;
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":279
+  /* "olive/drivers/dcamapi/wrapper.pyx":283
  *             attributes['type'] = 'unknown'
  * 
  *         return attributes             # <<<<<<<<<<<<<<
@@ -5752,7 +5840,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
   __pyx_r = __pyx_v_attributes;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":257
+  /* "olive/drivers/dcamapi/wrapper.pyx":261
  *         return attributes
  * 
  *     def _get_capability_lut(self):             # <<<<<<<<<<<<<<
@@ -5772,7 +5860,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_6_get_capabili
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":281
+/* "olive/drivers/dcamapi/wrapper.pyx":285
  *         return attributes
  * 
  *     def _get_capability_frameoption(self):             # <<<<<<<<<<<<<<
@@ -5813,7 +5901,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("_get_capability_frameoption", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":283
+  /* "olive/drivers/dcamapi/wrapper.pyx":287
  *     def _get_capability_frameoption(self):
  *         cdef DCAMDEV_CAPABILITY_FRAMEOPTION param
  *         memset(&param, 0, sizeof(param))             # <<<<<<<<<<<<<<
@@ -5822,7 +5910,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   (void)(memset((&__pyx_v_param), 0, (sizeof(__pyx_v_param))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":284
+  /* "olive/drivers/dcamapi/wrapper.pyx":288
  *         cdef DCAMDEV_CAPABILITY_FRAMEOPTION param
  *         memset(&param, 0, sizeof(param))
  *         param.hdr.size = sizeof(param)             # <<<<<<<<<<<<<<
@@ -5831,7 +5919,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   __pyx_v_param.hdr.size = (sizeof(__pyx_v_param));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":285
+  /* "olive/drivers/dcamapi/wrapper.pyx":289
  *         memset(&param, 0, sizeof(param))
  *         param.hdr.size = sizeof(param)
  *         param.hdr.domain = DCAMDEV_CAPDOMAIN.DCAMDEV_CAPDOMAIN__FRAMEOPTION             # <<<<<<<<<<<<<<
@@ -5840,7 +5928,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   __pyx_v_param.hdr.domain = DCAMDEV_CAPDOMAIN__FRAMEOPTION;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":288
+  /* "olive/drivers/dcamapi/wrapper.pyx":292
  * 
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)             # <<<<<<<<<<<<<<
@@ -5849,7 +5937,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   __pyx_v_err = dcamdev_getcapability(__pyx_v_self->handle, (&__pyx_v_param.hdr));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":289
+  /* "olive/drivers/dcamapi/wrapper.pyx":293
  *         cdef DCAMERR err
  *         err = dcamdev_getcapability(self.handle, &param.hdr)
  *         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)             # <<<<<<<<<<<<<<
@@ -5858,11 +5946,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_getcapbility()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamdev_getcapbility()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":291
+  /* "olive/drivers/dcamapi/wrapper.pyx":295
  *         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
  * 
  *         if param.supportproc == 0:             # <<<<<<<<<<<<<<
@@ -5872,20 +5960,20 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
   __pyx_t_3 = ((__pyx_v_param.supportproc == 0) != 0);
   if (unlikely(__pyx_t_3)) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":292
+    /* "olive/drivers/dcamapi/wrapper.pyx":296
  * 
  *         if param.supportproc == 0:
  *             raise RuntimeError("does not support processing options")             # <<<<<<<<<<<<<<
  *         if param.hdr.capflag == 0:
  *             raise RuntimeError('frame option is currently disabled')
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 296, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 292, __pyx_L1_error)
+    __PYX_ERR(0, 296, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":291
+    /* "olive/drivers/dcamapi/wrapper.pyx":295
  *         DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
  * 
  *         if param.supportproc == 0:             # <<<<<<<<<<<<<<
@@ -5894,7 +5982,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":293
+  /* "olive/drivers/dcamapi/wrapper.pyx":297
  *         if param.supportproc == 0:
  *             raise RuntimeError("does not support processing options")
  *         if param.hdr.capflag == 0:             # <<<<<<<<<<<<<<
@@ -5904,20 +5992,20 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
   __pyx_t_3 = ((__pyx_v_param.hdr.capflag == 0) != 0);
   if (unlikely(__pyx_t_3)) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":294
+    /* "olive/drivers/dcamapi/wrapper.pyx":298
  *             raise RuntimeError("does not support processing options")
  *         if param.hdr.capflag == 0:
  *             raise RuntimeError('frame option is currently disabled')             # <<<<<<<<<<<<<<
  * 
  *         flags = {
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 294, __pyx_L1_error)
+    __PYX_ERR(0, 298, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":293
+    /* "olive/drivers/dcamapi/wrapper.pyx":297
  *         if param.supportproc == 0:
  *             raise RuntimeError("does not support processing options")
  *         if param.hdr.capflag == 0:             # <<<<<<<<<<<<<<
@@ -5926,23 +6014,23 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":297
+  /* "olive/drivers/dcamapi/wrapper.pyx":301
  * 
  *         flags = {
  *             'highcontrast': DCAMBUF_PROCTYPE.DCAMBUF_PROCTYPE__HIGHCONTRASTMODE             # <<<<<<<<<<<<<<
  *         }
  *         return {
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyInt_From_enum__DCAMBUF_PROCTYPE(DCAMBUF_PROCTYPE__HIGHCONTRASTMODE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_enum__DCAMBUF_PROCTYPE(DCAMBUF_PROCTYPE__HIGHCONTRASTMODE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 301, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_highcontrast, __pyx_t_4) < 0) __PYX_ERR(0, 297, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_highcontrast, __pyx_t_4) < 0) __PYX_ERR(0, 301, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_flags = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":299
+  /* "olive/drivers/dcamapi/wrapper.pyx":303
  *             'highcontrast': DCAMBUF_PROCTYPE.DCAMBUF_PROCTYPE__HIGHCONTRASTMODE
  *         }
  *         return {             # <<<<<<<<<<<<<<
@@ -5951,10 +6039,10 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  */
   __Pyx_XDECREF(__pyx_r);
   { /* enter inner scope */
-    __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L7_error)
+    __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L7_error)
     __Pyx_GOTREF(__pyx_t_1);
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":301
+    /* "olive/drivers/dcamapi/wrapper.pyx":305
  *         return {
  *             key: <pybool>(param.hdr.capflag & value)
  *             for key, value in flags.items()             # <<<<<<<<<<<<<<
@@ -5962,7 +6050,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
  * 
  */
     __pyx_t_5 = 0;
-    __pyx_t_8 = __Pyx_dict_iterator(__pyx_v_flags, 1, __pyx_n_s_items, (&__pyx_t_6), (&__pyx_t_7)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 301, __pyx_L7_error)
+    __pyx_t_8 = __Pyx_dict_iterator(__pyx_v_flags, 1, __pyx_n_s_items, (&__pyx_t_6), (&__pyx_t_7)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 305, __pyx_L7_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_4);
     __pyx_t_4 = __pyx_t_8;
@@ -5970,7 +6058,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
     while (1) {
       __pyx_t_10 = __Pyx_dict_iter_next(__pyx_t_4, __pyx_t_6, &__pyx_t_5, &__pyx_t_8, &__pyx_t_9, NULL, __pyx_t_7);
       if (unlikely(__pyx_t_10 == 0)) break;
-      if (unlikely(__pyx_t_10 == -1)) __PYX_ERR(0, 301, __pyx_L7_error)
+      if (unlikely(__pyx_t_10 == -1)) __PYX_ERR(0, 305, __pyx_L7_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_XDECREF_SET(__pyx_7genexpr__pyx_v_key, __pyx_t_8);
@@ -5978,19 +6066,19 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
       __Pyx_XDECREF_SET(__pyx_7genexpr__pyx_v_value, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":300
+      /* "olive/drivers/dcamapi/wrapper.pyx":304
  *         }
  *         return {
  *             key: <pybool>(param.hdr.capflag & value)             # <<<<<<<<<<<<<<
  *             for key, value in flags.items()
  *         }
  */
-      __pyx_t_9 = __Pyx_PyInt_From_int32(__pyx_v_param.hdr.capflag); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 300, __pyx_L7_error)
+      __pyx_t_9 = __Pyx_PyInt_From_int32(__pyx_v_param.hdr.capflag); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 304, __pyx_L7_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_8 = PyNumber_And(__pyx_t_9, __pyx_7genexpr__pyx_v_value); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 300, __pyx_L7_error)
+      __pyx_t_8 = PyNumber_And(__pyx_t_9, __pyx_7genexpr__pyx_v_value); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 304, __pyx_L7_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(PyDict_SetItem(__pyx_t_1, (PyObject*)__pyx_7genexpr__pyx_v_key, (PyObject*)((PyBoolObject *)__pyx_t_8)))) __PYX_ERR(0, 300, __pyx_L7_error)
+      if (unlikely(PyDict_SetItem(__pyx_t_1, (PyObject*)__pyx_7genexpr__pyx_v_key, (PyObject*)((PyBoolObject *)__pyx_t_8)))) __PYX_ERR(0, 304, __pyx_L7_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -6007,7 +6095,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":281
+  /* "olive/drivers/dcamapi/wrapper.pyx":285
  *         return attributes
  * 
  *     def _get_capability_frameoption(self):             # <<<<<<<<<<<<<<
@@ -6032,7 +6120,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_8_get_capabili
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":304
+/* "olive/drivers/dcamapi/wrapper.pyx":308
  *         }
  * 
  *     cpdef get_string(self, int32 idstr, int32 nbytes=256):             # <<<<<<<<<<<<<<
@@ -6061,39 +6149,39 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":305
+  /* "olive/drivers/dcamapi/wrapper.pyx":309
  * 
  *     cpdef get_string(self, int32 idstr, int32 nbytes=256):
  *         cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')             # <<<<<<<<<<<<<<
  *         cdef char *c_text = &text[0]
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shape, __pyx_t_3) < 0) __PYX_ERR(0, 305, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shape, __pyx_t_3) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_itemsize, __pyx_t_3) < 0) __PYX_ERR(0, 305, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_itemsize, __pyx_t_3) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 305, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_text = __pyx_t_4;
   __pyx_t_4.memview = NULL;
   __pyx_t_4.data = NULL;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":306
+  /* "olive/drivers/dcamapi/wrapper.pyx":310
  *     cpdef get_string(self, int32 idstr, int32 nbytes=256):
  *         cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
  *         cdef char *c_text = &text[0]             # <<<<<<<<<<<<<<
@@ -6108,11 +6196,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
   } else if (unlikely(__pyx_t_5 >= __pyx_v_text.shape[0])) __pyx_t_6 = 0;
   if (unlikely(__pyx_t_6 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_6);
-    __PYX_ERR(0, 306, __pyx_L1_error)
+    __PYX_ERR(0, 310, __pyx_L1_error)
   }
   __pyx_v_c_text = (&(*((char *) ( /* dim=0 */ ((char *) (((char *) __pyx_v_text.data) + __pyx_t_5)) ))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":309
+  /* "olive/drivers/dcamapi/wrapper.pyx":313
  * 
  *         cdef DCAMDEV_STRING param
  *         memset(&param, 0, sizeof(param))             # <<<<<<<<<<<<<<
@@ -6121,7 +6209,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  */
   (void)(memset((&__pyx_v_param), 0, (sizeof(__pyx_v_param))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":310
+  /* "olive/drivers/dcamapi/wrapper.pyx":314
  *         cdef DCAMDEV_STRING param
  *         memset(&param, 0, sizeof(param))
  *         param.size = sizeof(param)             # <<<<<<<<<<<<<<
@@ -6130,7 +6218,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  */
   __pyx_v_param.size = (sizeof(__pyx_v_param));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":311
+  /* "olive/drivers/dcamapi/wrapper.pyx":315
  *         memset(&param, 0, sizeof(param))
  *         param.size = sizeof(param)
  *         param.text = c_text             # <<<<<<<<<<<<<<
@@ -6139,7 +6227,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  */
   __pyx_v_param.text = __pyx_v_c_text;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":312
+  /* "olive/drivers/dcamapi/wrapper.pyx":316
  *         param.size = sizeof(param)
  *         param.text = c_text
  *         param.textbytes = nbytes             # <<<<<<<<<<<<<<
@@ -6148,7 +6236,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  */
   __pyx_v_param.textbytes = __pyx_v_nbytes;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":313
+  /* "olive/drivers/dcamapi/wrapper.pyx":317
  *         param.text = c_text
  *         param.textbytes = nbytes
  *         param.iString = idstr             # <<<<<<<<<<<<<<
@@ -6157,7 +6245,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  */
   __pyx_v_param.iString = __pyx_v_idstr;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":315
+  /* "olive/drivers/dcamapi/wrapper.pyx":319
  *         param.iString = idstr
  * 
  *         dcamdev_getstring(self.handle, &param)             # <<<<<<<<<<<<<<
@@ -6166,7 +6254,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  */
   (void)(dcamdev_getstring(__pyx_v_self->handle, (&__pyx_v_param)));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":316
+  /* "olive/drivers/dcamapi/wrapper.pyx":320
  * 
  *         dcamdev_getstring(self.handle, &param)
  *         return c_text.decode('utf-8', errors='replace')             # <<<<<<<<<<<<<<
@@ -6174,15 +6262,15 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
  *     def set_data(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_c_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_c_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_errors, __pyx_n_u_replace) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 316, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_errors, __pyx_n_u_replace) < 0) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__11, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6190,7 +6278,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string(stru
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":304
+  /* "olive/drivers/dcamapi/wrapper.pyx":308
  *         }
  * 
  *     cpdef get_string(self, int32 idstr, int32 nbytes=256):             # <<<<<<<<<<<<<<
@@ -6248,7 +6336,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_11get_string(P
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_string") < 0)) __PYX_ERR(0, 304, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_string") < 0)) __PYX_ERR(0, 308, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -6259,16 +6347,16 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_11get_string(P
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_idstr = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_idstr == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 304, __pyx_L3_error)
+    __pyx_v_idstr = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_idstr == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 308, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_nbytes = __Pyx_PyInt_As_int32(values[1]); if (unlikely((__pyx_v_nbytes == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 304, __pyx_L3_error)
+      __pyx_v_nbytes = __Pyx_PyInt_As_int32(values[1]); if (unlikely((__pyx_v_nbytes == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 308, __pyx_L3_error)
     } else {
       __pyx_v_nbytes = ((int32)0x100);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_string", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 304, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_string", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 308, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.get_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6290,7 +6378,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_10get_string(s
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.nbytes = __pyx_v_nbytes;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->get_string(__pyx_v_self, __pyx_v_idstr, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->get_string(__pyx_v_self, __pyx_v_idstr, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6307,7 +6395,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_10get_string(s
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":318
+/* "olive/drivers/dcamapi/wrapper.pyx":322
  *         return c_text.decode('utf-8', errors='replace')
  * 
  *     def set_data(self):             # <<<<<<<<<<<<<<
@@ -6341,7 +6429,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_12set_data(CYT
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":324
+/* "olive/drivers/dcamapi/wrapper.pyx":328
  *         pass
  * 
  *     def get_data(self):             # <<<<<<<<<<<<<<
@@ -6375,7 +6463,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_14get_data(CYT
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":336
+/* "olive/drivers/dcamapi/wrapper.pyx":340
  *     ## property control
  *     ##
  *     cpdef get_attr(self, int32 iprop):             # <<<<<<<<<<<<<<
@@ -6409,7 +6497,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   int __pyx_t_12;
   __Pyx_RefNannySetupContext("get_attr", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":338
+  /* "olive/drivers/dcamapi/wrapper.pyx":342
  *     cpdef get_attr(self, int32 iprop):
  *         cdef DCAMPROP_ATTR attr
  *         memset(&attr, 0, sizeof(attr))             # <<<<<<<<<<<<<<
@@ -6418,7 +6506,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   (void)(memset((&__pyx_v_attr), 0, (sizeof(__pyx_v_attr))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":339
+  /* "olive/drivers/dcamapi/wrapper.pyx":343
  *         cdef DCAMPROP_ATTR attr
  *         memset(&attr, 0, sizeof(attr))
  *         attr.cbSize	= sizeof(attr)             # <<<<<<<<<<<<<<
@@ -6427,7 +6515,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   __pyx_v_attr.cbSize = (sizeof(__pyx_v_attr));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":340
+  /* "olive/drivers/dcamapi/wrapper.pyx":344
  *         memset(&attr, 0, sizeof(attr))
  *         attr.cbSize	= sizeof(attr)
  *         attr.iProp	= iprop             # <<<<<<<<<<<<<<
@@ -6436,7 +6524,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   __pyx_v_attr.iProp = __pyx_v_iprop;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":343
+  /* "olive/drivers/dcamapi/wrapper.pyx":347
  * 
  *         cdef DCAMERR err
  *         err = dcamprop_getattr(self.handle, &attr)             # <<<<<<<<<<<<<<
@@ -6445,7 +6533,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   __pyx_v_err = dcamprop_getattr(__pyx_v_self->handle, (&__pyx_v_attr));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":344
+  /* "olive/drivers/dcamapi/wrapper.pyx":348
  *         cdef DCAMERR err
  *         err = dcamprop_getattr(self.handle, &attr)
  *         DCAMAPI.check_error(err, 'dcamprop_getattr()', self.handle)             # <<<<<<<<<<<<<<
@@ -6454,57 +6542,57 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getattr()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 344, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getattr()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":346
+  /* "olive/drivers/dcamapi/wrapper.pyx":350
  *         DCAMAPI.check_error(err, 'dcamprop_getattr()', self.handle)
  * 
  *         attributes = dict()             # <<<<<<<<<<<<<<
  * 
  *         # read/write
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 346, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_attributes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":350
+  /* "olive/drivers/dcamapi/wrapper.pyx":354
  *         # read/write
  *         attributes = {
  *             'writable': pybool(attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_WRITABLE),             # <<<<<<<<<<<<<<
  *             'readable': pybool(attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_READABLE),
  *         }
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_From_int32((__pyx_v_attr.attribute & DCAMPROP_ATTR_WRITABLE)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int32((__pyx_v_attr.attribute & DCAMPROP_ATTR_WRITABLE)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7cpython_4bool_bool), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7cpython_4bool_bool), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_writable, __pyx_t_4) < 0) __PYX_ERR(0, 350, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_writable, __pyx_t_4) < 0) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":351
+  /* "olive/drivers/dcamapi/wrapper.pyx":355
  *         attributes = {
  *             'writable': pybool(attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_WRITABLE),
  *             'readable': pybool(attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_READABLE),             # <<<<<<<<<<<<<<
  *         }
  * 
  */
-  __pyx_t_4 = __Pyx_PyInt_From_int32((__pyx_v_attr.attribute & DCAMPROP_ATTR_READABLE)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int32((__pyx_v_attr.attribute & DCAMPROP_ATTR_READABLE)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7cpython_4bool_bool), __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7cpython_4bool_bool), __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_readable, __pyx_t_3) < 0) __PYX_ERR(0, 350, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_readable, __pyx_t_3) < 0) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF_SET(__pyx_v_attributes, ((PyObject*)__pyx_t_1));
   __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":355
+  /* "olive/drivers/dcamapi/wrapper.pyx":359
  * 
  *         # type
  *         prop_type = attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MASK             # <<<<<<<<<<<<<<
@@ -6513,7 +6601,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   __pyx_v_prop_type = (__pyx_v_attr.attribute & DCAMPROP_TYPE_MASK);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":356
+  /* "olive/drivers/dcamapi/wrapper.pyx":360
  *         # type
  *         prop_type = attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MASK
  *         if prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MODE:             # <<<<<<<<<<<<<<
@@ -6523,16 +6611,16 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   switch (__pyx_v_prop_type) {
     case DCAMPROP_TYPE_MODE:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":357
+    /* "olive/drivers/dcamapi/wrapper.pyx":361
  *         prop_type = attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MASK
  *         if prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MODE:
  *             attributes['type'] = 'mode'             # <<<<<<<<<<<<<<
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_LONG:
  *             attributes['type'] = 'long'
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_mode) < 0)) __PYX_ERR(0, 357, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_mode) < 0)) __PYX_ERR(0, 361, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":356
+    /* "olive/drivers/dcamapi/wrapper.pyx":360
  *         # type
  *         prop_type = attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MASK
  *         if prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MODE:             # <<<<<<<<<<<<<<
@@ -6542,16 +6630,16 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
     break;
     case DCAMPROP_TYPE_LONG:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":359
+    /* "olive/drivers/dcamapi/wrapper.pyx":363
  *             attributes['type'] = 'mode'
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_LONG:
  *             attributes['type'] = 'long'             # <<<<<<<<<<<<<<
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_REAL:
  *             attributes['type'] = 'real'
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_long) < 0)) __PYX_ERR(0, 359, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_long) < 0)) __PYX_ERR(0, 363, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":358
+    /* "olive/drivers/dcamapi/wrapper.pyx":362
  *         if prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_MODE:
  *             attributes['type'] = 'mode'
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_LONG:             # <<<<<<<<<<<<<<
@@ -6561,16 +6649,16 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
     break;
     case DCAMPROP_TYPE_REAL:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":361
+    /* "olive/drivers/dcamapi/wrapper.pyx":365
  *             attributes['type'] = 'long'
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_REAL:
  *             attributes['type'] = 'real'             # <<<<<<<<<<<<<<
  *         else:
  *             raise RuntimeError('unknown attribute type')
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_real) < 0)) __PYX_ERR(0, 361, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_type, __pyx_n_u_real) < 0)) __PYX_ERR(0, 365, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":360
+    /* "olive/drivers/dcamapi/wrapper.pyx":364
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_LONG:
  *             attributes['type'] = 'long'
  *         elif prop_type == DCAMPROPATTRIBUTE.DCAMPROP_TYPE_REAL:             # <<<<<<<<<<<<<<
@@ -6580,31 +6668,31 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
     break;
     default:
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":363
+    /* "olive/drivers/dcamapi/wrapper.pyx":367
  *             attributes['type'] = 'real'
  *         else:
  *             raise RuntimeError('unknown attribute type')             # <<<<<<<<<<<<<<
  * 
  *         # unit
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 363, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 363, __pyx_L1_error)
+    __PYX_ERR(0, 367, __pyx_L1_error)
     break;
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":366
+  /* "olive/drivers/dcamapi/wrapper.pyx":370
  * 
  *         # unit
  *         attributes['unit'] = Unit(attr.iUnit)             # <<<<<<<<<<<<<<
  * 
  *         # array
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Unit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Unit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_From_int32(__pyx_v_attr.iUnit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int32(__pyx_v_attr.iUnit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -6619,13 +6707,13 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 366, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_unit, __pyx_t_1) < 0)) __PYX_ERR(0, 366, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_unit, __pyx_t_1) < 0)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":369
+  /* "olive/drivers/dcamapi/wrapper.pyx":373
  * 
  *         # array
  *         prop_type = attr.attribute2 & DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE             # <<<<<<<<<<<<<<
@@ -6634,53 +6722,53 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   __pyx_v_prop_type = (__pyx_v_attr.attribute2 & DCAMPROP_ATTR2_ARRAYBASE);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":370
+  /* "olive/drivers/dcamapi/wrapper.pyx":374
  *         # array
  *         prop_type = attr.attribute2 & DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
  *         is_array = prop_type == DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE             # <<<<<<<<<<<<<<
  *         attributes['is_array'] = pybool(is_array)
  *         if is_array:
  */
-  __pyx_t_1 = __Pyx_PyBool_FromLong((__pyx_v_prop_type == DCAMPROP_ATTR2_ARRAYBASE)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong((__pyx_v_prop_type == DCAMPROP_ATTR2_ARRAYBASE)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_is_array = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":371
+  /* "olive/drivers/dcamapi/wrapper.pyx":375
  *         prop_type = attr.attribute2 & DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
  *         is_array = prop_type == DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
  *         attributes['is_array'] = pybool(is_array)             # <<<<<<<<<<<<<<
  *         if is_array:
  *             attributes['n_elements'] = attr.iProp_NumberOfElement
  */
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7cpython_4bool_bool), __pyx_v_is_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7cpython_4bool_bool), __pyx_v_is_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_is_array, __pyx_t_1) < 0)) __PYX_ERR(0, 371, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_is_array, __pyx_t_1) < 0)) __PYX_ERR(0, 375, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":372
+  /* "olive/drivers/dcamapi/wrapper.pyx":376
  *         is_array = prop_type == DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
  *         attributes['is_array'] = pybool(is_array)
  *         if is_array:             # <<<<<<<<<<<<<<
  *             attributes['n_elements'] = attr.iProp_NumberOfElement
  * 
  */
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_is_array); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_is_array); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 376, __pyx_L1_error)
   if (__pyx_t_6) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":373
+    /* "olive/drivers/dcamapi/wrapper.pyx":377
  *         attributes['is_array'] = pybool(is_array)
  *         if is_array:
  *             attributes['n_elements'] = attr.iProp_NumberOfElement             # <<<<<<<<<<<<<<
  * 
  *         # min/max/step
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_attr.iProp_NumberOfElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_attr.iProp_NumberOfElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_n_elements, __pyx_t_1) < 0)) __PYX_ERR(0, 373, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_n_elements, __pyx_t_1) < 0)) __PYX_ERR(0, 377, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":372
+    /* "olive/drivers/dcamapi/wrapper.pyx":376
  *         is_array = prop_type == DCAMPROPATTRIBUTE2.DCAMPROP_ATTR2_ARRAYBASE
  *         attributes['is_array'] = pybool(is_array)
  *         if is_array:             # <<<<<<<<<<<<<<
@@ -6689,7 +6777,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":376
+  /* "olive/drivers/dcamapi/wrapper.pyx":380
  * 
  *         # min/max/step
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASRANGE:             # <<<<<<<<<<<<<<
@@ -6699,29 +6787,29 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   __pyx_t_6 = ((__pyx_v_attr.attribute & DCAMPROP_ATTR_HASRANGE) != 0);
   if (__pyx_t_6) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":377
+    /* "olive/drivers/dcamapi/wrapper.pyx":381
  *         # min/max/step
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASRANGE:
  *             attributes.update({'min': attr.valuemin, 'max': attr.valuemax})             # <<<<<<<<<<<<<<
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:
  *             attributes['step'] = attr.valuestep
  */
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuemin); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuemin); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_min, __pyx_t_3) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_min, __pyx_t_3) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuemax); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuemax); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_max, __pyx_t_3) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_max, __pyx_t_3) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyDict_Type_update, __pyx_v_attributes, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyDict_Type_update, __pyx_v_attributes, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":376
+    /* "olive/drivers/dcamapi/wrapper.pyx":380
  * 
  *         # min/max/step
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASRANGE:             # <<<<<<<<<<<<<<
@@ -6730,7 +6818,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":378
+  /* "olive/drivers/dcamapi/wrapper.pyx":382
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASRANGE:
  *             attributes.update({'min': attr.valuemin, 'max': attr.valuemax})
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:             # <<<<<<<<<<<<<<
@@ -6740,19 +6828,19 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   __pyx_t_6 = ((__pyx_v_attr.attribute & DCAMPROP_ATTR_HASSTEP) != 0);
   if (__pyx_t_6) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":379
+    /* "olive/drivers/dcamapi/wrapper.pyx":383
  *             attributes.update({'min': attr.valuemin, 'max': attr.valuemax})
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:
  *             attributes['step'] = attr.valuestep             # <<<<<<<<<<<<<<
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASDEFAULT:
  *             attributes['default'] = attr.valuedefault
  */
-    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuestep); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuestep); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_step, __pyx_t_3) < 0)) __PYX_ERR(0, 379, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_step, __pyx_t_3) < 0)) __PYX_ERR(0, 383, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":378
+    /* "olive/drivers/dcamapi/wrapper.pyx":382
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASRANGE:
  *             attributes.update({'min': attr.valuemin, 'max': attr.valuemax})
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:             # <<<<<<<<<<<<<<
@@ -6761,7 +6849,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":380
+  /* "olive/drivers/dcamapi/wrapper.pyx":384
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:
  *             attributes['step'] = attr.valuestep
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASDEFAULT:             # <<<<<<<<<<<<<<
@@ -6771,19 +6859,19 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   __pyx_t_6 = ((__pyx_v_attr.attribute & DCAMPROP_ATTR_HASDEFAULT) != 0);
   if (__pyx_t_6) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":381
+    /* "olive/drivers/dcamapi/wrapper.pyx":385
  *             attributes['step'] = attr.valuestep
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASDEFAULT:
  *             attributes['default'] = attr.valuedefault             # <<<<<<<<<<<<<<
  * 
  *         # update details
  */
-    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuedefault); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
+    __pyx_t_3 = PyFloat_FromDouble(__pyx_v_attr.valuedefault); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_default, __pyx_t_3) < 0)) __PYX_ERR(0, 381, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_default, __pyx_t_3) < 0)) __PYX_ERR(0, 385, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":380
+    /* "olive/drivers/dcamapi/wrapper.pyx":384
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASSTEP:
  *             attributes['step'] = attr.valuestep
  *         if attr.attribute & DCAMPROPATTRIBUTE.DCAMPROP_ATTR_HASDEFAULT:             # <<<<<<<<<<<<<<
@@ -6792,20 +6880,20 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":385
+  /* "olive/drivers/dcamapi/wrapper.pyx":389
  *         # update details
  *         cdef double value
  *         if attributes['type'] == 'mode':             # <<<<<<<<<<<<<<
  *             try:
  *                 value = attributes['min']
  */
-  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = (__Pyx_PyUnicode_Equals(__pyx_t_3, __pyx_n_u_mode, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 385, __pyx_L1_error)
+  __pyx_t_6 = (__Pyx_PyUnicode_Equals(__pyx_t_3, __pyx_n_u_mode, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 389, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_6) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":386
+    /* "olive/drivers/dcamapi/wrapper.pyx":390
  *         cdef double value
  *         if attributes['type'] == 'mode':
  *             try:             # <<<<<<<<<<<<<<
@@ -6821,20 +6909,20 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
       __Pyx_XGOTREF(__pyx_t_9);
       /*try:*/ {
 
-        /* "olive/drivers/dcamapi/wrapper.pyx":387
+        /* "olive/drivers/dcamapi/wrapper.pyx":391
  *         if attributes['type'] == 'mode':
  *             try:
  *                 value = attributes['min']             # <<<<<<<<<<<<<<
  *             except KeyError:
  *                 # no minimum index value, default to 0
  */
-        __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_min); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L8_error)
+        __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_min); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 391, __pyx_L8_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 387, __pyx_L8_error)
+        __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 391, __pyx_L8_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_v_value = __pyx_t_10;
 
-        /* "olive/drivers/dcamapi/wrapper.pyx":386
+        /* "olive/drivers/dcamapi/wrapper.pyx":390
  *         cdef double value
  *         if attributes['type'] == 'mode':
  *             try:             # <<<<<<<<<<<<<<
@@ -6852,7 +6940,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":388
+      /* "olive/drivers/dcamapi/wrapper.pyx":392
  *             try:
  *                 value = attributes['min']
  *             except KeyError:             # <<<<<<<<<<<<<<
@@ -6862,30 +6950,30 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
       __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_KeyError);
       if (__pyx_t_11) {
         __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.get_attr", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 388, __pyx_L10_except_error)
+        if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 392, __pyx_L10_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_GOTREF(__pyx_t_4);
 
-        /* "olive/drivers/dcamapi/wrapper.pyx":390
+        /* "olive/drivers/dcamapi/wrapper.pyx":394
  *             except KeyError:
  *                 # no minimum index value, default to 0
  *                 attributes['min'] = 0             # <<<<<<<<<<<<<<
  *                 value = attributes['default']
  *             mode_text = []
  */
-        if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_min, __pyx_int_0) < 0)) __PYX_ERR(0, 390, __pyx_L10_except_error)
+        if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_min, __pyx_int_0) < 0)) __PYX_ERR(0, 394, __pyx_L10_except_error)
 
-        /* "olive/drivers/dcamapi/wrapper.pyx":391
+        /* "olive/drivers/dcamapi/wrapper.pyx":395
  *                 # no minimum index value, default to 0
  *                 attributes['min'] = 0
  *                 value = attributes['default']             # <<<<<<<<<<<<<<
  *             mode_text = []
  *             while True:
  */
-        __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_default); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 391, __pyx_L10_except_error)
+        __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_attributes, __pyx_n_u_default); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 395, __pyx_L10_except_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 391, __pyx_L10_except_error)
+        __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 395, __pyx_L10_except_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_v_value = __pyx_t_10;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6896,7 +6984,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
       goto __pyx_L10_except_error;
       __pyx_L10_except_error:;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":386
+      /* "olive/drivers/dcamapi/wrapper.pyx":390
  *         cdef double value
  *         if attributes['type'] == 'mode':
  *             try:             # <<<<<<<<<<<<<<
@@ -6916,19 +7004,19 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
       __pyx_L13_try_end:;
     }
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":392
+    /* "olive/drivers/dcamapi/wrapper.pyx":396
  *                 attributes['min'] = 0
  *                 value = attributes['default']
  *             mode_text = []             # <<<<<<<<<<<<<<
  *             while True:
  *                 text = self._get_value_text(iprop, value)
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 392, __pyx_L1_error)
+    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_v_mode_text = ((PyObject*)__pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":393
+    /* "olive/drivers/dcamapi/wrapper.pyx":397
  *                 value = attributes['default']
  *             mode_text = []
  *             while True:             # <<<<<<<<<<<<<<
@@ -6937,26 +7025,26 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
     while (1) {
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":394
+      /* "olive/drivers/dcamapi/wrapper.pyx":398
  *             mode_text = []
  *             while True:
  *                 text = self._get_value_text(iprop, value)             # <<<<<<<<<<<<<<
  *                 text = text.lower().replace(" ", "_")
  *                 mode_text.append(text)
  */
-      __pyx_t_4 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text(__pyx_v_self, __pyx_v_iprop, __pyx_v_value, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 394, __pyx_L1_error)
+      __pyx_t_4 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text(__pyx_v_self, __pyx_v_iprop, __pyx_v_value, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 398, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_XDECREF_SET(__pyx_v_text, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":395
+      /* "olive/drivers/dcamapi/wrapper.pyx":399
  *             while True:
  *                 text = self._get_value_text(iprop, value)
  *                 text = text.lower().replace(" ", "_")             # <<<<<<<<<<<<<<
  *                 mode_text.append(text)
  *                 try:
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_text, __pyx_n_s_lower); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_text, __pyx_n_s_lower); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_3 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -6970,28 +7058,28 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
       }
       __pyx_t_4 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 395, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_replace); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_replace); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_text, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":396
+      /* "olive/drivers/dcamapi/wrapper.pyx":400
  *                 text = self._get_value_text(iprop, value)
  *                 text = text.lower().replace(" ", "_")
  *                 mode_text.append(text)             # <<<<<<<<<<<<<<
  *                 try:
  *                     value = self._query_value(iprop, value)
  */
-      __pyx_t_12 = __Pyx_PyList_Append(__pyx_v_mode_text, __pyx_v_text); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 396, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyList_Append(__pyx_v_mode_text, __pyx_v_text); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 400, __pyx_L1_error)
 
-      /* "olive/drivers/dcamapi/wrapper.pyx":397
+      /* "olive/drivers/dcamapi/wrapper.pyx":401
  *                 text = text.lower().replace(" ", "_")
  *                 mode_text.append(text)
  *                 try:             # <<<<<<<<<<<<<<
@@ -7007,20 +7095,20 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
         __Pyx_XGOTREF(__pyx_t_7);
         /*try:*/ {
 
-          /* "olive/drivers/dcamapi/wrapper.pyx":398
+          /* "olive/drivers/dcamapi/wrapper.pyx":402
  *                 mode_text.append(text)
  *                 try:
  *                     value = self._query_value(iprop, value)             # <<<<<<<<<<<<<<
  *                 except RuntimeError:
  *                     # last value reached
  */
-          __pyx_t_4 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(__pyx_v_self, __pyx_v_iprop, __pyx_v_value); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 398, __pyx_L18_error)
+          __pyx_t_4 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(__pyx_v_self, __pyx_v_iprop, __pyx_v_value); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 402, __pyx_L18_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 398, __pyx_L18_error)
+          __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 402, __pyx_L18_error)
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_v_value = __pyx_t_10;
 
-          /* "olive/drivers/dcamapi/wrapper.pyx":397
+          /* "olive/drivers/dcamapi/wrapper.pyx":401
  *                 text = text.lower().replace(" ", "_")
  *                 mode_text.append(text)
  *                 try:             # <<<<<<<<<<<<<<
@@ -7038,7 +7126,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "olive/drivers/dcamapi/wrapper.pyx":399
+        /* "olive/drivers/dcamapi/wrapper.pyx":403
  *                 try:
  *                     value = self._query_value(iprop, value)
  *                 except RuntimeError:             # <<<<<<<<<<<<<<
@@ -7048,12 +7136,12 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
         __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_RuntimeError);
         if (__pyx_t_11) {
           __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.get_attr", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 399, __pyx_L20_except_error)
+          if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 403, __pyx_L20_except_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_GOTREF(__pyx_t_3);
 
-          /* "olive/drivers/dcamapi/wrapper.pyx":401
+          /* "olive/drivers/dcamapi/wrapper.pyx":405
  *                 except RuntimeError:
  *                     # last value reached
  *                     break             # <<<<<<<<<<<<<<
@@ -7070,7 +7158,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
         goto __pyx_L20_except_error;
         __pyx_L20_except_error:;
 
-        /* "olive/drivers/dcamapi/wrapper.pyx":397
+        /* "olive/drivers/dcamapi/wrapper.pyx":401
  *                 text = text.lower().replace(" ", "_")
  *                 mode_text.append(text)
  *                 try:             # <<<<<<<<<<<<<<
@@ -7093,19 +7181,19 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
     }
     __pyx_L17_break:;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":402
+    /* "olive/drivers/dcamapi/wrapper.pyx":406
  *                     # last value reached
  *                     break
  *             attributes['modes'] = tuple(mode_text)             # <<<<<<<<<<<<<<
  * 
  *         return attributes
  */
-    __pyx_t_3 = PyList_AsTuple(__pyx_v_mode_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
+    __pyx_t_3 = PyList_AsTuple(__pyx_v_mode_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_modes, __pyx_t_3) < 0)) __PYX_ERR(0, 402, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_attributes, __pyx_n_u_modes, __pyx_t_3) < 0)) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":385
+    /* "olive/drivers/dcamapi/wrapper.pyx":389
  *         # update details
  *         cdef double value
  *         if attributes['type'] == 'mode':             # <<<<<<<<<<<<<<
@@ -7114,7 +7202,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":404
+  /* "olive/drivers/dcamapi/wrapper.pyx":408
  *             attributes['modes'] = tuple(mode_text)
  * 
  *         return attributes             # <<<<<<<<<<<<<<
@@ -7126,7 +7214,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(struct
   __pyx_r = __pyx_v_attributes;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":336
+  /* "olive/drivers/dcamapi/wrapper.pyx":340
  *     ## property control
  *     ##
  *     cpdef get_attr(self, int32 iprop):             # <<<<<<<<<<<<<<
@@ -7160,7 +7248,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_17get_attr(PyO
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_attr (wrapper)", 0);
   assert(__pyx_arg_iprop); {
-    __pyx_v_iprop = __Pyx_PyInt_As_int32(__pyx_arg_iprop); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 336, __pyx_L3_error)
+    __pyx_v_iprop = __Pyx_PyInt_As_int32(__pyx_arg_iprop); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 340, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7181,7 +7269,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_16get_attr(str
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_attr", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(__pyx_v_self, __pyx_v_iprop, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_attr(__pyx_v_self, __pyx_v_iprop, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 340, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7198,7 +7286,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_16get_attr(str
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":406
+/* "olive/drivers/dcamapi/wrapper.pyx":410
  *         return attributes
  * 
  *     cpdef get_value(self, int32 iprop):             # <<<<<<<<<<<<<<
@@ -7216,7 +7304,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_value(struc
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("get_value", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":410
+  /* "olive/drivers/dcamapi/wrapper.pyx":414
  * 
  *         cdef DCAMERR err
  *         err = dcamprop_getvalue(self.handle, iprop, &value)             # <<<<<<<<<<<<<<
@@ -7225,7 +7313,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_value(struc
  */
   __pyx_v_err = dcamprop_getvalue(__pyx_v_self->handle, __pyx_v_iprop, (&__pyx_v_value));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":411
+  /* "olive/drivers/dcamapi/wrapper.pyx":415
  *         cdef DCAMERR err
  *         err = dcamprop_getvalue(self.handle, iprop, &value)
  *         DCAMAPI.check_error(err, 'dcamprop_getvalue()', self.handle)             # <<<<<<<<<<<<<<
@@ -7234,11 +7322,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_value(struc
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":413
+  /* "olive/drivers/dcamapi/wrapper.pyx":417
  *         DCAMAPI.check_error(err, 'dcamprop_getvalue()', self.handle)
  * 
  *         return value             # <<<<<<<<<<<<<<
@@ -7246,13 +7334,13 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_value(struc
  *     cpdef set_value(self, int32 iprop, double value):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 413, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 417, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":406
+  /* "olive/drivers/dcamapi/wrapper.pyx":410
  *         return attributes
  * 
  *     cpdef get_value(self, int32 iprop):             # <<<<<<<<<<<<<<
@@ -7279,7 +7367,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_19get_value(Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_value (wrapper)", 0);
   assert(__pyx_arg_iprop); {
-    __pyx_v_iprop = __Pyx_PyInt_As_int32(__pyx_arg_iprop); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+    __pyx_v_iprop = __Pyx_PyInt_As_int32(__pyx_arg_iprop); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7300,7 +7388,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_18get_value(st
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_value", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_value(__pyx_v_self, __pyx_v_iprop, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_value(__pyx_v_self, __pyx_v_iprop, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 410, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7317,7 +7405,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_18get_value(st
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":415
+/* "olive/drivers/dcamapi/wrapper.pyx":419
  *         return value
  * 
  *     cpdef set_value(self, int32 iprop, double value):             # <<<<<<<<<<<<<<
@@ -7334,7 +7422,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_set_value(struc
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("set_value", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":417
+  /* "olive/drivers/dcamapi/wrapper.pyx":421
  *     cpdef set_value(self, int32 iprop, double value):
  *         cdef DCAMERR err
  *         err = dcamprop_setvalue(self.handle, iprop, value)             # <<<<<<<<<<<<<<
@@ -7343,7 +7431,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_set_value(struc
  */
   __pyx_v_err = dcamprop_setvalue(__pyx_v_self->handle, __pyx_v_iprop, __pyx_v_value);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":418
+  /* "olive/drivers/dcamapi/wrapper.pyx":422
  *         cdef DCAMERR err
  *         err = dcamprop_setvalue(self.handle, iprop, value)
  *         DCAMAPI.check_error(err, 'dcamprop_setvalue()', self.handle)             # <<<<<<<<<<<<<<
@@ -7352,11 +7440,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_set_value(struc
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_setvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_setvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":415
+  /* "olive/drivers/dcamapi/wrapper.pyx":419
  *         return value
  * 
  *     cpdef set_value(self, int32 iprop, double value):             # <<<<<<<<<<<<<<
@@ -7408,11 +7496,11 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_21set_value(Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_value)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_value", 1, 2, 2, 1); __PYX_ERR(0, 415, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_value", 1, 2, 2, 1); __PYX_ERR(0, 419, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_value") < 0)) __PYX_ERR(0, 415, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_value") < 0)) __PYX_ERR(0, 419, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7420,12 +7508,12 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_21set_value(Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 415, __pyx_L3_error)
-    __pyx_v_value = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 415, __pyx_L3_error)
+    __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 419, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 419, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_value", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 415, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_value", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 419, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.set_value", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7444,7 +7532,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_20set_value(st
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_value", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_set_value(__pyx_v_self, __pyx_v_iprop, __pyx_v_value, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_set_value(__pyx_v_self, __pyx_v_iprop, __pyx_v_value, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7461,7 +7549,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_20set_value(st
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":420
+/* "olive/drivers/dcamapi/wrapper.pyx":424
  *         DCAMAPI.check_error(err, 'dcamprop_setvalue()', self.handle)
  * 
  *     def set_get_value(self, int32 iprop, double value):             # <<<<<<<<<<<<<<
@@ -7500,11 +7588,11 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_23set_get_valu
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_value)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_get_value", 1, 2, 2, 1); __PYX_ERR(0, 420, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_get_value", 1, 2, 2, 1); __PYX_ERR(0, 424, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_get_value") < 0)) __PYX_ERR(0, 420, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_get_value") < 0)) __PYX_ERR(0, 424, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7512,12 +7600,12 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_23set_get_valu
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 420, __pyx_L3_error)
-    __pyx_v_value = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 420, __pyx_L3_error)
+    __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 424, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 424, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_get_value", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 420, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_get_value", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 424, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.set_get_value", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7538,7 +7626,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_22set_get_valu
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("set_get_value", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":422
+  /* "olive/drivers/dcamapi/wrapper.pyx":426
  *     def set_get_value(self, int32 iprop, double value):
  *         cdef DCAMERR err
  *         err = dcamprop_setgetvalue(self.handle, iprop, &value)             # <<<<<<<<<<<<<<
@@ -7547,7 +7635,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_22set_get_valu
  */
   __pyx_v_err = dcamprop_setgetvalue(__pyx_v_self->handle, __pyx_v_iprop, (&__pyx_v_value));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":423
+  /* "olive/drivers/dcamapi/wrapper.pyx":427
  *         cdef DCAMERR err
  *         err = dcamprop_setgetvalue(self.handle, iprop, &value)
  *         DCAMAPI.check_error(err, 'dcamprop_setgetvalue()', self.handle)             # <<<<<<<<<<<<<<
@@ -7556,11 +7644,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_22set_get_valu
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_setgetvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 423, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_setgetvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":425
+  /* "olive/drivers/dcamapi/wrapper.pyx":429
  *         DCAMAPI.check_error(err, 'dcamprop_setgetvalue()', self.handle)
  * 
  *         return value             # <<<<<<<<<<<<<<
@@ -7568,13 +7656,13 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_22set_get_valu
  *     cdef _query_value(self, int32 iprop, double value):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 425, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":420
+  /* "olive/drivers/dcamapi/wrapper.pyx":424
  *         DCAMAPI.check_error(err, 'dcamprop_setvalue()', self.handle)
  * 
  *     def set_get_value(self, int32 iprop, double value):             # <<<<<<<<<<<<<<
@@ -7593,7 +7681,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_22set_get_valu
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":427
+/* "olive/drivers/dcamapi/wrapper.pyx":431
  *         return value
  * 
  *     cdef _query_value(self, int32 iprop, double value):             # <<<<<<<<<<<<<<
@@ -7609,7 +7697,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(st
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("_query_value", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":429
+  /* "olive/drivers/dcamapi/wrapper.pyx":433
  *     cdef _query_value(self, int32 iprop, double value):
  *         cdef DCAMERR err
  *         err = dcamprop_queryvalue(self.handle, iprop, &value, DCAMPROPOPTION.DCAMPROP_OPTION_NEXT)             # <<<<<<<<<<<<<<
@@ -7618,7 +7706,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(st
  */
   __pyx_v_err = dcamprop_queryvalue(__pyx_v_self->handle, __pyx_v_iprop, (&__pyx_v_value), DCAMPROP_OPTION_NEXT);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":430
+  /* "olive/drivers/dcamapi/wrapper.pyx":434
  *         cdef DCAMERR err
  *         err = dcamprop_queryvalue(self.handle, iprop, &value, DCAMPROPOPTION.DCAMPROP_OPTION_NEXT)
  *         DCAMAPI.check_error(err, 'dcamprop_queryvalue()', self.handle)             # <<<<<<<<<<<<<<
@@ -7627,11 +7715,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(st
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_queryvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 430, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_queryvalue()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":432
+  /* "olive/drivers/dcamapi/wrapper.pyx":436
  *         DCAMAPI.check_error(err, 'dcamprop_queryvalue()', self.handle)
  * 
  *         return value             # <<<<<<<<<<<<<<
@@ -7639,13 +7727,13 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(st
  *     cpdef get_next_id(self, int32 iprop=0):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 432, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 436, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":427
+  /* "olive/drivers/dcamapi/wrapper.pyx":431
  *         return value
  * 
  *     cdef _query_value(self, int32 iprop, double value):             # <<<<<<<<<<<<<<
@@ -7664,7 +7752,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__query_value(st
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":434
+/* "olive/drivers/dcamapi/wrapper.pyx":438
  *         return value
  * 
  *     cpdef get_next_id(self, int32 iprop=0):             # <<<<<<<<<<<<<<
@@ -7687,7 +7775,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_next_id(str
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":436
+  /* "olive/drivers/dcamapi/wrapper.pyx":440
  *     cpdef get_next_id(self, int32 iprop=0):
  *         cdef DCAMERR err
  *         err = dcamprop_getnextid(self.handle, &iprop, DCAMPROPOPTION.DCAMPROP_OPTION_SUPPORT)             # <<<<<<<<<<<<<<
@@ -7696,7 +7784,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_next_id(str
  */
   __pyx_v_err = dcamprop_getnextid(__pyx_v_self->handle, (&__pyx_v_iprop), DCAMPROP_OPTION_SUPPORT);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":437
+  /* "olive/drivers/dcamapi/wrapper.pyx":441
  *         cdef DCAMERR err
  *         err = dcamprop_getnextid(self.handle, &iprop, DCAMPROPOPTION.DCAMPROP_OPTION_SUPPORT)
  *         DCAMAPI.check_error(err, 'dcamprop_getnextid()', self.handle)             # <<<<<<<<<<<<<<
@@ -7705,11 +7793,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_next_id(str
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getnextid()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getnextid()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":439
+  /* "olive/drivers/dcamapi/wrapper.pyx":443
  *         DCAMAPI.check_error(err, 'dcamprop_getnextid()', self.handle)
  * 
  *         return iprop             # <<<<<<<<<<<<<<
@@ -7717,13 +7805,13 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_next_id(str
  *     cpdef get_name(self, int32 iprop, int32 nbytes=64):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_iprop); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_iprop); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":434
+  /* "olive/drivers/dcamapi/wrapper.pyx":438
  *         return value
  * 
  *     cpdef get_next_id(self, int32 iprop=0):             # <<<<<<<<<<<<<<
@@ -7770,7 +7858,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_25get_next_id(
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_next_id") < 0)) __PYX_ERR(0, 434, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_next_id") < 0)) __PYX_ERR(0, 438, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -7781,14 +7869,14 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_25get_next_id(
       }
     }
     if (values[0]) {
-      __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 434, __pyx_L3_error)
+      __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 438, __pyx_L3_error)
     } else {
       __pyx_v_iprop = ((int32)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_next_id", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 434, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_next_id", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 438, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.get_next_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7810,7 +7898,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_24get_next_id(
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.iprop = __pyx_v_iprop;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->get_next_id(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->get_next_id(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7827,7 +7915,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_24get_next_id(
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":441
+/* "olive/drivers/dcamapi/wrapper.pyx":445
  *         return iprop
  * 
  *     cpdef get_name(self, int32 iprop, int32 nbytes=64):             # <<<<<<<<<<<<<<
@@ -7857,39 +7945,39 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name(struct
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":442
+  /* "olive/drivers/dcamapi/wrapper.pyx":446
  * 
  *     cpdef get_name(self, int32 iprop, int32 nbytes=64):
  *         cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')             # <<<<<<<<<<<<<<
  *         cdef char *c_text = &text[0]
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shape, __pyx_t_3) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shape, __pyx_t_3) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_itemsize, __pyx_t_3) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_itemsize, __pyx_t_3) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 442, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_text = __pyx_t_4;
   __pyx_t_4.memview = NULL;
   __pyx_t_4.data = NULL;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":443
+  /* "olive/drivers/dcamapi/wrapper.pyx":447
  *     cpdef get_name(self, int32 iprop, int32 nbytes=64):
  *         cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
  *         cdef char *c_text = &text[0]             # <<<<<<<<<<<<<<
@@ -7904,11 +7992,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name(struct
   } else if (unlikely(__pyx_t_5 >= __pyx_v_text.shape[0])) __pyx_t_6 = 0;
   if (unlikely(__pyx_t_6 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_6);
-    __PYX_ERR(0, 443, __pyx_L1_error)
+    __PYX_ERR(0, 447, __pyx_L1_error)
   }
   __pyx_v_c_text = (&(*((char *) ( /* dim=0 */ ((char *) (((char *) __pyx_v_text.data) + __pyx_t_5)) ))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":446
+  /* "olive/drivers/dcamapi/wrapper.pyx":450
  * 
  *         cdef DCAMERR err
  *         err = dcamprop_getname(self.handle, iprop, c_text, nbytes)             # <<<<<<<<<<<<<<
@@ -7917,7 +8005,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name(struct
  */
   __pyx_v_err = dcamprop_getname(__pyx_v_self->handle, __pyx_v_iprop, __pyx_v_c_text, __pyx_v_nbytes);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":447
+  /* "olive/drivers/dcamapi/wrapper.pyx":451
  *         cdef DCAMERR err
  *         err = dcamprop_getname(self.handle, iprop, c_text, nbytes)
  *         DCAMAPI.check_error(err, 'dcamprop_getname()', self.handle)             # <<<<<<<<<<<<<<
@@ -7926,11 +8014,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name(struct
  */
   __pyx_t_7.__pyx_n = 1;
   __pyx_t_7.hdcam = __pyx_v_self->handle;
-  __pyx_t_3 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getname()"), &__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 447, __pyx_L1_error)
+  __pyx_t_3 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getname()"), &__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":449
+  /* "olive/drivers/dcamapi/wrapper.pyx":453
  *         DCAMAPI.check_error(err, 'dcamprop_getname()', self.handle)
  * 
  *         return c_text.decode('utf-8', errors='replace')             # <<<<<<<<<<<<<<
@@ -7938,15 +8026,15 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name(struct
  *     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_c_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 449, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_c_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 449, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 449, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_errors, __pyx_n_u_replace) < 0) __PYX_ERR(0, 449, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 449, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_errors, __pyx_n_u_replace) < 0) __PYX_ERR(0, 453, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__11, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7954,7 +8042,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_name(struct
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":441
+  /* "olive/drivers/dcamapi/wrapper.pyx":445
  *         return iprop
  * 
  *     cpdef get_name(self, int32 iprop, int32 nbytes=64):             # <<<<<<<<<<<<<<
@@ -8012,7 +8100,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_27get_name(PyO
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_name") < 0)) __PYX_ERR(0, 441, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_name") < 0)) __PYX_ERR(0, 445, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -8023,16 +8111,16 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_27get_name(PyO
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 441, __pyx_L3_error)
+    __pyx_v_iprop = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iprop == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 445, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_nbytes = __Pyx_PyInt_As_int32(values[1]); if (unlikely((__pyx_v_nbytes == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 441, __pyx_L3_error)
+      __pyx_v_nbytes = __Pyx_PyInt_As_int32(values[1]); if (unlikely((__pyx_v_nbytes == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 445, __pyx_L3_error)
     } else {
       __pyx_v_nbytes = ((int32)64);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_name", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 441, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_name", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 445, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.get_name", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8054,7 +8142,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_26get_name(str
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.nbytes = __pyx_v_nbytes;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->get_name(__pyx_v_self, __pyx_v_iprop, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->get_name(__pyx_v_self, __pyx_v_iprop, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8071,7 +8159,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_26get_name(str
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":451
+/* "olive/drivers/dcamapi/wrapper.pyx":455
  *         return c_text.decode('utf-8', errors='replace')
  * 
  *     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):             # <<<<<<<<<<<<<<
@@ -8101,39 +8189,39 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":452
+  /* "olive/drivers/dcamapi/wrapper.pyx":456
  * 
  *     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):
  *         cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')             # <<<<<<<<<<<<<<
  *         cdef char *c_text = &text[0]
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int32(__pyx_v_nbytes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shape, __pyx_t_3) < 0) __PYX_ERR(0, 452, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shape, __pyx_t_3) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_itemsize, __pyx_t_3) < 0) __PYX_ERR(0, 452, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_itemsize, __pyx_t_3) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 452, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_format, __pyx_n_u_c) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_array_type), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_dc_char(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_text = __pyx_t_4;
   __pyx_t_4.memview = NULL;
   __pyx_t_4.data = NULL;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":453
+  /* "olive/drivers/dcamapi/wrapper.pyx":457
  *     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):
  *         cdef char[::1] text = view.array(shape=(nbytes, ), itemsize=sizeof(char), format='c')
  *         cdef char *c_text = &text[0]             # <<<<<<<<<<<<<<
@@ -8148,11 +8236,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
   } else if (unlikely(__pyx_t_5 >= __pyx_v_text.shape[0])) __pyx_t_6 = 0;
   if (unlikely(__pyx_t_6 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_6);
-    __PYX_ERR(0, 453, __pyx_L1_error)
+    __PYX_ERR(0, 457, __pyx_L1_error)
   }
   __pyx_v_c_text = (&(*((char *) ( /* dim=0 */ ((char *) (((char *) __pyx_v_text.data) + __pyx_t_5)) ))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":456
+  /* "olive/drivers/dcamapi/wrapper.pyx":460
  * 
  *         cdef DCAMPROP_VALUETEXT value
  *         memset(&value, 0, sizeof(value))             # <<<<<<<<<<<<<<
@@ -8161,7 +8249,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   (void)(memset((&__pyx_v_value), 0, (sizeof(__pyx_v_value))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":457
+  /* "olive/drivers/dcamapi/wrapper.pyx":461
  *         cdef DCAMPROP_VALUETEXT value
  *         memset(&value, 0, sizeof(value))
  *         value.cbSize = sizeof(value)             # <<<<<<<<<<<<<<
@@ -8170,7 +8258,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_v_value.cbSize = (sizeof(__pyx_v_value));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":458
+  /* "olive/drivers/dcamapi/wrapper.pyx":462
  *         memset(&value, 0, sizeof(value))
  *         value.cbSize = sizeof(value)
  *         value.iProp	= iprop             # <<<<<<<<<<<<<<
@@ -8179,7 +8267,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_v_value.iProp = __pyx_v_iprop;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":459
+  /* "olive/drivers/dcamapi/wrapper.pyx":463
  *         value.cbSize = sizeof(value)
  *         value.iProp	= iprop
  *         value.value	= valuemin             # <<<<<<<<<<<<<<
@@ -8188,7 +8276,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_v_value.value = __pyx_v_valuemin;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":460
+  /* "olive/drivers/dcamapi/wrapper.pyx":464
  *         value.iProp	= iprop
  *         value.value	= valuemin
  *         value.text = c_text             # <<<<<<<<<<<<<<
@@ -8197,7 +8285,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_v_value.text = __pyx_v_c_text;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":461
+  /* "olive/drivers/dcamapi/wrapper.pyx":465
  *         value.value	= valuemin
  *         value.text = c_text
  *         value.textbytes = nbytes             # <<<<<<<<<<<<<<
@@ -8206,7 +8294,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_v_value.textbytes = __pyx_v_nbytes;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":464
+  /* "olive/drivers/dcamapi/wrapper.pyx":468
  * 
  *         cdef DCAMERR err
  *         err = dcamprop_getvaluetext(self.handle, &value)             # <<<<<<<<<<<<<<
@@ -8215,7 +8303,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_v_err = dcamprop_getvaluetext(__pyx_v_self->handle, (&__pyx_v_value));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":465
+  /* "olive/drivers/dcamapi/wrapper.pyx":469
  *         cdef DCAMERR err
  *         err = dcamprop_getvaluetext(self.handle, &value)
  *         DCAMAPI.check_error(err, 'dcamprop_getvaluetext()', self.handle)             # <<<<<<<<<<<<<<
@@ -8224,11 +8312,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  */
   __pyx_t_7.__pyx_n = 1;
   __pyx_t_7.hdcam = __pyx_v_self->handle;
-  __pyx_t_3 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getvaluetext()"), &__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 465, __pyx_L1_error)
+  __pyx_t_3 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamprop_getvaluetext()"), &__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":467
+  /* "olive/drivers/dcamapi/wrapper.pyx":471
  *         DCAMAPI.check_error(err, 'dcamprop_getvaluetext()', self.handle)
  * 
  *         return c_text.decode('utf-8', errors='replace')             # <<<<<<<<<<<<<<
@@ -8236,15 +8324,15 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
  *     ## property control
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_c_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_c_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_errors, __pyx_n_u_replace) < 0) __PYX_ERR(0, 467, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_errors, __pyx_n_u_replace) < 0) __PYX_ERR(0, 471, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__11, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8252,7 +8340,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":451
+  /* "olive/drivers/dcamapi/wrapper.pyx":455
  *         return c_text.decode('utf-8', errors='replace')
  * 
  *     cdef _get_value_text(self, int32 iprop, double valuemin, int32 nbytes=64):             # <<<<<<<<<<<<<<
@@ -8275,7 +8363,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM__get_value_text
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":475
+/* "olive/drivers/dcamapi/wrapper.pyx":479
  *     ## buffer control
  *     ##
  *     cpdef alloc(self, int32 nframes):             # <<<<<<<<<<<<<<
@@ -8292,7 +8380,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_alloc(struct __
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("alloc", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":480
+  /* "olive/drivers/dcamapi/wrapper.pyx":484
  *         """
  *         cdef DCAMERR err
  *         err = dcambuf_alloc(self.handle, nframes)             # <<<<<<<<<<<<<<
@@ -8301,7 +8389,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_alloc(struct __
  */
   __pyx_v_err = dcambuf_alloc(__pyx_v_self->handle, __pyx_v_nframes);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":481
+  /* "olive/drivers/dcamapi/wrapper.pyx":485
  *         cdef DCAMERR err
  *         err = dcambuf_alloc(self.handle, nframes)
  *         DCAMAPI.check_error(err, 'dcambuf_alloc()', self.handle)             # <<<<<<<<<<<<<<
@@ -8310,11 +8398,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_alloc(struct __
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_alloc()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_alloc()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":475
+  /* "olive/drivers/dcamapi/wrapper.pyx":479
  *     ## buffer control
  *     ##
  *     cpdef alloc(self, int32 nframes):             # <<<<<<<<<<<<<<
@@ -8344,7 +8432,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_29alloc(PyObje
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("alloc (wrapper)", 0);
   assert(__pyx_arg_nframes); {
-    __pyx_v_nframes = __Pyx_PyInt_As_int32(__pyx_arg_nframes); if (unlikely((__pyx_v_nframes == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 475, __pyx_L3_error)
+    __pyx_v_nframes = __Pyx_PyInt_As_int32(__pyx_arg_nframes); if (unlikely((__pyx_v_nframes == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 479, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8365,7 +8453,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_28alloc(struct
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("alloc", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_alloc(__pyx_v_self, __pyx_v_nframes, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 475, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_alloc(__pyx_v_self, __pyx_v_nframes, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 479, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8382,7 +8470,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_28alloc(struct
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":483
+/* "olive/drivers/dcamapi/wrapper.pyx":487
  *         DCAMAPI.check_error(err, 'dcambuf_alloc()', self.handle)
  * 
  *     cpdef attach(self, list buffer):             # <<<<<<<<<<<<<<
@@ -8418,7 +8506,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_17;
   __Pyx_RefNannySetupContext("attach", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":487
+  /* "olive/drivers/dcamapi/wrapper.pyx":491
  *         Attach external image buffers for image acquisition.
  *         """
  *         cdef int nframes = <int>len(buffer)             # <<<<<<<<<<<<<<
@@ -8427,12 +8515,12 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   if (unlikely(__pyx_v_buffer == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 487, __pyx_L1_error)
+    __PYX_ERR(0, 491, __pyx_L1_error)
   }
-  __pyx_t_1 = PyList_GET_SIZE(__pyx_v_buffer); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 487, __pyx_L1_error)
+  __pyx_t_1 = PyList_GET_SIZE(__pyx_v_buffer); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 491, __pyx_L1_error)
   __pyx_v_nframes = ((int)__pyx_t_1);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":488
+  /* "olive/drivers/dcamapi/wrapper.pyx":492
  *         """
  *         cdef int nframes = <int>len(buffer)
  *         if nframes < 1:             # <<<<<<<<<<<<<<
@@ -8442,20 +8530,20 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
   __pyx_t_2 = ((__pyx_v_nframes < 1) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":489
+    /* "olive/drivers/dcamapi/wrapper.pyx":493
  *         cdef int nframes = <int>len(buffer)
  *         if nframes < 1:
  *             raise RuntimeError('number of frames has to be >= 1')             # <<<<<<<<<<<<<<
  * 
  *         # build pointer array
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 489, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 493, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 489, __pyx_L1_error)
+    __PYX_ERR(0, 493, __pyx_L1_error)
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":488
+    /* "olive/drivers/dcamapi/wrapper.pyx":492
  *         """
  *         cdef int nframes = <int>len(buffer)
  *         if nframes < 1:             # <<<<<<<<<<<<<<
@@ -8464,47 +8552,47 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":492
+  /* "olive/drivers/dcamapi/wrapper.pyx":496
  * 
  *         # build pointer array
  *         self.buffer = np.empty(nframes, dtype=np.uintp)             # <<<<<<<<<<<<<<
  *         cdef uint8_t[::1] frame
  *         for i in range(nframes):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_nframes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_nframes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_uintp); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_uintp); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(0, 492, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_nn_uintptr_t(__pyx_t_7, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_nn_uintptr_t(__pyx_t_7, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->buffer, 0);
   __pyx_v_self->buffer = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":494
+  /* "olive/drivers/dcamapi/wrapper.pyx":498
  *         self.buffer = np.empty(nframes, dtype=np.uintp)
  *         cdef uint8_t[::1] frame
  *         for i in range(nframes):             # <<<<<<<<<<<<<<
@@ -8516,7 +8604,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
   for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
     __pyx_v_i = __pyx_t_11;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":495
+    /* "olive/drivers/dcamapi/wrapper.pyx":499
  *         cdef uint8_t[::1] frame
  *         for i in range(nframes):
  *             frame = buffer[i]#.get_obj()             # <<<<<<<<<<<<<<
@@ -8525,18 +8613,18 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
     if (unlikely(__pyx_v_buffer == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      __PYX_ERR(0, 495, __pyx_L1_error)
+      __PYX_ERR(0, 499, __pyx_L1_error)
     }
-    __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_buffer, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 495, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_buffer, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 499, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_12 = __Pyx_PyObject_to_MemoryviewSlice_dc_nn_uint8_t(__pyx_t_7, PyBUF_WRITABLE); if (unlikely(!__pyx_t_12.memview)) __PYX_ERR(0, 495, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_to_MemoryviewSlice_dc_nn_uint8_t(__pyx_t_7, PyBUF_WRITABLE); if (unlikely(!__pyx_t_12.memview)) __PYX_ERR(0, 499, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __PYX_XDEC_MEMVIEW(&__pyx_v_frame, 1);
     __pyx_v_frame = __pyx_t_12;
     __pyx_t_12.memview = NULL;
     __pyx_t_12.data = NULL;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":496
+    /* "olive/drivers/dcamapi/wrapper.pyx":500
  *         for i in range(nframes):
  *             frame = buffer[i]#.get_obj()
  *             self.buffer[i] = <uintptr_t>&frame[0]             # <<<<<<<<<<<<<<
@@ -8551,9 +8639,9 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
     } else if (unlikely(__pyx_t_13 >= __pyx_v_frame.shape[0])) __pyx_t_14 = 0;
     if (unlikely(__pyx_t_14 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_14);
-      __PYX_ERR(0, 496, __pyx_L1_error)
+      __PYX_ERR(0, 500, __pyx_L1_error)
     }
-    if (unlikely(!__pyx_v_self->buffer.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 496, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->buffer.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 500, __pyx_L1_error)}
     __pyx_t_15 = __pyx_v_i;
     __pyx_t_14 = -1;
     if (__pyx_t_15 < 0) {
@@ -8562,12 +8650,12 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
     } else if (unlikely(__pyx_t_15 >= __pyx_v_self->buffer.shape[0])) __pyx_t_14 = 0;
     if (unlikely(__pyx_t_14 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_14);
-      __PYX_ERR(0, 496, __pyx_L1_error)
+      __PYX_ERR(0, 500, __pyx_L1_error)
     }
     *((uintptr_t *) ( /* dim=0 */ ((char *) (((uintptr_t *) __pyx_v_self->buffer.data) + __pyx_t_15)) )) = ((uintptr_t)(&(*((uint8_t *) ( /* dim=0 */ ((char *) (((uint8_t *) __pyx_v_frame.data) + __pyx_t_13)) )))));
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":499
+  /* "olive/drivers/dcamapi/wrapper.pyx":503
  * 
  *         cdef DCAMBUF_ATTACH bufattach
  *         memset(&bufattach, 0, sizeof(bufattach))             # <<<<<<<<<<<<<<
@@ -8576,7 +8664,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   (void)(memset((&__pyx_v_bufattach), 0, (sizeof(__pyx_v_bufattach))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":500
+  /* "olive/drivers/dcamapi/wrapper.pyx":504
  *         cdef DCAMBUF_ATTACH bufattach
  *         memset(&bufattach, 0, sizeof(bufattach))
  *         bufattach.size = sizeof(bufattach)             # <<<<<<<<<<<<<<
@@ -8585,7 +8673,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   __pyx_v_bufattach.size = (sizeof(__pyx_v_bufattach));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":501
+  /* "olive/drivers/dcamapi/wrapper.pyx":505
  *         memset(&bufattach, 0, sizeof(bufattach))
  *         bufattach.size = sizeof(bufattach)
  *         bufattach.iKind = DCAMBUF_ATTACHKIND.DCAMBUF_ATTACHKIND_FRAME             # <<<<<<<<<<<<<<
@@ -8594,14 +8682,14 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   __pyx_v_bufattach.iKind = DCAMBUF_ATTACHKIND_FRAME;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":502
+  /* "olive/drivers/dcamapi/wrapper.pyx":506
  *         bufattach.size = sizeof(bufattach)
  *         bufattach.iKind = DCAMBUF_ATTACHKIND.DCAMBUF_ATTACHKIND_FRAME
  *         bufattach.buffer = <void **>&self.buffer[0]             # <<<<<<<<<<<<<<
  *         bufattach.buffercount = nframes
  * 
  */
-  if (unlikely(!__pyx_v_self->buffer.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 502, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->buffer.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 506, __pyx_L1_error)}
   __pyx_t_16 = 0;
   __pyx_t_9 = -1;
   if (__pyx_t_16 < 0) {
@@ -8610,11 +8698,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
   } else if (unlikely(__pyx_t_16 >= __pyx_v_self->buffer.shape[0])) __pyx_t_9 = 0;
   if (unlikely(__pyx_t_9 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_9);
-    __PYX_ERR(0, 502, __pyx_L1_error)
+    __PYX_ERR(0, 506, __pyx_L1_error)
   }
   __pyx_v_bufattach.buffer = ((void **)(&(*((uintptr_t *) ( /* dim=0 */ ((char *) (((uintptr_t *) __pyx_v_self->buffer.data) + __pyx_t_16)) )))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":503
+  /* "olive/drivers/dcamapi/wrapper.pyx":507
  *         bufattach.iKind = DCAMBUF_ATTACHKIND.DCAMBUF_ATTACHKIND_FRAME
  *         bufattach.buffer = <void **>&self.buffer[0]
  *         bufattach.buffercount = nframes             # <<<<<<<<<<<<<<
@@ -8623,7 +8711,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   __pyx_v_bufattach.buffercount = __pyx_v_nframes;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":506
+  /* "olive/drivers/dcamapi/wrapper.pyx":510
  * 
  *         cdef DCAMERR err
  *         err = dcambuf_attach(self.handle, &bufattach)             # <<<<<<<<<<<<<<
@@ -8632,7 +8720,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   __pyx_v_err = dcambuf_attach(__pyx_v_self->handle, (&__pyx_v_bufattach));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":507
+  /* "olive/drivers/dcamapi/wrapper.pyx":511
  *         cdef DCAMERR err
  *         err = dcambuf_attach(self.handle, &bufattach)
  *         DCAMAPI.check_error(err, 'dcambuf_attach()', self.handle)             # <<<<<<<<<<<<<<
@@ -8641,11 +8729,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(struct _
  */
   __pyx_t_17.__pyx_n = 1;
   __pyx_t_17.hdcam = __pyx_v_self->handle;
-  __pyx_t_7 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_attach()"), &__pyx_t_17); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 507, __pyx_L1_error)
+  __pyx_t_7 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_attach()"), &__pyx_t_17); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 511, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":483
+  /* "olive/drivers/dcamapi/wrapper.pyx":487
  *         DCAMAPI.check_error(err, 'dcambuf_alloc()', self.handle)
  * 
  *     cpdef attach(self, list buffer):             # <<<<<<<<<<<<<<
@@ -8680,7 +8768,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_31attach(PyObj
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("attach (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_buffer), (&PyList_Type), 1, "buffer", 1))) __PYX_ERR(0, 483, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_buffer), (&PyList_Type), 1, "buffer", 1))) __PYX_ERR(0, 487, __pyx_L1_error)
   __pyx_r = __pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_30attach(((struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *)__pyx_v_self), ((PyObject*)__pyx_v_buffer));
 
   /* function exit code */
@@ -8698,7 +8786,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_30attach(struc
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("attach", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(__pyx_v_self, __pyx_v_buffer, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 483, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach(__pyx_v_self, __pyx_v_buffer, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8715,7 +8803,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_30attach(struc
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":509
+/* "olive/drivers/dcamapi/wrapper.pyx":513
  *         DCAMAPI.check_error(err, 'dcambuf_attach()', self.handle)
  * 
  *     def release(self):             # <<<<<<<<<<<<<<
@@ -8746,7 +8834,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_32release(stru
   __Pyx_memviewslice __pyx_t_3 = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_RefNannySetupContext("release", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":514
+  /* "olive/drivers/dcamapi/wrapper.pyx":518
  *         """
  *         cdef DCAMERR err
  *         err = dcambuf_release(self.handle)             # <<<<<<<<<<<<<<
@@ -8755,7 +8843,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_32release(stru
  */
   __pyx_v_err = dcambuf_release(__pyx_v_self->handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":515
+  /* "olive/drivers/dcamapi/wrapper.pyx":519
  *         cdef DCAMERR err
  *         err = dcambuf_release(self.handle)
  *         DCAMAPI.check_error(err, 'dcambuf_release()', self.handle)             # <<<<<<<<<<<<<<
@@ -8764,24 +8852,24 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_32release(stru
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_release()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 515, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_release()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 519, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":517
+  /* "olive/drivers/dcamapi/wrapper.pyx":521
  *         DCAMAPI.check_error(err, 'dcambuf_release()', self.handle)
  * 
  *         self.buffer = None             # <<<<<<<<<<<<<<
  * 
  *     cpdef lock_frame(self, int32 iframe=-1):
  */
-  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_dc_nn_uintptr_t(Py_None, PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(0, 517, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_dc_nn_uintptr_t(Py_None, PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(0, 521, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->buffer, 0);
   __pyx_v_self->buffer = __pyx_t_3;
   __pyx_t_3.memview = NULL;
   __pyx_t_3.data = NULL;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":509
+  /* "olive/drivers/dcamapi/wrapper.pyx":513
  *         DCAMAPI.check_error(err, 'dcambuf_attach()', self.handle)
  * 
  *     def release(self):             # <<<<<<<<<<<<<<
@@ -8803,7 +8891,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_32release(stru
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":519
+/* "olive/drivers/dcamapi/wrapper.pyx":523
  *         self.buffer = None
  * 
  *     cpdef lock_frame(self, int32 iframe=-1):             # <<<<<<<<<<<<<<
@@ -8833,7 +8921,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
     }
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":527
+  /* "olive/drivers/dcamapi/wrapper.pyx":531
  *         """
  *         cdef DCAMBUF_FRAME bufframe
  *         memset(&bufframe, 0, sizeof(bufframe))             # <<<<<<<<<<<<<<
@@ -8842,7 +8930,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  */
   (void)(memset((&__pyx_v_bufframe), 0, (sizeof(__pyx_v_bufframe))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":528
+  /* "olive/drivers/dcamapi/wrapper.pyx":532
  *         cdef DCAMBUF_FRAME bufframe
  *         memset(&bufframe, 0, sizeof(bufframe))
  *         bufframe.size = sizeof(bufframe)             # <<<<<<<<<<<<<<
@@ -8851,7 +8939,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  */
   __pyx_v_bufframe.size = (sizeof(__pyx_v_bufframe));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":529
+  /* "olive/drivers/dcamapi/wrapper.pyx":533
  *         memset(&bufframe, 0, sizeof(bufframe))
  *         bufframe.size = sizeof(bufframe)
  *         bufframe.iFrame = iframe             # <<<<<<<<<<<<<<
@@ -8860,7 +8948,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  */
   __pyx_v_bufframe.iFrame = __pyx_v_iframe;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":532
+  /* "olive/drivers/dcamapi/wrapper.pyx":536
  * 
  *         cdef DCAMERR err
  *         err = dcambuf_lockframe(self.handle, &bufframe)             # <<<<<<<<<<<<<<
@@ -8869,7 +8957,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  */
   __pyx_v_err = dcambuf_lockframe(__pyx_v_self->handle, (&__pyx_v_bufframe));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":533
+  /* "olive/drivers/dcamapi/wrapper.pyx":537
  *         cdef DCAMERR err
  *         err = dcambuf_lockframe(self.handle, &bufframe)
  *         DCAMAPI.check_error(err, 'dcambuf_lockframe()', self.handle)             # <<<<<<<<<<<<<<
@@ -8878,11 +8966,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_lockframe()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 533, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcambuf_lockframe()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 537, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":536
+  /* "olive/drivers/dcamapi/wrapper.pyx":540
  * 
  *         # bufframe.buf, bufframe.rowbytes, bufframe.type, bufframe.width, bufframe.height
  *         if bufframe.type == DCAM_PIXELTYPE.DCAM_PIXELTYPE_MONO16:             # <<<<<<<<<<<<<<
@@ -8892,7 +8980,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
   __pyx_t_3 = ((__pyx_v_bufframe.type == DCAM_PIXELTYPE_MONO16) != 0);
   if (likely(__pyx_t_3)) {
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":537
+    /* "olive/drivers/dcamapi/wrapper.pyx":541
  *         # bufframe.buf, bufframe.rowbytes, bufframe.type, bufframe.width, bufframe.height
  *         if bufframe.type == DCAM_PIXELTYPE.DCAM_PIXELTYPE_MONO16:
  *             return np.asarray(<np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)             # <<<<<<<<<<<<<<
@@ -8900,23 +8988,23 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  *             raise NotImplementedError(f'unsupported pixel format')
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 537, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 541, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 537, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 541, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_6 = __pyx_v_bufframe.buf;
     if (!__pyx_t_6) {
       PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-      __PYX_ERR(0, 537, __pyx_L1_error)
+      __PYX_ERR(0, 541, __pyx_L1_error)
     }
     __pyx_t_8 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_5numpy_uint16_t);
     __pyx_t_4 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_bufframe.height), ((Py_ssize_t)__pyx_v_bufframe.width));
-    if (unlikely(!__pyx_t_8 || !__pyx_t_4 || !PyBytes_AsString(__pyx_t_8))) __PYX_ERR(0, 537, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8 || !__pyx_t_4 || !PyBytes_AsString(__pyx_t_8))) __PYX_ERR(0, 541, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = __pyx_array_new(__pyx_t_4, sizeof(__pyx_t_5numpy_uint16_t), PyBytes_AS_STRING(__pyx_t_8), (char *) "c", (char *) __pyx_t_6);
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 537, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 541, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -8933,14 +9021,14 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
     __pyx_t_1 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_8, ((PyObject *)__pyx_t_7)) : __Pyx_PyObject_CallOneArg(__pyx_t_5, ((PyObject *)__pyx_t_7));
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(((PyObject *)__pyx_t_7)); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 537, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 541, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "olive/drivers/dcamapi/wrapper.pyx":536
+    /* "olive/drivers/dcamapi/wrapper.pyx":540
  * 
  *         # bufframe.buf, bufframe.rowbytes, bufframe.type, bufframe.width, bufframe.height
  *         if bufframe.type == DCAM_PIXELTYPE.DCAM_PIXELTYPE_MONO16:             # <<<<<<<<<<<<<<
@@ -8949,7 +9037,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  */
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":539
+  /* "olive/drivers/dcamapi/wrapper.pyx":543
  *             return np.asarray(<np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
  *         else:
  *             raise NotImplementedError(f'unsupported pixel format')             # <<<<<<<<<<<<<<
@@ -8957,14 +9045,14 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame(stru
  *     def copy_frame(self):
  */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 543, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 539, __pyx_L1_error)
+    __PYX_ERR(0, 543, __pyx_L1_error)
   }
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":519
+  /* "olive/drivers/dcamapi/wrapper.pyx":523
  *         self.buffer = None
  * 
  *     cpdef lock_frame(self, int32 iframe=-1):             # <<<<<<<<<<<<<<
@@ -9016,7 +9104,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_35lock_frame(P
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lock_frame") < 0)) __PYX_ERR(0, 519, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lock_frame") < 0)) __PYX_ERR(0, 523, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -9027,14 +9115,14 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_35lock_frame(P
       }
     }
     if (values[0]) {
-      __pyx_v_iframe = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iframe == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 519, __pyx_L3_error)
+      __pyx_v_iframe = __Pyx_PyInt_As_int32(values[0]); if (unlikely((__pyx_v_iframe == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 523, __pyx_L3_error)
     } else {
       __pyx_v_iframe = ((int32)-1);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lock_frame", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 519, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lock_frame", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 523, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("olive.drivers.dcamapi.wrapper.DCAM.lock_frame", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -9056,7 +9144,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_34lock_frame(s
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.iframe = __pyx_v_iframe;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->lock_frame(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 519, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM->lock_frame(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 523, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9073,7 +9161,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_34lock_frame(s
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":541
+/* "olive/drivers/dcamapi/wrapper.pyx":545
  *             raise NotImplementedError(f'unsupported pixel format')
  * 
  *     def copy_frame(self):             # <<<<<<<<<<<<<<
@@ -9106,7 +9194,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_36copy_frame(C
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":544
+/* "olive/drivers/dcamapi/wrapper.pyx":548
  *         pass
  * 
  *     def copy_metadata(self):             # <<<<<<<<<<<<<<
@@ -9139,7 +9227,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_38copy_metadat
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":553
+/* "olive/drivers/dcamapi/wrapper.pyx":557
  *     ## capturing
  *     ##
  *     cpdef start(self, int32 mode):             # <<<<<<<<<<<<<<
@@ -9156,7 +9244,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_start(struct __
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("start", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":558
+  /* "olive/drivers/dcamapi/wrapper.pyx":562
  *         """
  *         cdef DCAMERR err
  *         err = dcamcap_start(self.handle, mode)             # <<<<<<<<<<<<<<
@@ -9165,7 +9253,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_start(struct __
  */
   __pyx_v_err = dcamcap_start(__pyx_v_self->handle, __pyx_v_mode);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":559
+  /* "olive/drivers/dcamapi/wrapper.pyx":563
  *         cdef DCAMERR err
  *         err = dcamcap_start(self.handle, mode)
  *         DCAMAPI.check_error(err, 'dcamcap_start()', self.handle)             # <<<<<<<<<<<<<<
@@ -9174,11 +9262,11 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_start(struct __
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_start()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_start()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":553
+  /* "olive/drivers/dcamapi/wrapper.pyx":557
  *     ## capturing
  *     ##
  *     cpdef start(self, int32 mode):             # <<<<<<<<<<<<<<
@@ -9208,7 +9296,7 @@ static PyObject *__pyx_pw_5olive_7drivers_7dcamapi_7wrapper_4DCAM_41start(PyObje
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("start (wrapper)", 0);
   assert(__pyx_arg_mode); {
-    __pyx_v_mode = __Pyx_PyInt_As_int32(__pyx_arg_mode); if (unlikely((__pyx_v_mode == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 553, __pyx_L3_error)
+    __pyx_v_mode = __Pyx_PyInt_As_int32(__pyx_arg_mode); if (unlikely((__pyx_v_mode == ((int32)-1)) && PyErr_Occurred())) __PYX_ERR(0, 557, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9229,7 +9317,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_40start(struct
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("start", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_start(__pyx_v_self, __pyx_v_mode, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 553, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_start(__pyx_v_self, __pyx_v_mode, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 557, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9246,7 +9334,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_40start(struct
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":561
+/* "olive/drivers/dcamapi/wrapper.pyx":565
  *         DCAMAPI.check_error(err, 'dcamcap_start()', self.handle)
  * 
  *     def stop(self):             # <<<<<<<<<<<<<<
@@ -9276,7 +9364,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_42stop(struct 
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("stop", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":566
+  /* "olive/drivers/dcamapi/wrapper.pyx":570
  *         """
  *         cdef DCAMERR err
  *         err = dcamcap_stop(self.handle)             # <<<<<<<<<<<<<<
@@ -9285,7 +9373,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_42stop(struct 
  */
   __pyx_v_err = dcamcap_stop(__pyx_v_self->handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":567
+  /* "olive/drivers/dcamapi/wrapper.pyx":571
  *         cdef DCAMERR err
  *         err = dcamcap_stop(self.handle)
  *         DCAMAPI.check_error(err, 'dcamcap_stop()', self.handle)             # <<<<<<<<<<<<<<
@@ -9294,11 +9382,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_42stop(struct 
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_stop()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_stop()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 571, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":561
+  /* "olive/drivers/dcamapi/wrapper.pyx":565
  *         DCAMAPI.check_error(err, 'dcamcap_start()', self.handle)
  * 
  *     def stop(self):             # <<<<<<<<<<<<<<
@@ -9319,7 +9407,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_42stop(struct 
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":569
+/* "olive/drivers/dcamapi/wrapper.pyx":573
  *         DCAMAPI.check_error(err, 'dcamcap_stop()', self.handle)
  * 
  *     def status(self) -> CaptureStatus:             # <<<<<<<<<<<<<<
@@ -9353,7 +9441,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_44status(struc
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("status", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":576
+  /* "olive/drivers/dcamapi/wrapper.pyx":580
  * 
  *         cdef DCAMERR err
  *         err = dcamcap_status(self.handle, &status)             # <<<<<<<<<<<<<<
@@ -9362,7 +9450,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_44status(struc
  */
   __pyx_v_err = dcamcap_status(__pyx_v_self->handle, (&__pyx_v_status));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":577
+  /* "olive/drivers/dcamapi/wrapper.pyx":581
  *         cdef DCAMERR err
  *         err = dcamcap_status(self.handle, &status)
  *         DCAMAPI.check_error(err, 'dcamcap_status()', self.handle)             # <<<<<<<<<<<<<<
@@ -9371,11 +9459,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_44status(struc
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_status()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 577, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_status()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 581, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":579
+  /* "olive/drivers/dcamapi/wrapper.pyx":583
  *         DCAMAPI.check_error(err, 'dcamcap_status()', self.handle)
  * 
  *         return CaptureStatus(status)             # <<<<<<<<<<<<<<
@@ -9383,9 +9471,9 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_44status(struc
  *     def transfer_info(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_CaptureStatus); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 579, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_CaptureStatus); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_From_int32(__pyx_v_status); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 579, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int32(__pyx_v_status); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -9400,14 +9488,14 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_44status(struc
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 579, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":569
+  /* "olive/drivers/dcamapi/wrapper.pyx":573
  *         DCAMAPI.check_error(err, 'dcamcap_stop()', self.handle)
  * 
  *     def status(self) -> CaptureStatus:             # <<<<<<<<<<<<<<
@@ -9429,7 +9517,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_44status(struc
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":581
+/* "olive/drivers/dcamapi/wrapper.pyx":585
  *         return CaptureStatus(status)
  * 
  *     def transfer_info(self):             # <<<<<<<<<<<<<<
@@ -9461,7 +9549,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("transfer_info", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":583
+  /* "olive/drivers/dcamapi/wrapper.pyx":587
  *     def transfer_info(self):
  *         cdef DCAMCAP_TRANSFERINFO info
  *         memset(&info, 0, sizeof(info))             # <<<<<<<<<<<<<<
@@ -9470,7 +9558,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  */
   (void)(memset((&__pyx_v_info), 0, (sizeof(__pyx_v_info))));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":584
+  /* "olive/drivers/dcamapi/wrapper.pyx":588
  *         cdef DCAMCAP_TRANSFERINFO info
  *         memset(&info, 0, sizeof(info))
  *         info.size = sizeof(info)             # <<<<<<<<<<<<<<
@@ -9479,7 +9567,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  */
   __pyx_v_info.size = (sizeof(__pyx_v_info));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":587
+  /* "olive/drivers/dcamapi/wrapper.pyx":591
  * 
  *         cdef DCAMERR err
  *         err = dcamcap_transferinfo(self.handle, &info)             # <<<<<<<<<<<<<<
@@ -9488,7 +9576,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  */
   __pyx_v_err = dcamcap_transferinfo(__pyx_v_self->handle, (&__pyx_v_info));
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":588
+  /* "olive/drivers/dcamapi/wrapper.pyx":592
  *         cdef DCAMERR err
  *         err = dcamcap_transferinfo(self.handle, &info)
  *         DCAMAPI.check_error(err, 'dcamcap_transferinfo()', self.handle)             # <<<<<<<<<<<<<<
@@ -9497,11 +9585,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_transferinfo()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_transferinfo()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 592, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":590
+  /* "olive/drivers/dcamapi/wrapper.pyx":594
  *         DCAMAPI.check_error(err, 'dcamcap_transferinfo()', self.handle)
  * 
  *         return info.nNewestFrameIndex, info.nFrameCount             # <<<<<<<<<<<<<<
@@ -9509,11 +9597,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
  *     def fire_trigger(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_info.nNewestFrameIndex); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 590, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int32(__pyx_v_info.nNewestFrameIndex); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 594, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_From_int32(__pyx_v_info.nFrameCount); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 590, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int32(__pyx_v_info.nFrameCount); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 594, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 590, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 594, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
@@ -9525,7 +9613,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":581
+  /* "olive/drivers/dcamapi/wrapper.pyx":585
  *         return CaptureStatus(status)
  * 
  *     def transfer_info(self):             # <<<<<<<<<<<<<<
@@ -9546,7 +9634,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_46transfer_inf
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":592
+/* "olive/drivers/dcamapi/wrapper.pyx":596
  *         return info.nNewestFrameIndex, info.nFrameCount
  * 
  *     def fire_trigger(self):             # <<<<<<<<<<<<<<
@@ -9575,7 +9663,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_48fire_trigger
   struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error __pyx_t_2;
   __Pyx_RefNannySetupContext("fire_trigger", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":594
+  /* "olive/drivers/dcamapi/wrapper.pyx":598
  *     def fire_trigger(self):
  *         cdef DCAMERR err
  *         err = dcamcap_firetrigger(self.handle)             # <<<<<<<<<<<<<<
@@ -9584,7 +9672,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_48fire_trigger
  */
   __pyx_v_err = dcamcap_firetrigger(__pyx_v_self->handle);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":595
+  /* "olive/drivers/dcamapi/wrapper.pyx":599
  *         cdef DCAMERR err
  *         err = dcamcap_firetrigger(self.handle)
  *         DCAMAPI.check_error(err, 'dcamcap_firetrigger()', self.handle)             # <<<<<<<<<<<<<<
@@ -9593,11 +9681,11 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_48fire_trigger
  */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.hdcam = __pyx_v_self->handle;
-  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_firetrigger()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 595, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI->check_error(__pyx_v_err, ((char const *)"dcamcap_firetrigger()"), &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 599, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":592
+  /* "olive/drivers/dcamapi/wrapper.pyx":596
  *         return info.nNewestFrameIndex, info.nFrameCount
  * 
  *     def fire_trigger(self):             # <<<<<<<<<<<<<<
@@ -9618,7 +9706,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_48fire_trigger
   return __pyx_r;
 }
 
-/* "olive/drivers/dcamapi/wrapper.pyx":601
+/* "olive/drivers/dcamapi/wrapper.pyx":605
  * 
  *     @property
  *     def event(self):             # <<<<<<<<<<<<<<
@@ -9645,22 +9733,22 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_5event___get__
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":602
+  /* "olive/drivers/dcamapi/wrapper.pyx":606
  *     @property
  *     def event(self):
  *         return DCAMWAIT(<uintptr_t>self.handle)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t(((uintptr_t)__pyx_v_self->handle)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 602, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t(((uintptr_t)__pyx_v_self->handle)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 606, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 602, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 606, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":601
+  /* "olive/drivers/dcamapi/wrapper.pyx":605
  * 
  *     @property
  *     def event(self):             # <<<<<<<<<<<<<<
@@ -9710,7 +9798,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_50__reduce_cyt
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9763,7 +9851,7 @@ static PyObject *__pyx_pf_5olive_7drivers_7dcamapi_7wrapper_4DCAM_52__setstate_c
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10173,7 +10261,7 @@ static PyObject *__pyx_f_5olive_7drivers_7dcamapi_7wrapper___pyx_unpickle_DCAMAP
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":258
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -10222,7 +10310,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_info->obj = Py_None; __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(__pyx_v_info->obj);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":265
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":265
  * 
  *             cdef int i, ndim
  *             cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -10231,7 +10319,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":266
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":266
  *             cdef int i, ndim
  *             cdef int endian_detector = 1
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -10240,7 +10328,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":268
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":268
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)
  * 
  *             ndim = PyArray_NDIM(self)             # <<<<<<<<<<<<<<
@@ -10249,7 +10337,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_ndim = PyArray_NDIM(__pyx_v_self);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":270
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *             ndim = PyArray_NDIM(self)
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -10263,7 +10351,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L4_bool_binop_done;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":271
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":271
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_C_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -10274,7 +10362,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L4_bool_binop_done:;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":270
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *             ndim = PyArray_NDIM(self)
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -10283,20 +10371,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (unlikely(__pyx_t_1)) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":272
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 272, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(2, 272, __pyx_L1_error)
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":270
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *             ndim = PyArray_NDIM(self)
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -10305,7 +10393,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":274
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -10319,7 +10407,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L7_bool_binop_done;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":275
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":275
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_F_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -10330,7 +10418,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L7_bool_binop_done:;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":274
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -10339,20 +10427,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (unlikely(__pyx_t_1)) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":276
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
  * 
  *             info.buf = PyArray_DATA(self)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 276, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(2, 276, __pyx_L1_error)
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":274
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -10361,7 +10449,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":278
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":278
  *                 raise ValueError(u"ndarray is not Fortran contiguous")
  * 
  *             info.buf = PyArray_DATA(self)             # <<<<<<<<<<<<<<
@@ -10370,7 +10458,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->buf = PyArray_DATA(__pyx_v_self);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":279
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":279
  * 
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim             # <<<<<<<<<<<<<<
@@ -10379,7 +10467,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->ndim = __pyx_v_ndim;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":280
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -10389,7 +10477,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":283
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":283
  *                 # Allocate new buffer for strides and shape info.
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>PyObject_Malloc(sizeof(Py_ssize_t) * 2 * <size_t>ndim)             # <<<<<<<<<<<<<<
@@ -10398,7 +10486,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->strides = ((Py_ssize_t *)PyObject_Malloc((((sizeof(Py_ssize_t)) * 2) * ((size_t)__pyx_v_ndim))));
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":284
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":284
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>PyObject_Malloc(sizeof(Py_ssize_t) * 2 * <size_t>ndim)
  *                 info.shape = info.strides + ndim             # <<<<<<<<<<<<<<
@@ -10407,7 +10495,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->shape = (__pyx_v_info->strides + __pyx_v_ndim);
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":285
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":285
  *                 info.strides = <Py_ssize_t*>PyObject_Malloc(sizeof(Py_ssize_t) * 2 * <size_t>ndim)
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):             # <<<<<<<<<<<<<<
@@ -10419,7 +10507,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":286
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":286
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]             # <<<<<<<<<<<<<<
@@ -10428,7 +10516,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
       (__pyx_v_info->strides[__pyx_v_i]) = (PyArray_STRIDES(__pyx_v_self)[__pyx_v_i]);
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":287
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":287
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]
  *                     info.shape[i] = PyArray_DIMS(self)[i]             # <<<<<<<<<<<<<<
@@ -10438,7 +10526,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       (__pyx_v_info->shape[__pyx_v_i]) = (PyArray_DIMS(__pyx_v_self)[__pyx_v_i]);
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":280
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -10448,7 +10536,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L9;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":289
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":289
  *                     info.shape[i] = PyArray_DIMS(self)[i]
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)             # <<<<<<<<<<<<<<
@@ -10458,7 +10546,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->strides = ((Py_ssize_t *)PyArray_STRIDES(__pyx_v_self));
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":290
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)             # <<<<<<<<<<<<<<
@@ -10469,7 +10557,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L9:;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":291
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":291
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -10478,7 +10566,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->suboffsets = NULL;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":292
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":292
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)             # <<<<<<<<<<<<<<
@@ -10487,7 +10575,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->itemsize = PyArray_ITEMSIZE(__pyx_v_self);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":293
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":293
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)
  *             info.readonly = not PyArray_ISWRITEABLE(self)             # <<<<<<<<<<<<<<
@@ -10496,7 +10584,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->readonly = (!(PyArray_ISWRITEABLE(__pyx_v_self) != 0));
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":296
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":296
  * 
  *             cdef int t
  *             cdef char* f = NULL             # <<<<<<<<<<<<<<
@@ -10505,7 +10593,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_f = NULL;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":297
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":297
  *             cdef int t
  *             cdef char* f = NULL
  *             cdef dtype descr = <dtype>PyArray_DESCR(self)             # <<<<<<<<<<<<<<
@@ -10518,7 +10606,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_descr = ((PyArray_Descr *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":300
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":300
  *             cdef int offset
  * 
  *             info.obj = self             # <<<<<<<<<<<<<<
@@ -10531,7 +10619,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __Pyx_DECREF(__pyx_v_info->obj);
   __pyx_v_info->obj = ((PyObject *)__pyx_v_self);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":302
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":302
  *             info.obj = self
  * 
  *             if not PyDataType_HASFIELDS(descr):             # <<<<<<<<<<<<<<
@@ -10541,7 +10629,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = ((!(PyDataType_HASFIELDS(__pyx_v_descr) != 0)) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":303
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":303
  * 
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num             # <<<<<<<<<<<<<<
@@ -10551,7 +10639,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_4 = __pyx_v_descr->type_num;
     __pyx_v_t = __pyx_t_4;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":304
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":304
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10571,7 +10659,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     }
     __pyx_L15_next_or:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":305
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":305
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -10588,7 +10676,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_1 = __pyx_t_2;
     __pyx_L14_bool_binop_done:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":304
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":304
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10597,20 +10685,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     if (unlikely(__pyx_t_1)) {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":306
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":306
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 306, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 306, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(2, 306, __pyx_L1_error)
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":304
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":304
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10619,7 +10707,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":307
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":307
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"             # <<<<<<<<<<<<<<
@@ -10632,7 +10720,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_UBYTE:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":308
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":308
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"             # <<<<<<<<<<<<<<
@@ -10643,7 +10731,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_SHORT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":309
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":309
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"             # <<<<<<<<<<<<<<
@@ -10654,7 +10742,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_USHORT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":310
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":310
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"             # <<<<<<<<<<<<<<
@@ -10665,7 +10753,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_INT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":311
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":311
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"             # <<<<<<<<<<<<<<
@@ -10676,7 +10764,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_UINT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":312
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":312
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"             # <<<<<<<<<<<<<<
@@ -10687,7 +10775,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_LONG:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":313
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":313
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"             # <<<<<<<<<<<<<<
@@ -10698,7 +10786,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_ULONG:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":314
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":314
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"             # <<<<<<<<<<<<<<
@@ -10709,7 +10797,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_LONGLONG:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":315
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":315
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"             # <<<<<<<<<<<<<<
@@ -10720,7 +10808,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_ULONGLONG:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":316
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":316
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"             # <<<<<<<<<<<<<<
@@ -10731,7 +10819,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_FLOAT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":317
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":317
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"             # <<<<<<<<<<<<<<
@@ -10742,7 +10830,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_DOUBLE:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":318
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":318
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"             # <<<<<<<<<<<<<<
@@ -10753,7 +10841,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_LONGDOUBLE:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":319
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":319
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"             # <<<<<<<<<<<<<<
@@ -10764,7 +10852,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_CFLOAT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":320
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":320
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"             # <<<<<<<<<<<<<<
@@ -10775,7 +10863,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_CDOUBLE:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":321
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":321
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"             # <<<<<<<<<<<<<<
@@ -10786,7 +10874,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_CLONGDOUBLE:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":322
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":322
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"             # <<<<<<<<<<<<<<
@@ -10797,7 +10885,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_OBJECT:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":323
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":323
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"
  *                 elif t == NPY_OBJECT:      f = "O"             # <<<<<<<<<<<<<<
@@ -10808,7 +10896,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       default:
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":325
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":325
  *                 elif t == NPY_OBJECT:      f = "O"
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -10829,7 +10917,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":326
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":326
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f             # <<<<<<<<<<<<<<
@@ -10838,7 +10926,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->format = __pyx_v_f;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":327
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":327
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f
  *                 return             # <<<<<<<<<<<<<<
@@ -10848,7 +10936,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":302
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":302
  *             info.obj = self
  * 
  *             if not PyDataType_HASFIELDS(descr):             # <<<<<<<<<<<<<<
@@ -10857,7 +10945,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":329
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":329
  *                 return
  *             else:
  *                 info.format = <char*>PyObject_Malloc(_buffer_format_string_len)             # <<<<<<<<<<<<<<
@@ -10867,7 +10955,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->format = ((char *)PyObject_Malloc(0xFF));
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":330
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":330
  *             else:
  *                 info.format = <char*>PyObject_Malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment             # <<<<<<<<<<<<<<
@@ -10876,7 +10964,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     (__pyx_v_info->format[0]) = '^';
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":331
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":331
  *                 info.format = <char*>PyObject_Malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0             # <<<<<<<<<<<<<<
@@ -10885,7 +10973,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_offset = 0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":332
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":332
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0
  *                 f = _util_dtypestring(descr, info.format + 1,             # <<<<<<<<<<<<<<
@@ -10895,7 +10983,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_9 = __pyx_f_5numpy__util_dtypestring(__pyx_v_descr, (__pyx_v_info->format + 1), (__pyx_v_info->format + 0xFF), (&__pyx_v_offset)); if (unlikely(__pyx_t_9 == ((char *)NULL))) __PYX_ERR(2, 332, __pyx_L1_error)
     __pyx_v_f = __pyx_t_9;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":335
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":335
  *                                       info.format + _buffer_format_string_len,
  *                                       &offset)
  *                 f[0] = c'\0' # Terminate format string             # <<<<<<<<<<<<<<
@@ -10905,7 +10993,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     (__pyx_v_f[0]) = '\x00';
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":258
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -10937,7 +11025,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":337
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":337
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -10961,7 +11049,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__releasebuffer__", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":338
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":338
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -10971,7 +11059,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (PyArray_HASFIELDS(__pyx_v_self) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":339
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":339
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):
  *                 PyObject_Free(info.format)             # <<<<<<<<<<<<<<
@@ -10980,7 +11068,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     PyObject_Free(__pyx_v_info->format);
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":338
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":338
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -10989,7 +11077,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":340
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":340
  *             if PyArray_HASFIELDS(self):
  *                 PyObject_Free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -10999,7 +11087,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":341
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":341
  *                 PyObject_Free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 PyObject_Free(info.strides)             # <<<<<<<<<<<<<<
@@ -11008,7 +11096,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     PyObject_Free(__pyx_v_info->strides);
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":340
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":340
  *             if PyArray_HASFIELDS(self):
  *                 PyObject_Free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -11017,7 +11105,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":337
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":337
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -11029,7 +11117,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":821
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":821
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -11043,7 +11131,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":822
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":822
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -11057,7 +11145,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":821
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":821
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -11076,7 +11164,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":824
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":824
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -11090,7 +11178,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":825
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":825
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -11104,7 +11192,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":824
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":824
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -11123,7 +11211,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":827
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":827
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -11137,7 +11225,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":828
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":828
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -11151,7 +11239,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":827
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":827
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -11170,7 +11258,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":830
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":830
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -11184,7 +11272,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":831
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":831
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -11198,7 +11286,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":830
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":830
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -11217,7 +11305,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":833
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":833
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -11231,7 +11319,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":834
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":834
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -11245,7 +11333,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":833
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":833
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -11264,7 +11352,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":836
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":836
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -11278,7 +11366,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("PyDataType_SHAPE", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":837
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":837
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -11288,7 +11376,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   __pyx_t_1 = (PyDataType_HASSUBARRAY(__pyx_v_d) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":838
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":838
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):
  *         return <tuple>d.subarray.shape             # <<<<<<<<<<<<<<
@@ -11300,7 +11388,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     __pyx_r = ((PyObject*)__pyx_v_d->subarray->shape);
     goto __pyx_L0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":837
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":837
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -11309,7 +11397,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":840
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":840
  *         return <tuple>d.subarray.shape
  *     else:
  *         return ()             # <<<<<<<<<<<<<<
@@ -11323,7 +11411,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     goto __pyx_L0;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":836
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":836
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -11338,7 +11426,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":842
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":842
  *         return ()
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -11367,7 +11455,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   char *__pyx_t_9;
   __Pyx_RefNannySetupContext("_util_dtypestring", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":847
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":847
  * 
  *     cdef dtype child
  *     cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -11376,7 +11464,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":848
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":848
  *     cdef dtype child
  *     cdef int endian_detector = 1
  *     cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -11385,7 +11473,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":851
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":851
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -11408,7 +11496,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_childname, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":852
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":852
  * 
  *     for childname in descr.names:
  *         fields = descr.fields[childname]             # <<<<<<<<<<<<<<
@@ -11425,7 +11513,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_fields, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":853
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":853
  *     for childname in descr.names:
  *         fields = descr.fields[childname]
  *         child, new_offset = fields             # <<<<<<<<<<<<<<
@@ -11460,7 +11548,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_new_offset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":855
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":855
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -11477,20 +11565,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((((__pyx_v_end - __pyx_v_f) - ((int)__pyx_t_5)) < 15) != 0);
     if (unlikely(__pyx_t_6)) {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":856
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":856
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 856, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 856, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(2, 856, __pyx_L1_error)
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":855
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":855
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -11499,7 +11587,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":858
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":858
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -11519,7 +11607,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L8_next_or:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":859
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":859
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -11536,7 +11624,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = __pyx_t_7;
     __pyx_L7_bool_binop_done:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":858
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":858
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -11545,20 +11633,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     if (unlikely(__pyx_t_6)) {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":860
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":860
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 860, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 860, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(2, 860, __pyx_L1_error)
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":858
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":858
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -11567,7 +11655,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":870
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":870
  * 
  *         # Output padding bytes
  *         while offset[0] < new_offset:             # <<<<<<<<<<<<<<
@@ -11583,7 +11671,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (!__pyx_t_6) break;
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":871
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":871
  *         # Output padding bytes
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte             # <<<<<<<<<<<<<<
@@ -11592,7 +11680,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       (__pyx_v_f[0]) = 0x78;
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":872
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":872
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte
  *             f += 1             # <<<<<<<<<<<<<<
@@ -11601,7 +11689,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":873
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":873
  *             f[0] = 120 # "x"; pad byte
  *             f += 1
  *             offset[0] += 1             # <<<<<<<<<<<<<<
@@ -11612,7 +11700,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + 1);
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":875
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":875
  *             offset[0] += 1
  * 
  *         offset[0] += child.itemsize             # <<<<<<<<<<<<<<
@@ -11622,7 +11710,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_8 = 0;
     (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + __pyx_v_child->elsize);
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":877
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":877
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -11632,7 +11720,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((!(PyDataType_HASFIELDS(__pyx_v_child) != 0)) != 0);
     if (__pyx_t_6) {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":878
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":878
  * 
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num             # <<<<<<<<<<<<<<
@@ -11644,7 +11732,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_XDECREF_SET(__pyx_v_t, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":879
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":879
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -11654,20 +11742,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __pyx_t_6 = (((__pyx_v_end - __pyx_v_f) < 5) != 0);
       if (unlikely(__pyx_t_6)) {
 
-        /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":880
+        /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":880
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 880, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 880, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_Raise(__pyx_t_4, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __PYX_ERR(2, 880, __pyx_L1_error)
 
-        /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":879
+        /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":879
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -11676,7 +11764,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":883
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":883
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"             # <<<<<<<<<<<<<<
@@ -11694,7 +11782,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":884
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":884
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"             # <<<<<<<<<<<<<<
@@ -11712,7 +11800,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":885
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":885
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"             # <<<<<<<<<<<<<<
@@ -11730,7 +11818,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":886
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":886
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"             # <<<<<<<<<<<<<<
@@ -11748,7 +11836,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":887
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":887
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"             # <<<<<<<<<<<<<<
@@ -11766,7 +11854,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":888
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":888
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"             # <<<<<<<<<<<<<<
@@ -11784,7 +11872,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":889
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":889
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"             # <<<<<<<<<<<<<<
@@ -11802,7 +11890,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":890
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":890
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"             # <<<<<<<<<<<<<<
@@ -11820,7 +11908,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":891
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":891
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"             # <<<<<<<<<<<<<<
@@ -11838,7 +11926,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":892
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":892
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"             # <<<<<<<<<<<<<<
@@ -11856,7 +11944,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":893
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":893
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"             # <<<<<<<<<<<<<<
@@ -11874,7 +11962,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":894
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":894
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"             # <<<<<<<<<<<<<<
@@ -11892,7 +11980,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":895
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":895
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"             # <<<<<<<<<<<<<<
@@ -11910,7 +11998,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":896
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":896
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf             # <<<<<<<<<<<<<<
@@ -11930,7 +12018,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":897
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":897
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd             # <<<<<<<<<<<<<<
@@ -11950,7 +12038,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":898
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":898
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg             # <<<<<<<<<<<<<<
@@ -11970,7 +12058,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":899
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":899
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"             # <<<<<<<<<<<<<<
@@ -11988,7 +12076,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":901
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":901
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -12007,7 +12095,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       }
       __pyx_L15:;
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":902
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":902
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *             f += 1             # <<<<<<<<<<<<<<
@@ -12016,7 +12104,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":877
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":877
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -12026,7 +12114,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       goto __pyx_L13;
     }
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":906
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":906
  *             # Cython ignores struct boundary information ("T{...}"),
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)             # <<<<<<<<<<<<<<
@@ -12039,7 +12127,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L13:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":851
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":851
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -12049,7 +12137,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":907
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":907
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)
  *     return f             # <<<<<<<<<<<<<<
@@ -12059,7 +12147,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   __pyx_r = __pyx_v_f;
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":842
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":842
  *         return ()
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -12084,7 +12172,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1022
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1022
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -12096,7 +12184,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1023
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1023
  * 
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!             # <<<<<<<<<<<<<<
@@ -12105,7 +12193,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_INCREF(__pyx_v_base);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1024
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1024
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!
  *     PyArray_SetBaseObject(arr, base)             # <<<<<<<<<<<<<<
@@ -12114,7 +12202,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   (void)(PyArray_SetBaseObject(__pyx_v_arr, __pyx_v_base));
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1022
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1022
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -12126,7 +12214,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1026
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1026
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -12141,7 +12229,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1027
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1027
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)             # <<<<<<<<<<<<<<
@@ -12150,7 +12238,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   __pyx_v_base = PyArray_BASE(__pyx_v_arr);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1028
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1028
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -12160,7 +12248,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1029
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1029
  *     base = PyArray_BASE(arr)
  *     if base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -12171,7 +12259,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1028
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1028
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -12180,7 +12268,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1030
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1030
  *     if base is NULL:
  *         return None
  *     return <object>base             # <<<<<<<<<<<<<<
@@ -12192,7 +12280,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_r = ((PyObject *)__pyx_v_base);
   goto __pyx_L0;
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1026
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1026
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -12207,7 +12295,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1034
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1034
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -12228,7 +12316,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("import_array", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1035
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1035
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12244,7 +12332,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1036
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1036
  * cdef inline int import_array() except -1:
  *     try:
  *         _import_array()             # <<<<<<<<<<<<<<
@@ -12253,7 +12341,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  */
       __pyx_t_4 = _import_array(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(2, 1036, __pyx_L3_error)
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1035
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1035
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12267,7 +12355,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1037
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1037
  *     try:
  *         _import_array()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -12282,14 +12370,14 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1038
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1038
  *         _import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_umath() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 1038, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 1038, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -12298,7 +12386,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1035
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1035
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12313,7 +12401,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1034
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1034
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -12336,7 +12424,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1040
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1040
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -12357,7 +12445,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("import_umath", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1041
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1041
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12373,7 +12461,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1042
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1042
  * cdef inline int import_umath() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -12382,7 +12470,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(2, 1042, __pyx_L3_error)
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1041
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1041
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12396,7 +12484,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1043
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1043
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -12411,14 +12499,14 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1044
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1044
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_ufunc() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 1044, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 1044, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -12427,7 +12515,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1041
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1041
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12442,7 +12530,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1040
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1040
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -12465,7 +12553,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   return __pyx_r;
 }
 
-/* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1046
+/* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1046
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -12486,7 +12574,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("import_ufunc", 0);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1047
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1047
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12502,7 +12590,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1048
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1048
  * cdef inline int import_ufunc() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -12511,7 +12599,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(2, 1048, __pyx_L3_error)
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1047
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1047
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12525,7 +12613,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1049
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1049
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -12539,12 +12627,12 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1050
+      /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1050
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 1050, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 1050, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -12553,7 +12641,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1047
+    /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1047
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -12568,7 +12656,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1046
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1046
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -12788,7 +12876,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12820,7 +12908,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12947,7 +13035,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13221,7 +13309,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -13462,7 +13550,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14178,7 +14266,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14231,7 +14319,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -15914,7 +16002,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -16947,7 +17035,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -17303,7 +17391,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17843,7 +17931,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17957,7 +18045,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__34, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__37, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -18962,7 +19050,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19015,7 +19103,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19366,9 +19454,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__37);
-            __Pyx_GIVEREF(__pyx_slice__37);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__37);
+            __Pyx_INCREF(__pyx_slice__40);
+            __Pyx_GIVEREF(__pyx_slice__40);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__40);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 682, __pyx_L1_error)
@@ -19401,7 +19489,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__37); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__40); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -19541,9 +19629,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__37);
-        __Pyx_GIVEREF(__pyx_slice__37);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__37);
+        __Pyx_INCREF(__pyx_slice__40);
+        __Pyx_GIVEREF(__pyx_slice__40);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__40);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 696, __pyx_L1_error)
@@ -19667,7 +19755,7 @@ static PyObject *assert_direct_dimensions(Py_ssize_t *__pyx_v_suboffsets, int __
  * 
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -21830,7 +21918,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__42, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -21883,7 +21971,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUS
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__43, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -25497,8 +25585,8 @@ static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *__pyx_v_type) {
  *         else:
  *             alignment = b''
  */
-      __Pyx_INCREF(__pyx_kp_b__41);
-      __pyx_v_alignment = __pyx_kp_b__41;
+      __Pyx_INCREF(__pyx_kp_b__44);
+      __pyx_v_alignment = __pyx_kp_b__44;
 
       /* "BufferFormatFromTypeInfo":1471
  *         assert type.fields != NULL and type.fields.type != NULL
@@ -25518,8 +25606,8 @@ static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *__pyx_v_type) {
  *         parts = [b"T{"]
  */
     /*else*/ {
-      __Pyx_INCREF(__pyx_kp_b__42);
-      __pyx_v_alignment = __pyx_kp_b__42;
+      __Pyx_INCREF(__pyx_kp_b__45);
+      __pyx_v_alignment = __pyx_kp_b__45;
     }
     __pyx_L6:;
 
@@ -25578,7 +25666,7 @@ static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *__pyx_v_type) {
  *             field += 1
  * 
  */
-      __pyx_t_3 = PyNumber_Add(__pyx_v_part, __pyx_kp_b__43); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1481, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Add(__pyx_v_part, __pyx_kp_b__46); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1481, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_5 = __Pyx_PyBytes_FromString(__pyx_v_field->name); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1481, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
@@ -25586,7 +25674,7 @@ static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *__pyx_v_type) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_Add(__pyx_t_6, __pyx_kp_b__43); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1481, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Add(__pyx_t_6, __pyx_kp_b__46); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1481, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_parts, __pyx_t_5); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(1, 1481, __pyx_L1_error)
@@ -25611,7 +25699,7 @@ static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *__pyx_v_type) {
  */
     __pyx_t_5 = __Pyx_PyBytes_Join(__pyx_v_alignment, __pyx_v_parts); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1484, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = PyNumber_Add(__pyx_t_5, __pyx_kp_b__44); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1484, __pyx_L1_error)
+    __pyx_t_6 = PyNumber_Add(__pyx_t_5, __pyx_kp_b__47); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1484, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (!(likely(PyBytes_CheckExact(__pyx_t_6))||((__pyx_t_6) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "bytes", Py_TYPE(__pyx_t_6)->tp_name), 0))) __PYX_ERR(1, 1484, __pyx_L1_error)
@@ -25679,7 +25767,7 @@ static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *__pyx_v_type) {
  *         else:
  *             result = fmt.string
  */
-      __pyx_t_6 = PyUnicode_Join(__pyx_kp_u__45, __pyx_v_extents); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1489, __pyx_L1_error)
+      __pyx_t_6 = PyUnicode_Join(__pyx_kp_u__48, __pyx_v_extents); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1489, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_3 = PyUnicode_Format(__pyx_kp_u_s, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1489, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
@@ -26853,7 +26941,6 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
   {&__pyx_kp_u_08X, __pyx_k_08X, sizeof(__pyx_k_08X), 0, 1, 0, 0},
   {&__pyx_n_s_APIVersion, __pyx_k_APIVersion, sizeof(__pyx_k_APIVersion), 0, 0, 1, 1},
   {&__pyx_n_s_ASCII, __pyx_k_ASCII, sizeof(__pyx_k_ASCII), 0, 0, 1, 1},
@@ -26931,17 +27018,20 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
   {&__pyx_n_s_Vendor, __pyx_k_Vendor, sizeof(__pyx_k_Vendor), 0, 0, 1, 1},
   {&__pyx_n_s_View_MemoryView, __pyx_k_View_MemoryView, sizeof(__pyx_k_View_MemoryView), 0, 0, 1, 1},
-  {&__pyx_n_u__10, __pyx_k__10, sizeof(__pyx_k__10), 0, 1, 0, 1},
-  {&__pyx_kp_b__41, __pyx_k__41, sizeof(__pyx_k__41), 0, 0, 0, 0},
-  {&__pyx_kp_b__42, __pyx_k__42, sizeof(__pyx_k__42), 0, 0, 0, 0},
-  {&__pyx_kp_b__43, __pyx_k__43, sizeof(__pyx_k__43), 0, 0, 0, 0},
+  {&__pyx_n_u__13, __pyx_k__13, sizeof(__pyx_k__13), 0, 1, 0, 1},
+  {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
   {&__pyx_kp_b__44, __pyx_k__44, sizeof(__pyx_k__44), 0, 0, 0, 0},
-  {&__pyx_kp_u__45, __pyx_k__45, sizeof(__pyx_k__45), 0, 1, 0, 0},
+  {&__pyx_kp_b__45, __pyx_k__45, sizeof(__pyx_k__45), 0, 0, 0, 0},
+  {&__pyx_kp_b__46, __pyx_k__46, sizeof(__pyx_k__46), 0, 0, 0, 0},
+  {&__pyx_kp_b__47, __pyx_k__47, sizeof(__pyx_k__47), 0, 0, 0, 0},
+  {&__pyx_kp_u__48, __pyx_k__48, sizeof(__pyx_k__48), 0, 1, 0, 0},
+  {&__pyx_kp_u_after_dcamapi_init, __pyx_k_after_dcamapi_init, sizeof(__pyx_k_after_dcamapi_init), 0, 1, 0, 0},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
   {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
   {&__pyx_n_s_asarray, __pyx_k_asarray, sizeof(__pyx_k_asarray), 0, 0, 1, 1},
   {&__pyx_n_s_auto, __pyx_k_auto, sizeof(__pyx_k_auto), 0, 0, 1, 1},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
+  {&__pyx_kp_u_before_dcamapi_init_2, __pyx_k_before_dcamapi_init_2, sizeof(__pyx_k_before_dcamapi_init_2), 0, 1, 0, 0},
   {&__pyx_n_u_bytemask, __pyx_k_bytemask, sizeof(__pyx_k_bytemask), 0, 1, 0, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
   {&__pyx_n_u_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 1, 0, 1},
@@ -26949,6 +27039,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
+  {&__pyx_kp_u_create_apiinit, __pyx_k_create_apiinit, sizeof(__pyx_k_create_apiinit), 0, 1, 0, 0},
   {&__pyx_n_s_decode, __pyx_k_decode, sizeof(__pyx_k_decode), 0, 0, 1, 1},
   {&__pyx_n_u_default, __pyx_k_default, sizeof(__pyx_k_default), 0, 1, 0, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
@@ -27021,6 +27112,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
+  {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_getbuffer, __pyx_k_pyx_getbuffer, sizeof(__pyx_k_pyx_getbuffer), 0, 0, 1, 1},
@@ -27076,12 +27168,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 146, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
-  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 225, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 226, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 494, __pyx_L1_error)
-  __pyx_builtin_NotImplementedError = __Pyx_GetBuiltinName(__pyx_n_s_NotImplementedError); if (!__pyx_builtin_NotImplementedError) __PYX_ERR(0, 539, __pyx_L1_error)
+  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 498, __pyx_L1_error)
+  __pyx_builtin_NotImplementedError = __Pyx_GetBuiltinName(__pyx_n_s_NotImplementedError); if (!__pyx_builtin_NotImplementedError) __PYX_ERR(0, 543, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(2, 1038, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 148, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 151, __pyx_L1_error)
@@ -27097,123 +27190,156 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
+  /* "olive/drivers/dcamapi/wrapper.pyx":84
+ *         Only one session of DCAM-API can be open at any time, therefore, DCAMAPI wrapped _DCAMAPI, who provides the singleton behavior.
+ *         """
+ *         print('create apiinit')             # <<<<<<<<<<<<<<
+ *         cdef DCAMAPI_INIT apiinit
+ *         memset(&apiinit, 0, sizeof(apiinit))
+ */
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_create_apiinit); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":89
+ *         apiinit.size = sizeof(apiinit)
+ * 
+ *         print('before dcamapi_init (2)')             # <<<<<<<<<<<<<<
+ *         cdef DCAMERR err
+ *         err = dcamapi_init(&apiinit)
+ */
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_before_dcamapi_init_2); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
+
+  /* "olive/drivers/dcamapi/wrapper.pyx":93
+ *         err = dcamapi_init(&apiinit)
+ *         DCAMAPI.check_error(err, 'dcamapi_init()')
+ *         print('after dcamapi_init')             # <<<<<<<<<<<<<<
+ * 
+ *         print(apiinit.iDeviceCount)
+ */
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_after_dcamapi_init); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
+
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":226
+  /* "olive/drivers/dcamapi/wrapper.pyx":230
  *             }[capability]()
  *         except KeyError:
  *             raise ValueError('unknown capability option')             # <<<<<<<<<<<<<<
  * 
  *     def _get_capability_region(self):
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_unknown_capability_option); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 226, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u_unknown_capability_option); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":240
+  /* "olive/drivers/dcamapi/wrapper.pyx":244
  *             DCAMAPI.check_error(err, 'dcamdev_getcapbility()', self.handle)
  *         except RuntimeError:
  *             raise RuntimeError("does not support region")             # <<<<<<<<<<<<<<
  * 
  *         attributes = dict()
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_does_not_support_region); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 240, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_does_not_support_region); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 244, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":292
+  /* "olive/drivers/dcamapi/wrapper.pyx":296
  * 
  *         if param.supportproc == 0:
  *             raise RuntimeError("does not support processing options")             # <<<<<<<<<<<<<<
  *         if param.hdr.capflag == 0:
  *             raise RuntimeError('frame option is currently disabled')
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_does_not_support_processing_opti); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_does_not_support_processing_opti); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":294
+  /* "olive/drivers/dcamapi/wrapper.pyx":298
  *             raise RuntimeError("does not support processing options")
  *         if param.hdr.capflag == 0:
  *             raise RuntimeError('frame option is currently disabled')             # <<<<<<<<<<<<<<
  * 
  *         flags = {
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u_frame_option_is_currently_disabl); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 294, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_frame_option_is_currently_disabl); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":316
+  /* "olive/drivers/dcamapi/wrapper.pyx":320
  * 
  *         dcamdev_getstring(self.handle, &param)
  *         return c_text.decode('utf-8', errors='replace')             # <<<<<<<<<<<<<<
  * 
  *     def set_data(self):
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_utf_8); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 316, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_u_utf_8); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":363
+  /* "olive/drivers/dcamapi/wrapper.pyx":367
  *             attributes['type'] = 'real'
  *         else:
  *             raise RuntimeError('unknown attribute type')             # <<<<<<<<<<<<<<
  * 
  *         # unit
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_unknown_attribute_type); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_unknown_attribute_type); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":395
+  /* "olive/drivers/dcamapi/wrapper.pyx":399
  *             while True:
  *                 text = self._get_value_text(iprop, value)
  *                 text = text.lower().replace(" ", "_")             # <<<<<<<<<<<<<<
  *                 mode_text.append(text)
  *                 try:
  */
-  __pyx_tuple__11 = PyTuple_Pack(2, __pyx_kp_u_, __pyx_n_u__10); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 395, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__14 = PyTuple_Pack(2, __pyx_kp_u__4, __pyx_n_u__13); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":489
+  /* "olive/drivers/dcamapi/wrapper.pyx":493
  *         cdef int nframes = <int>len(buffer)
  *         if nframes < 1:
  *             raise RuntimeError('number of frames has to be >= 1')             # <<<<<<<<<<<<<<
  * 
  *         # build pointer array
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_number_of_frames_has_to_be_1); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 489, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_u_number_of_frames_has_to_be_1); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "olive/drivers/dcamapi/wrapper.pyx":539
+  /* "olive/drivers/dcamapi/wrapper.pyx":543
  *             return np.asarray(<np.uint16_t[:bufframe.height, :bufframe.width]>bufframe.buf)
  *         else:
  *             raise NotImplementedError(f'unsupported pixel format')             # <<<<<<<<<<<<<<
  * 
  *     def copy_frame(self):
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_unsupported_pixel_format); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 539, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_u_unsupported_pixel_format); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 543, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27221,95 +27347,95 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":272
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(2, 272, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(2, 272, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":276
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
  * 
  *             info.buf = PyArray_DATA(self)
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(2, 276, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(2, 276, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":306
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":306
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(2, 306, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(2, 306, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":856
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":856
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(2, 856, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(2, 856, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":880
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":880
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(2, 880, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(2, 880, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1038
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1038
  *         _import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(2, 1038, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(2, 1038, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
 
-  /* "../../../AppData/Local/Temp/pip-build-env-36cer2x1/overlay/Lib/site-packages/Cython/Includes/numpy/__init__.pxd":1044
+  /* "../../../.conda/envs/olive-dev/lib/site-packages/Cython/Includes/numpy/__init__.pxd":1044
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(2, 1044, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(2, 1044, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
   /* "View.MemoryView":133
  * 
@@ -27318,9 +27444,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(1, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "View.MemoryView":136
  * 
@@ -27329,9 +27455,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "View.MemoryView":148
  * 
@@ -27340,9 +27466,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(1, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "View.MemoryView":176
  *             self.data = <char *>malloc(self.len)
@@ -27351,9 +27477,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "View.MemoryView":192
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -27362,9 +27488,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27372,18 +27498,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__31);
+  __Pyx_GIVEREF(__pyx_tuple__31);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
 
   /* "View.MemoryView":418
  *     def __setitem__(memoryview self, object index, object value):
@@ -27392,9 +27518,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 418, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
 
   /* "View.MemoryView":495
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -27403,9 +27529,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(1, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__34);
+  __Pyx_GIVEREF(__pyx_tuple__34);
 
   /* "View.MemoryView":520
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -27414,9 +27540,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 520, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__35);
+  __Pyx_GIVEREF(__pyx_tuple__35);
 
   /* "View.MemoryView":570
  *         if self.view.strides == NULL:
@@ -27425,9 +27551,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(1, 570, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
+  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(1, 570, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
 
   /* "View.MemoryView":577
  *     def suboffsets(self):
@@ -27436,12 +27562,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__34 = PyTuple_New(1); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(1, 577, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__34);
+  __pyx_tuple__37 = PyTuple_New(1); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(1, 577, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__34, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__34);
+  PyTuple_SET_ITEM(__pyx_tuple__37, 0, __pyx_int_neg_1);
+  __Pyx_GIVEREF(__pyx_tuple__37);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27449,18 +27575,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
+  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__38);
+  __Pyx_GIVEREF(__pyx_tuple__38);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__36);
-  __Pyx_GIVEREF(__pyx_tuple__36);
+  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__39);
+  __Pyx_GIVEREF(__pyx_tuple__39);
 
   /* "View.MemoryView":682
  *         if item is Ellipsis:
@@ -27469,9 +27595,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 seen_ellipsis = True
  *             else:
  */
-  __pyx_slice__37 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__37)) __PYX_ERR(1, 682, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__37);
-  __Pyx_GIVEREF(__pyx_slice__37);
+  __pyx_slice__40 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__40)) __PYX_ERR(1, 682, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__40);
+  __Pyx_GIVEREF(__pyx_slice__40);
 
   /* "View.MemoryView":703
  *     for suboffset in suboffsets[:ndim]:
@@ -27480,9 +27606,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(1, 703, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__38);
-  __Pyx_GIVEREF(__pyx_tuple__38);
+  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(1, 703, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__41);
+  __Pyx_GIVEREF(__pyx_tuple__41);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27490,28 +27616,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__39);
-  __Pyx_GIVEREF(__pyx_tuple__39);
+  __pyx_tuple__42 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__42);
+  __Pyx_GIVEREF(__pyx_tuple__42);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__40);
-  __Pyx_GIVEREF(__pyx_tuple__40);
+  __pyx_tuple__43 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__43);
+  __Pyx_GIVEREF(__pyx_tuple__43);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_DCAMAPI(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__46 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__46);
-  __Pyx_GIVEREF(__pyx_tuple__46);
-  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_DCAMAPI, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__49 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__49);
+  __Pyx_GIVEREF(__pyx_tuple__49);
+  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_DCAMAPI, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "View.MemoryView":286
  *         return self.name
@@ -27520,9 +27646,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(1, 286, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__48);
-  __Pyx_GIVEREF(__pyx_tuple__48);
+  __pyx_tuple__51 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__51);
+  __Pyx_GIVEREF(__pyx_tuple__51);
 
   /* "View.MemoryView":287
  * 
@@ -27531,9 +27657,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__49 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
+  __pyx_tuple__52 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
 
   /* "View.MemoryView":288
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -27542,9 +27668,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__50);
-  __Pyx_GIVEREF(__pyx_tuple__50);
+  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__53);
+  __Pyx_GIVEREF(__pyx_tuple__53);
 
   /* "View.MemoryView":291
  * 
@@ -27553,9 +27679,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__51 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(1, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
+  __pyx_tuple__54 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__54);
+  __Pyx_GIVEREF(__pyx_tuple__54);
 
   /* "View.MemoryView":292
  * 
@@ -27564,19 +27690,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__52 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__52);
-  __Pyx_GIVEREF(__pyx_tuple__52);
+  __pyx_tuple__55 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__55);
+  __Pyx_GIVEREF(__pyx_tuple__55);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__53 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__53);
-  __Pyx_GIVEREF(__pyx_tuple__53);
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__56 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__56);
+  __Pyx_GIVEREF(__pyx_tuple__56);
+  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__56, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -27640,6 +27766,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI = &__pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI;
+  __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI.init = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, int __pyx_skip_dispatch))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_init;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI.open = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, int32, int __pyx_skip_dispatch))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_open;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI.close = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI *, struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, int __pyx_skip_dispatch))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_close;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI.check_error = (PyObject *(*)(enum DCAMERR, char const *, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error *__pyx_optional_args))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_7DCAMAPI_check_error;
@@ -27656,16 +27783,16 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI = &__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMAPI;
   __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT = &__pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.start = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT *, int32, int __pyx_skip_dispatch, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start *__pyx_optional_args))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_8DCAMWAIT_start;
-  if (PyType_Ready(&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.tp_dictoffset && __pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  if (__Pyx_SetVtable(__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.tp_dict, __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DCAMWAIT, (PyObject *)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT.tp_dict, __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DCAMWAIT, (PyObject *)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
   __pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT = &__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAMWAIT;
   __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM = &__pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAM;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAM.get_string = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, int32, int __pyx_skip_dispatch, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string *__pyx_optional_args))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_get_string;
@@ -27680,16 +27807,16 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAM.attach = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, PyObject *, int __pyx_skip_dispatch))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_attach;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAM.lock_frame = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, int __pyx_skip_dispatch, struct __pyx_opt_args_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame *__pyx_optional_args))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_lock_frame;
   __pyx_vtable_5olive_7drivers_7dcamapi_7wrapper_DCAM.start = (PyObject *(*)(struct __pyx_obj_5olive_7drivers_7dcamapi_7wrapper_DCAM *, int32, int __pyx_skip_dispatch))__pyx_f_5olive_7drivers_7dcamapi_7wrapper_4DCAM_start;
-  if (PyType_Ready(&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM.tp_dictoffset && __pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  if (__Pyx_SetVtable(__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM.tp_dict, __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DCAM, (PyObject *)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM.tp_dict, __pyx_vtabptr_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DCAM, (PyObject *)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
   __pyx_ptype_5olive_7drivers_7dcamapi_7wrapper_DCAM = &__pyx_type_5olive_7drivers_7dcamapi_7wrapper_DCAM;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;
@@ -28723,7 +28850,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__48, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__51, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_2);
@@ -28737,7 +28864,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__49, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__52, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_2);
@@ -28751,7 +28878,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_2);
@@ -28765,7 +28892,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__51, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__54, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_2);
@@ -28779,7 +28906,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__52, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__55, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_2);
@@ -28931,27 +29058,6 @@ static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
     return result;
 }
 
-/* ArgTypeTest */
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
-{
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    else if (exact) {
-        #if PY_MAJOR_VERSION == 2
-        if ((type == &PyBaseString_Type) && likely(__Pyx_PyBaseString_CheckExact(obj))) return 1;
-        #endif
-    }
-    else {
-        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
-    }
-    PyErr_Format(PyExc_TypeError,
-        "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
-        name, type->tp_name, Py_TYPE(obj)->tp_name);
-    return 0;
-}
-
 /* PyObjectCall */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
@@ -28971,143 +29077,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg
     return result;
 }
 #endif
-
-/* BufferIndexError */
-static void __Pyx_RaiseBufferIndexError(int axis) {
-  PyErr_Format(PyExc_IndexError,
-     "Out of bounds on buffer access (axis %d)", axis);
-}
-
-/* decode_c_string */
-static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
-         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
-         const char* encoding, const char* errors,
-         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors)) {
-    Py_ssize_t length;
-    if (unlikely((start < 0) | (stop < 0))) {
-        size_t slen = strlen(cstring);
-        if (unlikely(slen > (size_t) PY_SSIZE_T_MAX)) {
-            PyErr_SetString(PyExc_OverflowError,
-                            "c-string too long to convert to Python");
-            return NULL;
-        }
-        length = (Py_ssize_t) slen;
-        if (start < 0) {
-            start += length;
-            if (start < 0)
-                start = 0;
-        }
-        if (stop < 0)
-            stop += length;
-    }
-    length = stop - start;
-    if (unlikely(length <= 0))
-        return PyUnicode_FromUnicode(NULL, 0);
-    cstring += start;
-    if (decode_func) {
-        return decode_func(cstring, length, errors);
-    } else {
-        return PyUnicode_Decode(cstring, length, encoding, errors);
-    }
-}
-
-/* PyObjectFormat */
-#if CYTHON_USE_UNICODE_WRITER
-static PyObject* __Pyx_PyObject_Format(PyObject* obj, PyObject* format_spec) {
-    int ret;
-    _PyUnicodeWriter writer;
-    if (likely(PyFloat_CheckExact(obj))) {
-#if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX < 0x03040000
-        _PyUnicodeWriter_Init(&writer, 0);
-#else
-        _PyUnicodeWriter_Init(&writer);
-#endif
-        ret = _PyFloat_FormatAdvancedWriter(
-            &writer,
-            obj,
-            format_spec, 0, PyUnicode_GET_LENGTH(format_spec));
-    } else if (likely(PyLong_CheckExact(obj))) {
-#if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX < 0x03040000
-        _PyUnicodeWriter_Init(&writer, 0);
-#else
-        _PyUnicodeWriter_Init(&writer);
-#endif
-        ret = _PyLong_FormatAdvancedWriter(
-            &writer,
-            obj,
-            format_spec, 0, PyUnicode_GET_LENGTH(format_spec));
-    } else {
-        return PyObject_Format(obj, format_spec);
-    }
-    if (unlikely(ret == -1)) {
-        _PyUnicodeWriter_Dealloc(&writer);
-        return NULL;
-    }
-    return _PyUnicodeWriter_Finish(&writer);
-}
-#endif
-
-/* JoinPyUnicode */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      CYTHON_UNUSED Py_UCS4 max_char) {
-#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    PyObject *result_uval;
-    int result_ukind;
-    Py_ssize_t i, char_pos;
-    void *result_udata;
-#if CYTHON_PEP393_ENABLED
-    result_uval = PyUnicode_New(result_ulength, max_char);
-    if (unlikely(!result_uval)) return NULL;
-    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
-    result_udata = PyUnicode_DATA(result_uval);
-#else
-    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
-    if (unlikely(!result_uval)) return NULL;
-    result_ukind = sizeof(Py_UNICODE);
-    result_udata = PyUnicode_AS_UNICODE(result_uval);
-#endif
-    char_pos = 0;
-    for (i=0; i < value_count; i++) {
-        int ukind;
-        Py_ssize_t ulength;
-        void *udata;
-        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
-        if (unlikely(__Pyx_PyUnicode_READY(uval)))
-            goto bad;
-        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
-        if (unlikely(!ulength))
-            continue;
-        if (unlikely(char_pos + ulength < 0))
-            goto overflow;
-        ukind = __Pyx_PyUnicode_KIND(uval);
-        udata = __Pyx_PyUnicode_DATA(uval);
-        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
-            memcpy((char *)result_udata + char_pos * result_ukind, udata, (size_t) (ulength * result_ukind));
-        } else {
-            #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
-            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
-            #else
-            Py_ssize_t j;
-            for (j=0; j < ulength; j++) {
-                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
-                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
-            }
-            #endif
-        }
-        char_pos += ulength;
-    }
-    return result_uval;
-overflow:
-    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
-bad:
-    Py_DECREF(result_uval);
-    return NULL;
-#else
-    result_ulength++;
-    value_count++;
-    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
-#endif
-}
 
 /* PyCFunctionFastCall */
 #if CYTHON_FAST_PYCCALL
@@ -29310,6 +29279,164 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
     return result;
 }
 #endif
+
+/* ArgTypeTest */
+static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
+{
+    if (unlikely(!type)) {
+        PyErr_SetString(PyExc_SystemError, "Missing type object");
+        return 0;
+    }
+    else if (exact) {
+        #if PY_MAJOR_VERSION == 2
+        if ((type == &PyBaseString_Type) && likely(__Pyx_PyBaseString_CheckExact(obj))) return 1;
+        #endif
+    }
+    else {
+        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
+    }
+    PyErr_Format(PyExc_TypeError,
+        "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
+        name, type->tp_name, Py_TYPE(obj)->tp_name);
+    return 0;
+}
+
+/* BufferIndexError */
+static void __Pyx_RaiseBufferIndexError(int axis) {
+  PyErr_Format(PyExc_IndexError,
+     "Out of bounds on buffer access (axis %d)", axis);
+}
+
+/* decode_c_string */
+static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
+         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
+         const char* encoding, const char* errors,
+         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors)) {
+    Py_ssize_t length;
+    if (unlikely((start < 0) | (stop < 0))) {
+        size_t slen = strlen(cstring);
+        if (unlikely(slen > (size_t) PY_SSIZE_T_MAX)) {
+            PyErr_SetString(PyExc_OverflowError,
+                            "c-string too long to convert to Python");
+            return NULL;
+        }
+        length = (Py_ssize_t) slen;
+        if (start < 0) {
+            start += length;
+            if (start < 0)
+                start = 0;
+        }
+        if (stop < 0)
+            stop += length;
+    }
+    length = stop - start;
+    if (unlikely(length <= 0))
+        return PyUnicode_FromUnicode(NULL, 0);
+    cstring += start;
+    if (decode_func) {
+        return decode_func(cstring, length, errors);
+    } else {
+        return PyUnicode_Decode(cstring, length, encoding, errors);
+    }
+}
+
+/* PyObjectFormat */
+#if CYTHON_USE_UNICODE_WRITER
+static PyObject* __Pyx_PyObject_Format(PyObject* obj, PyObject* format_spec) {
+    int ret;
+    _PyUnicodeWriter writer;
+    if (likely(PyFloat_CheckExact(obj))) {
+#if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX < 0x03040000
+        _PyUnicodeWriter_Init(&writer, 0);
+#else
+        _PyUnicodeWriter_Init(&writer);
+#endif
+        ret = _PyFloat_FormatAdvancedWriter(
+            &writer,
+            obj,
+            format_spec, 0, PyUnicode_GET_LENGTH(format_spec));
+    } else if (likely(PyLong_CheckExact(obj))) {
+#if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX < 0x03040000
+        _PyUnicodeWriter_Init(&writer, 0);
+#else
+        _PyUnicodeWriter_Init(&writer);
+#endif
+        ret = _PyLong_FormatAdvancedWriter(
+            &writer,
+            obj,
+            format_spec, 0, PyUnicode_GET_LENGTH(format_spec));
+    } else {
+        return PyObject_Format(obj, format_spec);
+    }
+    if (unlikely(ret == -1)) {
+        _PyUnicodeWriter_Dealloc(&writer);
+        return NULL;
+    }
+    return _PyUnicodeWriter_Finish(&writer);
+}
+#endif
+
+/* JoinPyUnicode */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      CYTHON_UNUSED Py_UCS4 max_char) {
+#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    PyObject *result_uval;
+    int result_ukind;
+    Py_ssize_t i, char_pos;
+    void *result_udata;
+#if CYTHON_PEP393_ENABLED
+    result_uval = PyUnicode_New(result_ulength, max_char);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
+    result_udata = PyUnicode_DATA(result_uval);
+#else
+    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = sizeof(Py_UNICODE);
+    result_udata = PyUnicode_AS_UNICODE(result_uval);
+#endif
+    char_pos = 0;
+    for (i=0; i < value_count; i++) {
+        int ukind;
+        Py_ssize_t ulength;
+        void *udata;
+        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
+        if (unlikely(__Pyx_PyUnicode_READY(uval)))
+            goto bad;
+        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
+        if (unlikely(!ulength))
+            continue;
+        if (unlikely(char_pos + ulength < 0))
+            goto overflow;
+        ukind = __Pyx_PyUnicode_KIND(uval);
+        udata = __Pyx_PyUnicode_DATA(uval);
+        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
+            memcpy((char *)result_udata + char_pos * result_ukind, udata, (size_t) (ulength * result_ukind));
+        } else {
+            #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
+            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
+            #else
+            Py_ssize_t j;
+            for (j=0; j < ulength; j++) {
+                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
+                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
+            }
+            #endif
+        }
+        char_pos += ulength;
+    }
+    return result_uval;
+overflow:
+    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
+bad:
+    Py_DECREF(result_uval);
+    return NULL;
+#else
+    result_ulength++;
+    value_count++;
+    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
+#endif
+}
 
 /* PyErrFetchRestore */
 #if CYTHON_FAST_THREAD_STATE
