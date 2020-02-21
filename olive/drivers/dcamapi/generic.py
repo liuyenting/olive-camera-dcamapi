@@ -5,6 +5,7 @@ import re
 from functools import lru_cache
 from multiprocessing.sharedctypes import RawArray
 from typing import Iterable
+from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 
@@ -32,21 +33,28 @@ class HamamatsuCamera(Camera):
 
     ##
 
+    @property
+    def api(self):
+        return self._api
+
+    @property
+    def is_busy(self):
+        return self.api.status() != CaptureStatus.Ready
+
+    @property
+    def is_opened(self):
+        return self._api is not None
+
+    ##
+
     async def test_open(self):
         try:
-            await self.open()
-            logger.info(f".. {self.info}")
+            await super().test_open()
         except RuntimeError as err:
             logger.exception(err)
             raise UnsupportedClassError
-        finally:
-            await self.close()
 
-    async def open(self):
-        """
-        Note:
-            Do not open and close in another thread.
-        """
+    async def _open(self):
         handle = self.driver.api.open(self._index)
         self._api = DCAM(handle)
 
@@ -56,9 +64,29 @@ class HamamatsuCamera(Camera):
         # enable defect correction
         self.set_property("defect_correct_mode", "on")
 
-    async def close(self):
+    async def _close(self):
         self.driver.api.close(self.api)
         self._api = None
+
+    ##
+
+    async def get_device_info(self) -> DeviceInfo:
+        raw_sn = self.api.get_string(Info.CameraID)
+        params = {
+            "version": self.api.get_string(Info.APIVersion),
+            "vendor": self.api.get_string(Info.Vendor),
+            "model": self.api.get_string(Info.Model),
+            "serial_number": re.match(r"S/N: (\d+)", raw_sn).group(1),
+        }
+
+        # DEBUG
+        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
+            try:
+                print(self.api.get_capability(option))
+            except RuntimeError as err:
+                logger.error(err)
+
+        return DeviceInfo(**params)
 
     ##
 
@@ -324,64 +352,36 @@ class HamamatsuCamera(Camera):
             self.set_roi(pos0=prev_pos0, shape=prev_shape)
             raise
 
-    ##
-
-    @property
-    def api(self):
-        return self._api
-
-    @property
-    def is_busy(self):
-        return self.api.status() != CaptureStatus.Ready
-
-    @property
-    def is_opened(self):
-        return self._api is not None
-
-    @property
-    def info(self):
-        raw_sn = self.api.get_string(Info.CameraID)
-        params = {
-            "version": self.api.get_string(Info.APIVersion),
-            "vendor": self.api.get_string(Info.Vendor),
-            "model": self.api.get_string(Info.Model),
-            "serial_number": re.match(r"S/N: (\d+)", raw_sn).group(1),
-        }
-
-        # DEBUG
-        for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
-            try:
-                print(self.api.get_capability(option))
-            except RuntimeError as err:
-                logger.error(err)
-
-        return DeviceInfo(**params)
-
 
 class DCAMAPI(Driver):
     api = None
 
     def __init__(self):
-        if type(self).api is None:
-            type(self).api = _DCAMAPI()
+        # ensure API is only instantiated once
+        if self.api is None:
+            logger.info(f"loading DCAM-API")
+            self.api = _DCAMAPI()
         super().__init__()
 
     ##
 
     async def initialize(self):
+        loop = asyncio.get_running_loop()
+
         try:
-            print("DCAMAPI, pre-init")
-            api = _DCAMAPI()
-            api.init()
-            print("DCAMAPI, post-init")
+            with ThreadPoolExecutor(max_workers=1) as pool:
+                loop.run_in_executor(pool, self.api.init)
         except RuntimeError as err:
             if "No cameras" not in str(err):
+                logger.debug(f"no camera found")
                 raise
 
     async def shutdown(self):
-        self.api.uninit()
+        loop = asyncio.get_running_loop()
+        with ThreadPoolExecutor(max_workers=1) as pool:
+            loop.run_in_executor(pool, self.api.uninit)
 
-    async def _enumerate_device_candidates(self) -> Iterable[HamamatsuCamera]:
+    def _enumerate_device_candidates(self) -> Iterable[HamamatsuCamera]:
         n_devices = self.api.n_devices
-        logger.debug(f"found {n_devices} device(s)")
+        logger.debug(f"found {n_devices} camera(s)")
         return [HamamatsuCamera(self, i) for i in range(n_devices)]
