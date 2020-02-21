@@ -7,6 +7,8 @@ import coloredlogs
 from olive.core.managers import DriverManager
 from olive.devices import Camera
 
+from olive.utils import timeit
+
 coloredlogs.install(
     level="DEBUG", fmt="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S"
 )
@@ -14,11 +16,14 @@ coloredlogs.install(
 logger = logging.getLogger(__name__)
 
 
+@timeit
 async def run(device: Camera):
     try:
         await device.open()
 
         props = await device.enumerate_properties()
+
+        props = {name: await device.get_property(name) for name in props}
         pprint(props)
     finally:
         await device.close()
