@@ -2,7 +2,7 @@ import asyncio
 import ctypes
 import logging
 import re
-from functools import lru_cache
+from functools import lru_cache, partial
 from multiprocessing.sharedctypes import RawArray
 from typing import Iterable
 from concurrent.futures import ThreadPoolExecutor
@@ -13,6 +13,7 @@ from olive.devices import BufferRetrieveMode, Camera
 from olive.devices.base import DeviceInfo
 from olive.devices.error import UnsupportedClassError
 from olive.drivers.base import Driver
+from olive.utils import timeit
 
 from .wrapper import DCAM
 from .wrapper import DCAMAPI as _DCAMAPI
@@ -21,6 +22,13 @@ from .wrapper import Capability, CaptureStatus, CaptureType, Event, Info
 __all__ = ["DCAMAPI", "HamamatsuCamera"]
 
 logger = logging.getLogger(__name__)
+
+executor = ThreadPoolExecutor(max_workers=1)
+
+
+async def sync(func, *args, **kwargs):
+    loop = asyncio.get_running_loop()
+    return await loop.run_in_executor(executor, partial(func, *args, **kwargs))
 
 
 class HamamatsuCamera(Camera):
@@ -55,29 +63,34 @@ class HamamatsuCamera(Camera):
             raise UnsupportedClassError
 
     async def _open(self):
-        handle = self.driver.api.open(self._index)
+        handle = self.driver.api.open(self._index)  # cannot wrap in sync
         self._api = DCAM(handle)
 
         # probe the camera
         await self.enumerate_properties()
 
         # enable defect correction
-        self.set_property("defect_correct_mode", "on")
+        await self.set_property("defect_correct_mode", "on")
 
     async def _close(self):
-        self.driver.api.close(self.api)
+        self.driver.api.close(self.api)  # cannot wrap in sync
         self._api = None
 
     ##
 
     async def get_device_info(self) -> DeviceInfo:
-        raw_sn = self.api.get_string(Info.CameraID)
         params = {
-            "version": self.api.get_string(Info.APIVersion),
-            "vendor": self.api.get_string(Info.Vendor),
-            "model": self.api.get_string(Info.Model),
-            "serial_number": re.match(r"S/N: (\d+)", raw_sn).group(1),
+            "version": Info.APIVersion,
+            "vendor": Info.Vendor,
+            "model": Info.Model,
+            "serial_number": Info.CameraID,
         }
+        for key, value in params.items():
+            params[key] = await sync(self.api.get_string, value)
+
+        # serial number requires further parsing
+        parsed_sn = re.match(r"S/N: (\d+)", params["serial_number"]).group(1)
+        params["serial_number"] = parsed_sn
 
         # DEBUG
         for option in (Capability.Region, Capability.FrameOption, Capability.LUT):
@@ -96,19 +109,19 @@ class HamamatsuCamera(Camera):
         curr_id, next_id = -1, self.api.get_next_id()
         while curr_id != next_id:
             try:
-                curr_id, next_id = next_id, self.api.get_next_id(next_id)
+                curr_id, next_id = next_id, await sync(self.api.get_next_id, next_id)
             except RuntimeError:
                 # no more supported property id
                 break
 
-            name = self.api.get_name(curr_id)
+            name = await sync(self.api.get_name, curr_id)
             name = name.lower().replace(" ", "_")
             properties[name] = curr_id
 
         self._properties = properties
         return tuple(properties.keys())
 
-    def get_property(self, name):
+    async def get_property(self, name):
         attributes = self._get_property_attributes(name)
         if not attributes["readable"]:
             raise TypeError(f'property "{name}" is not readable')
@@ -121,7 +134,7 @@ class HamamatsuCamera(Camera):
         # convert data type
         prop_type, prop_id = attributes["type"], self._get_property_id(name)
 
-        value = self.api.get_value(prop_id)
+        value = await sync(self.api.get_value, prop_id)
         if prop_type == "mode":
             # NOTE assuming uniform step
             index = int(value) - int(attributes["min"])
@@ -131,7 +144,7 @@ class HamamatsuCamera(Camera):
         elif prop_type == "real":
             return float(value)
 
-    def set_property(self, name, value):
+    async def set_property(self, name, value):
         attributes = self._get_property_attributes(name)
         if not attributes["writable"]:
             raise TypeError(f'property "{name}" is not writable')
@@ -141,7 +154,7 @@ class HamamatsuCamera(Camera):
             # translate string enum back to index
             # NOTE assuming uniform step
             value = attributes["modes"].index(value) + int(attributes["min"])
-        self.api.set_value(prop_id, value)
+        await sync(self.api.set_value, prop_id, value)
 
     def _get_property_id(self, name):
         return self._properties[name]
@@ -149,7 +162,22 @@ class HamamatsuCamera(Camera):
     @lru_cache(maxsize=16)
     def _get_property_attributes(self, name):
         """
-        Attributes indicates the characteristic of the property.
+        Attributes define the characteristic of a property.
+
+        - readable
+        - writable
+        - auto-rounding:
+            value will be adjusted if host software does not set an accurate value
+        - stepping inconsistent:
+            stepping value is not consistent throughout its range
+        - volatile:
+            can be changed manually or automatically by the device, e.g. temperature
+        - data stream:
+            value change will affect the data stream
+        - access ready:
+            can be changed during READY state
+        - access busy:
+            can be changed during busy state.
 
         Args:
             name (str): name of the property

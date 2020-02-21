@@ -1,5 +1,6 @@
 import asyncio
 import logging
+from pprint import pprint
 
 import coloredlogs
 
@@ -14,7 +15,13 @@ logger = logging.getLogger(__name__)
 
 
 async def run(device: Camera):
-    pass
+    try:
+        await device.open()
+
+        props = await device.enumerate_properties()
+        pprint(props)
+    finally:
+        await device.close()
 
 
 async def main():
