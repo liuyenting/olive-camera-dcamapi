@@ -394,20 +394,15 @@ class DCAMAPI(Driver):
     ##
 
     async def initialize(self):
-        loop = asyncio.get_running_loop()
-
         try:
-            with ThreadPoolExecutor(max_workers=1) as pool:
-                loop.run_in_executor(pool, self.api.init)
+            await sync(self.api.init)
         except RuntimeError as err:
             if "No cameras" not in str(err):
                 logger.debug(f"no camera found")
                 raise
 
     async def shutdown(self):
-        loop = asyncio.get_running_loop()
-        with ThreadPoolExecutor(max_workers=1) as pool:
-            loop.run_in_executor(pool, self.api.uninit)
+        await sync(self.api.uninit)
 
     def _enumerate_device_candidates(self) -> Iterable[HamamatsuCamera]:
         n_devices = self.api.n_devices
