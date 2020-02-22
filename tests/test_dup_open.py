@@ -1,21 +1,52 @@
-from olive.drivers.dcamapi import DCAMAPI
+import asyncio
+import logging
+from pprint import pprint
 
-try:
-    camera1 = DCAMAPI()
-    camera1.open(0)
-    print('cam1 open')
-    
+import coloredlogs
+
+from olive.core.managers import DriverManager
+from olive.devices import Camera
+
+from olive.utils import timeit
+
+coloredlogs.install(
+    level="DEBUG", fmt="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S"
+)
+
+logger = logging.getLogger(__name__)
+
+
+@timeit
+async def run(device: Camera):
     try:
-        camera2 = DCAMAPI()
-        camera2.open(0)
-        print('cam2 open') # should fail
-        
-        camera2.close()
-    finally:
-        print('cam2 cleanup')
-        camera2.uninit()
+        await device.open()
 
-    camera1.close()
-finally:
-    print('cam1 cleanup')
-    camera1.uninit()
+        props = await device.enumerate_properties()
+
+        props = {name: await device.get_property(name) for name in props}
+        pprint(props)
+    finally:
+        await device.close()
+
+
+async def main():
+    driver_mgmt = DriverManager()
+    await driver_mgmt.refresh()
+
+    cam_drivers = driver_mgmt.query_drivers(Camera)
+    print(cam_drivers)
+
+    cam_driver = cam_drivers[0]
+    try:
+        await cam_driver.initialize()
+        cam_devices = await cam_driver.enumerate_devices()
+        print(cam_devices)
+
+        aom_device = cam_devices[0]
+        await run(aom_device)
+    finally:
+        await cam_driver.shutdown()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

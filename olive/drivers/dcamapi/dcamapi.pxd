@@ -562,7 +562,6 @@ cdef extern from 'lib/dcamapi4.h':
     ##
     ## initialize, uninitialize and misc ##
     DCAMERR dcamapi_init			( DCAMAPI_INIT* param )
-    DCAMERR dcamapi_init			()
     DCAMERR dcamapi_uninit			()
     DCAMERR dcamdev_open			( DCAMDEV_OPEN* param )
     DCAMERR dcamdev_close			( HDCAM h )

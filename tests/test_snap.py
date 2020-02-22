@@ -1,6 +1,6 @@
+import asyncio
 import logging
 from pprint import pprint
-import trio
 
 import coloredlogs
 import imageio
@@ -29,15 +29,19 @@ async def main():
         await camera.open()
 
         try:
-            t_exp = 10
+            # t_exp = 10
 
-            camera.set_exposure_time(t_exp)
-            camera.set_roi(shape=(2048, 2048))
+            props = await camera.enumerate_properties()
 
-            # TODO single frame ring buffer not working, exception
-            frame = await camera.snap()
-            print(f"captured size {frame.shape}, {frame.dtype}")
-            imageio.imwrite("debug.tif", frame)
+            props = {name: await camera.get_property(name) for name in props}
+            pprint(props)
+
+            # camera.set_exposure_time(t_exp)
+            # camera.set_roi(shape=(1024, 1024))
+
+            # frame = await camera.snap()
+            # print(f"captured size {frame.shape}, {frame.dtype}")
+            # imageio.imwrite("_debug.tif", frame)
         finally:
             await camera.close()
     finally:
@@ -45,4 +49,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    trio.run(main)
+    asyncio.run(main())

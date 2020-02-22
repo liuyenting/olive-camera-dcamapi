@@ -1,7 +1,7 @@
 import logging
 import os
 from pprint import pprint
-import trio
+import asyncio
 
 import coloredlogs
 from skimage import exposure, transform
@@ -101,4 +101,4 @@ async def main(t_exp=20, shape=(2048, 2048)):
 
 
 if __name__ == "__main__":
-    trio.run(main)
+    asyncio.run(main())
